@@ -38,17 +38,17 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
+  //For Testing
   window.login = SessionUtil.login
   window.signup = SessionUtil.signup
   window.logout = SessionUtil.logout
   window.getState = store.getState
   window.dispatch = store.dispatch
-
-  ReactDOM.render(<Root store={store} />, root);
+  ReactDOM.render(<Root store={store} />, root)
+})
   // ReactDOM.render(<h1>Welcome to Melp</h1>, root);
   // ReactDOM.render(<h1> Hello </h1>, root);
 
   // window.getState = store.getState;
   // window.dispatch = store.dispatch;
-});
 

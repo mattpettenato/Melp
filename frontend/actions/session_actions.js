@@ -27,7 +27,7 @@ export const receiveSessionErrors = (errors) => {
 
 export const clearErrors = () => {
   return {
-    type: REMOVE_ERRORS
+    type: CLEAR_SESSION_ERRORS
   }
 }
 
