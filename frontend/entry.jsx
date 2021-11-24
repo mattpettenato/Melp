@@ -6,17 +6,44 @@ import Root from './components/root'
 import createStore from './store/store';
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const root = document.getElementById("root");
-  let preloadedState = undefined;
+// document.addEventListener("DOMContentLoaded", () => {
+//   const root = document.getElementById("root");
+//   let preloadedState = undefined;
+//   if (window.currentUser) {
+//     preloadedState = {
+//       session: {
+//         currentUser: window.currentUser
+//       }
+//     };
+//   }
+//   const store = configureStore(preloadedState);
+document.addEventListener('DOMContentLoaded', () => {
+  const root = document.getElementById('root')
+  let store;
   if (window.currentUser) {
-    preloadedState = {
+    const preloadedState = {
+      entities: {
+        users: {
+          [window.currentUser.id]: window.currentUser
+        }
+      },
+
       session: {
-        currentUser: window.currentUser
+        id: window.currentUser.id
       }
     };
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = configureStore();
   }
-  const store = configureStore(preloadedState);
+
+  window.login = SessionUtil.login
+  window.signup = SessionUtil.signup
+  window.logout = SessionUtil.logout
+  window.getState = store.getState
+  window.dispatch = store.dispatch
+
   ReactDOM.render(<Root store={store} />, root);
   // ReactDOM.render(<h1>Welcome to Melp</h1>, root);
   // ReactDOM.render(<h1> Hello </h1>, root);

@@ -22,6 +22,10 @@ class Signup extends React.Component{
     this.props.signupUser(this.state)
   }
 
+  // componentWillUnmount() {
+  //   this.props.clearErrors()
+  // }
+
   render () {
     return (
       <div className="session-form">

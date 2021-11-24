@@ -19,21 +19,21 @@ class Login extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    this.props.loginUser(this.state)
+    this.props.login(this.state)
       .then(this.props.closeModal);
   }
 
-  handleSubmitDemo(e) {
-    e.preventDefault()
+  // handleSubmitDemo(e) {
+  //   e.preventDefault()
 
-    const demoUser = {
-      email: 'DemoUser',
-      password: 'DemoUser'
-    }
+  //   const demoUser = {
+  //     email: 'DemoUser',
+  //     password: 'DemoUser'
+  //   }
 
-    this.props.loginUser(demoUser)
-      .then(this.props.closeModal())
-  }
+  //   this.props.login(demoUser)
+  //     .then(this.props.closeModal())
+  // }
 
   update(field) {
     return e => this.setState({ [field]: e.currentTarget.value })
