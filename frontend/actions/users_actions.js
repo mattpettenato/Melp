@@ -1,17 +1,17 @@
-import * as APIUtil from "../util/users_api_util";
+// import * as APIUtil from "../util/users_api_util";
 
-export const RECEIVE_USERS = "RECEIVE_USERS";
+// export const RECEIVE_USERS = "RECEIVE_USERS";
 
-export const receiveUsers = users => {
-  return {
-    type: RECEIVE_USERS,
-    users
-  };
-};
+// export const receiveUsers = users => {
+//   return {
+//     type: RECEIVE_USERS,
+//     users
+//   };
+// };
 
-export const fetchUsers = () => dispatch => {
-  return APIUtil.fetchUsers().then(users => {
+// export const fetchUsers = () => dispatch => {
+//   return APIUtil.fetchUsers().then(users => {
 
-    return dispatch(receiveUsers(users))
-  })
-};
+//     return dispatch(receiveUsers(users))
+//   })
+// };

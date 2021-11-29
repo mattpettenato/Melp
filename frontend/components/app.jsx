@@ -1,58 +1,38 @@
-// import React from 'react';
-// // import WelcomeBar from './nav_bar/welcome_bar_container';
-// import NavBarContainer from './nav_bar/nav_bar_container';
-// import SignupContainer from './session/signup_container';
-// import LoginContainer from './session/login_container';
-// import Home from './home/home';
-// // import { Route } from 'react-router-dom';
-// import { AuthRoute, ProtectedRoute } from '../util/route_util';
-
-// import {
-//   Route,
-//   Redirect,
-//   Routes,
-//   Link,
-//   HashRouter
-// } from 'react-router-dom';
-// // import { AuthRoute, ProtectedRoute } from '../utils/route_util';
-
-
-// const App = () => (
-//   <div>
-//     {/* <NavBarContainer /> */}
-//     <Routes>
-//       {/* <Route path="/" element={NavBarContainer} /> */}
-//       {/* <Route exact path="/" element={Home} /> */}
-//       {/* <Route path="/signup" element={SignupContainer} /> */}
-//       {/* <Route path="/login" element={LoginContainer} /> */}
-//       {/* <Route path='/' element={NavBarContainer} /> */}
-//       {/* <Route exact path='/' element={Home} /> */}
-//       {/* <Route path='/signup' element={props => <SignupContainer {...props} />} /> */}
-//       <Route path="/" component={NavBarContainer} />
-//       <Route exact path="/" component={Home} />
-//       <AuthRoute path="/signup" component={SignupContainer} />
-//       <AuthRoute path="/login" component={LoginContainer} />
-//     </Routes>
-//   </div>
-// );
-
-// export default App;
 import React from 'react';
-// import WelcomeBar from './nav_bar/welcome_bar_container';
 import NavBarContainer from './nav_bar/nav_bar_container';
-import SignupContainer from './session/signup_container';
-import LoginContainer from './session/login_container';
-// import ChirpIndexContainer from './chirps/chirp_index_container';
+import SignupContainer from './session_form/signup_container';
+import LoginContainer from './session_form/login_container';
 import Home from './home/home';
-import { Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import Modal from './modal/modal'
 
-export default () => (
+const App = () => (
   <div>
-    <Route path="/" component={NavBarContainer} />
-    <Route exact path="/" component={Home} />
-    <AuthRoute path="/signup" component={SignupContainer} />
-    <AuthRoute path="/login" component={LoginContainer} />
-    {/* <ProtectedRoute path="/chirps" component={ChirpIndexContainer} /> */}
+
+    <Modal />
+
+    <header>
+      <Link to="/" className="header-link">
+        <h1>Melp</h1>
+        <div className="hero-img-frame">
+          <img className="hero-img" src="https://s3-media0.fl.yelpcdn.com/assets/public/yelp_favicon.yji-5e8cc24f40ca89107dc7a349ed209e00.svg" />
+        </div>
+      </Link>
+    </header>
+    <br />
+    <NavBarContainer />
+    <br />
+    <h1>Just Melpp It.</h1>
+
+
+{/* 
+    <Switch>
+      
+      <AuthRoute exact path="/login" component={LoginContainer} />
+      <AuthRoute exact path="/signup" component={SignupContainer} />
+
+    </Switch> */}
   </div>
 );
+export default App;
