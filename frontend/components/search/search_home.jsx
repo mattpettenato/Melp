@@ -72,6 +72,10 @@ class Search extends React.Component {
           <div id="rightDiv">
             <input className="findneartext" type="text" placeholder="San Francisco" />
           </div>
+          <div id="search-submit">
+            <button >Search</button>
+          </div>
+
         </form>
 
       </div>

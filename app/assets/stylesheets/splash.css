@@ -101,12 +101,12 @@ margin: 25px auto 25px auto;
     display: table-cell;
 } */
 
-.homesearch input{
+/* .homesearch input{
     height: 45px;
     float:left;
     display: table-cell;
 
-}
+} */
 
 /* .findsearch label{
     font-weight: bold;
@@ -139,27 +139,51 @@ body > div{
     text-align:center;
 } */
 #findme{
+    display: flex;
+    align-items: center;
     font-weight: bold;
     background-color: white;
     /* padding:14.5px; */
     padding-right: 10px;
-    padding-top: 0px;
+    /* padding-top: 0px; */
     display:table-cell;
     height: 14.5px;
     /* margin-right: 0px; */
-    background-color: blue;
+    /* background-color: blue; */
     /* height: 100px; */
-    background-color: blue;
-    padding:14.5px;
+    /* background-color: blue; */
+    /* padding:14.5px; */
 
 }
+#search-submit {
+        /* width: 300px; */
+    border: none;
+    font-weight: bold;
+    background-color: white;
+    /* padding:14.5px; */
+    padding-right: 10px;
+    display:table-cell;
+    /* margin-right: 0px; */
+    text-align: center;
+    outline: none;
+}
 
-#findme label{
+#search-submit button{
+    border: none;
+    outline: none;
+    background-color: #c41200;
+    height: 41.5px;
+    font-weight: bold;
+    width: 60px;
+    margin-right: -10px
+}
+
+/* #findme label{
     height: 50px;
     background-color: blue;
     padding:14.5px;
     
-}
+} */
 #leftDiv{
     /* width: 300px; */
     border: none;
@@ -172,6 +196,7 @@ body > div{
     text-align: center;
 }
 #leftDiv input{
+    height: 40px;
     align-items: center;
 }
 
@@ -184,6 +209,11 @@ body > div{
     padding-left: 0px;
     display:table-cell;
     margin-right: 0px;
+}
+
+#rightDiv input{
+    height: 40px;
+    align-items: center;
 }
 
 .findnear{
