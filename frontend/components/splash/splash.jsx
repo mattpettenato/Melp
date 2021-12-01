@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import Search from '../search/search_home';
 import NavBarContainer from '../../components/nav_bar/nav_bar_container';
 
 class Splash extends React.Component {
@@ -32,7 +32,7 @@ class Splash extends React.Component {
             <div className="main-logo">
               <Link to="/"><img src="https://s3-media0.fl.yelpcdn.com/assets/public/yelp_favicon.yji-5e8cc24f40ca89107dc7a349ed209e00.svg" /></Link>
             </div>
-            {/* <SearchBox /> */}
+            <Search />
           </div>
 
           <div className="new-businesses">

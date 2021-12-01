@@ -9,6 +9,7 @@ import Home from './home/home';
 import { Switch, Route, Link } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Splash from './splash/splash_container';
+import Search from './search/search_home';
 
 
 const App = () => (
@@ -17,7 +18,7 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginContainer} />
       <AuthRoute exact path="/signup" component={SignupContainer} />
 
-
+      
       <Route path="/" component={Splash} />
     </Switch>
   </div>

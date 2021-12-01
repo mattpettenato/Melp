@@ -70,9 +70,163 @@ margin: 25px auto 25px auto;
 
 }
 
-/* .main-search {
+.splashsearch {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    display: table-cell;
+
+}
+
+.homesearch {
+    /* display: flex; */
+    /* justify-content: center; */
+    /* flex-direction: column; */
     margin: 0 auto 0 auto;
+    /* width: 500px; */
+    /* height: 40px; */
+    align-items: center;
+    /* border-radius: 5px; */
+    height: 45px;
+    display: table-cell;
+    text-align:center;
+    display:table;
+    /* width:100%; */
+    text-align:center;
+
+}
+
+/* .homesearch form{
+    align-items: center;
+    display: table-cell;
 } */
+
+.homesearch input{
+    height: 45px;
+    float:left;
+    display: table-cell;
+
+}
+
+/* .findsearch label{
+    font-weight: bold;
+    background-color: white;
+    padding:14.5px;
+    padding-left: 0px;
+    display:table-cell;
+    margin-right: 0px;
+} */
+
+.findsearchtext{
+    
+    width: 300px;
+    border: none;
+    font-weight: bold;
+    background-color: white;
+    padding-left: 0px;
+    display:table-cell;
+    margin-right: 0px;
+    align-items: center;
+
+}
+/* 
+body {
+  background-color:#CCFFCC;
+}
+body > div{
+    display:table;
+    width:100%;
+    text-align:center;
+} */
+#findme{
+    font-weight: bold;
+    background-color: white;
+    /* padding:14.5px; */
+    padding-right: 10px;
+    padding-top: 0px;
+    display:table-cell;
+    height: 14.5px;
+    /* margin-right: 0px; */
+    background-color: blue;
+    /* height: 100px; */
+    background-color: blue;
+    padding:14.5px;
+
+}
+
+#findme label{
+    height: 50px;
+    background-color: blue;
+    padding:14.5px;
+    
+}
+#leftDiv{
+    /* width: 300px; */
+    border: none;
+    font-weight: bold;
+    background-color: white;
+    /* padding:14.5px; */
+    padding-left: 10px;
+    display:table-cell;
+    margin-right: 0px;
+    text-align: center;
+}
+#leftDiv input{
+    align-items: center;
+}
+
+#rightDiv{
+    width: 300px;
+    border: none;
+    font-weight: bold;
+    background-color: white;
+    /* padding:14.5px; */
+    padding-left: 0px;
+    display:table-cell;
+    margin-right: 0px;
+}
+
+.findnear{
+    color: black;
+    width: 35px;
+    border: none;
+    
+
+}
+
+/* .findnear label{
+    font-weight: bold;
+    background-color: white;
+    padding:14.5px;
+    padding-left: 0px;
+    display:table-cell;
+    margin-right: 0px;
+} */
+
+.findneartext{
+    width: 300px;
+    border: none;
+    font-weight: bold;
+    background-color: white;
+    /* padding:14.5px; */
+    padding-left: 0px;
+    display:table-cell;
+    margin-right: 0px;
+}
+
+.searchsubmit button{
+    outline: none;
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
 
 /* .main-search-box {
     width: 500px;
