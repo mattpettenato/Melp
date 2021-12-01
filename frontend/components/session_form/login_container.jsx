@@ -8,9 +8,24 @@ import LogIn from './login';
 
 
 
-const mapStateToProps = ({ errors }) => ({
-  errors: errors.session
-})
+// const mapStateToProps = ({ errors }) => ({
+//   errors: errors.session
+// })
+
+const mapStateToProps = (state) => {
+  return {
+    errors: state.errors.session,
+    formType: 'login',
+    navLink: <Link to="/signup">sign up instead</Link>,
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    processForm: (user) => dispatch(login(user)),
+    clearErrors: () => dispatch(clearErrors())
+  };
+};
 
 // const mapStateToProps = ({ errors }) => {
 //   return {
@@ -19,18 +34,18 @@ const mapStateToProps = ({ errors }) => ({
 //   };
 // };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    processForm: (user) => dispatch(login(user)),
-    clearErrors: () => dispatch(clearErrors()),
-    otherForm: (
-      <button onClick={() => dispatch(openModal('signup'))}>
-        Signup
-      </button>
-    ),
-    closeModal: () => dispatch(closeModal())
-  };
-};
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     processForm: (user) => dispatch(login(user)),
+//     clearErrors: () => dispatch(clearErrors()),
+//     otherForm: (
+//       <button onClick={() => dispatch(openModal('signup'))}>
+//         Signup
+//       </button>
+//     ),
+//     closeModal: () => dispatch(closeModal())
+//   };
+// };
 
 
 // const mapDispatchToProps = dispatch => ({

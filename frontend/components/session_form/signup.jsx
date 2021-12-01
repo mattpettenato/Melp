@@ -1,7 +1,7 @@
 import React from "react";
 import NavBarContainer from '../nav_bar/nav_bar_container'
 import { withRouter } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 
 class Signup extends React.Component{
@@ -11,167 +11,130 @@ class Signup extends React.Component{
       username: '',
       email: '',
       password: '',
+
+      show: false
+
     }
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleBlur = this.handleBlur.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentWillUnmount() {
     this.props.clearErrors()
   }
 
-  // handleInput(type) {
-  //   return (e) => {
-  //     this.setState({ [type]: e.target.value })
-  //   }
-  // }
+  handleBlur() {
+    this.setState(
+      { show: false }
+    )
+  }
+
+  handleClick() {
+    this.setState(
+      { show: !this.state.show }
+    )
+  }
+
+
 
   update(field) {
-    return e => this.setState({ [field]: e.currentTarget.value })
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(this.props.closeModal);
+    this.props.processForm(user);
   }
 
-  handleSubmit(e) {
-    e.preventDefault()
-    this.props.processForm(this.state)
-      .then(this.props.closeModal)
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
 
   render () {
     return (
       <div className="session-form">
-        <h2>Sign Up!</h2>
-        <br />
-        <NavBarContainer />
+  
+        <div className="session-form-nav">
 
-        <form> 
-          <br />
-          {/* {this.props.formType} or {this.props.otherForm} */}
-          {/* <div onClick={this.props.closeModal} className="close-x"></div> */}
-          {/* {this.renderErrors()} */}
-          <br />
-          <label>Username:
+          <Link to="/">
+            <img className="hero-img" src="https://s3-media0.fl.yelpcdn.com/assets/public/yelp_favicon.yji-5e8cc24f40ca89107dc7a349ed209e00.svg" />
+          </Link>
+        </div>
+        <div className="session-form-container">
+        <div className="session-form-box">
+
+          <form onSubmit={this.handleSubmit} className="login-form-box">
+
+        <p className="session-form-title">Sign Up for Melp</p>
+        <p className="legal-copy">By continuing, you agree to Yelp’s 
+        <a href="https://terms.yelp.com/tos/en_us/20200101_en_us/" > Terms of Service</a> and 
+        <a href="https://terms.yelp.com/privacy/en_us/20200101_en_us/" > Privacy Policy.</a>
+        </p>
+
+        {this.renderErrors()}
+
+          <div className="login-form">
+
+          <label>
             <input
               type="text"
               value={this.state.username}
               onChange={this.update('username')}
+              placeholder="Username"
+              className="login-input"
             />
-            <div className='modal-errors'>
-              {this.props.errors ? this.props.errors.username : ''}
-            </div>
           </label>
-            <br />
-          <label>Email:
+          <label>
             <input
               type="text"
               value={this.state.email}
               onChange={this.update('email')}
+              placeholder="Email"
+              className="login-input"
             />
-            <div className='modal-errors'>
-              {this.props.errors ? this.props.errors.email : ''}
-            </div>
           </label>
-          <br />
-          <label>Password:
+          <label>
             <input
               type="password"
               value={this.state.password}
               onChange={this.update('password')}
+              placeholder="Password"
+              className="login-input"
             />
-            <div className='modal-errors'>
-              {this.props.errors ? this.props.errors.password : ''}
-            </div>
           </label>
-          <br />
-          <button onClick={this.handleSubmit}>Sign Up!</button>
-          <br />
-          <br />
 
+          <label>
+            <input
+              type="text"
+              placeholder="ZIP code"
+              className="login-input"
+            />
+          </label>
+          {/* <input className="submit" type="submit" value="Sign Up" /> */}
+                <input className="submit" type="submit" value="Sign Up" />
+
+          <p className="session-form-foot">Already on Melp? <Link to="/login" onClick={this.clearErrors}>Log In</Link></p>
+          </div>
         </form>
+      </div>
+        <img className="signup-img" src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png" />
+      </div>
       </div>
     )
   }
 }
 
-export default withRouter(Signup);
-
-
-// handleSubmit(e){
-//   e.preventDefault()
-//   this.props.signupUser(this.state)
-//     .then(this.props.closeModal)
-// }
-
-// update(field){
-//   return e => this.setState({ [field]: e.currentTarget.value })
-// }
-
-// componentWillUnmount() {
-//   this.props.clearErrors()
-// }
-
-// // renderErrors() {
-// //   return (
-// //     <ul>
-// //       {this.props.errors.map((error, i) => (
-// //         <li key={i}>
-// //           {error}
-// //         </li>
-// //       ))}
-// //     </ul>
-// //   )
-// // }
-
-// render(){
-
-//   return (
-//     <form onSubmit={this.handleSubmit} className="session-form">
-//       <h2 className='modal-title'>Sign Up</h2>
-//       <div className="modal-content">
-//         <input className="modal-inputs"
-//           type="text"
-//           placeholder='Email'
-//           value={this.state.email}
-//           onChange={this.update('email')}
-//         />
-//         <div className='modal-errors'>
-//           {this.props.errors ? this.props.errors.email : ''}
-//         </div>
-//         <br />
-//         <input className="modal-inputs"
-//           type="text"
-//           placeholder='Username'
-//           value={this.state.username}
-//           onChange={this.update('username')}
-//         />
-//         <br />
-//         <div className='modal-errors'>
-//           {this.props.errors ? this.props.errors.username : ''}
-//         </div>
-//         <br />
-//         <input className="modal-inputs"
-//           type="password"
-//           placeholder='Password'
-//           value={this.state.password}
-//           onChange={this.update('password')}
-//         />
-//         <div className='modal-errors'>
-//           {this.props.errors ? this.props.errors.password : ''}
-//         </div>
-//         <br />
-//         <button className="modal-submit">Create User</button>
-//       </div>
-//       <div className='modal-footer'>Sign up or
-//         <button className='button'>{this.props.otherForm}</button>
-//       </div>
-//     </form>
-//   )
-// }
-// }
-
-// export default Signup
+export default Signup;

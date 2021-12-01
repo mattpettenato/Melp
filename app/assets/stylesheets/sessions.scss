@@ -1,3 +1,204 @@
-// Place all the styles related to the Sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.session-form-nav {
+    background-color: #c41200;
+    display: flex;
+    justify-content: center;
+    padding: 5px 0px 10px 0px;
+    // padding: 0;
+    margin: auto;
+    width: auto;
+}
+.session-form-container {
+    margin-top: 100px;;
+    display: flex;
+    justify-content: space-evenly;
+    min-height: 400px;
+    width:960px;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+.signup-img {
+    height: 300px;
+    vertical-align: middle;
+}
+.session-form-box {
+     display: flex;
+     flex-flow: column wrap;
+     width: 300px;
+
+ }
+.session-form-box form{
+    display: flex;
+    flex-flow: column wrap;
+}
+.login-input {
+    margin: 5px;
+    width: 300px;
+    height: 25px;
+}
+.name-input {
+    height: 40px;
+}
+.name-input input {
+    margin: 5px;
+    width: 143px;
+    height: 25px;
+}
+.name-input input:first-child {
+    margin-right: 0px;
+}
+
+ .session-form-title {
+    font: bold 22px helvetica;
+    color: 182	40	40;
+    text-decoration: none;
+    margin: 10px auto 10px auto;
+ }
+
+ .session-form-title-2 {
+    font: bold 15px helvetica;
+    text-decoration: none;
+    margin: 10px auto 10px auto;
+ }
+
+ .session-form-foot {
+    font: bold 10px helvetica;
+    color: gray;
+    /* color: #0073bb; */
+    text-decoration: none;
+    margin-left: auto;
+ }
+
+ .session-form-foot a, .session-form-title-2 a {
+     text-decoration: none;
+         color: #0073bb;
+ }
+
+ .session-form-foot a:hover, .session-form-title-2 a:hover {
+     text-decoration: underline;
+ }
+ 
+.big-errors p {
+     font: 16px helvetica;
+     background: #fcd6d3;
+     padding: 18px 18px 18px 24px;
+     margin-left: 75px;
+     margin-right: 75px;
+     border-radius: 3px;
+ }
+
+ .email-error {
+  width: 300px;
+  margin: 10px auto;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 5px;
+  text-align: center;
+  color: black;
+  font: 14px helvetica;
+  background-color: #eeeeef;
+  position: fixed
+}
+
+.email-error::after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid #eeeeef;
+  left: 20px;
+  top: -20px;
+    }
+
+.email-error::before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid gray;
+  left: 20px;
+  top: -21px;
+    }
+.email-errors i {
+    color: orange;
+    margin: 5px;
+ }
+.email-errors-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 0;
+}
+
+.submit {
+    height: 35px;
+    background: #c41200;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    width: 309px;
+    margin: 5px;
+    transition: 0.5s;
+}
+
+.submit:hover {
+    cursor: pointer;
+    background-color: #d32323;
+}
+
+.legal-copy {
+    text-align: center;
+    color: #333;
+    font-size: 12px;
+    line-height: 1.5em;
+    margin-bottom: 12px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.footer {
+    margin-top: 70px;
+    // margin-bottom: 100%;
+    
+    // background: lightgray;
+    background: #eeeeef;
+    height: 100%;
+    width: 100%;
+    // color: white;
+    text-align: center;
+    // display: block;
+    display: flex;
+    justify-content: center;
+    font-family: helvetica;
+    // margin: 70px;
+    // padding: 60px 0;
+    font-family: helvetica;
+    // background-color: #eeeeef;
+    position: static;
+    // bottom:0px;
+    // background-color: #f0f0f0;
+    // background-color: green;
+    height: 530px;
+    // position: absolute;
+    // bottom: 0;
+    // width: 100%;
+    // height: 2.5rem; 
+}
+#wrapper {
+    margin-left:auto;
+    margin-right:auto;
+    padding-bottom: 2.5rem; 
+    min-height: 100%;
+    // width:960px;
+}

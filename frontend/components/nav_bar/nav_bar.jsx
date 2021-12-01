@@ -1,118 +1,67 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-
-// const NavBar = ({ currentUser, logout, openModal }) => {
-//   const display = currentUser ? (
-//     <div>
-//       <h3>Welcome {currentUser.username}!</h3>
-//       <button className="header-button" onClick={logout}>Log Out</button>
-//     </div>
-//   ) : (
-//     <div>
-//       <nav className="login-signup">
-//         <button onClick={() => openModal('login')}>Login</button>
-//         &nbsp;or&nbsp;
-//         <button onClick={() => openModal('signup')}>Signup</button>
-//       </nav>
-//     </div>
-//   );
-//   return (
-//     <header className="nav-bar">
-//       {/* <Link to="/" className="header-link">
-//         <h1 className="logo">Melppp</h1>
-//       </Link> */}
-//       <div>
-//         {display}
-//       </div>
-//     </header>
-//   )
-// }
-
-// export default NavBar;
-
-
 import React from 'react';
+import { Link } from 'react-router-dom';
+// import SearchBox from '../search_box/nav_search_box_container'
 
-const NavBar = ({ currentUser, logout, openModal }) => {
+class NavBar extends React.Component {
+  constructor(props) {
+    super(props)
 
-  const sessionLinks = () => (
-    <nav className="login-signup">
-      <button onClick={() => openModal('login')}>Login</button>
-      &nbsp;or&nbsp;
-      <button onClick={() => openModal('signup')}>Signup</button>
-    </nav>
-  );
-  const personalGreeting = () => (
-    <hgroup className="header-group">
-      <h2 className="header-name">Welcome, {currentUser.username}!</h2>
-      <button className="header-button" onClick={logout}>Log Out</button>
-    </hgroup>
-  );
+    this.state = {
+      show: false
+    }
+    this.handleBlur = this.handleBlur.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
 
-  return (
-    currentUser ?
-      personalGreeting(currentUser, logout) :
-      sessionLinks()
-  );
-};
+  handleBlur() {
+    this.setState(
+      { show: false }
+    )
+  }
+
+  handleClick() {
+    this.setState(
+      { show: !this.state.show }
+    )
+  }
+
+  render() {
+    return this.props.currentUser ? (
+      <div className="nav-logged-in">
+        <ul className="nav-list">
+
+          <li>
+            {/* <SearchBox /> */}
+          </li>
+
+          
+          <div className="nav-links">
+              <Link to="/" onClick={this.props.logout}>Log Out</Link>
+          </div>
+
+        </ul>
+
+      </div>
+    ) :
+      (
+        <div className="nav-logged-out">
+          <ul className="nav-logged-out-list">
+
+            <li>
+              {/* <SearchBox /> */}
+            </li>
+            <li>
+              <div className="nav-links">
+                <Link to="/login">Login</Link>
+                <Link to="/signup">Sign up</Link>
+              </div>
+            </li>
+          </ul>
+        </div>
+      )
+  }
+}
 
 export default NavBar;
 
-// import React from 'react';
 
-// const Greeting = ({ currentUser, logout, openModal }) => {
-
-//   const sessionLinks = () => (
-//     <nav className="login-signup">
-//       <button onClick={() => openModal('login')}>Login</button>
-//       &nbsp;or&nbsp;
-//       <button onClick={() => openModal('signup')}>Signup</button>
-//     </nav>
-//   );
-//   const personalGreeting = () => (
-//     <nav className="logout-btn">
-//       <h2 className="header-name">Welcome, {currentUser.username}!</h2>
-//       <button className="header-button" onClick={logout}>Log Out!!!!</button>
-//     </nav>
-
-//   );
-
-//   return (
-//     currentUser ?
-//       personalGreeting(currentUser, logout) :
-//       sessionLinks()
-//   );
-// };
-
-// export default Greeting;
-
-// import React from "react";
-// import { Link } from "react-router-dom";
-
-// class Navbar extends React.Component {
-//   constructor(props) {
-//     super(props)
-//     // console.log(this.props)
-//   }
-
-//   render() {
-//     if (!this.props.currentUser) {
-//       return (
-//       <nav className="login-signup">
-//         <button onClick={() => this.props.openModal('login')}>Login</button>
-//         &nbsp;or&nbsp;
-//         <button onClick={() => this.props.openModal('signup')}>Signup</button>
-//       </nav>
-//       )
-//     } else {
-//       return (
-//         <nav className="logout-btn">
-//           <h2 className="header-name">Welcome, {this.props.currentUser.username}!</h2>
-//           <button className="header-button" onClick={() => this.props.logout()}>Logout!!!</button>
-//     </nav>
-//       )
-//     }
-//   }
-// }
-
-// export default Navbar
