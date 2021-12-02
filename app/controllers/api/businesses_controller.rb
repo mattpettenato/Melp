@@ -1,7 +1,12 @@
 class Api::BusinessesController < ApplicationController
   
+  # def show
+  #   @business = Business.find(params[:id])
+  # end
+
   def show
-    @business = Business.find(params[:id])
+    @business = Business.with_attached_photos.find(params[:id])
+    render :show
   end
 
   def index
@@ -26,6 +31,6 @@ class Api::BusinessesController < ApplicationController
   private
 
   def business_params
-    params.require(:business).permit(:name, :about, :rating, :phone, :address, :hours, photos:[])
+    params.require(:business).permit(:name, :about, :rating, :phone, :address, :hours, photos: [])
   end
 end

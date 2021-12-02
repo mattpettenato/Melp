@@ -37,23 +37,9 @@ class Splash extends React.Component {
 
           <div className="new-businesses">
             <p className="new-businesses-title">Find the Best Businesses in Town</p>
-            {/* <ul className="new-business">
-              {Object.values(this.props.businesses).slice(0, 4).map((business) => {
-                const categories = business.category_2 ? business.category_3 ? business.category_1 + ", " + business.category_2 + ", " + business.category_3 : business.category_1 + ", " + business.category_2 : business.category_1;
-                return (
-                  <li key={business.id}>
-                    <Link to={`/businesses/${business.id}`}>
-                      <img className="new-business-img" src={business.photos[0]} />
-                      <p className="new-business-title">{business.business_name}</p>
-                      {this.avgRating(business)}
-                      <p>{business.cost} · {categories}</p>
-                    </Link>
-                  </li>
-
-                )
-              })}
-            </ul> */}
-
+            <div>
+              <Link to="/businesses/1">bus1</Link>
+            </div>
           </div>
           <footer className= "footer">
             <div className="mylinks">

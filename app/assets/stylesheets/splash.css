@@ -14,25 +14,19 @@
 #main-nav-bar .nav-links a {
     background-color: transparent;
     color: white;
-      padding: 10px 12px 10px 12px;
-  border-top: 1px solid lightgray;
-  border-right: 1px solid lightgray;
-  border-bottom: 1px solid lightgray;
-  border-left: 1px solid lightgray;
-  transition: 0.5s;
+    padding: 10px 12px 10px 12px;
+    border-top: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    transition: 0.5s;
 }
-
-
-
 
 #main-nav-bar .nav-links a:hover {
     color: black;
     background-color: white;
 }
 
-/* #main-nav-bar .nav-search, #main-nav-bar .melplogo {
-    display: none;
-} */
 .splash-background img {
     width:100%;
     height:600px;
@@ -52,9 +46,6 @@
 .splash-main {
     position: relative;
     top: 100px;
-    /* top: 25%;
-    left: 50%;
-    margin-left: -265px; */
     display: flex;
     flex-direction: column;
 }
@@ -70,6 +61,10 @@ margin: 25px auto 25px auto;
 
 }
 
+#fas fa-search{
+    size: 10x;
+}
+
 .splashsearch {
     display: flex;
     justify-content: center;
@@ -79,43 +74,20 @@ margin: 25px auto 25px auto;
 }
 
 .homesearch {
-    /* display: flex; */
-    /* justify-content: center; */
-    /* flex-direction: column; */
+
     margin: 0 auto 0 auto;
-    /* width: 500px; */
-    /* height: 40px; */
+    box-shadow: 2px 2px 2px 2px #c8c9ca;
     align-items: center;
-    /* border-radius: 5px; */
+
     height: 45px;
     display: table-cell;
     text-align:center;
     display:table;
-    /* width:100%; */
+
     text-align:center;
 
 }
 
-/* .homesearch form{
-    align-items: center;
-    display: table-cell;
-} */
-
-/* .homesearch input{
-    height: 45px;
-    float:left;
-    display: table-cell;
-
-} */
-
-/* .findsearch label{
-    font-weight: bold;
-    background-color: white;
-    padding:14.5px;
-    padding-left: 0px;
-    display:table-cell;
-    margin-right: 0px;
-} */
 
 .findsearchtext{
     
@@ -129,41 +101,28 @@ margin: 25px auto 25px auto;
     align-items: center;
 
 }
-/* 
-body {
-  background-color:#CCFFCC;
-}
-body > div{
-    display:table;
-    width:100%;
-    text-align:center;
-} */
+
 #findme{
     display: flex;
     align-items: center;
     font-weight: bold;
     background-color: white;
-    /* padding:14.5px; */
     padding-right: 10px;
-    /* padding-top: 0px; */
+    padding-left: 10px;
+    font-size:18px;
     display:table-cell;
     height: 14.5px;
-    /* margin-right: 0px; */
-    /* background-color: blue; */
-    /* height: 100px; */
-    /* background-color: blue; */
-    /* padding:14.5px; */
-
 }
+
 #search-submit {
-        /* width: 300px; */
+    
     border: none;
     font-weight: bold;
     background-color: white;
-    /* padding:14.5px; */
+    
     padding-right: 10px;
     display:table-cell;
-    /* margin-right: 0px; */
+    
     text-align: center;
     outline: none;
 }
@@ -172,24 +131,19 @@ body > div{
     border: none;
     outline: none;
     background-color: #c41200;
-    height: 41.5px;
+    height: 44px;
     font-weight: bold;
     width: 60px;
-    margin-right: -10px
+    margin-right: -10px;
+    cursor: pointer;
+    color: white;
+    size: 30;
 }
 
-/* #findme label{
-    height: 50px;
-    background-color: blue;
-    padding:14.5px;
-    
-} */
 #leftDiv{
-    /* width: 300px; */
     border: none;
     font-weight: bold;
     background-color: white;
-    /* padding:14.5px; */
     padding-left: 10px;
     display:table-cell;
     margin-right: 0px;
@@ -198,6 +152,7 @@ body > div{
 #leftDiv input{
     height: 40px;
     align-items: center;
+    font-size: 18px;
 }
 
 #rightDiv{
@@ -205,7 +160,6 @@ body > div{
     border: none;
     font-weight: bold;
     background-color: white;
-    /* padding:14.5px; */
     padding-left: 0px;
     display:table-cell;
     margin-right: 0px;
@@ -214,6 +168,7 @@ body > div{
 #rightDiv input{
     height: 40px;
     align-items: center;
+    font-size: 18px;
 }
 
 .findnear{
@@ -224,21 +179,11 @@ body > div{
 
 }
 
-/* .findnear label{
-    font-weight: bold;
-    background-color: white;
-    padding:14.5px;
-    padding-left: 0px;
-    display:table-cell;
-    margin-right: 0px;
-} */
-
 .findneartext{
     width: 300px;
     border: none;
     font-weight: bold;
     background-color: white;
-    /* padding:14.5px; */
     padding-left: 0px;
     display:table-cell;
     margin-right: 0px;
@@ -258,33 +203,6 @@ body > div{
     width: 1px;
 }
 
-/* .main-search-box {
-    width: 500px;
-      height: 40px;
-  font-size: 16px;
-    border: none;
-    border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-} */
-
-/* .main-search-box form {
-    align-items: center;
-} */
-/* .main-search button {
-    margin-top: 1px;
-    height: 40px;
-    width: 50px;
-    color: white;
-    background-color: red;
-    border: none;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-    cursor: pointer;
-    transition: 0.5s;
-} */
-/* .main-search button:hover {
-    background-color: #d32323;
-} */
 .sample {
     margin: 10px auto 10px auto
 }
@@ -293,25 +211,9 @@ body > div{
     text-decoration: none;
     color: white;
 }
-/* .splash-main .search-box {
-    width: 500px;
-} */
-
-.sample-categories {
-    display: flex;
-    justify-content: space-evenly;
-    color: white;
-}
-.sample-categories p {
-cursor: pointer;
-}
-
-.sample-categories p:hover {
-    text-decoration: underline;
-}
 
 .new-businesses {
-    margin-top: 383px
+    margin-top: 350px
 }
 .new-businesses-title {
     text-align: center;
@@ -323,36 +225,4 @@ cursor: pointer;
     display: flex;
     justify-content: center;
     list-style: none;
-}
-.new-business li{
-    width: 300px;
-    border-radius: 4px;
-    border: 1px solid lightgray;
-    margin: 0px 10px 20px 10px;
-    margin-bottom: 20px;
-}
-.new-business-title {
-    color: #0073bb;
-    font-weight: bold;
-    font-size: 18px;
-}
-.new-business a {
-    text-decoration: none;
-    color: gray;
-}
-.new-business a p {
-margin-left: 25px;
-}
-
-.new-business a p:first-of-type:hover {
-text-decoration: underline;
-}
-
-.new-business-img {
-    border-top-right-radius: 4px;
-    border-top-left-radius: 4px;
-    vertical-align: middle;
-    height: 180px;
-    width: 300px;
-    object-fit: cover;
 }

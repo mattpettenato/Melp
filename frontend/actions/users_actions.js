@@ -1,17 +1,23 @@
-// import * as APIUtil from "../util/users_api_util";
 
-// export const RECEIVE_USERS = "RECEIVE_USERS";
+import * as UserApiUtil from '../util/user_api_util'
 
-// export const receiveUsers = users => {
-//   return {
-//     type: RECEIVE_USERS,
-//     users
-//   };
-// };
+export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 
-// export const fetchUsers = () => dispatch => {
-//   return APIUtil.fetchUsers().then(users => {
+export const receiveUser = (user) => {
+  return {
+    type: RECEIVE_CURRENT_USER,
+    user,
+  }
+}
 
-//     return dispatch(receiveUsers(users))
-//   })
-// };
+export const fetchUser = (userId) => (dispatch) => {
+  return UserApiUtil.fetchUser(userId).then(result => (
+    dispatch(receiveUser(result))
+  ))
+}
+
+export const updateUser = (userId, user) => (dispatch) => {
+  return UserApiUtil.patchUser(userId, user).then(user => (
+    dispatch(receiveUser(user))
+  ))
+}

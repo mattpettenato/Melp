@@ -1,0 +1,35 @@
+.business-page-nav {
+  /* background-color: #c41200; */
+  display: block;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-left: 35px; */
+  /* margin-right: 35px; */
+  /* position: static; */
+}
+
+.busnav{
+
+}
+
+.hero-img-bus-nav{
+  margin-left: 35px;
+
+}
+
+.bus-menu-options{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.fas {
+  color: black;
+
+}

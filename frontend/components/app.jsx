@@ -10,6 +10,8 @@ import { Switch, Route, Link } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Splash from './splash/splash_container';
 import Search from './search/search_home';
+import BusinessIndexContainer from "./business/business_index_container";
+import BusinessShowContainer from "./business/business_show_container"
 
 
 const App = () => (
@@ -17,8 +19,8 @@ const App = () => (
     <Switch>      
       <AuthRoute exact path="/login" component={LoginContainer} />
       <AuthRoute exact path="/signup" component={SignupContainer} />
-
-      
+      <Route exact path="/businesses/:businessId" component={BusinessShowContainer} />
+      {/* <Route exact path="/" component={BusinessIndexContainer} />  */}
       <Route path="/" component={Splash} />
     </Switch>
   </div>
