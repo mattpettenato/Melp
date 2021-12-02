@@ -17,9 +17,10 @@ class Search extends React.Component {
           <div id="rightDiv">
             <input className="findneartext" type="text" placeholder="San Francisco" />
           </div>
-          <span id="search-submit">
+          <span id="search-submit" style={{width : '24px', height : '24px'}} >
             <button className="search-btn" >
-              <i className="fas fa-search"></i>
+              {/* <span style="width: 24px;" style="height: 24px;" /> */}
+              <i className="fas fa-search fa-lg"></i>
             </button>
           </span>
         </form>

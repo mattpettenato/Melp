@@ -148,7 +148,7 @@ color:white
 
 .nav-links a:last-child{
   color: white;
-  background-color: red;
+  background-color: #c41200;
   border: none;
   transition: 0.5s;
 }
