@@ -45,21 +45,19 @@ export const CLEAR_BUSINESSES = "CLEAR_BUSINESSES";
 
 import * as BusinessApiUtil from '../util/businesses_api_util'
 
-const receiveAllBusinesses = (response) => ({
-  type: RECEIVE_ALL_BUSINESSES,
-  businesses: response.businesses,
-  categories: response.categories,
-  reviews: response.reviews,
-});
+export const receiveAllBusinesses = (businesses) => {
+  return {
+    type: RECEIVE_ALL_BUSINESSES,
+    businesses
+  }
+}
 
-const receiveBusiness = (response) => {
+export const receiveBusiness = (business) => {
   return {
     type: RECEIVE_BUSINESS,
-    business: response.business,
-    categories: response.categories,
-    reviews: response.reviews,
-  };
-};
+    business
+  }
+}
 
 export const clearBusinesses = () => ({
   type: CLEAR_BUSINESSES,
@@ -83,6 +81,9 @@ export const fetchBusiness = (businessId) => {
 //     return dispatch(receiveBusiness(business));
 //   })
 // }
+
+export const createBusiness = business => dispatch => BusinessApiUtil.createBusiness(business)
+  .then(business => dispatch(receiveBusiness(business)))
 
 export const searchBusinesses = (search) => {
   return (dispatch) => {

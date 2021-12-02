@@ -76,14 +76,14 @@ margin: 25px auto 25px auto;
 .homesearch {
 
     margin: 0 auto 0 auto;
-    box-shadow: 2px 2px 2px 2px #c8c9ca;
+    /* box-shadow: 2px 2px 2px 2px #c8c9ca; */
     align-items: center;
 
     height: 45px;
     display: table-cell;
     text-align:center;
     display:table;
-
+    width: 912px;
     text-align:center;
 
 }
@@ -107,7 +107,7 @@ margin: 25px auto 25px auto;
     align-items: center;
     font-weight: bold;
     background-color: white;
-    padding-right: 10px;
+    padding-right: 50px;
     padding-left: 10px;
     font-size:18px;
     display:table-cell;
@@ -131,9 +131,9 @@ margin: 25px auto 25px auto;
     border: none;
     outline: none;
     background-color: #c41200;
-    height: 44px;
+    height: 48px;
     font-weight: bold;
-    width: 60px;
+    width: 56px;
     margin-right: -10px;
     cursor: pointer;
     color: white;
@@ -167,6 +167,7 @@ margin: 25px auto 25px auto;
 
 #rightDiv input{
     height: 40px;
+    width: 300px;
     align-items: center;
     font-size: 18px;
 }
@@ -180,13 +181,13 @@ margin: 25px auto 25px auto;
 }
 
 .findneartext{
-    width: 300px;
+    width: 360px;
     border: none;
     font-weight: bold;
     background-color: white;
     padding-left: 0px;
     display:table-cell;
-    margin-right: 0px;
+    margin-right: 43px;
 }
 
 .searchsubmit button{

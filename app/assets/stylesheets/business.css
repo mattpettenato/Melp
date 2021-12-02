@@ -1,21 +1,33 @@
 .business-page-nav {
   /* background-color: #c41200; */
-  display: block;
+  /* display: block; */
   margin-top: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
+  /* position: relative; */
+
   /* margin-left: 35px; */
   /* margin-right: 35px; */
   /* position: static; */
 }
 
-.busnav{
-
+#search-home-bus{
+  box-shadow: 2px 2px 2px 2px #c8c9ca;
+  background-color: green;
+  
 }
+
+/* .busnav{
+
+} */
 
 .hero-img-bus-nav{
   margin-left: 35px;
+  white-space: nowrap;
+  position: relative;
+  /* margin-right: 30px; */
 
 }
 
@@ -27,9 +39,28 @@
   color: inherit;
   cursor: pointer;
   margin-top: 20px;
+  white-space: nowrap;
+  position: relative;
+
+
 }
 
 .fas {
   color: black;
+  white-space: nowrap;
 
+}
+
+.bus-head {
+  /* display: flex;
+  justify-content: center; */
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  /* max-width: 1922px; */
+  /* position: relative; */
+  width: 100%;
+  /* display: block; */
+  overflow: hidden;
+  white-space: nowrap;
 }

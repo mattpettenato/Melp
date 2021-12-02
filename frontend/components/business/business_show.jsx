@@ -85,21 +85,7 @@ class BusinessShow extends React.Component {
   }
 
   render() {
-    const { business } = this.props
-    let photosList;
-    // if (business.photos) {
-      // photosList = business.photos.map((photo, idx) => {
-      //   return (
-      //     <li key={`${photo}+${idx}`}>
-      //       <img
-      //         className="business-photos"
-      //         id={`photo${idx}`}
-      //         src={photo}
-      //       ></img>
-      //     </li>
-      //   );
-      // });
-    // }
+
 
     return (
       <div>
@@ -107,7 +93,7 @@ class BusinessShow extends React.Component {
           <Link to="/">
             <img className="hero-img-bus-nav" src="https://s3-media0.fl.yelpcdn.com/assets/public/yelp_favicon.yji-5e8cc24f40ca89107dc7a349ed209e00.svg" />
           </Link>
-          <SearchHome/>
+          <SearchHome id="search-home-bus"/>
           <div className="busnav">
             <NavBarContainer/>
           </div>
@@ -119,14 +105,24 @@ class BusinessShow extends React.Component {
           </Link>
         </div>
         {/* <div className="bus-imgs">
-          <img src="<%= url_for(@businesses.photos) %>"/>
+          <img src="<%= url_for(@business.photos) %>"/>
         </div> */}
-        <div className="pictures-array">
+        {/* <div className="pictures-array">
           {this.props.currentBusiness.photoUrls.map((p, i) => (
             <div className="picture-holder" key={i}>
               <img className="show-picture" src={p} />
             </div>
           ))}
+        </div> */}
+        <div className="bus-head">
+          <div className="bus-imgs">
+            <img src="https://i.imgur.com/jcjx5TK.jpeg" height="424" />
+            <img src="https://i.imgur.com/BqiB8yM.jpeg" height="424" />
+            <img src="https://i.imgur.com/4Bo62Nq.jpeg" height="424" />
+            <img src="https://i.imgur.com/fLEaIv1.jpeg" height="424" />
+
+          </div>
+          {/* <ul>PHOTOS HERE</ul> */}
         </div>
       </div>
     )

@@ -28,3 +28,13 @@ export const searchBusinesses = (search) => {
     data: { search },
   });
 };
+
+export const createBusiness = business => {
+  return $.ajax({
+    method: 'POST',
+    url: '/api/businesss',
+    data: business,
+    contentType: false,
+    processData: false
+  })
+}
