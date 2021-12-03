@@ -13,14 +13,14 @@ class MarkerManager {
 
     businesses
       .filter(business => !this.markers[business.id])
-      .forEach(newBench => this.createMarkerFromBench(newBench, this.handleClick))
+      .forEach(newBusiness => this.createMarkerFromBusiness(newBusiness, this.handleClick))
 
     Object.keys(this.markers)
       .filter(businessId => !businessesObj[businessId])
       .forEach((businessId) => this.removeMarker(this.markers[businessId]))
   }
 
-  createMarkerFromBench(business) {
+  createMarkerFromBusiness(business) {
     const position = new google.maps.LatLng(business.lat, business.lng);
     const marker = new google.maps.Marker({
       position,

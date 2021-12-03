@@ -46,7 +46,7 @@ componentWillUnmount(){
             <p className="bis-name">{item.name}</p>
               {/* <p className="bis-rating">{item.rating}</p> */}
               <p className="bis-rating"><img src="https://raw.githubusercontent.com/mattpettenato/git_test/main/large/large_5.png"/></p>
-            <p className="bis-phone">{item.phone}</p>
+            <p className="bis-phone">{item.about}</p>
 
               <p className="bis-address">{item.address}</p>
 
