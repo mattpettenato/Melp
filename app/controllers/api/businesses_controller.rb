@@ -5,11 +5,6 @@ class Api::BusinessesController < ApplicationController
     render :show
   end
 
-  # def show
-  #   @business = Business.with_attached_photos.find(params[:id])
-  #   render :showas
-  # end
-
   def index
     @businesses = Business.all
     render :index

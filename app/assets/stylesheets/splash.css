@@ -194,34 +194,17 @@ margin: 0px auto 0px auto;
     outline: none;
 }
 
-.visually-hidden {
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-}
-
-.sample {
-    margin: 10px auto 10px auto
-}
-.sample a {
-    margin: 10px 20px 10px 20px;
-    text-decoration: none;
-    color: white;
-}
-
 .new-businesses {
     margin-top: 240px
 }
+
 .new-businesses-title {
     text-align: center;
     color: #c41200;
     font-size: 32px;
     font-weight: bold;
 }
+
 .new-business {
     display: flex;
     justify-content: center;

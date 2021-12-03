@@ -1,60 +1,37 @@
 .business-page-nav {
-  /* background-color: #c41200; */
-  /* display: block; */
   margin-top: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  /* position: relative; */
-
-  /* margin-left: 35px; */
-  /* margin-right: 35px; */
-  /* position: static; */
 }
 
 #search-home-bus{
   box-shadow: 2px 2px 2px 2px #c8c9ca;
   background-color: green;
-  
 }
 
 .bis-name{
-    color: #0073BB;
-    text-decoration: none;
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
-    line-height: 1.28571em;
-    font-weight: bold;
-    font-size:x-large;
-
+  color: #0073BB;
+  text-decoration: none;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  line-height: 1.28571em;
+  font-weight: bold;
+  font-size:x-large;
 }
 
-
 .plswork123{
-  /* display: flex;
-  height: 430px;
-  align-items: center;
-  margin: 15px 0;
-  padding: 15px;
-  box-sizing: border-box; */
   display: flex;
   justify-content: center;
   margin-top: 25px;
-
   width: 100%;
-
   overflow: hidden;
   white-space: nowrap;
-    text-decoration: none;
+  text-decoration: none;
   color: inherit;
-  
-
 }
 
 .bis-splash{
-  display: flex;
-  /* height: 430px; */
-  /* border: 1px solid #eeeeef; */
   display: flex;
   justify-content: center;
   width: 330px;
@@ -63,7 +40,6 @@
   box-sizing: border-box;
   border: 1px solid #e6e6e6;
   border-radius: 4px;
-
   overflow: hidden;
   white-space: nowrap;
   margin-left: 10px;
@@ -82,17 +58,11 @@
   height: 400px
 }
 
-/* .busnav{
-
-} */
-
 .hero-img-bus-nav{
   margin-left: 85px;
   white-space: nowrap;
   position: relative;
   height: 125px;
-  /* margin-right: 30px; */
-
 }
 
 .bus-menu-options{
@@ -110,17 +80,13 @@
 .fas {
   color: black;
   white-space: nowrap;
-
 }
 
 .bus-head {
-
   display: flex;
   justify-content: center;
   margin-bottom: 25px;
-
   width: 100%;
-
   overflow: hidden;
   white-space: nowrap;
 }
@@ -149,15 +115,15 @@
 }
 
 .bus-reviews-1{
-display: flex;
-    justify-content: center;
-    align-content: space-between;
-    column-gap: 300px;
-    white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  column-gap: 300px;
+  white-space: nowrap;
 }
 
 .bis-splash-container{
-    display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -171,8 +137,7 @@ display: flex;
 }
 
 .bis-link1{
-    text-decoration: none;
-
+  text-decoration: none;
 }
 
 #busdir button{
