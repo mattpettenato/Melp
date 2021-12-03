@@ -53,7 +53,7 @@ componentWillUnmount(){
               {console.log(this.props)}
 
             {this.props.businesses.length}
-            &nbsp;Listing Found
+            &nbsp;Business Found
             </div>
           }
         </div>

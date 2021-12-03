@@ -10,23 +10,32 @@ class Splash extends React.Component {
   }
   
   componentDidMount() {
-
     this.props.fetchBusiness(1);
-    this.props.fetchBusiness(2);
-    this.props.fetchBusiness(3);
+    let bus;
+    if (this.props.businesses !== 0) {
+      // if (this.props.businesses.length !== 0) {
+      // console.log(this.props.businesses)
+      bus = this.props.businesses
+      console.log(this)
+
+      //   console.log(this.props)
+    }
+    // this.props.fetchBusiness(2);
+    // this.props.fetchBusiness(3);
     // this.props.fetchBusiness(4);
     // this.props.fetchBusinesses()
   }
 
   render() {
-    let bus;
-    if (this.props.businesses[3]) {
-      // if (this.props.businesses.length !== 0) {
-    console.log(this.props.businesses)
-    bus = this.props.businesses
+    // let bus;
+    // if (this.props.businesses[1]) {
+    //   // if (this.props.businesses.length !== 0) {
+    // // console.log(this.props.businesses)
+    // bus = this.props.businesses
+    // console.log(bus)
 
-      //   console.log(this.props)
-    }
+    //   //   console.log(this.props)
+    // }
     
       return (
         <div className="splash">
@@ -49,7 +58,7 @@ class Splash extends React.Component {
             <div>
               <Link to="/businesses/1">bus1</Link>
               <Link to="/businesses">INDEXbus</Link>
-              {/* <ul className="listing-container">
+              {/* <ul className="business-container">
                 {this.props.businesses.map((business, idx) => (
                   <BusinessIndexItem key={idx} session={this.props.session} business={business} removeBusiness={this.props.removeBusiness} />
                 ))}
@@ -57,7 +66,7 @@ class Splash extends React.Component {
 
               <div>
 
-                {bus}
+                {/* {bus.first.name} */}
               </div>
                 
 

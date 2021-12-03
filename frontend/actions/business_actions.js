@@ -23,18 +23,17 @@ export const removeBusiness = () => ({
   businessId
 });
 
-// export const fetchBusinesses = (filters) => (dispatch) =>
-//   BusinessApiUtil.fetchBusinesses(filters).then((businesses) =>
-//     dispatch(receiveAllBusinesses(businesses))
-//   );
 
-export const fetchBusiness = (businessId) => {
-  return (dispatch) => {
-    return BusinessApiUtil.fetchBusiness(businessId).then((response) => {
-      return dispatch(receiveBusiness(response));
-    });
-  };
-};
+// export const fetchBusiness = (businessId) => {
+//   return (dispatch) => {
+//     return BusinessApiUtil.fetchBusiness(businessId).then((response) => {
+//       return dispatch(receiveBusiness(response));
+//     });
+//   };
+// };
+
+export const fetchBusiness = businessId => dispatch => BusinessApiUtil.fetchBusiness(businessId)
+  .then(businessId => dispatch(receiveBusiness(businessId )))
 
 export const clearBusiness = (businessId) => dispatch => BusinessApiUtil.clearBusiness(businessId)
   .then(business => dispatch(removeBusiness(businessId)))
