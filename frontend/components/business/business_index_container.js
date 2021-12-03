@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
-import { fetchBusinesses } from '../../actions/business_actions'
+import { fetchBusinesses, fetchBusiness } from '../../actions/business_actions'
 import BusinessIndex from './business_index'
 import React from 'react';
+import { withRouter } from "react-router-dom";
+
 
 // const mSTP = (state) => {
 //   const businesses = state.entities.businesses
@@ -10,18 +12,19 @@ import React from 'react';
 //   }
 // }
 
-const mSTP = state => ({
-  businesses: Object.values(state.entities.businesses),
-  session: state.session.id
-})
+const mSTP = state => {
+  return {
+    businesses: Object.values(state.entities.businesses)
+  }
+  // session: state.session.id
+}
 
 const mDTP = (dispatch) => {
   return {
-    fetchBusinesses: () => {
-      return dispatch(fetchBusinesses());
-    }
+    fetchBusinesses: () => dispatch(fetchBusinesses()),
+    fetchBusiness: (businessId) => dispatch(fetchBusiness(businessId)),
   }
 }
 
-export default connect(mSTP, mDTP)(BusinessIndex);
+export default withRouter(connect(mSTP, mDTP)(BusinessIndex));
 

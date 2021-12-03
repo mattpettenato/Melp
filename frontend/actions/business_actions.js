@@ -1,6 +1,6 @@
 export const RECEIVE_ALL_BUSINESSES = "RECEIVE_ALL_BUSINESSES";
 export const RECEIVE_BUSINESS = "RECEIVE_BUSINESS";
-export const CLEAR_BUSINESS = "CLEAR_BUSINESS";
+// export const CLEAR_BUSINESS = "CLEAR_BUSINESS";
 
 import * as BusinessApiUtil from '../util/businesses_api_util'
 
@@ -18,10 +18,10 @@ export const receiveBusiness = (business) => {
   }
 }
 
-export const removeBusiness = () => ({
-  type: CLEAR_BUSINESS,
-  businessId
-});
+// export const removeBusiness = () => ({
+//   type: CLEAR_BUSINESS,
+//   businessId
+// });
 
 
 // export const fetchBusiness = (businessId) => {
@@ -31,18 +31,19 @@ export const removeBusiness = () => ({
 //     });
 //   };
 // };
-
-export const fetchBusiness = businessId => dispatch => BusinessApiUtil.fetchBusiness(businessId)
-  .then(businessId => dispatch(receiveBusiness(businessId )))
-
-export const clearBusiness = (businessId) => dispatch => BusinessApiUtil.clearBusiness(businessId)
-  .then(business => dispatch(removeBusiness(businessId)))
-
 export const fetchBusinesses = () => dispatch => BusinessApiUtil.fetchBusinesses()
   .then(businesses => dispatch(receiveAllBusinesses(businesses)))
 
-export const createBusiness = business => dispatch => BusinessApiUtil.createBusiness(business)
-  .then(business => dispatch(receiveBusiness(business)))
+export const fetchBusiness = businessId => dispatch => BusinessApiUtil.fetchBusiness(businessId)
+  .then(result => dispatch(receiveBusiness(result)))
+
+// export const clearBusiness = (businessId) => dispatch => BusinessApiUtil.clearBusiness(businessId)
+//   .then(business => dispatch(removeBusiness(businessId)))
+
+
+
+// export const createBusiness = business => dispatch => BusinessApiUtil.createBusiness(business)
+//   .then(business => dispatch(receiveBusiness(business)))
 
 export const searchBusinesses = (search) => {
   return (dispatch) => {

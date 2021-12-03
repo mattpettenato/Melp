@@ -6,19 +6,16 @@ import {
 
 const businessesReducer = (state = {}, action) => {
   Object.freeze(state);
-  let nextState = Object.assign({}, state)
+  let newState = Object.assign({}, state)
   switch (action.type) {
     case RECEIVE_ALL_BUSINESSES:
-      return action.businesses;
-    // case RECEIVE_BUSINESS:
-    //   return Object.assign({}, state, {
-    //     [action.businesses.id]: action.businesses,
-    //   });
+      newState = action.businesses;
+      return newState;
     case RECEIVE_BUSINESS:
       return Object.assign({}, state, { [action.business.id]: action.business })
-    case CLEAR_BUSINESS:
-      delete nextState[action.businessId]
-      return nextState
+    // case CLEAR_BUSINESS:
+    //   delete nextState[action.businessId]
+    //   return nextState
     default:
       return state;
   }
