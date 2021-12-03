@@ -89,7 +89,7 @@ componentWillUnmount(){
           <div className="plswork123" >
           {/* {Object.keys(this.props.businesses || [])} */}
           {/* {
-            Object.keys(this.props.businesses || {}).map((business) => (<BusinessIndexItem business={business}
+            Object.keys(this.props.businesses || {}).map((business) => (<BusinessIndexItem business={business} asd
               fetchBusiness={this.props.fetchBusiness}/>))
           } */}
           {/* {bis} */}
