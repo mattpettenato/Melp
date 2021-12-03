@@ -116,17 +116,17 @@ class BusinessShow extends React.Component {
           </div>
           {/* <ul>PHOTOS HERE</ul> */}
         </div>
-
+        <div className="bus-info-body">
         <div className="bus-info-1">
           <ul className="business-title">
             {bisName}
           </ul>
-          <ul className="business-about">
-            {bisAbout}
-          </ul>
           <ul className="business-rating">
             {bisRating}
             (need to calculate rating based off average rating of all reviews)
+          </ul>
+          <ul className="business-about">
+            {bisAbout}
           </ul>
           <ul className="business-phone">
             {bisPhone}
@@ -139,9 +139,8 @@ class BusinessShow extends React.Component {
           </ul>
         </div>
         <div className="bus-map-1">
-          (need to add lat lng coords to seed data and add to business table (migration))
           <BusinessMap />
-          <h3>test</h3>
+        </div>
         </div>
         <div className="bus-reviews-1">
           <h3>reviewwwwww</h3>
