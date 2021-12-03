@@ -2,8 +2,6 @@ class Business < ApplicationRecord
     validates :name, :about, :phone, :address, :hours, presence: true
     validates :rating, inclusion:{in: (1..5)}
 
-    # has_one_attached :main_photo
-
     has_many_attached :photos
 
     has_many :reviews,
@@ -15,7 +13,5 @@ class Business < ApplicationRecord
     through: :reviews,
     source: :user
 
-    def average_rating
-        reviews.average(:rating)
-    end
+
 end 

@@ -3,10 +3,6 @@ import Splash from './splash'
 import { fetchBusiness } from '../../actions/business_actions';
 
 const mSTP = (state) => {
-  // const businesses = state.entities.businesses
-  // return {
-  //   businesses
-  // }
   return {
     businesses: Object.values(state.entities.businesses)
   };

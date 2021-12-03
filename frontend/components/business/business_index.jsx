@@ -1,9 +1,9 @@
 // import React from 'react';
 import { Link } from 'react-router-dom';
-// import LargeGoogleMap from './largeGoogleMap'
+
 import NavBarContainer from '../nav_bar/nav_bar_container';
-import SearchHome from '../search/search_home'
-// import BusinessSearchShow from './business_search_show_container'
+
+
 import BusinessIndexItem from './business_index_item';
 import React, { useEffect, useRef } from 'react';
 

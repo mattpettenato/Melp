@@ -13,14 +13,6 @@ export const fetchBusiness = (id) => {
   })
 }
 
-
-// export const fetchBusinesses = () => {
-//   return $.ajax({
-//     url: `/api/businesses`,
-//     method: `GET`,
-//   })
-// }
-
 export const searchBusinesses = (search) => {
   return $.ajax({
     method: "GET",

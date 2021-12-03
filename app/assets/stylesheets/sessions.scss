@@ -30,9 +30,9 @@
     vertical-align: middle;
 }
 .session-form-box {
-     display: flex;
-     flex-flow: column wrap;
-     width: 300px;
+    display: flex;
+    flex-flow: column wrap;
+    width: 300px;
 
  }
 .session-form-box form{
@@ -68,83 +68,6 @@
     text-decoration: none;
     margin: 10px auto 10px auto;
  }
-
- .session-form-foot {
-    font: bold 10px helvetica;
-    color: gray;
-    /* color: #0073bb; */
-    text-decoration: none;
-    margin-left: auto;
- }
-
- .session-form-foot a, .session-form-title-2 a {
-     text-decoration: none;
-         color: #0073bb;
- }
-
- .session-form-foot a:hover, .session-form-title-2 a:hover {
-     text-decoration: underline;
- }
- 
-.big-errors p {
-     font: 16px helvetica;
-     background: #fcd6d3;
-     padding: 18px 18px 18px 24px;
-     margin-left: 75px;
-     margin-right: 75px;
-     border-radius: 3px;
- }
-
- .email-error {
-  width: 300px;
-  margin: 10px auto;
-  border: 1px solid gray;
-  border-radius: 4px;
-  padding: 5px;
-  text-align: center;
-  color: black;
-  font: 14px helvetica;
-  background-color: #eeeeef;
-  position: fixed
-}
-
-.email-error::after {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid #eeeeef;
-  left: 20px;
-  top: -20px;
-    }
-
-.email-error::before {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid gray;
-  left: 20px;
-  top: -21px;
-    }
-.email-errors i {
-    color: orange;
-    margin: 5px;
- }
-.email-errors-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    z-index: 0;
-}
 
 .submit {
     height: 35px;

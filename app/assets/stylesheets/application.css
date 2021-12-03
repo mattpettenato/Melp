@@ -21,31 +21,6 @@ html, body {
     
 }
 
-/* .nav-search-box{
-  height: 40px;
-  width: 200px;
-  font-size: 16px;
-    border: none;
-  border-radius: 3px;
-}
-.nav-search button {
-  height: 40px;
-  width: 40px;
-  margin-bottom: 1px;
-  color: white;
-  background-color: red;
-  border: none;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  cursor: pointer;
-  transition: 0.5s;
-}
-.nav-search button:hover{
-  background-color: #d32323;
-} */
-/* .nav-dropdown ul {
-    list-style-type: none;
-} */
 .nav-list {
   list-style-type: none;
   display: flex;
@@ -69,64 +44,12 @@ html, body {
   margin: 0px 100px 0px 30px;
     height: 75px;
 }
-/* #dropdown-container {
 
-  color: darkgray;
-  transition: 0.5s;
-  font-size: 40px;
-  z-index: 9;
-
-} */
-
-/* #dropdown-container:hover {
-color:white
-}
-.nav-dropdown {
-  position: relative;
-}
-.nav-dropdown-box {
-  position: absolute;
-  background-color: white;
-  width: 150px;
-  right: -5px;
-  top: 40px;
-  border-radius: 3px;
-  padding: 10px 15px 10px 15px;
-  z-index: 1;
-} */
 .about-link {
     text-decoration: none;
     color: #2b273c;
 }
 
-/* .nav-dropdown-box li:not(:first-child){
-  border-top: 1px solid lightgray;
-}
-.nav-dropdown-box li{
-  padding: 20px 0px 20px 0px;
-  z-index: 9;
-}
-.dropdown-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  z-index: -1;
-}
-.nav-dropdown-box li div{
-  color: #2b273c;
-}
-
-.nav-dropdown-box li:hover {
-  cursor: pointer;
-  background-color: lightgray;
-}
-
-.nav-dropdown-box li i {
-  margin-right: 10px;
-  padding-left: 10px;
-} */
 
 .melplogo {
   height: 50px;

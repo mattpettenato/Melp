@@ -4,14 +4,6 @@ import BusinessIndex from './business_index'
 import React from 'react';
 import { withRouter } from "react-router-dom";
 
-
-// const mSTP = (state) => {
-//   const businesses = state.entities.businesses
-//   return {
-//     businesses
-//   }
-// }
-
 const mSTP = state => {
   return {
     businesses: Object.values(state.entities.businesses)

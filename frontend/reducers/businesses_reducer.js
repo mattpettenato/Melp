@@ -1,7 +1,6 @@
 import {
   RECEIVE_ALL_BUSINESSES,
-  RECEIVE_BUSINESS,
-  CLEAR_BUSINESS,
+  RECEIVE_BUSINESS
 } from "../actions/business_actions";
 
 const businessesReducer = (state = {}, action) => {
@@ -13,9 +12,6 @@ const businessesReducer = (state = {}, action) => {
       return newState;
     case RECEIVE_BUSINESS:
       return Object.assign({}, state, { [action.business.id]: action.business })
-    // case CLEAR_BUSINESS:
-    //   delete nextState[action.businessId]
-    //   return nextState
     default:
       return state;
   }

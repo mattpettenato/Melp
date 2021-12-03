@@ -9,11 +9,7 @@ class BusinessIndexItem extends React.Component {
 
   componentDidMount() {
     this.props.fetchBusiness(this.props.business.id);
-    // this.props.fetchReviews(this.props.business.id)
   }
-
-
-
 
   render() {
     return (
