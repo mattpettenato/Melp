@@ -55,13 +55,21 @@ componentWillUnmount(){
     // console.log(this.props.businesses)
     console.log(this.props.businesses)
     const items = this.props.businesses.map((item) =>
-      <div className="bis-splash" key={item.id}>
+      <div className="bis-splash-container" key={item.id}>
+        <div className="bis-splash" key={item.id}>
         <Link key={item.id} to={`/businesses/${item.id}`}>
           <img src={`https://github.com/mattpettenato/FullStack_Project/blob/main/melp_imgs/home/${item.id}/${item.id}.jpg?raw=true`}/>
           
-        <div key={item.id}>{item.name} {item.rating} {item.phone}</div>
+          <div key={item.id}>
+            <p className="bis-name">{item.name}</p>
+            <p className="bis-rating">{item.rating}</p>
+            <p className="bis-phone">{item.phone}</p>
 
+             {/* {item.rating} {item.phone}</div> */}
+        </div>
+        
         </Link>
+        </div>
       </div>
     );
     // console.log(this.props)
