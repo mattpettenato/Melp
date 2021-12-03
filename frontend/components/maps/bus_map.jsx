@@ -14,7 +14,7 @@ const mapOptions = {
     lat: 37.773972,
     lng: -122.431297
   }, // San Francisco coords
-  zoom: 13
+  zoom: 8
 };
 
 class BusinessMap extends React.Component {
@@ -26,7 +26,7 @@ class BusinessMap extends React.Component {
     // set the map to show SF
     mapOptions = {
       center: { lat: 37.7758, lng: -122.435 }, // this is SF
-      zoom: 13
+      zoom: 11.5
     };
     
 

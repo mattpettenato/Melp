@@ -131,15 +131,15 @@ class BusinessShow extends React.Component {
           <ul className="business-phone">
             {bisPhone}
           </ul>
-          <ul className="business-address">
-            {bisAddress}
-          </ul>
           <ul className="business-hours">
             {bisHours}
           </ul>
         </div>
         <div className="bus-map-1">
           <BusinessMap />
+          <ul className="business-address">
+            {bisAddress}
+          </ul>
         </div>
         </div>
         <div className="bus-reviews-1">
