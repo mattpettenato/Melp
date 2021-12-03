@@ -90,12 +90,12 @@ class BusinessShow extends React.Component {
             <NavBarContainer/>
           </div>
         </div>
-        <div className="bus-menu-options">
+        {/* <div className="bus-menu-options">
           <Link to="/businesses"> 
-            {/* need to change link to index page */}
+            need to change link to index page
             <i className="fas fa-utensils fa-lg">  Restaurants</i>
           </Link>
-        </div>
+        </div> */}
         {/* <div className="bus-imgs">
           <img src="<%= url_for(@business.photos) %>"/>
         </div> */}
