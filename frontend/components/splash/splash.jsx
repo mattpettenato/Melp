@@ -31,7 +31,7 @@ class Splash extends React.Component {
 
           <div className="splash-main">
             <div className="main-logo">
-              <Link to="/"><img src="https://s3-media0.fl.yelpcdn.com/assets/public/yelp_favicon.yji-5e8cc24f40ca89107dc7a349ed209e00.svg" /></Link>
+              <Link to="/"><img src="https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/melp_logo.png" /></Link>
             </div>
             <Search />
           </div>

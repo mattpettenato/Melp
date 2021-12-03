@@ -83,7 +83,7 @@ class BusinessShow extends React.Component {
       <div>
         <div className="business-page-nav">
           <Link to="/">
-            <img className="hero-img-bus-nav" src="https://s3-media0.fl.yelpcdn.com/assets/public/yelp_favicon.yji-5e8cc24f40ca89107dc7a349ed209e00.svg" />
+            <img className="hero-img-bus-nav" src="https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/melp_logo.png" />
           </Link>
           <SearchHome id="search-home-bus"/>
           <div className="busnav">
