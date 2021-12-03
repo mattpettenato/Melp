@@ -64,11 +64,16 @@ componentWillUnmount(){
             <p className="bis-name">{item.name}</p>
             <p className="bis-rating">{item.rating}</p>
             <p className="bis-phone">{item.phone}</p>
+            {/* <Link to="https://goo.gl/maps/eGyZ5M38sm1d1UV86"> */}
+              <p className="bis-address">{item.address}</p>
+
+            {/* <a className="bis-address" href="https://goo.gl/maps/eGyZ5M38sm1d1UV86">{item.address}</a> */}
+
 
              {/* {item.rating} {item.phone}</div> */}
-        </div>
-        
+          </div>
         </Link>
+        
         </div>
       </div>
     );

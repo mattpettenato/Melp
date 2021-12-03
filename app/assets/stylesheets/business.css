@@ -19,6 +19,16 @@
   
 }
 
+.bis-name{
+    color: #0073BB;
+    text-decoration: none;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    line-height: 1.28571em;
+    font-weight: bold;
+
+}
+
+
 .plswork123{
   /* display: flex;
   height: 430px;
@@ -34,13 +44,15 @@
 
   overflow: hidden;
   white-space: nowrap;
+    text-decoration: none;
+  color: inherit;
   
 
 }
 
 .bis-splash{
   display: flex;
-  height: 430px;
+  /* height: 430px; */
   /* border: 1px solid #eeeeef; */
   display: flex;
   justify-content: center;
@@ -53,6 +65,8 @@
 
   overflow: hidden;
   white-space: nowrap;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .bis-splash img{
