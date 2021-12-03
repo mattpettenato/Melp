@@ -90,28 +90,14 @@ class BusinessShow extends React.Component {
             <NavBarContainer/>
           </div>
         </div>
-        {/* <div className="bus-menu-options">
-          <Link to="/businesses"> 
-            need to change link to index page
-            <i className="fas fa-utensils fa-lg">  Restaurants</i>
-          </Link>
-        </div> */}
-        {/* <div className="bus-imgs">
-          <img src="<%= url_for(@business.photos) %>"/>
-        </div> */}
-        {/* <div className="pictures-array">
-          {this.props.currentBusiness.photoUrls.map((p, i) => (
-            <div className="picture-holder" key={i}>
-              <img className="show-picture" src={p} />
-            </div>
-          ))}
-        </div> */}
+
         <div className="bus-head">
           <div className="bus-imgs">
             <img src="https://i.imgur.com/jcjx5TK.jpeg" height="424" />
             <img src="https://i.imgur.com/BqiB8yM.jpeg" height="424" />
             <img src="https://i.imgur.com/4Bo62Nq.jpeg" height="424" />
             <img src="https://i.imgur.com/fLEaIv1.jpeg" height="424" />
+            {/* <img src={`https://github.com/mattpettenato/FullStack_Project/blob/main/melp_imgs/home/4/4.jpg?raw=true`} height="424"/> */}
 
           </div>
           {/* <ul>PHOTOS HERE</ul> */}
@@ -121,31 +107,41 @@ class BusinessShow extends React.Component {
           <ul className="business-title">
             {bisName}
           </ul>
-          <ul className="business-rating">
+          <div className="business-rating">
             {/* {bisRating} */}
               <p className="bis-rating"><img src="https://raw.githubusercontent.com/mattpettenato/git_test/main/large/large_5.png" /></p>
 
-            {/* (need to calculate rating based off average rating of all reviews) */}
-          </ul>
+ 
+          </div>
           <ul className="business-about">
             {bisAbout}
           </ul>
           <ul className="business-phone">
             {bisPhone}
           </ul>
-          <ul className="business-hours">
-            {bisHours}
-          </ul>
+
         </div>
         <div className="bus-map-1">
           <BusinessMap />
-          <ul className="business-address">
-            {bisAddress}
-          </ul>
+          <div className="map-under">
+            <span id="busdir">
+              <button className="busdirbut" >
+                <i className="fas fa-directions"></i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{bisAddress}
+              </button>
+            </span>
+            <span id="busdir">
+              <button className="busdirbut" >
+                <i className="fas fa-clock"></i>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{bisHours}
+              </button>
+              
+            </span>
+          </div>
         </div>
         </div>
         <div className="bus-reviews-1">
-          <h3>reviewwwwww</h3>
+          <h3>reviewwwwwws :(</h3>
 
         </div>
         <footer className="footer">

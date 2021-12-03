@@ -125,6 +125,10 @@
   white-space: nowrap;
 }
 
+.business-about{
+  margin-top: 0px;
+}
+
 .business-title{
   font-size: 32px;
   color: #0073BB;
@@ -133,6 +137,7 @@
   line-height: 1.28571em;
   font-weight: bold;
   padding: 0px;
+  margin-bottom: -12px;
 }
 
 .bus-info-body{
@@ -169,3 +174,16 @@ display: flex;
     text-decoration: none;
 
 }
+
+#busdir button{
+  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 400px;
+  padding-left: 3px;
+}
+
+.map-under span{
+  display:block;
+}
+
