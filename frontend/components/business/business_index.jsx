@@ -53,7 +53,7 @@ componentWillUnmount(){
     Object.keys(this.props.businesses || []).map((business) => bis.push(parseInt(business)))
     // console.log(bis)
     // console.log(this.props.businesses)
-
+    console.log(this.props.businesses)
     const items = this.props.businesses.map((item) =>
           <ul key={item.id}>{item.name} {item.rating} {item.phone}</ul>
     );
