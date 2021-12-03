@@ -78,6 +78,45 @@ class BusinessShow extends React.Component {
       bisHours = this.props.currentBusiness.hours
     }
 
+    // // const mathMe {
+    //   for (var x = 0; x < 10; x++) {
+    //   for (var y = 0; y < 10; y++) {
+    //     console.log("x: " + x + ", y: " + y);
+    //   }
+    // }
+    // // }
+
+    // const mth =       for (var x = 0; x < 10; x++) {
+    //   for (var y = 0; y < 10; y++) {
+    //     console.log("x: " + x + ", y: " + y);
+    //   }
+    // }
+
+    // const maths = this.props.businesses.map((item) =>
+    //   <div className="bis-splash-container" key={item.id}>
+    //     <div className="bis-splash" key={item.id}>
+    //       <Link className="bis-link1" key={item.id} to={`/businesses/${item.id}`}>
+    //         <img src={`https://github.com/mattpettenato/FullStack_Project/blob/main/melp_imgs/home/${item.id}/${item.id}.jpg?raw=true`} />
+
+    //         <div key={item.id}>
+    //           <p className="bis-name">{item.name}</p>
+    //           {/* <p className="bis-rating">{item.rating}</p> */}
+    //           <p className="bis-rating"><img src="https://raw.githubusercontent.com/mattpettenato/git_test/main/large/large_5.png" /></p>
+    //           <p className="bis-phone">{item.about}</p>
+
+    //           <p className="bis-address">{item.address}</p>
+
+
+    //         </div>
+    //       </Link>
+
+    //     </div>
+    //   </div>
+    // );
+
+    console.log(this.props.currentBusiness.id)
+
+
 
     return (
       <div>
@@ -93,10 +132,15 @@ class BusinessShow extends React.Component {
 
         <div className="bus-head">
           <div className="bus-imgs">
-            <img src="https://i.imgur.com/jcjx5TK.jpeg" height="424" />
-            <img src="https://i.imgur.com/BqiB8yM.jpeg" height="424" />
-            <img src="https://i.imgur.com/4Bo62Nq.jpeg" height="424" />
+            <img src="" height="424" />
+            <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/1.jpg`} height="424" />
+            <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/2.jpg`} height="424" />
+            <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/3.jpg`} height="424" />
+            <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/4.jpg`} height="424" />
+
+            {/* <img src="https://i.imgur.com/4Bo62Nq.jpeg" height="424" />
             <img src="https://i.imgur.com/fLEaIv1.jpeg" height="424" />
+            <img src="https://i.imgur.com/fLEaIv1.jpeg" height="424" /> */}
             {/* <img src={`https://github.com/mattpettenato/FullStack_Project/blob/main/melp_imgs/home/4/4.jpg?raw=true`} height="424"/> */}
 
           </div>

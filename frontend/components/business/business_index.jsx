@@ -33,8 +33,8 @@ componentWillUnmount(){
 
   render() {
 
-    const bis=[]
-    Object.keys(this.props.businesses || []).map((business) => bis.push(parseInt(business)))
+    // const bis=[]
+    // Object.keys(this.props.businesses || []).map((business) => bis.push(parseInt(business)))
     // console.log(this.props.businesses)
     const items = this.props.businesses.map((item) =>
       <div className="bis-splash-container" key={item.id}>
