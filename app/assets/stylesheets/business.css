@@ -19,6 +19,12 @@
   
 }
 
+.bis-splash{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #map-container{
   width: 500px;
   height: 500px

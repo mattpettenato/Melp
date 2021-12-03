@@ -55,7 +55,14 @@ componentWillUnmount(){
     // console.log(this.props.businesses)
     console.log(this.props.businesses)
     const items = this.props.businesses.map((item) =>
-          <ul key={item.id}>{item.name} {item.rating} {item.phone}</ul>
+      <div className="bis-splash" key={item.id}>
+        <Link key={item.id} to={`/businesses/${item.id}`}>
+          <img src={`melp_imgs/home/${item.id}/${item.id}`}/>
+          /Users/matthewpettenato/Documents/GitHub/FullStack_Project/melp_imgs/home/1/1.jpg
+        <div key={item.id}>{item.name} {item.rating} {item.phone}</div>
+
+        </Link>
+      </div>
     );
     // console.log(this.props)
 
