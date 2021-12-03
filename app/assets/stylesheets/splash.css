@@ -219,11 +219,43 @@ margin: 25px auto 25px auto;
 .new-businesses-title {
     text-align: center;
     color: #c41200;
-    font-size: 20px;
+    font-size: 32px;
     font-weight: bold;
 }
 .new-business {
     display: flex;
     justify-content: center;
     list-style: none;
+}
+
+.about-user{
+    margin-left: 500px;
+    margin-top: 100px;
+}
+
+.mylinks{
+    margin-right: 500px;
+    margin-top: 100px;
+    padding-bottom: 20px;
+}
+
+.footer p{
+    color: #c41200;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.git-img{
+    height: 30px;
+}
+
+.ln-img{
+    height: 30px;
+    padding-bottom: 20px;
+}
+
+.gmail p{
+    color: black;
+    font-size: 16px;
+    font-weight:500
 }

@@ -25,6 +25,7 @@
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
     line-height: 1.28571em;
     font-weight: bold;
+    font-size:x-large;
 
 }
 
@@ -153,4 +154,17 @@ display: flex;
     display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.bis-phone{
+  color: black;
+}
+
+.bis-address{
+  color: black;
+}
+
+.bis-link1{
+    text-decoration: none;
+
 }

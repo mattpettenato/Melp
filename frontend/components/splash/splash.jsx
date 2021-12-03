@@ -22,11 +22,6 @@ class Splash extends React.Component {
   }
 
   render() {
-
-    // n++
-    // console.log(n)
-
-    
       return (
         <div className="splash">
           <header id="main-nav-bar">
@@ -46,33 +41,32 @@ class Splash extends React.Component {
           <div className="new-businesses">
             <p className="new-businesses-title">Find the Best Businesses in Town</p>
             <div>
-              {/* <Link to="/businesses/1">bus1</Link> */}
-              {/* <Link to="/businesses">INDEXbus</Link> */}
-              {/* <ul className="business-container">
-                {this.props.businesses.map((business, idx) => (
-                  <BusinessIndexItem key={idx} session={this.props.session} business={business} removeBusiness={this.props.removeBusiness} />
-                ))}
-              </ul> */}
-
               <div>
                 <BusinessIndexContainer />
               </div>
-                
-
-
             </div>
           </div>
           <footer className= "footer">
+            <div className="about-user">
+              <p className="about-user-title">Contact</p>
+              <div className='gmail'><p>mtp855@gmail.com</p></div>
+            </div>
             <div className="mylinks">
               <p className="about-user-title">About</p>
-              <a href="https://www.linkedin.com/in/matthew-pettenato-936236123/" target="_blank">Linkedin</a>
-              <a href="https://github.com/mattpettenato" target="_blank"> Git Hub</a>
+
+              <a href="https://www.linkedin.com/in/matthew-pettenato-936236123/" target="_blank">
+                <img className="ln-img" src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg" />
+              </a>
+              
+              <a href="https://github.com/mattpettenato" target="_blank">
+                <img className="git-img" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" />
+              </a>
+
             </div>
-            {/* <img src={window.footerURL} alt="" /> */}
+
           </footer>
         </div>
       )
       }
 }
-
 export default Splash;

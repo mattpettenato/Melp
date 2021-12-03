@@ -145,6 +145,14 @@ class BusinessShow extends React.Component {
         <div className="bus-reviews-1">
           <h3>reviewwwwww</h3>
         </div>
+        <footer className="footer">
+          <div className="mylinks">
+            <p className="about-user-title">About</p>
+            <a href="https://www.linkedin.com/in/matthew-pettenato-936236123/" target="_blank">Linkedin</a>
+            <a href="https://github.com/mattpettenato" target="_blank"> Git Hub</a>
+          </div>
+
+        </footer>
       </div>
     )
   }

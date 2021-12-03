@@ -38,3 +38,12 @@ bus1 = Business.create!({name: "Taquería El Farolito", about: "Busy, no-frills 
 bus2 = Business.create!({name: "Kogi Gogi BBQ", about: "Informal dinner spot serving all-you-can-eat, grill-your-own Korean BBQ, plus beer & sake.", rating: 4, phone: "(415) 702-6792", address: "1358 9th Ave San Francisco, CA 94122", hours:"Mon-Fri 5PM-10PM, Sat-Sun 12PM-10PM"})
 
 bus3 = Business.create!({name: "District Tea", about: "We are the Mission District’s newest tea house! We proudly use natural and organic fresh fruits and dairy products! Built by San Francisco natives, District Tea brings a new, but familiar vibe to the Mission District.", rating: 4.5, phone: "(415) 638-6134", address: "2154 Mission St San Francisco, CA 94110", hours:"11AM-5PM"})
+
+bus4 = Business.create!({
+                          name: "North Beach Pizza", 
+                          about: "Pizza, Italian, Sandwiches", 
+                          rating: 3, 
+                          phone: "(415) 433-2444", 
+                          address: "1462 Grant Ave San Francisco, CA 94133", 
+                          hours:"11AM–10:00PM"
+                          })
