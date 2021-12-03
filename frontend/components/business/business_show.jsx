@@ -122,8 +122,10 @@ class BusinessShow extends React.Component {
             {bisName}
           </ul>
           <ul className="business-rating">
-            {bisRating}
-            (need to calculate rating based off average rating of all reviews)
+            {/* {bisRating} */}
+              <p className="bis-rating"><img src="https://raw.githubusercontent.com/mattpettenato/git_test/main/large/large_5.png" /></p>
+
+            {/* (need to calculate rating based off average rating of all reviews) */}
           </ul>
           <ul className="business-about">
             {bisAbout}
@@ -144,12 +146,23 @@ class BusinessShow extends React.Component {
         </div>
         <div className="bus-reviews-1">
           <h3>reviewwwwww</h3>
+
         </div>
         <footer className="footer">
+          <div className="about-user">
+            <p className="about-user-contact">Contact</p>
+            <div className='gmail'><p>mtp855@gmail.com</p></div>
+          </div>
           <div className="mylinks">
             <p className="about-user-title">About</p>
-            <a href="https://www.linkedin.com/in/matthew-pettenato-936236123/" target="_blank">Linkedin</a>
-            <a href="https://github.com/mattpettenato" target="_blank"> Git Hub</a>
+            <a href="https://www.linkedin.com/in/matthew-pettenato-936236123/" target="_blank">
+              <img className="ln-img" src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg" />
+            </a>
+
+            <a href="https://github.com/mattpettenato" target="_blank">
+              <img className="git-img" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" />
+            </a>
+
           </div>
 
         </footer>

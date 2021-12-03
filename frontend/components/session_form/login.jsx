@@ -130,7 +130,7 @@ class Login extends React.Component {
       <div className="session-form">
         <div className="session-form-nav">
           <Link to="/">
-            <img className="hero-img" src="https://s3-media0.fl.yelpcdn.com/assets/public/yelp_favicon.yji-5e8cc24f40ca89107dc7a349ed209e00.svg" />
+              <img className="hero-img" src="https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/melp_logo.png" />
           </Link>
         </div>
         <div className="session-form-container">
@@ -180,11 +180,24 @@ class Login extends React.Component {
           </div>
           <img className="signup-img" src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png" />
         </div>
-      <footer>
-        <div className="footer">
-          test footer
-        </div>
-      </footer>
+          <footer className="footer">
+            <div className="about-user">
+              <p className="about-user-contact">Contact</p>
+              <div className='gmail'><p>mtp855@gmail.com</p></div>
+            </div>
+            <div className="mylinks">
+              <p className="about-user-title">About</p>
+              <a href="https://www.linkedin.com/in/matthew-pettenato-936236123/" target="_blank">
+                <img className="ln-img" src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg" />
+              </a>
+
+              <a href="https://github.com/mattpettenato" target="_blank">
+                <img className="git-img" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" />
+              </a>
+
+            </div>
+
+          </footer>
       
       </div>
       </div>

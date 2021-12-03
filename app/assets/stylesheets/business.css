@@ -87,7 +87,7 @@
 } */
 
 .hero-img-bus-nav{
-  margin-left: 35px;
+  margin-left: 85px;
   white-space: nowrap;
   position: relative;
   height: 125px;
@@ -117,7 +117,7 @@
 
   display: flex;
   justify-content: center;
-  margin-top: 25px;
+  margin-bottom: 25px;
 
   width: 100%;
 
