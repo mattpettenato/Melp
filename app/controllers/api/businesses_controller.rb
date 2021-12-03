@@ -7,7 +7,7 @@ class Api::BusinessesController < ApplicationController
 
   # def show
   #   @business = Business.with_attached_photos.find(params[:id])
-  #   render :show
+  #   render :showa
   # end
 
   def index
