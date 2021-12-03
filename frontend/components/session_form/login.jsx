@@ -152,7 +152,7 @@ class Login extends React.Component {
                   value={this.state.username}
                   onChange={this.update('username')}
                   className="login-input"
-                  placeholder="Email"
+                  placeholder="Username"
                 />
               {/* </label> */}
               

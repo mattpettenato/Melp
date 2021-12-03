@@ -41,14 +41,14 @@ componentWillUnmount(){
     // const { business } = this.props.business
     // console.log(this.props.fetchBusinesses(this.props.match.params.businessId))
 
-    const useDidMountEffect = (func, deps) => {
-      const didMount = useRef(false);
+    // const useDidMountEffect = (func, deps) => {
+    //   const didMount = useRef(false);
 
-      useEffect(() => {
-        if (didMount.current) func();
-        else didMount.current = true;
-      }, deps);
-    }
+    //   useEffect(() => {
+    //     if (didMount.current) func();
+    //     else didMount.current = true;
+    //   }, deps);
+    // }
     const bis=[]
     Object.keys(this.props.businesses || []).map((business) => bis.push(parseInt(business)))
     // console.log(bis)
