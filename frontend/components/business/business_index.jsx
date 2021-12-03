@@ -1,97 +1,69 @@
-// import React from 'react';
-// // import { Link } from "react-router-dom"
-// import BusinessIndexItem from './business_index_item'
-
-// class BusinessIndex extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-
-//   componentDidMount() {
-//     if (this.props.match.params.query === undefined) {
-//       this.props.fetchBusinesses()
-//     } else {
-//       this.props.getSearchBusinesses(this.props.match.params.query)
-//     }
-//     // this.props.fetchBusinesses()
-//   }
-
-//   render() {
-//     if (!this.props.fetchBusinesses) {
-//       return null;
-//     } else {
-//       return (
-//         <div className="business-box">
-//           <div className="business-index">
-//             <h3 className="business-ul-title">Find the Best Businesses in Town</h3>
-//           </div>
-//           <div>
-//             <ul className="business-ul">
-//               {
-//                 this.props.business.map((business) => (<BusinessIndexItem business={business}
-//                   key={business.id}
-//                   fetchBusiness={this.props.fetchBusiness}
-//                   fetchReviews={this.props.fetchReviews} />))
-//               }
-//             </ul>
-//           </div>
-//         </div>
-//       )
-//     }
-//   }
-// }
-
-// export default BusinessIndex;
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 // import LargeGoogleMap from './largeGoogleMap'
 import NavBarContainer from '../nav_bar/nav_bar_container';
+import SearchHome from '../search/search_home'
 // import BusinessSearchShow from './business_search_show_container'
+import BusinessIndexItem from './business_index_item';
 
 class BusinessIndex extends React.Component {
   constructor(props) {
     super(props)
-
   }
 
-  avgRating(business) {
-    let numRatings = Object.values(business.reviews).length;
-    let sumRatings = 0;
-    for (let i = 0; Object.values(business.reviews)[i]; i++) {
-      sumRatings += business.reviews[i].rating;
-    }
-    const rating = sumRatings / numRatings;
-    
-  }
+componentWillUnmount(){
 
+}
+
+  // componentWillMount() {
+  //   console.log('First this called');
+  // }
 
   render() {
-
-    let num = 0;
-    if (this.props.businesses) {
-      return (
-        <div className="business-index">
-          <header className="index-nav-bar">
+    // const { business } = this.props.business
+    // console.log(this.props.fetchBusinesses(this.props.match.params.businessId))
+    return (
+      <div className="bus-index-main">
+        <div className="business-page-nav">
+          <Link to="/">
+            <img className="hero-img-bus-nav" src="https://s3-media0.fl.yelpcdn.com/assets/public/yelp_favicon.yji-5e8cc24f40ca89107dc7a349ed209e00.svg" />
+          </Link>
+          <SearchHome id="search-home-bus" />
+          <div className="busnav">
             <NavBarContainer />
-          </header>
-          <div className="business-index-container">
-            <div className="search-results">
-              All Results
+          </div>
+        </div>
+
+        <div className="bus-menu-options">
+          <Link to="/businesses">
+            <i className="fas fa-utensils fa-lg">  Restaurants</i>
+          </Link>
+        </div>
+
+        <div>
+          {this.props.businesses.length !== 0 ? (
+            <div>
+              {/* {console.log(this.props.businesses)} */}
+              
+              &nbsp;Stays in the area&nbsp;
+              {this.props.businesses.length}
             </div>
 
-          </div>
-test
-        </div>
-      )
-    }
-    else
-      return (
-        <div>
-          broken
-        </div>
-      )
+          ) : <div>
+              {console.log(this.props)}
 
+            {this.props.businesses.length}
+            &nbsp;Listing Found
+            </div>
+          }
+        </div>
+
+        <div className="index-list-bus">
+          {/* <BusinessIndexItem /> */}
+        </div>
+
+      </div>
+    )
   }
 
   }

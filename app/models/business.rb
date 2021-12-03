@@ -6,12 +6,16 @@ class Business < ApplicationRecord
 
     has_many_attached :photos
 
-    has_many :reviews
-    # primary_key: :id,
-    # foreign_key: :business_id,
-    # class_name: :Business
+    has_many :reviews,
+    primary_key: :id,
+    foreign_key: :business_id,
+    class_name: :Review
 
     has_many :users_reviewed,
     through: :reviews,
     source: :user
+
+    def average_rating
+        reviews.average(:rating)
+    end
 end 

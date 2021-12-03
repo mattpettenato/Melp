@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Search from '../search/search_home';
 import NavBarContainer from '../../components/nav_bar/nav_bar_container';
+import BusinessIndexItem from '../business/business_index_item';
 
 class Splash extends React.Component {
   constructor(props) {
@@ -9,16 +10,24 @@ class Splash extends React.Component {
   }
   
   componentDidMount() {
-    // this.props.fetchBusiness(1);
-    // this.props.fetchBusiness(2);
-    // this.props.fetchBusiness(3);
+
+    this.props.fetchBusiness(1);
+    this.props.fetchBusiness(2);
+    this.props.fetchBusiness(3);
     // this.props.fetchBusiness(4);
+    // this.props.fetchBusinesses()
   }
 
   render() {
-    // if (this.props.businesses[3]) {
-      if (true === true) {
+    let bus;
+    if (this.props.businesses[3]) {
+      // if (this.props.businesses.length !== 0) {
+    console.log(this.props.businesses)
+    bus = this.props.businesses
 
+      //   console.log(this.props)
+    }
+    
       return (
         <div className="splash">
           <header id="main-nav-bar">
@@ -39,6 +48,20 @@ class Splash extends React.Component {
             <p className="new-businesses-title">Find the Best Businesses in Town</p>
             <div>
               <Link to="/businesses/1">bus1</Link>
+              <Link to="/businesses">INDEXbus</Link>
+              {/* <ul className="listing-container">
+                {this.props.businesses.map((business, idx) => (
+                  <BusinessIndexItem key={idx} session={this.props.session} business={business} removeBusiness={this.props.removeBusiness} />
+                ))}
+              </ul> */}
+
+              <div>
+
+                {bus}
+              </div>
+                
+
+
             </div>
           </div>
           <footer className= "footer">
@@ -51,10 +74,7 @@ class Splash extends React.Component {
           </footer>
         </div>
       )
-    }
-    else
-      return (null)
-  }
+      }
 }
 
 export default Splash;

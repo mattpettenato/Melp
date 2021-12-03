@@ -38,3 +38,10 @@ export const createBusiness = business => {
     processData: false
   })
 }
+
+export const clearBusiness = businessId => (
+  $.ajax({
+    method: 'DELETE',
+    url: `/api/businesses/${businessId}`
+  })
+)
