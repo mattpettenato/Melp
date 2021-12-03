@@ -20,12 +20,7 @@ class Login extends React.Component {
       password: 'demopassword'
     }
 
-    // this.handleBlur = this.handleBlur.bind(this);
-    // this.handleClick = this.handleClick.bind(this);
 
-    // this.handleSubmit = this.handleSubmit.bind(this);
-    // this.renderErrors = this.renderErrors.bind(this);
-    // this.clearErrors = this.clearErrors.bind(this);
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
@@ -39,19 +34,11 @@ class Login extends React.Component {
     this.zipCodeEmpty = false;
   }
 
-  // handleBlur() {
-  //   this.setState(
-  //     { show: false }
-  //   )
-  // }
+
 
   handleBlur(e) {
     e.preventDefault();
-    // this.nameEmpty = false;
-    // this.emailError = false;
-    // this.emailEmpty = false;
-    // this.passwordEmpty = false;
-    // this.zipCodeEmpty = false;
+
     this.setState({ state: this.state });
   }
 
@@ -62,30 +49,13 @@ class Login extends React.Component {
     });
   }
 
-  // handleSubmit(e) {
-  //   this.props.clearErrors();
-  //   e.preventDefault();
-  //   const user = Object.assign({}, this.state);
-  //   this.props.processForm(user)
-  //   this.setState({
-  //     password: ""
-  //   })
-  // }
+
 
   clearErrors(e) {
     this.props.clearErrors()
   }
 
-  // handleSubmitDemo(e) {
-  //   e.preventDefault()
 
-  //   const demoUser = {
-  //     username: 'demo',
-  //     password: 'demopassword'
-  //   }
-
-  //   this.props.loginUser(demoUser)
-  // }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -95,11 +65,7 @@ class Login extends React.Component {
     this.setState({ state: this.state });
   }
 
-  // emailValid() {
-  //   if (!this.state.email.includes("@") && this.state.email !== "") {
-  //     return `Please include an '@' in the email address. ${this.state.email} is missing an '@'.`
-  //   }
-  // }
+
 
   renderErrors() {
     return (
@@ -146,27 +112,20 @@ class Login extends React.Component {
         
             {this.renderErrors()}
 
-            {/* <div className="login-form"> */}
-              {/* <label> */}
+
                 <input type="text"
                   value={this.state.username}
                   onChange={this.update('username')}
                   className="login-input"
                   placeholder="Username"
                 />
-              {/* </label> */}
-              
-              {/* <label> */}
+
                 <input type="password"
                   value={this.state.password}
                   onChange={this.update('password')}
                   className="login-input"
                   placeholder="Password"
                 />
-              {/* </label> */}
-              
-
-            {/* </div> */}
 
               <input className="submit" type="submit" value="Log In"/>
 
@@ -174,7 +133,7 @@ class Login extends React.Component {
 
             <button className="submit" onClick={() => this.props.processForm(this.demo)}>Demo Login</button>
 
-            {/* <button onClick={this.demoLogin} className="submit">Demo Login</button> */}
+
 
               <p className="session-form-foot">New to Melp? <Link to="/signup" onClick={this.clearErrors}>Sign Up</Link></p>
           </div>
