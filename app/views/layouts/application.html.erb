@@ -4,7 +4,13 @@
     <title>Melp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <script type="text/javascript">
+      window.googleAPIKey = "<%= Rails.application.credentials.google[:api_key] %>"
+    </script>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['MAPS_API_KEY']}" %>
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
