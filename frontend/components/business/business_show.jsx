@@ -114,7 +114,7 @@ class BusinessShow extends React.Component {
     //   </div>
     // );
 
-    console.log(this.props.currentBusiness.id)
+    // console.log(this.props.currentBusiness.id)
 
 
 
