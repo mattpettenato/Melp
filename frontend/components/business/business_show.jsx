@@ -185,6 +185,11 @@ class BusinessShow extends React.Component {
         </div>
         </div>
         <div className="bus-reviews-1">
+          <div className="review-warning">
+            <div className="warning">
+              <h2>Your trust is our top concern, so businesses can't pay to alter or remove their reviews</h2>
+            </div>
+          </div>
           <h3>reviewwwwwws :(</h3>
 
         </div>
