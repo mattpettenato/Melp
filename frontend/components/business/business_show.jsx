@@ -139,30 +139,33 @@ class BusinessShow extends React.Component {
             <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/4.jpg`} height="424" />
 
             {/* <img src="https://i.imgur.com/4Bo62Nq.jpeg" height="424" />
-            <img src="https://i.imgur.com/fLEaIv1.jpeg" height="424" />
-            <img src="https://i.imgur.com/fLEaIv1.jpeg" height="424" /> */}
+              <img src="https://i.imgur.com/fLEaIv1.jpeg" height="424" />
+              <img src="https://i.imgur.com/fLEaIv1.jpeg" height="424" /> */}
             {/* <img src={`https://github.com/mattpettenato/FullStack_Project/blob/main/melp_imgs/home/4/4.jpg?raw=true`} height="424"/> */}
 
           </div>
           {/* <ul>PHOTOS HERE</ul> */}
         </div>
         <div className="bus-info-body">
+          {/* <div className="bus-info-body-1">
+              <ul>test</ul> */}
+          
         <div className="bus-info-1">
-          <ul className="business-title">
+          <div className="business-title">
             {bisName}
-          </ul>
+          </div>
           <div className="business-rating">
             {/* {bisRating} */}
-              <p className="bis-rating"><img src="https://raw.githubusercontent.com/mattpettenato/git_test/main/large/large_5.png" /></p>
+              <p className="bis-rating"><img src="https://raw.githubusercontent.com/mattpettenato/git_test/main/large/large_5.png" />
+              </p>
 
- 
           </div>
-          <ul className="business-about">
+          <div className="business-about">
             {bisAbout}
-          </ul>
-          <ul className="business-phone">
+          </div>
+          {/* <ul className="business-phone">
             {bisPhone}
-          </ul>
+          </ul> */}
 
         </div>
         <div className="bus-map-1">
@@ -179,7 +182,12 @@ class BusinessShow extends React.Component {
                 <i className="fas fa-clock"></i>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{bisHours}
               </button>
-              
+            </span>
+            <span id="busdir">
+              <button className="busdirbut" >
+                <i className="fas fa-phone"></i>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{bisPhone}
+              </button>
             </span>
           </div>
         </div>
@@ -187,6 +195,7 @@ class BusinessShow extends React.Component {
         <div className="bus-reviews-1">
           <div className="review-warning">
             <div className="warning">
+              {/* <img className="hero-img-bus-nav" src="https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/melp_logo.png" /> */}
               <h2>Your trust is our top concern, so businesses can't pay to alter or remove their reviews</h2>
             </div>
           </div>
@@ -212,6 +221,7 @@ class BusinessShow extends React.Component {
 
         </footer>
       </div>
+      // </div>
     )
   }
 }

@@ -91,9 +91,9 @@
   white-space: nowrap;
 }
 
-.business-about{
+/* .business-about{
   margin-top: 0px;
-}
+} */
 
 .business-title{
   font-size: 32px;
@@ -104,6 +104,12 @@
   font-weight: bold;
   padding: 0px;
   margin-bottom: -12px;
+}
+
+.bus-info-1{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .bus-info-body{
