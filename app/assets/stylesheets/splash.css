@@ -11,6 +11,7 @@
     border: solid 2px gray;
     border-radius: 3px;
 }
+
 #main-nav-bar .nav-links a {
     background-color: transparent;
     color: white;
@@ -43,7 +44,6 @@
     /* z-index: -1; */
 }
 
-
 .splash-main {
     position: relative;
     top: 100px;
@@ -71,15 +71,12 @@ margin: 0px auto 0px auto;
     justify-content: center;
     flex-direction: column;
     display: table-cell;
-
 }
 
 .homesearch {
-
     margin: 0 auto 0 auto;
     box-shadow: -2px 2px 2px 2px #c8c9ca;
     align-items: center;
-
     height: 45px;
     display: table-cell;
     text-align:center;
@@ -214,7 +211,6 @@ margin: 0px auto 0px auto;
 .about-user{
     margin-left: 500px;
     margin-right: 250px;
-
     margin-top: 50px;
 }
 

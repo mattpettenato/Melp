@@ -6,21 +6,21 @@
   white-space: nowrap;
 }
 
-#search-home-bus{
+#search-home-bus {
   box-shadow: 2px 2px 2px 2px #c8c9ca;
   background-color: green;
 }
 
-.bis-name{
+.bis-name {
   color: #0073BB;
   text-decoration: none;
-  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   line-height: 1.28571em;
   font-weight: bold;
-  font-size:x-large;
+  font-size: x-large;
 }
 
-.plswork123{
+.plswork123 {
   display: flex;
   justify-content: center;
   margin-top: 25px;
@@ -31,7 +31,7 @@
   color: inherit;
 }
 
-.bis-splash{
+.bis-splash {
   display: flex;
   justify-content: center;
   width: 330px;
@@ -47,25 +47,26 @@
   text-align: center;
 }
 
-.bis-splash img{
+.bis-splash img {
   max-width: 300px;
   max-height: 180px;
   justify-content: center;
 }
 
-#map-container{
+#map-container {
   width: 400px;
-  height: 400px
+  height: 400px;
+  margin-bottom: 20px;
 }
 
-.hero-img-bus-nav{
+.hero-img-bus-nav {
   margin-left: 85px;
   white-space: nowrap;
   position: relative;
   height: 125px;
 }
 
-.bus-menu-options{
+.bus-menu-options {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,36 +84,43 @@
 }
 
 .bus-head {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   margin-bottom: 25px;
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
+  position: relative;
+  z-index: 1;
+
 }
 
 /* .business-about{
   margin-top: 0px;
 } */
 
-.business-title{
+.business-title {
   font-size: 32px;
   color: #0073BB;
   text-decoration: none;
-  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   line-height: 1.28571em;
   font-weight: bold;
   padding: 0px;
   margin-bottom: -12px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+
 }
 
-.bus-info-1{
+.bus-info-1 {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
-.bus-info-body{
+.bus-info-body {
   display: flex;
   justify-content: center;
   align-content: space-between;
@@ -120,7 +128,7 @@
   white-space: nowrap;
 }
 
-.bus-reviews-1{
+.bus-reviews-1 {
   display: flex;
   justify-content: center;
   align-content: space-between;
@@ -128,33 +136,75 @@
   white-space: nowrap;
 }
 
-.bis-splash-container{
+.bis-splash-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.bis-phone{
+.bis-phone {
   color: black;
 }
 
-.bis-address{
+.bis-address {
   color: black;
 }
 
-.bis-link1{
+.bis-link1 {
   text-decoration: none;
 }
 
-#busdir button{
+#busdir button {
   font-size: 16px;
   padding-top: 10px;
   padding-bottom: 10px;
   width: 400px;
   padding-left: 3px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
 }
 
-.map-under span{
-  display:block;
+/* .map-under span {
+  display: block;
+} */
+
+#bus-imgs {
+  display: inline-flex;
+  position: relative;
+}
+
+
+
+.bus1-about-box {
+  display: flex;
+  
+  position: absolute;
+  width: 60%;
+  height: 90%;
+  /* outline: auto; */
+  background-color: transparent;
+  vertical-align: baseline;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.bus-names {
+  color: #fff;
+  font-family: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  /* -webkit-letter-spacing: -0.4px;
+  -moz-letter-spacing: -0.4px;
+  -ms-letter-spacing: -0.4px; */
+  letter-spacing: -0.4px;
+  line-height: 56px;
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  /* color: rgba(45, 46, 47, 1); */
+  display: inline;
 }
 

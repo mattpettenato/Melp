@@ -132,30 +132,18 @@ class BusinessShow extends React.Component {
 
         <div className="bus-head">
           <div className="bus-imgs">
-            <img src="" height="424" />
+            {/* <img src="" height="424" /> */}
             <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/1.jpg`} height="424" />
             <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/2.jpg`} height="424" />
             <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/3.jpg`} height="424" />
             <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/4.jpg`} height="424" />
 
-            {/* <img src="https://i.imgur.com/4Bo62Nq.jpeg" height="424" />
-              <img src="https://i.imgur.com/fLEaIv1.jpeg" height="424" />
-              <img src="https://i.imgur.com/fLEaIv1.jpeg" height="424" /> */}
-            {/* <img src={`https://github.com/mattpettenato/FullStack_Project/blob/main/melp_imgs/home/4/4.jpg?raw=true`} height="424"/> */}
-
-          </div>
-          {/* <ul>PHOTOS HERE</ul> */}
-        </div>
-        <div className="bus-info-body">
-          {/* <div className="bus-info-body-1">
-              <ul>test</ul> */}
-          
-        <div className="bus-info-1">
-          <div className="business-title">
+            {/* <div className="business-title">
             {bisName}
-          </div>
+          {/* </div> */}
+          {/* 
           <div className="business-rating">
-            {/* {bisRating} */}
+            {/* {bisRating} 
               <p className="bis-rating"><img src="https://raw.githubusercontent.com/mattpettenato/git_test/main/large/large_5.png" />
               </p>
 
@@ -163,30 +151,60 @@ class BusinessShow extends React.Component {
           <div className="business-about">
             {bisAbout}
           </div>
-          {/* <ul className="business-phone">
-            {bisPhone}
-          </ul> */}
+*/}
+        {/* </div> */}
 
+
+
+          </div>
+
+
+          
+          {/* <div className="bus-info-1"> */}
+
+
+          <div className="bus1-about-box">
+            <div className="bus-names">
+              {bisName}
+            </div>
+
+            <div className="business-rating">
+              <p className="bis-rating"><img src="https://raw.githubusercontent.com/mattpettenato/git_test/main/large/large_5.png" />
+              </p>
+            </div>
+
+          <div className="business-about">
+            {bisAbout}
+          </div>
+          </div>
         </div>
+
+
+
+        <div className="bus-info-body">
+          {/* <div className="bus-info-body-1">
+              <ul>test</ul> */}
+          
+
         <div className="bus-map-1">
           <BusinessMap />
           <div className="map-under">
             <span id="busdir">
               <button className="busdirbut" >
                 <i className="fas fa-directions"></i>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{bisAddress}
+                &nbsp;&nbsp;{bisAddress}
               </button>
             </span>
             <span id="busdir">
               <button className="busdirbut" >
                 <i className="fas fa-clock"></i>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{bisHours}
+                  &nbsp;&nbsp;{bisHours}
               </button>
             </span>
             <span id="busdir">
               <button className="busdirbut" >
                 <i className="fas fa-phone"></i>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{bisPhone}
+                &nbsp;&nbsp;{bisPhone}
               </button>
             </span>
           </div>
