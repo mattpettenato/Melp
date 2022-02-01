@@ -95,9 +95,15 @@
 
 }
 
-/* .business-about{
-  margin-top: 0px;
-} */
+.business-about {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  border-radius: 3px;
+  /* -webkit-text-decoration: none; */
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+  font-size: inherit;
+}
 
 .business-title {
   font-size: 32px;
@@ -180,7 +186,7 @@
 
 .bus1-about-box {
   display: flex;
-  
+
   position: absolute;
   width: 60%;
   height: 90%;
@@ -189,6 +195,8 @@
   vertical-align: baseline;
   flex-direction: column;
   justify-content: flex-end;
+  margin-left: 15%;
+
 }
 
 .bus-names {
@@ -207,4 +215,3 @@
   /* color: rgba(45, 46, 47, 1); */
   display: inline;
 }
-
