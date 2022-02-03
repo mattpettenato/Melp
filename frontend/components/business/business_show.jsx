@@ -182,36 +182,36 @@ class BusinessShow extends React.Component {
 
 
         <div className="bus-info-body">
-          {/* <div className="bus-info-body-1">
-              <ul>test</ul> */}
-          
-
-        <div className="bus-map-1">
-          <BusinessMap />
-          <div className="map-under">
-            <span id="busdir">
-              <button className="busdirbut" >
-                <i className="fas fa-directions"></i>
-                &nbsp;&nbsp;{bisAddress}
-              </button>
-            </span>
-            <span id="busdir">
-              <button className="busdirbut" >
-                <i className="fas fa-clock"></i>
-                  &nbsp;&nbsp;{bisHours}
-              </button>
-            </span>
-            <span id="busdir">
-              <button className="busdirbut" >
-                <i className="fas fa-phone"></i>
-                &nbsp;&nbsp;{bisPhone}
-              </button>
-            </span>
+          <div className="location-hours">
+            <h1>Location & Hours</h1>
           </div>
-        </div>
+          <div className="bus-map-1">
+            <BusinessMap />
+            <div className="map-under">
+              <span id="busdir">
+                <button className="busdirbut" >
+                  <i className="fas fa-directions"></i>
+                  &nbsp;&nbsp;{bisAddress}
+                </button>
+              </span>
+              <span id="busdir">
+                <button className="busdirbut" >
+                  <i className="fas fa-clock"></i>
+                    &nbsp;&nbsp;{bisHours}
+                </button>
+              </span>
+              <span id="busdir">
+                <button className="busdirbut" >
+                  <i className="fas fa-phone"></i>
+                  &nbsp;&nbsp;{bisPhone}
+                </button>
+              </span>
+            </div>
+          </div>
         </div>
         <div className="bus-reviews-1">
           <div className="review-warning">
+
             <div className="warning">
               {/* <img className="hero-img-bus-nav" src="https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/melp_logo.png" /> */}
               <h2>Your trust is our top concern, so businesses can't pay to alter or remove their reviews</h2>
