@@ -133,9 +133,10 @@
   column-gap: 700px;
   white-space: nowrap;
   margin: 0 auto;
-  max-width: 1144px;
+  /* max-width: 1144px; */
   padding: 0 40px;
   position: relative;
+  justify-content: space-between;
 }
 
 .bus-reviews-1 {
@@ -234,4 +235,42 @@
 .location-hours {
   display: flex;
   /* padding: 0 40px; */
+}
+
+.warning h2 {
+  font-size: 10px;
+}
+
+.warning {
+  display: flex;
+}
+
+.review-warning {
+  display: flex;
+}
+
+.bus-map-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.write-review button {
+  background-color: rgba(224, 7, 7, 1);
+  color: #fff;
+  border: none;
+  width: 180px;
+  height: 45px;
+}
+
+
+.write-review-button {
+  border: 1px solid rgba(224, 7, 7, 1);;
+  border-radius: 3px;
+  color: white;
+  background-color: rgba(224, 7, 7, 1);;
+  font-size: 18px;
+  /* font-family: $main-font; */
+  font-weight: 500;
+  padding: 3px 12px;
+  cursor: pointer;
 }

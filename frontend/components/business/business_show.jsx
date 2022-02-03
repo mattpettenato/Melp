@@ -178,13 +178,22 @@ class BusinessShow extends React.Component {
           </div>
           </div>
         </div>
-
-
-
+        <div className="write-review">
+          <button className="write-review-button"><i className="far fa-star"></i> Write a Review</button>
+        </div>
         <div className="bus-info-body">
-          <div className="location-hours">
-            <h1>Location & Hours</h1>
+        <div className="bus-reviews-1">
+          <div className="review-warning">
+
+            <div className="warning">
+              {/* <img className="hero-img-bus-nav" src="https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/melp_logo.png" /> */}
+              <h2>Your trust is our top concern, so businesses can't pay to alter or remove their reviews</h2>
+            </div>
           </div>
+        </div>          
+          {/* <div className="location-hours">
+            <h1>Location & Hours</h1>
+          </div> */}
           <div className="bus-map-1">
             <BusinessMap />
             <div className="map-under">
@@ -209,17 +218,7 @@ class BusinessShow extends React.Component {
             </div>
           </div>
         </div>
-        <div className="bus-reviews-1">
-          <div className="review-warning">
 
-            <div className="warning">
-              {/* <img className="hero-img-bus-nav" src="https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/melp_logo.png" /> */}
-              <h2>Your trust is our top concern, so businesses can't pay to alter or remove their reviews</h2>
-            </div>
-          </div>
-          <h3>reviewwwwwws :(</h3>
-
-        </div>
         <footer className="footer">
           <div className="about-user">
             <p className="about-user-contact">Contact</p>
