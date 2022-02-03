@@ -178,8 +178,11 @@ class BusinessShow extends React.Component {
           </div>
           </div>
         </div>
-        <div className="write-review">
-          <button className="write-review-button"><i className="far fa-star"></i> Write a Review</button>
+        <div className="above-review">
+
+          <div className="write-review">
+            <button className="write-review-button"><i className="far fa-star"></i> Write a Review</button>
+          </div>
         </div>
         <div className="bus-info-body">
         <div className="bus-reviews-1">

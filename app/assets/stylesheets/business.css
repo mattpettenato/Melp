@@ -85,8 +85,8 @@
 
 .bus-head {
   display: inline-flex;
-  justify-content: center;
-  margin-bottom: 25px;
+  /* justify-content: center; */
+  margin-bottom: 24px;
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
@@ -187,8 +187,6 @@
   position: relative;
 }
 
-
-
 .bus1-about-box {
   display: flex;
   position: absolute;
@@ -199,7 +197,10 @@
   vertical-align: baseline;
   flex-direction: column;
   justify-content: flex-end;
-  /* margin-left: 10%; */
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-left: 63px;
+  padding-right: 63px;
 
 }
 
@@ -264,13 +265,24 @@
 
 
 .write-review-button {
-  border: 1px solid rgba(224, 7, 7, 1);;
+  border: 1px solid rgba(224, 7, 7, 1);
+  ;
   border-radius: 3px;
   color: white;
-  background-color: rgba(224, 7, 7, 1);;
+  background-color: rgba(224, 7, 7, 1);
+  ;
   font-size: 18px;
   /* font-family: $main-font; */
   font-weight: 500;
   padding: 3px 12px;
   cursor: pointer;
+}
+
+.above-review {
+  display: flex;
+  position: relative;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-left: 40px;
+  padding-right: 40px;
 }
