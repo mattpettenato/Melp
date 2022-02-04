@@ -134,9 +134,13 @@
   white-space: nowrap;
   margin: 0 auto;
   /* max-width: 1144px; */
-  padding: 0 40px;
+  /* padding: 0 40px; */
   position: relative;
   justify-content: space-between;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .bus-reviews-1 {
@@ -246,6 +250,10 @@
   display: flex;
 }
 
+.warning h2 {
+  font-size: 28px;
+}
+
 .review-warning {
   display: flex;
 }
@@ -253,6 +261,8 @@
 .bus-map-1 {
   display: flex;
   flex-direction: column;
+  position: sticky;
+  top: 0;
 }
 
 .write-review button {
@@ -262,7 +272,6 @@
   width: 180px;
   height: 45px;
 }
-
 
 .write-review-button {
   border: 1px solid rgba(224, 7, 7, 1);
@@ -285,4 +294,23 @@
   margin-right: 10%;
   padding-left: 40px;
   padding-right: 40px;
+  margin-bottom: 32px;
+  /* outline: 12px; */
 }
+
+#review-line {
+  height: 1px;
+  width: 50%;
+  border-width: 0;
+  color: rgba(0, 0, 0, 0.103);
+  background-color: rgba(0, 0, 0, 0.103);
+  margin-left: 12%;
+  margin-right: 12%;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-bottom: 32px;
+}
+
+/* #review-line hr{
+  border-width: 5px
+} */

@@ -181,9 +181,15 @@ class BusinessShow extends React.Component {
         <div className="above-review">
 
           <div className="write-review">
-            <button className="write-review-button"><i className="far fa-star"></i> Write a Review</button>
+            <button className="write-review-button">
+              <i className="far fa-star"></i>
+              &nbsp;&nbsp;Write a Review
+            </button>
           </div>
+          
         </div>
+        
+          <hr id="review-line"/>
         <div className="bus-info-body">
         <div className="bus-reviews-1">
           <div className="review-warning">
