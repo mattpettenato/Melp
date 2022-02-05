@@ -178,6 +178,8 @@ class BusinessShow extends React.Component {
           </div>
           </div>
         </div>
+
+        <div className="center-div">
         <div className="above-review">
 
           <div className="write-review">
@@ -199,7 +201,8 @@ class BusinessShow extends React.Component {
               <h2>Your trust is our top concern, so businesses can't pay to alter or remove their reviews</h2>
             </div>
           </div>
-        </div>          
+        </div>
+                  
           {/* <div className="location-hours">
             <h1>Location & Hours</h1>
           </div> */}
@@ -227,7 +230,8 @@ class BusinessShow extends React.Component {
             </div>
           </div>
         </div>
-
+        </div>
+          <div>
         <footer className="footer">
           <div className="about-user">
             <p className="about-user-contact">Contact</p>
@@ -247,7 +251,7 @@ class BusinessShow extends React.Component {
 
         </footer>
       </div>
-      // </div>
+      </div>
     )
   }
 }
