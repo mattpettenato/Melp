@@ -79,6 +79,11 @@ class BusinessShow extends React.Component {
       bisHours = this.props.currentBusiness.hours
     }
 
+    let bisWebsite;
+    if (this.props.currentBusiness) {
+      bisWebsite = this.props.currentBusiness.websiteurl
+    }
+
     // console.log(this.props.currentBusiness.latitude)
     // console.log(this.props.businesses)
 
@@ -143,31 +148,17 @@ class BusinessShow extends React.Component {
         <div className="map-left">
           <h2>Location & Hours</h2>
             <BusinessMap business={this.props.currentBusiness}/>
-            
-
         </div>
-          {/* <div className="bus-map-1">
-            <div className="map-under">
-              <span id="busdir">
-                <button className="busdirbut" >
-                  <i className="fas fa-directions"></i>
-                  &nbsp;&nbsp;{bisAddress}
-                </button>
-              </span>
-              <span id="busdir">
-                <button className="busdirbut" >
-                  <i className="fas fa-clock"></i>
-                    &nbsp;&nbsp;{bisHours}
-                </button>
-              </span>
-              <span id="busdir">
-                <button className="busdirbut" >
-                  <i className="fas fa-phone"></i>
-                  &nbsp;&nbsp;{bisPhone}
-                </button>
-              </span>
-            </div>
-          </div> */}
+        <div className="time-list">
+          <p>Mon: {bisHours}</p>
+          <p>Tue: {bisHours}</p>
+          <p>Wed: {bisHours}</p>
+          <p>Thu: {bisHours}</p>
+          <p>Fri: {bisHours}</p>
+          <p>Sat: {bisHours}</p>
+          <p>Sun: {bisHours}</p>
+        </div>
+
           </div>
           <hr id="review-line"/>
 
@@ -189,6 +180,30 @@ class BusinessShow extends React.Component {
 
 
         <div>
+
+      </div>
+      </div>
+      <div className="right-side">
+        <div className="info-bar">
+          <div className="busdirbut" >
+            <a href={`${bisWebsite}`}>{bisWebsite}</a>
+            &nbsp;&nbsp;
+            <i className="fa fa-external-link"></i>
+            {/* <a href=`#{bisWebsite}`></a> */}
+          </div>
+        <hr id="side-hr" />
+          <div className="busdirbut" >
+            {bisHours}&nbsp;&nbsp;
+            <i className="fas fa-clock"></i>
+          </div>
+        <hr id="side-hr" />
+          <div className="busdirbut" >
+            {bisPhone}&nbsp;&nbsp;
+            <i className="fas fa-phone"></i>
+          </div>
+        </div>
+      </div>
+      </div>
         <footer className="footer">
           <div className="about-user">
             <p className="about-user-contact">Contact</p>
@@ -207,27 +222,6 @@ class BusinessShow extends React.Component {
           </div>
 
         </footer>
-      </div>
-      </div>
-      <div className="right-side">
-        <div className="info-bar">
-          <div className="busdirbut" >
-            <i className="fas fa-directions"></i>
-            &nbsp;&nbsp;{bisAddress}
-          </div>
-        <hr id="side-hr" />
-          <div className="busdirbut" >
-            <i className="fas fa-clock"></i>
-            &nbsp;&nbsp;{bisHours}
-          </div>
-        <hr id="side-hr" />
-          <div className="busdirbut" >
-            <i className="fas fa-phone"></i>
-            &nbsp;&nbsp;{bisPhone}
-          </div>
-        </div>
-      </div>
-      </div>
       </div>
     )
   }

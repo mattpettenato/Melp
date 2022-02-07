@@ -309,7 +309,7 @@
 
 #review-line {
   height: 1px;
-  width: 746px;
+  width: 120%;
   border-width: 0;
   color: rgba(0, 0, 0, 0.103);
   background-color: rgba(0, 0, 0, 0.103);
@@ -375,6 +375,22 @@
   margin-bottom: 32px;
 }
 
+.map-left h2 {
+  font-family: 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  -webkit-letter-spacing: -0.4px;
+  -moz-letter-spacing: -0.4px;
+  -ms-letter-spacing: -0.4px;
+  letter-spacing: -0.4px;
+  line-height: 28px;
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  color: rgba(45, 46, 47, 1);
+  display: inline;
+}
+
 .middle-portion {
   display: flex;
   /* justify-content: center; */
@@ -382,7 +398,7 @@
 }
 
 .info-bar {
-  position: sticky;
+  position: absolute;
   display: flex;
   justify-content: space-around;
   padding-left: 16px !important;
@@ -419,8 +435,11 @@
 
 .right-side {
   display: flex;
+  position: sticky;
   flex-direction: column;
-
+  margin-right: 10%;
+  margin-left: 10%;
+  width: 365px;
 }
 
 #side-hr {
@@ -434,4 +453,42 @@
 .location-map {
   width: 315px;
   height: 150px;
+}
+
+.busdirbut {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.info-bar a {
+  font-size: 14px;
+}
+
+.time-list p {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  line-height: 24px;
+  color: rgba(45, 46, 47, 1);
+  text-align: left;
+}
+
+.time-list {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  -webkit-letter-spacing: 0px;
+  -moz-letter-spacing: 0px;
+  -ms-letter-spacing: 0px;
+  letter-spacing: 0px;
+  line-height: 24px;
+  color: rgba(45, 46, 47, 1);
+  text-align: left;
+  min-width: 158px;
 }
