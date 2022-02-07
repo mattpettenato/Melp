@@ -96,36 +96,11 @@ class BusinessShow extends React.Component {
 
         <div className="bus-head">
           <div className="bus-imgs">
-            {/* <img src="" height="424" /> */}
             <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/1.jpg`} height="424" />
             <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/2.jpg`} height="424" />
             <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/3.jpg`} height="424" />
             <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/4.jpg`} height="424" />
-
-            {/* <div className="business-title">
-            {bisName}
-          {/* </div> */}
-          {/* 
-          <div className="business-rating">
-            {/* {bisRating} 
-              <p className="bis-rating"><img src="https://raw.githubusercontent.com/mattpettenato/git_test/main/large/large_5.png" />
-              </p>
-
           </div>
-          <div className="business-about">
-            {bisAbout}
-          </div>
-*/}
-        {/* </div> */}
-
-
-
-          </div>
-
-
-          
-          {/* <div className="bus-info-1"> */}
-
 
           <div className="bus1-about-box">
             <div className="bus-names">
@@ -143,7 +118,9 @@ class BusinessShow extends React.Component {
           </div>
         </div>
 
+        <div className="entire-page">
         <div className="center-div">
+        <div className="guts-body">
         <div className="above-review">
 
           <div className="write-review">
@@ -157,27 +134,16 @@ class BusinessShow extends React.Component {
         
           <hr id="review-line"/>
 
+
+        <div className="middle-portion">
+
+        
         <div className="map-left">
           <h2>Location & Hours</h2>
             <BusinessMap />
 
         </div>
-          <hr id="review-line"/>
-
-        <div className="bus-info-body">
-        <div className="bus-reviews-1">
-          <div className="review-warning">
-            <h1 className="recoreview">Recommended Reviews</h1>
-            <div className="warning">
-              <img className="hero-img-bus-nav" src="https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/melp_logo.png" />
-
-              <h2>Your trust is our top concern, so businesses can't pay to alter or remove their reviews</h2>
-            </div>
-          </div>
-        </div>
-        
-          <div className="bus-map-1">
-            {/* <BusinessMap /> */}
+          {/* <div className="bus-map-1">
             <div className="map-under">
               <span id="busdir">
                 <button className="busdirbut" >
@@ -198,10 +164,28 @@ class BusinessShow extends React.Component {
                 </button>
               </span>
             </div>
+          </div> */}
+          </div>
+          <hr id="review-line"/>
+
+        <div className="bus-info-body">
+        <div className="bus-reviews-1">
+          <div className="review-warning">
+            <h1 className="recoreview">Recommended Reviews</h1>
+            <div className="warning">
+              <img className="hero-img-bus-nav" src="https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/melp_logo.png" />
+
+              <h2>Your trust is our top concern, so businesses can't pay to alter or remove their reviews</h2>
+            </div>
           </div>
         </div>
+        
         </div>
-          <div>
+
+        </div>
+
+
+        <div>
         <footer className="footer">
           <div className="about-user">
             <p className="about-user-contact">Contact</p>
@@ -220,6 +204,26 @@ class BusinessShow extends React.Component {
           </div>
 
         </footer>
+      </div>
+      </div>
+      <div className="right-side">
+        <div className="info-bar">
+          <div className="busdirbut" >
+            <i className="fas fa-directions"></i>
+            &nbsp;&nbsp;{bisAddress}
+          </div>
+        <hr id="side-hr" />
+          <div className="busdirbut" >
+            <i className="fas fa-clock"></i>
+            &nbsp;&nbsp;{bisHours}
+          </div>
+        <hr id="side-hr" />
+          <div className="busdirbut" >
+            <i className="fas fa-phone"></i>
+            &nbsp;&nbsp;{bisPhone}
+          </div>
+        </div>
+      </div>
       </div>
       </div>
     )
