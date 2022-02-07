@@ -33,6 +33,7 @@ class BusinessShow extends React.Component {
   }
 
   render() {
+    
     const { business } = this.props;
 
     if (this.props.currentBusiness !== undefined) {
@@ -78,7 +79,8 @@ class BusinessShow extends React.Component {
       bisHours = this.props.currentBusiness.hours
     }
 
-    console.log(this.props)
+    // console.log(this.props.currentBusiness.latitude)
+    // console.log(this.props.businesses)
 
 
 
@@ -140,7 +142,8 @@ class BusinessShow extends React.Component {
         
         <div className="map-left">
           <h2>Location & Hours</h2>
-            <BusinessMap />
+            <BusinessMap business={this.props.currentBusiness}/>
+            
 
         </div>
           {/* <div className="bus-map-1">

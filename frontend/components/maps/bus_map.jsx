@@ -1,42 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { withRouter } from 'react-router-dom';
 
-import MarkerManager from '../../util/marker_manager';
+class BusinessMap extends React.Component{
 
-const getCoordsObj = latLng => ({
-  lat: latLng.lat(),
-  lng: latLng.lng()
-});
+    constructor(props) {
+        super(props)
+    }
 
-const mapOptions = {
-  center: {
-    lat: 37.773972,
-    lng: -122.431297
-  }, // San Francisco coords
-  zoom: 8
-};
+    componentDidMount() {
+      // console.log(this.props.business.latitude)
+        const mapOptions = {
+            center: { lat: this.props.business.latitude, lng: this.props.business.longitude },
+            zoom: 14
+        };
+        this.map = new google.maps.Map(this.mapNode, mapOptions);
+        const markerOptions = {
+            position: { lat: this.props.business.latitude, lng: this.props.business.longitude },
+            map: this.map
+        }
+        this.marker = new google.maps.Marker(markerOptions);
+    }
 
-class BusinessMap extends React.Component {
-  //...
-
-  componentDidMount() {
-    let mapOptions;
-
-    // set the map to show SF
-    mapOptions = {
-      center: { lat: 37.7758, lng: -122.435 }, // this is SF
-      zoom: 11.5
-    };
-    
-
-    // wrap this.mapNode in a Google Map
-    this.map = new google.maps.Map(this.mapNode, mapOptions);
-  }
-
-  render() {
-    return <div id="map-container" ref={(map) => (this.mapNode = map)}></div>;
-  }
+    render() {
+        return (
+            <div className="location-map" ref={map => this.mapNode = map}>
+            </div>
+        )
+    }
 }
 
-export default withRouter(BusinessMap);
+export default BusinessMap;

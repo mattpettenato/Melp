@@ -430,3 +430,8 @@
   color: rgba(0, 0, 0, 0.103);
   background-color: rgba(0, 0, 0, 0.103);
 }
+
+.location-map {
+  width: 315px;
+  height: 150px;
+}
