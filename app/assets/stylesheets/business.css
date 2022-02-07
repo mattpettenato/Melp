@@ -382,11 +382,18 @@
 }
 
 .info-bar {
-  position: relative;
+  position: sticky;
   display: flex;
   justify-content: space-around;
-  padding-left: 50px;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
   flex-direction: column;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  border-left: 1px solid #ebebeb;
+  border-right: 1px solid #ebebeb;
 }
 
 .guts-body {
@@ -423,4 +430,3 @@
   color: rgba(0, 0, 0, 0.103);
   background-color: rgba(0, 0, 0, 0.103);
 }
-
