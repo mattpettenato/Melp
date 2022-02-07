@@ -1,7 +1,7 @@
 
 @businesses.each do |business|
     json.set! business.id do
-        json.extract! business, :id, :name, :about, :rating, :phone, :address, :hours
+        json.extract! business, :id, :name, :about, :rating, :phone, :address, :hours, :websiteurl
 
 
         if business.photos.attached?
