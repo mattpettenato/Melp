@@ -78,43 +78,7 @@ class BusinessShow extends React.Component {
       bisHours = this.props.currentBusiness.hours
     }
 
-    // // const mathMe {
-    //   for (var x = 0; x < 10; x++) {
-    //   for (var y = 0; y < 10; y++) {
-    //     console.log("x: " + x + ", y: " + y);
-    //   }
-    // }
-    // // }
-
-    // const mth =       for (var x = 0; x < 10; x++) {
-    //   for (var y = 0; y < 10; y++) {
-    //     console.log("x: " + x + ", y: " + y);
-    //   }
-    // }
-
-    // const maths = this.props.businesses.map((item) =>
-    //   <div className="bis-splash-container" key={item.id}>
-    //     <div className="bis-splash" key={item.id}>
-    //       <Link className="bis-link1" key={item.id} to={`/businesses/${item.id}`}>
-    //         <img src={`https://github.com/mattpettenato/FullStack_Project/blob/main/melp_imgs/home/${item.id}/${item.id}.jpg?raw=true`} />
-
-    //         <div key={item.id}>
-    //           <p className="bis-name">{item.name}</p>
-    //           {/* <p className="bis-rating">{item.rating}</p> */}
-    //           <p className="bis-rating"><img src="https://raw.githubusercontent.com/mattpettenato/git_test/main/large/large_5.png" /></p>
-    //           <p className="bis-phone">{item.about}</p>
-
-    //           <p className="bis-address">{item.address}</p>
-
-
-    //         </div>
-    //       </Link>
-
-    //     </div>
-    //   </div>
-    // );
-
-    // console.log(this.props.currentBusiness.id)
+    console.log(this.props)
 
 
 
@@ -192,22 +156,28 @@ class BusinessShow extends React.Component {
         </div>
         
           <hr id="review-line"/>
+
+        <div className="map-left">
+          <h2>Location & Hours</h2>
+            <BusinessMap />
+
+        </div>
+          <hr id="review-line"/>
+
         <div className="bus-info-body">
         <div className="bus-reviews-1">
           <div className="review-warning">
-
+            <h1 className="recoreview">Recommended Reviews</h1>
             <div className="warning">
-              {/* <img className="hero-img-bus-nav" src="https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/melp_logo.png" /> */}
+              <img className="hero-img-bus-nav" src="https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/melp_logo.png" />
+
               <h2>Your trust is our top concern, so businesses can't pay to alter or remove their reviews</h2>
             </div>
           </div>
         </div>
-                  
-          {/* <div className="location-hours">
-            <h1>Location & Hours</h1>
-          </div> */}
+        
           <div className="bus-map-1">
-            <BusinessMap />
+            {/* <BusinessMap /> */}
             <div className="map-under">
               <span id="busdir">
                 <button className="busdirbut" >

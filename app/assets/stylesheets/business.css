@@ -245,18 +245,24 @@
 
 .warning h2 {
   font-size: 15px;
-  padding: 24px;
+  padding: 10px;
 }
 
 .warning {
   display: flex;
-  border: 1px solid green;
-
+  align-items: center;
+  height: 60px;
+  width: 715px;
+  background-color: #e2e0e0;
+  opacity: 0.8;
+  border-radius: 3px;
+  justify-content: flex-end;
 
 }
 
 .review-warning {
   display: flex;
+  flex-direction: column;
   /* border-radius: 25px; */
 }
 
@@ -335,4 +341,36 @@
   /* margin-right: 10%; */
   /* padding-left: 63px; */
   /* padding-right: 63px; */
+}
+
+.warning img {
+  height: 75px;
+}
+
+.recoreview {
+  margin-bottom: 20px;
+  /* padding-top: 25px; */
+  font-size: 25px;
+  font-weight: 600;
+  /* border-top: 1px solid #e2e0e0; */
+}
+
+.map-left {
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  /* justify-content: center; */
+  align-content: normal;
+  column-gap: 700px;
+  white-space: nowrap;
+  margin: 0 auto;
+  /* max-width: 1144px; */
+  /* padding: 0 40px; */
+  position: relative;
+  justify-content: space-between;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-bottom: 32px;
 }
