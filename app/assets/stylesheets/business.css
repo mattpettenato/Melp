@@ -398,7 +398,9 @@
 }
 
 .info-bar {
-  position: absolute;
+  /* position: absolute; */
+  position: sticky;
+  top: 18px;
   display: flex;
   justify-content: space-around;
   padding-left: 16px !important;
@@ -437,7 +439,7 @@
   display: flex;
   position: sticky;
   flex-direction: column;
-  margin-right: 10%;
+  margin-right: 20%;
   margin-left: 10%;
   width: 365px;
 }
@@ -464,6 +466,7 @@
 
 .info-bar a {
   font-size: 14px;
+
 }
 
 .time-list p {
