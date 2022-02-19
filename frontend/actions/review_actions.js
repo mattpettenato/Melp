@@ -3,6 +3,9 @@ import * as APIUtil from '../util/reviews_api_util';
 export const RECEIVE_ALL_REVIEWS = 'RECEIVE_ALL_REVIEWS';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const CREATE_REVIEW = 'CREATE_REVIEW';
+export const REMOVE_REVIEW = "REMOVE_REVIEW";
+export const RECEIVE_REVIEW_ERRORS = "RECEIVE_REVIEW_ERRORS";
+export const CLEAR_REVIEW_ERRORS = "CLEAR_REVIEW_ERRORS";
 
 export const fetchAllReviews = (businessId) => (dispatch) => {
   return APIUtil.fetchAllReviews(businessId).then((reviews) => {
@@ -21,6 +24,10 @@ export const createReview = (review, businessId) => (dispatch) => {
     return dispatch(receiveReview(review))
   })
 }
+
+export const clearReviewErrors = () => ({
+  type: CLEAR_REVIEW_ERRORS,
+})
 
 export const receiveAllReviews = (reviews) => {
   return {
