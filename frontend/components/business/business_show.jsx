@@ -136,10 +136,12 @@ console.log(prnDt);
         <div className="above-review">
 
           <div className="write-review">
-            <button className="write-review-button">
+            <Link to={`/businesses/${this.props.currentBusiness.id}/reviews/new`}>
+              <button className="write-review-button">
               <i className="far fa-star"></i>
               &nbsp;&nbsp;Write a Review
-            </button>
+                </button>
+            </Link>
           </div>
           
         </div>

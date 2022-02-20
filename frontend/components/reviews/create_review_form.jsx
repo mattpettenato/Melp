@@ -27,7 +27,7 @@ export default class CreateReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const review = Object.assign({}, this.state);
-    this.props.createReview(review, this.props.business.id).then(() => this.props.history.push(`/businesses/${this.props.business.id}`))
+    this.props.createReview(review, this.props.currentBusiness.id).then(() => this.props.history.push(`/businesses/${this.props.currentBusiness.id}`))
   }
 
   handleChange(field) {
@@ -45,7 +45,7 @@ export default class CreateReviewForm extends React.Component {
         (<li key={index} className="review-error">{error}</li>)
       )
     }
-    if (!this.props.business) return null;
+    if (!this.props.currentBusiness) return null;
     
     return (
       <div>
@@ -53,7 +53,7 @@ export default class CreateReviewForm extends React.Component {
           <NavBarContainer/>
         </div>
         <form onSubmit={this.handleSubmit} className="create-review-form">
-          <Link className="create-review-title" to={`/businesses/${this.props.business.id}`}>{this.props.business.name}</Link>
+          <Link className="create-review-title" to={`/businesses/${this.props.currentBusiness.id}`}>{this.props.currentBusiness.name}</Link>
 
           <button type="submit" className="create-review-submit" onClick={this.clearErrors}>Post Review</button>
           <div className='errors-container'>
