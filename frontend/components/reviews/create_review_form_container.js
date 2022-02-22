@@ -1,20 +1,24 @@
-import { connect } from "react-redux";
-import { createReview, clearReviewErrors } from "../../actions/review_actions";
-import { fetchBusiness } from "../../actions/business_actions";
-import CreateReviewForm from './create_review_form'
+import {connect} from "react-redux";
+import { fetchBusiness } from '../../actions/business_actions';
+import {createReview, clearReviewErrors} from "../../actions/review_actions";
+import { logout } from "../../actions/session_actions";
+import ReviewForm from "../reviews/create_review_form";
 
-const mapStateToProps = (state, ownProps) => ({
-  formType: 'Create Review',
-  business: state.entities.businesses[ownProps.match.params.businessId],
-  currentUser: state.entities.users[state.session.id],
-  user_id: state.session.id,
-  errors: Object.values(state.errors.review),
-})
+const mSTP = (state, ownProps) => {
+    const businessId = ownProps.match.params.businessId;
+    return {
+    business: state.entities.businesses[businessId],
+    businessId: businessId,
 
-const mapDispatchToProps = dispatch => ({
-  createReview: (review, businessId) => dispatch(createReview(review, businessId)),
-  fetchBusiness: businessId => dispatch(fetchBusiness(businessId)),
-  clearReviewErrors: () => dispatch(clearReviewErrors())
-})
+    currentUser: state.entities.users[state.session.id],
+    errors: state.errors.reviews,
+}}
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateReviewForm)
+const mDTP = (dispatch) => ({
+    createReview: review => dispatch(createReview(review)),
+    logout: () => dispatch(logout()),
+    fetchBusiness: businessId => dispatch(fetchBusiness(businessId)),
+    clearErrors: () => dispatch(clearReviewErrors())
+});
+
+export default connect(mSTP, mDTP)(ReviewForm);

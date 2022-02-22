@@ -22,6 +22,10 @@ class BusinessShow extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.fetchBusiness(this.props.match.params.businessId);
+        if (this.props.currentBusiness !== undefined) {
+      const curBus1 = this.props.currentBusiness
+      console.log(curBus1.id)
+    }
   }
 
   componentDidUpdate(prevProps) {
@@ -33,11 +37,16 @@ class BusinessShow extends React.Component {
   }
 
   render() {
+    // console.log(this.props.currentBusiness)
+    if (this.props.currentBusiness !== undefined) {
+      const curBus1 = this.props.currentBusiness
+      console.log(curBus1.id)
+    }
     
     var options = {  weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
     var prnDt = 'Printed on ' + new Date().toLocaleTimeString('en-us', options);
 
-console.log(prnDt);
+    // console.log(prnDt);
 
     const { business } = this.props;
 
@@ -136,7 +145,7 @@ console.log(prnDt);
         <div className="above-review">
 
           <div className="write-review">
-            <Link to={`/businesses/${this.props.currentBusiness.id}/reviews/new`}>
+            <Link to={`/businesses/${this.props.currentBusiness.id}/review`}>
               <button className="write-review-button">
               <i className="far fa-star"></i>
               &nbsp;&nbsp;Write a Review
