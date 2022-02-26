@@ -101,8 +101,6 @@ class BusinessShow extends React.Component {
     // console.log(this.props.currentBusiness.latitude)
     // console.log(this.props.businesses)
 
-
-
     return (
       <div>
         <div className="business-page-nav">
