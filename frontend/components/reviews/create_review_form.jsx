@@ -90,9 +90,22 @@ class ReviewForm extends React.Component {
           </div>
 
           <div className="review-body">
-            
             <div className="review-text">
               {/* <textarea name="" id="" cols="30" rows="10"></textarea> */}
+              <div className="review-ratings-1">
+                <form>
+                  <input type="radio" name="radAnswer"></input>
+                  <label>Not good</label>
+                  <input type="radio" name="radAnswer"></input>
+                  <label>Could've been better</label>
+                  <input type="radio" name="radAnswer"></input>
+                  <label>OK</label>
+                  <input type="radio" name="radAnswer"></input>
+                  <label>Good</label>
+                  <input type="radio" name="radAnswer"></input>
+                  <label>Great</label>
+                </form>
+              </div>
             </div>
           </div>
         </div>
