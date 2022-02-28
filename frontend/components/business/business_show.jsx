@@ -15,7 +15,7 @@ class BusinessShow extends React.Component {
     super(props);
     this.state = {
       hasReview: false,
-      businessId: this.props.businessId
+      // businessId: this.props.currentBusiness.id
     };
   }
 
@@ -24,7 +24,7 @@ class BusinessShow extends React.Component {
     this.props.fetchBusiness(this.props.match.params.businessId);
         if (this.props.currentBusiness !== undefined) {
       const curBus1 = this.props.currentBusiness
-      console.log(curBus1.id)
+      // console.log(this.props)
     }
   }
 
@@ -38,9 +38,11 @@ class BusinessShow extends React.Component {
 
   render() {
     // console.log(this.props.currentBusiness)
+    // console.log(this.props)
     if (this.props.currentBusiness !== undefined) {
       const curBus1 = this.props.currentBusiness
-      console.log(curBus1.id)
+      const busRevs = this.props.reviews
+      console.log(this.state)
     }
     
     var options = {  weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };

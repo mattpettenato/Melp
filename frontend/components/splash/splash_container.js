@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import Splash from './splash'
 import { fetchBusiness } from '../../actions/business_actions';
+import { fetchUser } from '../../actions/users_actions'
 
 const mSTP = (state) => {
   return {
@@ -12,7 +13,10 @@ const mDTP = (dispatch) => {
   return {
     fetchBusiness: (businessId) => {
       return dispatch(fetchBusiness(businessId));
-    }
+    },
+    fetchUser: (userId => {
+      return dispatch(fetchUser(userId))
+    })
   }
 }
 

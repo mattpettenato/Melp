@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2022_02_07_060415) do # rubocop:disable Met
   end
 
   create_table 'reviews', force: :cascade do |t|
-    t.text 'body', null: false  
+    t.text 'body', null: false
     t.integer 'rating', null: false
     t.integer 'author_id', null: false
     t.integer 'business_id', null: false

@@ -1,6 +1,6 @@
 class Business < ApplicationRecord
     validates :name, :about, :phone, :address, :hours, presence: true
-    validates :rating, inclusion:{in: (1..5)}
+    # validates :rating, inclusion:{in: (1..5)}
 
     has_many_attached :photos
 

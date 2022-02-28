@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import {Link, Redirect} from "react-router-dom";
 import NavBar from "../nav_bar/nav_bar";
 import NavBarContainer from "../nav_bar/nav_bar_container";
@@ -7,22 +8,26 @@ import SearchHome from "../search/search_home";
 class ReviewForm extends React.Component {
   constructor(props){
     super(props);
-    this.state= {
-      rating:  4,
-      body: "",
-    };
+    // this.state= {
+    //   rating:  4,
+    //   body: "",
+
+    // };
+    
 
     this.handleSubmit = this.handleSubmit.bind(this);
 
   }
 
   componentDidMount() {
-    this.props.fetchBusiness(this.props.businessId)
+    this.props.fetchBusiness(this.props.businessId);
+    this.props.fetchAllReviews(this.props.match.params.businessId)
   }
 
   handleSubmit(e){
     e.preventDefault();
     const businessId = parseInt(this.props.match.params.businessId);
+
     const formData = new FormData();
     formData.append('review[rating]', this.state.rating)
     formData.append('review[body]', this.state.body)
@@ -56,13 +61,16 @@ class ReviewForm extends React.Component {
     }
   }
 
+  
+
   render(){
     if (!this.props.business) return null;
     // if (this.props.currentBusiness !== undefined) {
     //   const curBus1 = this.props.currentBusiness
     // }
-    console.log(this.props.business.name)
-    
+    // console.log(this.props)
+    // const [body, setBody] = useState('')
+    console.log(getState())
 
     return(
       <div>
@@ -94,18 +102,26 @@ class ReviewForm extends React.Component {
               {/* <textarea name="" id="" cols="30" rows="10"></textarea> */}
               <div className="review-ratings-1">
                 <form>
-                  <input type="radio" name="radAnswer"></input>
+                  <input type="radio" name="radAnswer" value="1"></input>
                   <label>Not good</label>
-                  <input type="radio" name="radAnswer"></input>
+                  <input type="radio" name="radAnswer" value="2"></input>
                   <label>Could've been better</label>
-                  <input type="radio" name="radAnswer"></input>
+                  <input type="radio" name="radAnswer" value="3"></input>
                   <label>OK</label>
-                  <input type="radio" name="radAnswer"></input>
+                  <input type="radio" name="radAnswer" value="4"></input>
                   <label>Good</label>
-                  <input type="radio" name="radAnswer"></input>
+                  <input type="radio" name="radAnswer" value="5"></input>
                   <label>Great</label>
                 </form>
               </div>
+              <div className="review-text-box">
+                <textarea
+                  required
+                  // value={body}
+                  // onChange={(e) => setBody(e.target.value)}
+                ></textarea>
+              </div>
+              {/* <p>{ body }</p> */}
             </div>
           </div>
         </div>
