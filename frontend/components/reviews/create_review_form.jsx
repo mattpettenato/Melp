@@ -58,6 +58,11 @@ class ReviewForm extends React.Component {
 
   render(){
     if (!this.props.business) return null;
+    // if (this.props.currentBusiness !== undefined) {
+    //   const curBus1 = this.props.currentBusiness
+    // }
+    console.log(this.props.business.name)
+    
 
     return(
       <div>
@@ -70,6 +75,28 @@ class ReviewForm extends React.Component {
             <NavBarContainer/>
           </div>
         </div>
+
+        <div className="review-page-1">
+          <div className="review-bus-name">
+            <div className="rev-name-1">
+              <Link to={`/businesses/${this.props.business.id}`}>
+                <h1>{this.props.business.name}</h1>
+              </Link>
+            </div>
+
+            <div className="review-guide">
+              <a href="https://www.yelp.com/guidelines">Read our review guidelines</a>
+            </div>
+          </div>
+
+          <div className="review-body">
+            
+            <div className="review-text">
+              {/* <textarea name="" id="" cols="30" rows="10"></textarea> */}
+            </div>
+          </div>
+        </div>
+
         <footer className="footer">
           <div className="about-user">
             <p className="about-user-contact">Contact</p>
