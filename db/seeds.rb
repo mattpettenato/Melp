@@ -49,16 +49,19 @@ bus4 = Business.create!({
                         longitude: -122.40735018605879
                         })
 
-rev1 = Review.create!({
-                        body: 'This is a test review',
-                        rating: 1,
-                        author_id:user1.id,
-                        business_id: bus3.id
-                    })
+# rev1 = Review.create!({
+#                         body: 'This is a test review',
+#                         rating: 1,
+#                         author_id: user1.id,
+#                         business_id: bus3.id
+#                     })
 
-rev2 = Review.create!({
-                        body: 'This is a test review 2',
-                        rating: 2,
-                        author_id: user2.id,
-                        business_id: bus2.id
-                    })
+# rev2 = Review.create!({
+#                         body: 'This is a test review 2',
+#                         rating: 2,
+#                         author_id: user2.id,
+#                         business_id: bus2.id
+#                     })
+
+rev1 = Review.create(body: "The food was great", rating: 4, author_id: user1.id, business_id: bus1.id)
+rev2 = Review.create(body:"The food was great", rating: 4, author_id: user1.id, business_id: bus2.id)

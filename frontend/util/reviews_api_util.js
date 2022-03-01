@@ -1,5 +1,3 @@
-
-
 export const fetchAllReviews = (businessId) => {
   return $.ajax({
     method: "GET",
@@ -21,3 +19,10 @@ export const createReview = (review, businessId) => {
     data: { review }
   })
 }
+
+// export const deleteReview = (reviewId) => {
+//   return $.ajax({
+//     url: `api/reviews/${reviewId}`,
+//     method: `DELETE`
+//   })
+// }

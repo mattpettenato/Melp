@@ -9,7 +9,7 @@ const mSTP = (state, ownProps) => {
     return {
       reviews: Object.values(state.entities.reviews[ownProps.currentBusiness.id]),
       currentBusiness: ownProps.currentBusiness,
-      ratings: Object.values(state.entities.reviews).map(review => (review.rating)),
+      // ratings: Object.values(state.entities.reviews).map(review => (review.rating)),
       businessId: ownProps.currentBusiness.id
     }
   } else {

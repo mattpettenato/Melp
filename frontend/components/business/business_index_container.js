@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchBusinesses, fetchBusiness } from '../../actions/business_actions'
 import BusinessIndex from './business_index'
+import { fetchAllReviews } from '../../actions/review_actions';
 import React from 'react';
 import { withRouter } from "react-router-dom";
 
@@ -15,6 +16,7 @@ const mDTP = (dispatch) => {
   return {
     fetchBusinesses: () => dispatch(fetchBusinesses()),
     fetchBusiness: (businessId) => dispatch(fetchBusiness(businessId)),
+    fetchAllReviews: (businessId) => dispatch(fetchAllReviews(businessId)),
   }
 }
 
