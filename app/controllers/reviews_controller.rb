@@ -30,7 +30,7 @@ end
 private
 
 def review_params
-  params.require(:review).permit(:body, :rating, :author_id, :business_id)
+  params.require(:review).permit(:body, :rating, :user_id, :business_id)
 end
 
 end

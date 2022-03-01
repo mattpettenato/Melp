@@ -8,6 +8,7 @@ const mSTP = (state, ownProps) => {
   return {
     currentBusiness: state.entities.businesses[ownProps.match.params.businessId],
     reviews: state.entities.reviews,
+    // reviews: Object.values(state.entities.reviews),
     authors: state.entities.users
   }
 };

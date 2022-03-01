@@ -3,10 +3,11 @@ import React from "react";
 // import BusinessNavContainer from "../business_nav/business_nav_container";
 import NavBar from "../nav_bar/nav_bar";
 import NavBarContainer from '../../components/nav_bar/nav_bar_container';
-
+import ReviewListItem from "../reviews/review_list_item";
 import SearchHome from "../search/search_home"
 import { Link } from "react-router-dom";
 import BusinessMap from "../maps/bus_map"
+
 
 // import ReviewIndexContainer from "../reviews/review_index_container";
 
@@ -15,17 +16,18 @@ class BusinessShow extends React.Component {
     super(props);
     this.state = {
       hasReview: false,
-      // businessId: this.props.currentBusiness.id
+      businessId: this.props.businesses
     };
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.fetchBusiness(this.props.match.params.businessId);
-        if (this.props.currentBusiness !== undefined) {
-      const curBus1 = this.props.currentBusiness
-      // console.log(this.props)
-    }
+    //     if (this.props.currentBusiness !== undefined) {
+    //   const curBus1 = this.props.currentBusiness
+    //   // console.log(this.props)
+    // }
+    this.props.fetchAllReviews(this.props.match.params.businessId)
   }
 
   componentDidUpdate(prevProps) {
@@ -42,8 +44,8 @@ class BusinessShow extends React.Component {
     if (this.props.currentBusiness !== undefined) {
       const curBus1 = this.props.currentBusiness
       const busRevs = this.props.reviews
-      console.log(this.state)
     }
+      // console.log(this.props)
     
     var options = {  weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
     var prnDt = 'Printed on ' + new Date().toLocaleTimeString('en-us', options);
@@ -102,6 +104,7 @@ class BusinessShow extends React.Component {
 
     // console.log(this.props.currentBusiness.latitude)
     // console.log(this.props.businesses)
+    console.log(this.props)
 
     return (
       <div>
@@ -187,7 +190,19 @@ class BusinessShow extends React.Component {
 
               <h2>Your trust is our top concern, so businesses can't pay to alter or remove their reviews</h2>
             </div>
+            
+            {/* <ReviewListItem /> */}
+                    <ul>
+                        {
+                            
+                        <ReviewListItem currentBusiness={this.props.currentBusiness}/>
+                            
+                        
+                        }
+                    </ul>
           </div>
+
+
         </div>
         
         </div>

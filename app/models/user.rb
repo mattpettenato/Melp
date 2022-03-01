@@ -6,15 +6,15 @@ class User < ApplicationRecord
   attr_reader :password
   after_initialize :ensure_session_token
 
-  has_many :businesses,
-    foreign_key: :owner_id,
-    primary_key: :id,
-    class_name: :Business
+  # has_many :businesses,
+  #   foreign_key: :owner_id,
+  #   primary_key: :id,
+  #   class_name: :Business
 
   has_many :reviews,
-    foreign_key: :author_id,
-    primary_key: :id,
-    class_name: :Review
+  foreign_key: :user_id,
+  primary_key: :id,
+  class_name: :Review
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

@@ -16,7 +16,7 @@ class Splash extends React.Component {
     this.props.fetchBusiness(2);
     this.props.fetchBusiness(3);
     this.props.fetchBusiness(4);
-    this.props.fetchUser();
+    // this.props.fetchUser(1);
   }
 
   render() {
