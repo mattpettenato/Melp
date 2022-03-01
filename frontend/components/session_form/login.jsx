@@ -139,6 +139,10 @@ class Login extends React.Component {
           </div>
           <img className="signup-img" src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png" />
         </div>
+      
+      </div>
+      <div className="fix-footer">
+
           <footer className="footer">
             <div className="about-user">
               <p className="about-user-contact">Contact</p>
@@ -157,7 +161,6 @@ class Login extends React.Component {
             </div>
 
           </footer>
-      
       </div>
       </div>
 

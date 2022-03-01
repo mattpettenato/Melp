@@ -1,4 +1,3 @@
-
 .session-form-nav {
     background-color: #c41200;
     display: flex;
@@ -9,19 +8,20 @@
     width: auto;
 }
 
-.session-form-nav img{
+.session-form-nav img {
     height: 125px;
     margin-bottom: -20px;
 }
 
 .session-form-container {
-    margin-top: 100px;;
+    margin-top: 100px;
+    ;
     display: flex;
     justify-content: space-evenly;
     min-height: 400px;
-    width:960px;
-    margin-left:auto;
-    margin-right:auto;
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
@@ -29,45 +29,51 @@
     height: 300px;
     vertical-align: middle;
 }
+
 .session-form-box {
     display: flex;
     flex-flow: column wrap;
     width: 300px;
 
- }
-.session-form-box form{
+}
+
+.session-form-box form {
     display: flex;
     flex-flow: column wrap;
 }
+
 .login-input {
     margin: 5px;
     width: 300px;
     height: 25px;
 }
+
 .name-input {
     height: 40px;
 }
+
 .name-input input {
     margin: 5px;
     width: 143px;
     height: 25px;
 }
+
 .name-input input:first-child {
     margin-right: 0px;
 }
 
- .session-form-title {
+.session-form-title {
     font: bold 22px helvetica;
     color: #c41200;
     text-decoration: none;
     margin: 10px auto 10px auto;
- }
+}
 
- .session-form-title-2 {
+.session-form-title-2 {
     font: bold 15px helvetica;
     text-decoration: none;
     margin: 10px auto 10px auto;
- }
+}
 
 .submit {
     height: 35px;
@@ -99,7 +105,7 @@
 .footer {
     margin-top: 70px;
     // margin-bottom: 100%;
-    
+
     // background: lightgray;
     background: #eeeeef;
     height: 100%;
@@ -123,13 +129,22 @@
     // bottom: 0;
     // width: 100%;
     // height: 2.5rem; 
-      display: flex;
-//   justify-content: center;
+    display: flex;
+    //   justify-content: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    // padding-top: 100px;
 }
+
 #wrapper {
-    margin-left:auto;
-    margin-right:auto;
-    padding-bottom: 2.5rem; 
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 2.5rem;
     min-height: 100%;
     // width:960px;
+}
+
+.session-form {
+    min-height: 80vh;
 }

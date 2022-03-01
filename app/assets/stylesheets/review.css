@@ -94,3 +94,58 @@ a:active {
   /* background: blue; */
 
 }
+
+.review-text-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-text-box textarea {
+  resize: none;
+  width: 580px;
+  height: 275px;
+  border: none;
+
+}
+
+.review-ratings-1 {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.post-review button {
+  background-color: rgba(224, 7, 7, 1);
+  color: #fff;
+  border: none;
+  width: 180px;
+  height: 45px;
+}
+
+.post-review-button {
+  border: 1px solid rgba(224, 7, 7, 1);
+  ;
+  border-radius: 3px;
+  color: white;
+  background-color: rgba(224, 7, 7, 1);
+  ;
+  font-size: 18px;
+  /* font-family: $main-font; */
+  font-weight: 500;
+  padding: 3px 12px;
+
+  cursor: pointer;
+}
+
+.post-review {
+  margin-top: 40px;
+}
+
+.review-page {
+  min-height: 80vh;
+}

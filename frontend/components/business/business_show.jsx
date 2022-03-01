@@ -153,12 +153,12 @@ class BusinessShow extends React.Component {
         <div className="above-review">
 
           <div className="write-review">
-            {/* <Link to={`/businesses/${this.props.currentBusiness.id}/review`}>
+            <Link to={`/businesses/${this.props.currentBusiness.id}/review`}>
               <button className="write-review-button">
               <i className="far fa-star"></i>
               &nbsp;&nbsp;Write a Review
-                </button>
-            </Link> */}
+              </button>
+            </Link>
           </div>
           
         </div>

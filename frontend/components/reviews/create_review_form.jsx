@@ -73,7 +73,8 @@ class ReviewForm extends React.Component {
     console.log(getState())
 
     return(
-      <div>
+      <div id="wrapper">
+        <div className="review-page">
         <div className="business-page-nav">
           <Link to="/">
             <img className="hero-img-bus-nav" src="https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/melp_logo.png" />
@@ -117,33 +118,47 @@ class ReviewForm extends React.Component {
               <div className="review-text-box">
                 <textarea
                   required
-                  // value={body}
-                  // onChange={(e) => setBody(e.target.value)}
-                ></textarea>
+                  className="textarea-review-box"
+                  // value={this.state.body}
+                  placeholder="Doesn’t look like much when you walk past, but I was practically dying of hunger so I popped in. The definition of a hole-in-the-wall. I got the regular hamburger and wow…  there are no words. A classic burger done right. Crisp bun, juicy patty, stuffed with all the essentials (ketchup, shredded lettuce, tomato, and pickles). There’s about a million options available between the menu board and wall full of specials, so it can get a little overwhelming, but you really can’t go wrong. Not much else to say besides go see for yourself! You won’t be disappointed."
+                  // onChange={this.handleInput("body")}
+                >
+                </textarea>
               </div>
-              {/* <p>{ body }</p> */}
+          <div className="post-review">
+            <Link to={`/`}>
+              <button className="post-review-button">
+                Post Review
+              </button>
+            </Link>
+          </div>
+              
             </div>
           </div>
         </div>
 
-        <footer className="footer">
-          <div className="about-user">
-            <p className="about-user-contact">Contact</p>
-            <div className='gmail'><p>mtp855@gmail.com</p></div>
-          </div>
-          <div className="mylinks">
-            <p className="about-user-title">About</p>
-            <a href="https://www.linkedin.com/in/matthew-pettenato-936236123/" target="_blank">
-              <img className="ln-img" src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg" />
-            </a>
+      </div>
+      <div className="fix-footer">
 
-            <a href="https://github.com/mattpettenato" target="_blank">
-              <img className="git-img" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" />
-            </a>
+          <footer className="footer">
+            <div className="about-user">
+              <p className="about-user-contact">Contact</p>
+              <div className='gmail'><p>mtp855@gmail.com</p></div>
+            </div>
+            <div className="mylinks">
+              <p className="about-user-title">About</p>
+              <a href="https://www.linkedin.com/in/matthew-pettenato-936236123/" target="_blank">
+                <img className="ln-img" src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg" />
+              </a>
 
-          </div>
+              <a href="https://github.com/mattpettenato" target="_blank">
+                <img className="git-img" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" />
+              </a>
 
-        </footer>
+            </div>
+
+          </footer>
+      </div>
       </div>
     )
   }
