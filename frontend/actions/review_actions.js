@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/reviews_api_util';
+import * as reviewsAPIUtil from '../util/reviews_api_util';
 
 export const RECEIVE_ALL_REVIEWS = 'RECEIVE_ALL_REVIEWS';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
@@ -6,24 +6,7 @@ export const CREATE_REVIEW = 'CREATE_REVIEW';
 export const REMOVE_REVIEW = "REMOVE_REVIEW";
 export const RECEIVE_REVIEW_ERRORS = "RECEIVE_REVIEW_ERRORS";
 export const CLEAR_REVIEW_ERRORS = "CLEAR_REVIEW_ERRORS";
-
-export const fetchAllReviews = (businessId) => (dispatch) => {
-  return APIUtil.fetchAllReviews(businessId).then((reviews) => {
-    return dispatch(receiveAllReviews(reviews));
-  })
-}
-
-export const fetchReview = (businessId, reviewId) => (dispatch) => {
-  return APIUtil.fetchReview(businessId, reviewId).then((review) => {
-    return dispatch(receiveReview(review));
-  })
-}
-
-export const createReview = (review, businessId) => (dispatch) => {
-  return APIUtil.createReview(review, businessId).then((review) => {
-    return dispatch(receiveReview(review))
-  })
-}
+export const REMOVE_ERRORS = "REMOVE_ERRORS";
 
 export const clearReviewErrors = () => ({
   type: CLEAR_REVIEW_ERRORS,
@@ -41,4 +24,42 @@ export const receiveReview = (review) => {
     type: RECEIVE_REVIEW,
     review
   }
+}
+
+export const receiveErrors = errors => {
+  return ({
+    type: RECEIVE_REVIEW_ERRORS,
+    errors
+  })
+}
+
+export const removeErrors = () => {
+  return ({
+    type: REMOVE_ERRORS
+  })
+}
+
+export const fetchAllReviews = (businessId) => (dispatch) => {
+  return reviewsAPIUtil.fetchAllReviews(businessId)
+    .then(
+      reviews => dispatch(receiveAllReviews(reviews)),
+      errors => dispatch(receiveErrors(errors.response.JSON))
+    )
+}
+
+export const fetchReview = (reviewId) => (dispatch) => {
+  return reviewsAPIUtil.fetchReview(reviewId)
+    .then(
+      review => dispatch(receiveReview(review)),
+      errors => dispatch(receiveErrors(errors.response.JSON))
+      )
+}
+
+export const createReview = (businessId, review) => (dispatch) => {
+  return reviewsAPIUtil.createReview(businessId, review)
+  .then(
+    review => (dispatch(receiveReview(review),
+    errors => dispatch(receiveErrors(errors.reponse.JSON))
+    )
+  ))
 }

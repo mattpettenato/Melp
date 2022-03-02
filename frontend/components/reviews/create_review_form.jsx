@@ -39,6 +39,10 @@ class ReviewForm extends React.Component {
     })
   }
 
+  handleInput(field) {
+    return e => this.setState({ [field]: e.target.value })
+  }
+
   update(field) {
     if (field === "rating"){
       return e => this.setState({ [field]: parseInt(e.currentTarget.value) });
@@ -46,19 +50,41 @@ class ReviewForm extends React.Component {
     return e => this.setState({ [field]: e.currentTarget.value })
   }
 
-  ratingPhrase(){
-    switch(this.rating){
-      case 1:
-        return "Not good";
-      case 2:
-        return "Could've been better"
-      case 3:
-        return "OK";
-      case 4:
-        return "Good";
-      case 5:
-        return "Great"
+  // ratingPhrase(){
+  //   switch(this.rating){
+  //     case 1:
+  //       return "Not good";
+  //     case 2:
+  //       return "Could've been better"
+  //     case 3:
+  //       return "OK";
+  //     case 4:
+  //       return "Good";
+  //     case 5:
+  //       return "Great"
+  //   }
+  // }
+
+  ratingRadio() {
+    const updateRating = (ratingValue) => {
+      this.setState({ rating: ratingValue })
     }
+    return (
+      <div className="review-ratings-1">
+        
+          <input type="radio" name="radAnswer" value="1"></input>
+          <label>Not good</label>
+          <input type="radio" name="radAnswer" value="2"></input>
+          <label>Could've been better</label>
+          <input type="radio" name="radAnswer" value="3"></input>
+          <label>OK</label>
+          <input type="radio" name="radAnswer" value="4"></input>
+          <label>Good</label>
+          <input type="radio" name="radAnswer" value="5"></input>
+          <label>Great</label>
+        
+      </div>
+    )
   }
 
   
@@ -100,21 +126,8 @@ class ReviewForm extends React.Component {
 
           <div className="review-body">
             <div className="review-text">
-              {/* <textarea name="" id="" cols="30" rows="10"></textarea> */}
-              <div className="review-ratings-1">
-                <form>
-                  <input type="radio" name="radAnswer" value="1"></input>
-                  <label>Not good</label>
-                  <input type="radio" name="radAnswer" value="2"></input>
-                  <label>Could've been better</label>
-                  <input type="radio" name="radAnswer" value="3"></input>
-                  <label>OK</label>
-                  <input type="radio" name="radAnswer" value="4"></input>
-                  <label>Good</label>
-                  <input type="radio" name="radAnswer" value="5"></input>
-                  <label>Great</label>
-                </form>
-              </div>
+              {this.ratingRadio()}
+
               <div className="review-text-box">
                 <textarea
                   required
@@ -126,11 +139,9 @@ class ReviewForm extends React.Component {
                 </textarea>
               </div>
           <div className="post-review">
-            <Link to={`/`}>
-              <button className="post-review-button">
-                Post Review
-              </button>
-            </Link>
+            <button className="post-review-button">
+              Post Review
+            </button>
           </div>
               
             </div>
