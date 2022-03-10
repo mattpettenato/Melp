@@ -37,3 +37,11 @@ class Review < ApplicationRecord
   class_name: :User
 
 end
+
+# class Review < ApplicationRecord
+#   validates_presence_of :rating, :comment, :user_id, :business_id
+
+#   belongs_to :user
+
+#   belongs_to :business
+# end

@@ -10,9 +10,9 @@ import Splash from './splash/splash_container';
 
 import BusinessIndexContainer from "./business/business_index_container";
 import BusinessShowContainer from "./business/business_show_container"
-
+import ReviewForm from "./reviews/create_review_form"
 import CreateReviewFormContainer from './reviews/create_review_form_container';
-
+import ReviewIndexContainer from './reviews/reviews_index_container'
 
 const App = () => (
   <div>
@@ -21,7 +21,7 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupContainer} />
       {/* <ProtectedRoute exact path="/businesses/:businessId/reviews/new" component={CreateReviewFormContainer} /> */}
       <Route exact path="/businesses/:businessId" component={BusinessShowContainer} />
-      <ProtectedRoute  exact path="/businesses/:businessId/review" component={CreateReviewFormContainer} />
+      <ProtectedRoute  exact path="/businesses/:businessId/reviews" component={CreateReviewFormContainer} />
       <Route path="/" component={Splash} />
     </Switch>
   </div>

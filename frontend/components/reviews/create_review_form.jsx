@@ -26,17 +26,21 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    const businessId = parseInt(this.props.match.params.businessId);
+    // const businessId = parseInt(this.props.match.params.businessId);
 
-    const formData = new FormData();
-    formData.append('review[rating]', this.state.rating)
-    formData.append('review[body]', this.state.body)
-    formData.append('review[business_id]', businessId)
-    this.props.createReview(formData).then(()=>{
-      if (this.props.errors.length === 0) {
-        this.props.history.push('/businesses/${businessId}')
-      }
-    })
+    // const formData = new FormData();
+    // formData.append('review[rating]', this.state.rating)
+    // formData.append('review[body]', this.state.body)
+    // formData.append('review[business_id]', businessId)
+    // this.props.createReview(formData).then(()=>{
+    //   if (this.props.errors.length === 0) {
+    //     this.props.history.push('/businesses/${businessId}')
+    //   }
+    // })
+    let review = this.state
+    review.business_id = this.props.businessId
+    this.props.createReview(this.props.businessId, review)
+    this.props.history.push(`/businesses/${this.props.businessId}`)
   }
 
   handleInput(field) {
@@ -90,13 +94,13 @@ class ReviewForm extends React.Component {
   
 
   render(){
-    if (!this.props.business) return null;
+    // if (!this.props.business) return null;
     // if (this.props.currentBusiness !== undefined) {
     //   const curBus1 = this.props.currentBusiness
     // }
-    // console.log(this.props)
+    console.log(this.props)
     // const [body, setBody] = useState('')
-    console.log(getState())
+    // console.log(getState())
 
     return(
       <div id="wrapper">
@@ -114,8 +118,8 @@ class ReviewForm extends React.Component {
         <div className="review-page-1">
           <div className="review-bus-name">
             <div className="rev-name-1">
-              <Link to={`/businesses/${this.props.business.id}`}>
-                <h1>{this.props.business.name}</h1>
+              <Link to={`/businesses/${this.props.businessId}`}>
+                <h1>{this.props.currentBusiness[this.props.businessId].name}</h1>
               </Link>
             </div>
 
@@ -173,6 +177,82 @@ class ReviewForm extends React.Component {
       </div>
     )
   }
-}
+  }
 
-export default ReviewForm;
+  export default ReviewForm;
+
+//       render() {
+//         if (!this.props.business) console.log('pooo');
+//         console.log('TEST1 TEST1 TEST1')
+//         console.log(this.props)
+//         console.log('TEST2 TEST2 TEST2')
+//         let bNameID;
+//         // bNameID = this.props.currentBusiness
+//         // if (this.props.currentBusines)
+//         // = this.props.businessId
+//         console.log(this.props.businessID)
+//         if ('key' in this.props.currentBusiness === this.props.businessID) {
+//           console.log('yeee')
+//         }
+
+        
+
+//         return (
+//           <div id="wrapper">
+//           <div className="business-page-nav">
+//             <Link to="/">
+//               <img className="hero-img-bus-nav" src="https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/melp_logo.png" />
+//             </Link>
+//             <SearchHome id="search-home-bus"/>
+//             <div className="busnav">
+//               <NavBarContainer/>
+//             </div>
+//           </div>
+
+//         <div className="review-page-1">
+//           <div className="review-bus-name">
+//             <div className="rev-name-1">
+//               <Link to={`/businesses/${this.props.businessid}`}>
+//                 <h1>{bNameID}</h1>
+//               </Link>
+//             </div>
+
+//             <div className="review-guide">
+//               <a href="https://www.yelp.com/guidelines">Read our review guidelines</a>
+//             </div>
+//           </div>
+
+//           <div className="review-body">
+//             <div className="review-text">
+//               {this.ratingRadio()}
+
+//               <div className="review-text-box">
+//                 <textarea
+//                   required
+//                   className="textarea-review-box"
+//                   // value={this.state.body}
+//                   placeholder="Doesn’t look like much when you walk past, but I was practically dying of hunger so I popped in. The definition of a hole-in-the-wall. I got the regular hamburger and wow…  there are no words. A classic burger done right. Crisp bun, juicy patty, stuffed with all the essentials (ketchup, shredded lettuce, tomato, and pickles). There’s about a million options available between the menu board and wall full of specials, so it can get a little overwhelming, but you really can’t go wrong. Not much else to say besides go see for yourself! You won’t be disappointed."
+//                   // onChange={this.handleInput("body")}
+//                 >
+//                 </textarea>
+//               </div>
+//           <div className="post-review">
+//             <button className="post-review-button">
+//               Post Review
+//             </button>
+//           </div>
+              
+//             </div>
+//           </div>
+//         </div>
+
+//             <div className="reviews">
+//                 <h1>
+//                     test
+//                 </h1>                                               
+//             </div>
+//           </div>
+//         )
+//     }
+// }
+// }

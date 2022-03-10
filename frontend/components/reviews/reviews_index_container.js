@@ -5,16 +5,18 @@ import ReviewIndex from '../reviews/review_index';
 
 const mSTP = (state, ownProps) => {
 
-  if(state.entities.reviews[ownProps.currentBusiness.id]) {
+  // if(state.entities.reviews[ownProps.currentBusiness.id]) {
     return {
-      reviews: Object.values(state.entities.reviews[ownProps.currentBusiness.id]),
-      currentBusiness: ownProps.currentBusiness,
+      // reviews: Object.values(state.entities.reviews[ownProps.currentBusiness.id]),
+      // currentBusiness: ownProps.currentBusiness,
+    currentBusiness: state.entities.businesses,
+
       // ratings: Object.values(state.entities.reviews).map(review => (review.rating)),
-      businessId: ownProps.currentBusiness.id
+      // businessId: ownProps.currentBusiness.id
+      businessId: ownProps.match.params.businessId,
     }
-  } else {
-    return {}
-  }
+  
+  // }
 }
 
 const mDTP = (dispatch) => {

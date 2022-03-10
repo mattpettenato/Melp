@@ -9,9 +9,13 @@ class ReviewIndex extends React.Component {
     render() {
         return (
             <div className="reviews">
+                <h1>
+                    test
+                </h1>
                 <ul>
-                    {this.props.reviews.reverse().map(review => (<ReviewListItem   review={review}
-                                                                    key={review.id}/>))}
+                    {/* {this.props.reviews.reverse().map(review => (<ReviewListItem   review={review}
+                                                                    key={review.id}/>))} */}
+                                                                    test
                 </ul>                                               
             </div>
         )

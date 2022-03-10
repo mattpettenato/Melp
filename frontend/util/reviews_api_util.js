@@ -16,7 +16,10 @@ export const createReview = (review, businessId) => {
   return $.ajax({
     method: "POST",
     url: `api/businesses/${businessId}/reviews`,
-    data: { review }
+    data: {
+      review: review,
+      businessId: businessId
+    }
   })
 }
 
@@ -24,5 +27,13 @@ export const createReview = (review, businessId) => {
 //   return $.ajax({
 //     url: `api/reviews/${reviewId}`,
 //     method: `DELETE`
+//   })
+// }
+
+// export const createReview = (review) =>{
+//   return $.ajax({ 
+//   url: "/api/reviews", 
+//   method: "POST", 
+//   data: review,
 //   })
 // }

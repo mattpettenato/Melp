@@ -109,7 +109,7 @@ class BusinessShow extends React.Component {
 
     // console.log(this.props.currentBusiness.latitude)
     // console.log(this.props.businesses)
-    console.log(this.props)
+    console.log(this.props.currentBusiness.name)
 
     return (
       <div>
@@ -153,11 +153,12 @@ class BusinessShow extends React.Component {
         <div className="above-review">
 
           <div className="write-review">
-            <Link to={`/businesses/${this.props.currentBusiness.id}/review`}>
+            <Link to={`/businesses/${this.props.currentBusiness.id}/reviews`}>
               <button className="write-review-button">
               <i className="far fa-star"></i>
               &nbsp;&nbsp;Write a Review
               </button>
+              {/* currBuss={this.props.currentBusiness} */}
             </Link>
           </div>
           
