@@ -8,20 +8,17 @@ import SearchHome from "../search/search_home";
 class ReviewForm extends React.Component {
   constructor(props){
     super(props);
-    // this.state= {
-    //   rating:  4,
-    //   body: "",
-
-    // };
-    
-
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state= {
+      rating:  4,
+      body: ""
+    };
+  this.handleSubmit = this.handleSubmit.bind(this);
 
   }
 
   componentDidMount() {
     this.props.fetchBusiness(this.props.businessId);
-    this.props.fetchAllReviews(this.props.match.params.businessId)
+    // this.props.fetchAllReviews(this.props.match.params.businessId)
   }
 
   handleSubmit(e){
@@ -54,6 +51,18 @@ class ReviewForm extends React.Component {
     return e => this.setState({ [field]: e.currentTarget.value })
   }
 
+  renderErrors() {
+    return (
+      <ul className="error-msg">
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    )
+  }
+
   // ratingPhrase(){
   //   switch(this.rating){
   //     case 1:
@@ -75,16 +84,15 @@ class ReviewForm extends React.Component {
     }
     return (
       <div className="review-ratings-1">
-        
-          <input type="radio" name="radAnswer" value="1"></input>
+          <input type="radio" name="radAnswer" value="1" onClick={() => updateRating(1)}></input>
           <label>Not good</label>
-          <input type="radio" name="radAnswer" value="2"></input>
+          <input type="radio" name="radAnswer" value="2" onClick={() => updateRating(2)}></input>
           <label>Could've been better</label>
-          <input type="radio" name="radAnswer" value="3"></input>
+          <input type="radio" name="radAnswer" value="3" onClick={() => updateRating(3)}></input>
           <label>OK</label>
-          <input type="radio" name="radAnswer" value="4"></input>
+          <input type="radio" name="radAnswer" value="4" onClick={() => updateRating(4)}></input>
           <label>Good</label>
-          <input type="radio" name="radAnswer" value="5"></input>
+          <input type="radio" name="radAnswer" value="5" onClick={() => updateRating(5)}></input>
           <label>Great</label>
         
       </div>
@@ -127,29 +135,35 @@ class ReviewForm extends React.Component {
               <a href="https://www.yelp.com/guidelines">Read our review guidelines</a>
             </div>
           </div>
-
-          <div className="review-body">
-            <div className="review-text">
-              {this.ratingRadio()}
-
-              <div className="review-text-box">
-                <textarea
-                  required
-                  className="textarea-review-box"
-                  // value={this.state.body}
-                  placeholder="Doesn’t look like much when you walk past, but I was practically dying of hunger so I popped in. The definition of a hole-in-the-wall. I got the regular hamburger and wow…  there are no words. A classic burger done right. Crisp bun, juicy patty, stuffed with all the essentials (ketchup, shredded lettuce, tomato, and pickles). There’s about a million options available between the menu board and wall full of specials, so it can get a little overwhelming, but you really can’t go wrong. Not much else to say besides go see for yourself! You won’t be disappointed."
-                  // onChange={this.handleInput("body")}
-                >
-                </textarea>
-              </div>
-          <div className="post-review">
-            <button className="post-review-button">
-              Post Review
-            </button>
+          <div className="errors-message">
+            {this.renderErrors()}
           </div>
-              
+
+          <form className="review-form" onSubmit={this.handleSubmit}>
+            <div className="review-body">
+              <div className="review-text">
+                {this.ratingRadio()}
+
+                <div className="review-text-box">
+                  <textarea
+                    className="textarea-review-box"
+                    type="text"
+                    value={this.state.body}
+                    placeholder="Doesn’t look like much when you walk past, but I was practically dying of hunger so I popped in. The definition of a hole-in-the-wall. I got the regular hamburger and wow…  there are no words. A classic burger done right. Crisp bun, juicy patty, stuffed with all the essentials (ketchup, shredded lettuce, tomato, and pickles). There’s about a million options available between the menu board and wall full of specials, so it can get a little overwhelming, but you really can’t go wrong. Not much else to say besides go see for yourself! You won’t be disappointed."
+                    // onChange={this.handleInput("body")}
+                    onChange={this.handleInput("body")}
+                  >
+                  </textarea>
+                </div>
+            <div className="post-review">
+              <button className="post-review-button">
+                Post Review
+              </button>
             </div>
-          </div>
+                
+              </div>
+            </div>
+          </form>
         </div>
 
       </div>
@@ -180,79 +194,3 @@ class ReviewForm extends React.Component {
   }
 
   export default ReviewForm;
-
-//       render() {
-//         if (!this.props.business) console.log('pooo');
-//         console.log('TEST1 TEST1 TEST1')
-//         console.log(this.props)
-//         console.log('TEST2 TEST2 TEST2')
-//         let bNameID;
-//         // bNameID = this.props.currentBusiness
-//         // if (this.props.currentBusines)
-//         // = this.props.businessId
-//         console.log(this.props.businessID)
-//         if ('key' in this.props.currentBusiness === this.props.businessID) {
-//           console.log('yeee')
-//         }
-
-        
-
-//         return (
-//           <div id="wrapper">
-//           <div className="business-page-nav">
-//             <Link to="/">
-//               <img className="hero-img-bus-nav" src="https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/melp_logo.png" />
-//             </Link>
-//             <SearchHome id="search-home-bus"/>
-//             <div className="busnav">
-//               <NavBarContainer/>
-//             </div>
-//           </div>
-
-//         <div className="review-page-1">
-//           <div className="review-bus-name">
-//             <div className="rev-name-1">
-//               <Link to={`/businesses/${this.props.businessid}`}>
-//                 <h1>{bNameID}</h1>
-//               </Link>
-//             </div>
-
-//             <div className="review-guide">
-//               <a href="https://www.yelp.com/guidelines">Read our review guidelines</a>
-//             </div>
-//           </div>
-
-//           <div className="review-body">
-//             <div className="review-text">
-//               {this.ratingRadio()}
-
-//               <div className="review-text-box">
-//                 <textarea
-//                   required
-//                   className="textarea-review-box"
-//                   // value={this.state.body}
-//                   placeholder="Doesn’t look like much when you walk past, but I was practically dying of hunger so I popped in. The definition of a hole-in-the-wall. I got the regular hamburger and wow…  there are no words. A classic burger done right. Crisp bun, juicy patty, stuffed with all the essentials (ketchup, shredded lettuce, tomato, and pickles). There’s about a million options available between the menu board and wall full of specials, so it can get a little overwhelming, but you really can’t go wrong. Not much else to say besides go see for yourself! You won’t be disappointed."
-//                   // onChange={this.handleInput("body")}
-//                 >
-//                 </textarea>
-//               </div>
-//           <div className="post-review">
-//             <button className="post-review-button">
-//               Post Review
-//             </button>
-//           </div>
-              
-//             </div>
-//           </div>
-//         </div>
-
-//             <div className="reviews">
-//                 <h1>
-//                     test
-//                 </h1>                                               
-//             </div>
-//           </div>
-//         )
-//     }
-// }
-// }
