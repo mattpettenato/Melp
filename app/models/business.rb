@@ -29,6 +29,7 @@ class Business < ApplicationRecord
     through: :reviews,
     source: :user
 
+
     # has_many :categories,
     # through: :business_categories,
     # source: :category

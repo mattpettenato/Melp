@@ -1,27 +1,17 @@
 export const fetchAllReviews = (businessId) => {
   return $.ajax({
-    method: "GET",
-    url: `api/businesses/${businessId}/reviews`
+    url: `api/businesses/${businessId}/reviews`,
+    method: `GET`,
   })
 }
 
 export const fetchReview = (businessId, reviewId) => {
   return $.ajax({
-    method: "GET",
+    method: `GET`,
     url: `api/businesses/${businessId}/reviews/${reviewId}`
   })
 }
 
-// export const createReview = (review, businessId) => {
-//   return $.ajax({
-//     url: `/api/businesses/${businessId}/reviews`,
-//     method: "POST",
-//     data: {
-//       review: review,
-//       businessId: businessId
-//     }
-//   })
-// }
 export const createReview = (businessId, review) => {
   return $.ajax({
     url: `/api/businesses/${businessId}/reviews`,

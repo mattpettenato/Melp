@@ -1,31 +1,24 @@
 import { connect } from 'react-redux';
 import { fetchAllReviews } from '../../actions/review_actions';
 import { fetchBusiness } from '../../actions/business_actions';
-import ReviewIndex from '../reviews/review_index';
+import ReviewIndex from '../../components/reviews/review_index';
 
 const mSTP = (state, ownProps) => {
 
-  // if(state.entities.reviews[ownProps.currentBusiness.id]) {
-    return {
-      // reviews: Object.values(state.entities.reviews[ownProps.currentBusiness.id]),
-      // currentBusiness: ownProps.currentBusiness,
-    currentBusiness: state.entities.businesses,
-
-      // ratings: Object.values(state.entities.reviews).map(review => (review.rating)),
-      // businessId: ownProps.currentBusiness.id
-      businessId: ownProps.match.params.businessId,
-    }
-  
-  // }
-}
+  return {
+    // businesses: Object.values(state.entities.businesses),
+    // reviews: Object.values(state.entities.reviews)
+  }
+};
 
 const mDTP = (dispatch) => {
-  return {
-    fetchBusiness: (businessId) => dispatch(fetchBusiness(businessId)),
-    fetchAllReviews: (businessId) => dispatch(fetchAllReviews(businessId)),
-    createReview: (businessId, review) => dispatch(createReview(businessId, review)),
-    removeErrors: () => dispatch(removeErrors())
-  }
-}
+    return {
+        fetchBusiness: (businessId) => dispatch(fetchBusiness(businessId)),
+        // fetchUserReviews: (userId) => dispatch(fetchUserReviews(userId)),
+        fetchAllReviews: (businessId) => dispatch(fetchAllReviews(businessId)),
+        createReview: (businessId, review) => dispatch(createReview(businessId, review)),
+        removeErrors: () => dispatch(removeErrors())
+    }
+};
 
 export default connect(mSTP, mDTP)(ReviewIndex);

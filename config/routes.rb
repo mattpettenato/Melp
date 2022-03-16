@@ -29,7 +29,7 @@ Rails.application.routes.draw do
       resources :reviews, only:[:index]
     end
     resources :businesses, only:[:index, :show] do 
-      resources :reviews, only:[:create, :index]
+      resources :reviews, only:[:create, :index, :show]
       collection do 
         get :search, to: "businesses#search", as: "search"
         # get :location, to: "businesses#location", as: "location"

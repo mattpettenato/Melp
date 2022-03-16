@@ -17,11 +17,11 @@ import ReviewIndexContainer from './reviews/reviews_index_container'
 const App = () => (
   <div>
     <Switch>      
+      <ProtectedRoute  exact path="/businesses/:businessId/reviews" component={CreateReviewFormContainer} />
+      <Route exact path="/businesses/:businessId" component={BusinessShowContainer} />
       <AuthRoute exact path="/login" component={LoginContainer} />
       <AuthRoute exact path="/signup" component={SignupContainer} />
       {/* <ProtectedRoute exact path="/businesses/:businessId/reviews/new" component={CreateReviewFormContainer} /> */}
-      <Route exact path="/businesses/:businessId" component={BusinessShowContainer} />
-      <ProtectedRoute  exact path="/businesses/:businessId/reviews" component={CreateReviewFormContainer} />
       <Route path="/" component={Splash} />
     </Switch>
   </div>

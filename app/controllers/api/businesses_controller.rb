@@ -1,5 +1,5 @@
 class Api::BusinessesController < ApplicationController
-  
+  skip_before_action :verify_authenticity_token
   def show
     @business = Business.find(params[:id])
     render :show

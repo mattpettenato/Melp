@@ -3,69 +3,63 @@ import React from "react";
 // import BusinessNavContainer from "../business_nav/business_nav_container";
 import NavBar from "../nav_bar/nav_bar";
 import NavBarContainer from '../../components/nav_bar/nav_bar_container';
-import ReviewListItem from "../reviews/review_list_item";
+
 import SearchHome from "../search/search_home"
 import { Link } from "react-router-dom";
 import BusinessMap from "../maps/bus_map"
 import ReviewIndexContainer from "../reviews/reviews_index_container";
+import ReviewIndex from "../reviews/review_index";
 
 class BusinessShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {loading: true}
-    // this.state = {
-    //   hasReview: false,
-    //   businessId: this.props.businesses
-    // };
+    // this.state = {loading: true}
+
   }
 
   componentDidMount() {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
+    // this.props.fetchBusiness()
     this.props.fetchBusiness(this.props.match.params.businessId);
-    //     if (this.props.currentBusiness !== undefined) {
-    //   const curBus1 = this.props.currentBusiness
-    //   // console.log(this.props)
-    // }
-    this.props.fetchAllReviews(this.props.match.params.businessId)
-      .then(()=> {
-        this.setState({loading: false})
-      })
+    // this.props.fetchAllReviews(this.props.match.params.businessId)
+    // this.props.fetchAllUsers(this.props.match.params.userId);
   }
 
-  // componentDidUpdate(prevProps) {
-  //   if (
-  //     prevProps.match.params.businessId !== this.props.match.params.businessId
-  //   ) {
-  //     this.props.fetchBusiness(this.props.match.params.businessId);
-  //   }
-  // }
 
   render() {
-    // console.log(this.props.currentBusiness)
+    console.log(this.props.reviews)
     // console.log(this.props)
-    if (this.state.loading || !this.props.currentBusiness){
+    if (!this.props.currentBusiness) return null;
+    let orderedReview = []
+    for (let i = this.props.reviews.length -1; i >= 0 && orderedReview.length < 8; i--){
+      orderedReview.push(this.props.reviews[i])
+    }
+    let oneReview = orderedReview
+    // let twoReview = orderedReview
+
+    let reviewBox1 = oneReview.map((review, idx) => {
+      return (
+        <ReviewIndex key={idx} deleteReview={this.props.removeReview} currentUser={this.props.currentUser} review={review} />
+      )
+    })
+
+    // if (this.state.loading || !this.props.currentBusiness){
+    if (!this.props.currentBusiness){
       return <div></div>
     }
     if (this.props.currentBusiness !== undefined) {
       const curBus1 = this.props.currentBusiness
       const busRevs = this.props.reviews
     }
-      // console.log(this.props)
-    
+
     var options = {  weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
     var prnDt = 'Printed on ' + new Date().toLocaleTimeString('en-us', options);
-
-    // console.log(prnDt);
 
     const { business } = this.props;
 
     if (this.props.currentBusiness !== undefined) {
-      
-      // console.log(this.props.match.params.businessId)
       const curBus = this.props.currentBusiness
-      // console.log(business.name)
     } else {
-      // console.log(this.props)
     }
 
     if (!this.props.currentBusiness) {
@@ -106,10 +100,6 @@ class BusinessShow extends React.Component {
     if (this.props.currentBusiness) {
       bisWebsite = this.props.currentBusiness.websiteurl
     }
-
-    // console.log(this.props.currentBusiness.latitude)
-    // console.log(this.props.businesses)
-    console.log(this.props.currentBusiness.name)
 
     return (
       <div>
@@ -152,15 +142,14 @@ class BusinessShow extends React.Component {
         <div className="guts-body">
         <div className="above-review">
 
-          <div className="write-review">
-            <Link to={`/businesses/${this.props.currentBusiness.id}/reviews`}>
-              <button className="write-review-button">
-              <i className="far fa-star"></i>
-              &nbsp;&nbsp;Write a Review
-              </button>
-              {/* currBuss={this.props.currentBusiness} */}
-            </Link>
-          </div>
+        <div className="write-review">
+          <Link to={`/businesses/${this.props.currentBusiness.id}/reviews`}>
+            <button className="write-review-button">
+            <i className="far fa-star"></i>
+            &nbsp;&nbsp;Write a Review
+            </button>
+          </Link>
+        </div>
           
         </div>
         
@@ -197,15 +186,10 @@ class BusinessShow extends React.Component {
               <h2>Your trust is our top concern, so businesses can't pay to alter or remove their reviews</h2>
             </div>
             
-            {/* <ReviewListItem /> */}
-                    <ul>
-                        {
-                            
-                        // <ReviewIndexContainer currentBusiness={this.props.currentBusiness}/>
-                            
-                        
-                        }
-                    </ul>
+            <ul>
+              {/* {<ReviewIndexContainer currentBusiness={this.props.currentBusiness} />} */}
+              {/* {reviewBox1} */}
+            </ul>
           </div>
 
 

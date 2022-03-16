@@ -12,3 +12,10 @@ export const patchUser = (userId, user) => (
     data: { user }
   })
 )
+
+export const fetchAllUsers = () => (
+  $.ajax({
+    method: 'GET',
+    url: `api/users`
+  })
+)

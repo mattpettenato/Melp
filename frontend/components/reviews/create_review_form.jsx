@@ -10,7 +10,8 @@ class ReviewForm extends React.Component {
     super(props);
     this.state= {
       rating:  4,
-      body: ""
+      body: "",
+      name: ""
     };
   this.handleSubmit = this.handleSubmit.bind(this);
 
@@ -23,17 +24,6 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    // const businessId = parseInt(this.props.match.params.businessId);
-
-    // const formData = new FormData();
-    // formData.append('review[rating]', this.state.rating)
-    // formData.append('review[body]', this.state.body)
-    // formData.append('review[business_id]', businessId)
-    // this.props.createReview(formData).then(()=>{
-    //   if (this.props.errors.length === 0) {
-    //     this.props.history.push('/businesses/${businessId}')
-    //   }
-    // })
     let review = this.state
     review.business_id = this.props.businessId
     this.props.createReview(this.props.businessId, review)
@@ -50,6 +40,19 @@ class ReviewForm extends React.Component {
     }
     return e => this.setState({ [field]: e.currentTarget.value })
   }
+
+  updateName(field){
+    return e => this.setState({[field]: e.currentTarget.value})
+  }
+
+  // reviewNameSave() {
+  //   const updateReviewAuthor = (reviewAuthorName) => {
+  //     this.setState({ name: reviewAuthorName })
+  //   }
+  //   return (
+  //   <h4 onSubmit>Review will be posted from your account: {this.props.authorId.username}</h4>  
+  //   )
+  // }
 
   renderErrors() {
     return (
@@ -99,6 +102,8 @@ class ReviewForm extends React.Component {
     )
   }
 
+
+
   
 
   render(){
@@ -107,8 +112,6 @@ class ReviewForm extends React.Component {
     //   const curBus1 = this.props.currentBusiness
     // }
     console.log(this.props)
-    // const [body, setBody] = useState('')
-    // console.log(getState())
 
     return(
       <div id="wrapper">
@@ -160,6 +163,13 @@ class ReviewForm extends React.Component {
                 Post Review
               </button>
             </div>
+      <h1>test</h1>
+            <label> Review will be posted from your account:  
+              {/* <input className="text-inputs1" placeholder={this.props.authorId.username} type="text" value={this.props.authorId.username} onChange={this.updateName(this.props.authorId.username)}  /> */}
+              {/* <textarea className="text-inputs1"  type="text" onChange={this.updateName('name')}> 
+                {this.props.authorId.username}
+              </textarea> */}
+            </label>
                 
               </div>
             </div>

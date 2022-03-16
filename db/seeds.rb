@@ -63,5 +63,11 @@ bus4 = Business.create!({
 #                         business_id: bus2.id
 #                     })
 
-rev1 = Review.create(body: "The food was great", rating: 4, author_id: user1.id, business_id: bus1.id)
-rev2 = Review.create(body:"The food was great", rating: 4, author_id: user1.id, business_id: bus2.id)
+rev1 = Review.create(body: "The food was great", rating: 4, author_id: user1.id, business_id: bus1.id, name: 'demo')
+rev2 = Review.create(body:"The food was great", rating: 4, author_id: user1.id, business_id: bus2.id, name: 'demo')
+rev3 = Review.create(body:"The food and drinks are amazing", rating: 3, author_id: user2.id, business_id: bus3.id, name: 'AnnaViviana')
+rev4 = Review.create(body:"The food and drinks are amazing", rating: 4, author_id: user3.id, business_id: bus4.id, name: 'JeongJo')
+
+
+
+
