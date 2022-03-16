@@ -11,7 +11,7 @@ class ReviewForm extends React.Component {
     this.state= {
       rating:  4,
       body: "",
-      name: ""
+      name: this.props.currentUser
     };
   this.handleSubmit = this.handleSubmit.bind(this);
 
@@ -26,6 +26,7 @@ class ReviewForm extends React.Component {
     e.preventDefault();
     let review = this.state
     review.business_id = this.props.businessId
+    
     this.props.createReview(this.props.businessId, review)
     this.props.history.push(`/businesses/${this.props.businessId}`)
   }
@@ -107,12 +108,38 @@ class ReviewForm extends React.Component {
   
 
   render(){
-    // if (!this.props.business) return null;
-    // if (this.props.currentBusiness !== undefined) {
-    //   const curBus1 = this.props.currentBusiness
-    // }
-    console.log(this.props)
 
+    // let bisWebsite;
+    // if (this.props.currentBusiness) {
+    //   bisWebsite = this.props.currentBusiness.websiteurl
+    // }
+
+    let curBus1;
+    if (this.props.business !== undefined) {
+      curBus1 = this.props.business.name
+      console.log(curBus1)
+    }
+
+
+    // if (!this.props.business) return null;
+    // if (this.props.business !== undefined) {
+    //   curBus1 = this.props.business.name
+    // // console.log(this.props.business)
+    // console.log(curBus1)
+
+
+    // }
+    // let curBus10
+    // if (!this.props.business === undefined) {
+    //   curBus10 = this.props.business
+    //   console.log('awooga')
+    //   console.log(curBus10)
+    // }
+    // console.log(this.props.business)
+
+
+    // console.log(this.props.business)
+    // let namepls = 
     return(
       <div id="wrapper">
         <div className="review-page">
@@ -130,7 +157,8 @@ class ReviewForm extends React.Component {
           <div className="review-bus-name">
             <div className="rev-name-1">
               <Link to={`/businesses/${this.props.businessId}`}>
-                <h1>{this.props.currentBusiness[this.props.businessId].name}</h1>
+                <h1>{curBus1}</h1>
+                
               </Link>
             </div>
 
@@ -163,9 +191,9 @@ class ReviewForm extends React.Component {
                 Post Review
               </button>
             </div>
-      <h1>test</h1>
-            <label> Review will be posted from your account:  
-              {/* <input className="text-inputs1" placeholder={this.props.authorId.username} type="text" value={this.props.authorId.username} onChange={this.updateName(this.props.authorId.username)}  /> */}
+      <h1>{this.props.authorId.username}</h1>
+            <label> Review will be posted from your account: {this.props.authorId.username}
+              <input className="text-inputs1" type="text" value={this.state.name} onChange={this.updateName('name')}  />
               {/* <textarea className="text-inputs1"  type="text" onChange={this.updateName('name')}> 
                 {this.props.authorId.username}
               </textarea> */}

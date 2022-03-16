@@ -188,7 +188,7 @@ class BusinessShow extends React.Component {
             
             <ul>
               {/* {<ReviewIndexContainer currentBusiness={this.props.currentBusiness} />} */}
-              {/* {reviewBox1} */}
+              {reviewBox1}
             </ul>
           </div>
 
