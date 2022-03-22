@@ -29,6 +29,13 @@ class ReviewForm extends React.Component {
     
     this.props.createReview(this.props.businessId, review)
     this.props.history.push(`/businesses/${this.props.businessId}`)
+    this.setState({
+      body: '',
+      authorId: this.props.currentUser,
+      businessId: this.props.businessId,
+      name: '',
+      rating: ''
+    })
   }
 
   handleInput(field) {
@@ -67,21 +74,6 @@ class ReviewForm extends React.Component {
     )
   }
 
-  // ratingPhrase(){
-  //   switch(this.rating){
-  //     case 1:
-  //       return "Not good";
-  //     case 2:
-  //       return "Could've been better"
-  //     case 3:
-  //       return "OK";
-  //     case 4:
-  //       return "Good";
-  //     case 5:
-  //       return "Great"
-  //   }
-  // }
-
   ratingRadio() {
     const updateRating = (ratingValue) => {
       this.setState({ rating: ratingValue })
@@ -103,16 +95,8 @@ class ReviewForm extends React.Component {
     )
   }
 
-
-
-  
-
   render(){
 
-    // let bisWebsite;
-    // if (this.props.currentBusiness) {
-    //   bisWebsite = this.props.currentBusiness.websiteurl
-    // }
 
     let curBus1;
     if (this.props.business !== undefined) {
@@ -120,26 +104,6 @@ class ReviewForm extends React.Component {
       console.log(curBus1)
     }
 
-
-    // if (!this.props.business) return null;
-    // if (this.props.business !== undefined) {
-    //   curBus1 = this.props.business.name
-    // // console.log(this.props.business)
-    // console.log(curBus1)
-
-
-    // }
-    // let curBus10
-    // if (!this.props.business === undefined) {
-    //   curBus10 = this.props.business
-    //   console.log('awooga')
-    //   console.log(curBus10)
-    // }
-    // console.log(this.props.business)
-
-
-    // console.log(this.props.business)
-    // let namepls = 
     return(
       <div id="wrapper">
         <div className="review-page">
@@ -167,7 +131,7 @@ class ReviewForm extends React.Component {
             </div>
           </div>
           <div className="errors-message">
-            {this.renderErrors()}
+            {/* {this.renderErrors()} */}
           </div>
 
           <form className="review-form" onSubmit={this.handleSubmit}>
@@ -191,7 +155,7 @@ class ReviewForm extends React.Component {
                 Post Review
               </button>
             </div>
-      <h1>{this.props.authorId.username}</h1>
+              {/* <h1>{this.props.authorId.username}</h1> */}
             <label> Review will be posted from your account: {this.props.authorId.username}
               <input className="text-inputs1" type="text" value={this.state.name} onChange={this.updateName('name')}  />
               {/* <textarea className="text-inputs1"  type="text" onChange={this.updateName('name')}> 

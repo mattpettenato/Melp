@@ -13,9 +13,20 @@ def create
     if @review.save && @review.rating
         render :show
     else
-        render json: ['Make sure to select stars for rating'], status: 422
+        # render json: ['Make sure to select stars for rating'], status: 422
+      render json: @review.errors.full_messages, status: 422
     end
 end
+
+# def create
+#   @review = Review.new(review_params)
+
+#   if @review.save
+#     render :show
+#   else
+#     render json: @review.errors.full_messages, status: 422
+#   end
+# end
 
 def index
   @reviews = Review.all
@@ -34,7 +45,7 @@ end
 private
 
   def review_params
-    params.require(:review).permit(:body, :rating, :author_id, :name, :business_id)
+    params.require(:review).permit(:name, :body, :rating, :author_id, :business_id)
   end
 
 end

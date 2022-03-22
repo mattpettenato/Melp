@@ -13,12 +13,33 @@ const ReviewIndex = props => {
   // console.log('test')
   // console.log(props)
   // console.log('test2')
+    // console.log(this.props.allUsers)
+    // console.log(this.props.allUsers)
+
+  // console.log(props)
+  // console.log()
+  // console.log(props.review)
+  // console.log(props)
+  // let authorName = props.allUsers.map
+  
+  
+  console.log(props.allUsers)
+  let authorName
+  if (props.review.author_id) {
+    authorName = props.allUsers[props.review.author_id].username
+  }
+  console.log(props.review.author_id)
+  for (let i = 0; i < props.allUsers.length; i++) {
+    console.log('tetasdasd')
+  }
+  console.log
 
 
   return (
     <div className="reviews01">
       <div className="review-name">
-        {/* {props.review.name} */}
+        {authorName}
+        {/* {props.review.name} namehere */}
       </div>
       <div className="review-body">
         {props.review.body}
@@ -31,16 +52,3 @@ const ReviewIndex = props => {
 }
 
 export default ReviewIndex
-//   constructor(props) {
-//     super(props);
-//   }
-
-//   render() {
-//     return (
-//       <div className="reviews">
-
-//       </div>
-//     )
-//   }
-// }
-// export default ReviewIndex;

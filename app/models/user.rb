@@ -11,8 +11,13 @@ class User < ApplicationRecord
   #   primary_key: :id,
   #   class_name: :Business
 
+  # has_many :reviews,
+  # foreign_key: :user_id,
+  # primary_key: :id,
+  # class_name: :Review
+
   has_many :reviews,
-  foreign_key: :user_id,
+  foreign_key: :author_id,
   primary_key: :id,
   class_name: :Review
 

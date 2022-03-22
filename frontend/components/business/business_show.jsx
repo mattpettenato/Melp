@@ -23,11 +23,18 @@ class BusinessShow extends React.Component {
     this.props.fetchBusiness(this.props.match.params.businessId);
     // this.props.fetchAllReviews(this.props.match.params.businessId)
     // this.props.fetchAllUsers(this.props.match.params.userId);
+
   }
 
 
   render() {
-    console.log(this.props.reviews)
+    // console.log(this.props.allUsers)
+    if (this.props.business){
+      const authors = this.props.authors;
+      console.log(authors)
+    }
+    // console.log(this.props.allUsers)
+    // console.log(this.props.reviews)
     // console.log(this.props)
     if (!this.props.currentBusiness) return null;
     let orderedReview = []
@@ -39,7 +46,7 @@ class BusinessShow extends React.Component {
 
     let reviewBox1 = oneReview.map((review, idx) => {
       return (
-        <ReviewIndex key={idx} deleteReview={this.props.removeReview} currentUser={this.props.currentUser} review={review} />
+        <ReviewIndex key={idx} deleteReview={this.props.removeReview} currentUser={this.props.currentUser} review={review} allUsers={this.props.allUsers} />
       )
     })
 

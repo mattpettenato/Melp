@@ -10,7 +10,7 @@ const mSTP = (state, ownProps) => {
     currentBusiness: state.entities.businesses[ownProps.match.params.businessId],
     reviews: Object.values(state.entities.reviews),
     reviewObject: state.entities.reviews,
-    // users: Object.values(state.entities.users)
+    allUsers: state.entities.users
   }
 };
 

@@ -8,6 +8,7 @@ const mSTP = (state, ownProps) => {
   return {
     // businesses: Object.values(state.entities.businesses),
     // reviews: Object.values(state.entities.reviews)
+    users: state.entities.users
   }
 };
 
