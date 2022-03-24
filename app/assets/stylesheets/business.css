@@ -495,3 +495,27 @@
   text-align: left;
   min-width: 158px;
 }
+
+.icon-star {
+  color: #F43939;
+
+}
+
+.fa-star {
+  color: white;
+}
+
+.fa-stack fa-xs icon-star {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.stars-div span {
+  margin: -3px;
+}
+
+.reviews01 {
+  box-sizing: border-box;
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+}

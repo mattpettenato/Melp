@@ -156,12 +156,12 @@ class ReviewForm extends React.Component {
               </button>
             </div>
               {/* <h1>{this.props.authorId.username}</h1> */}
-            <label> Review will be posted from your account: {this.props.authorId.username}
+            {/* <label> Review will be posted from your account: {this.props.authorId.username}
               <input className="text-inputs1" type="text" value={this.state.name} onChange={this.updateName('name')}  />
-              {/* <textarea className="text-inputs1"  type="text" onChange={this.updateName('name')}> 
+              <textarea className="text-inputs1"  type="text" onChange={this.updateName('name')}> 
                 {this.props.authorId.username}
-              </textarea> */}
-            </label>
+              </textarea>
+            </label> */}
                 
               </div>
             </div>

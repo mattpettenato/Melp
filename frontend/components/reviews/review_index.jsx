@@ -1,51 +1,115 @@
 import React from "react";
-// import ReviewListItem from "./review_list_item"
+
 
 const ReviewIndex = props => {
-  // let stars = []
-  // for (let i = 0; i < props.review.rating; i++){
-  //   stars.push(<i class="fa-solid fa-star"></i>)
-  // }
+  let starRating
+  // console.log(props.review.rating)
+  if (props.review.rating === 1){
+    starRating =
+      <div className="stars-div">
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+      </div>
+  }
+  if (props.review.rating === 2){
+    starRating = 
+      <div className="stars-div">
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+      </div>
 
-  // while (stars.length < 5) {
-  //   let i = stars.lengthstars.push(<i class="fa-solid fa-star" key={i} size={20} color={'#e9e9e9'}/>)
-  // }
-  // console.log('test')
-  // console.log(props)
-  // console.log('test2')
-    // console.log(this.props.allUsers)
-    // console.log(this.props.allUsers)
-
-  // console.log(props)
-  // console.log()
-  // console.log(props.review)
-  // console.log(props)
-  // let authorName = props.allUsers.map
+  }
+  if (props.review.rating === 3){
+    starRating = 
+      <div className="stars-div">
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+      </div>
+  }
+  if (props.review.rating === 4){
+    starRating = 
+      <div className="stars-div">
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+      </div>
+  }
+  if (props.review.rating === 5){
+    starRating = 
+      <div className="stars-div">
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+      </div>
+  }
   
-  
-  console.log(props.allUsers)
   let authorName
   if (props.review.author_id) {
     authorName = props.allUsers[props.review.author_id].username
   }
-  console.log(props.review.author_id)
-  for (let i = 0; i < props.allUsers.length; i++) {
-    console.log('tetasdasd')
-  }
-  console.log
-
 
   return (
     <div className="reviews01">
+      <i className="fas fa-user fa-lg"></i>
       <div className="review-name">
         {authorName}
-        {/* {props.review.name} namehere */}
       </div>
       <div className="review-body">
         {props.review.body}
       </div>
       <div className="review-rating">
-        {props.review.rating}
+        {/* {props.review.rating} */}
+        <div className="stars-div">
+          {starRating}
+        </div>
       </div>
     </div>
   )

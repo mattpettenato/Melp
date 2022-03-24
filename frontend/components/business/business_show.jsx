@@ -13,44 +13,31 @@ import ReviewIndex from "../reviews/review_index";
 class BusinessShow extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {loading: true}
-
   }
 
   componentDidMount() {
-    // window.scrollTo(0, 0);
-    // this.props.fetchBusiness()
     this.props.fetchBusiness(this.props.match.params.businessId);
-    // this.props.fetchAllReviews(this.props.match.params.businessId)
-    // this.props.fetchAllUsers(this.props.match.params.userId);
-
   }
 
 
   render() {
-    // console.log(this.props.allUsers)
     if (this.props.business){
       const authors = this.props.authors;
-      console.log(authors)
+      // console.log(authors)
     }
-    // console.log(this.props.allUsers)
-    // console.log(this.props.reviews)
-    // console.log(this.props)
+
     if (!this.props.currentBusiness) return null;
     let orderedReview = []
     for (let i = this.props.reviews.length -1; i >= 0 && orderedReview.length < 8; i--){
       orderedReview.push(this.props.reviews[i])
     }
     let oneReview = orderedReview
-    // let twoReview = orderedReview
-
     let reviewBox1 = oneReview.map((review, idx) => {
       return (
-        <ReviewIndex key={idx} deleteReview={this.props.removeReview} currentUser={this.props.currentUser} review={review} allUsers={this.props.allUsers} />
+        <ReviewIndex className="rev-box-1" key={idx} deleteReview={this.props.removeReview} currentUser={this.props.currentUser} review={review} allUsers={this.props.allUsers} />
       )
     })
 
-    // if (this.state.loading || !this.props.currentBusiness){
     if (!this.props.currentBusiness){
       return <div></div>
     }
@@ -59,8 +46,8 @@ class BusinessShow extends React.Component {
       const busRevs = this.props.reviews
     }
 
-    var options = {  weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
-    var prnDt = 'Printed on ' + new Date().toLocaleTimeString('en-us', options);
+    // var options = {  weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+    // var prnDt = 'Printed on ' + new Date().toLocaleTimeString('en-us', options);
 
     const { business } = this.props;
 
@@ -193,13 +180,10 @@ class BusinessShow extends React.Component {
               <h2>Your trust is our top concern, so businesses can't pay to alter or remove their reviews</h2>
             </div>
             
-            <ul>
-              {/* {<ReviewIndexContainer currentBusiness={this.props.currentBusiness} />} */}
+            <ul className="review-box-1-work">
               {reviewBox1}
             </ul>
           </div>
-
-
         </div>
         
         </div>
