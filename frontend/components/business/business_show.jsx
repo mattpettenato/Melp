@@ -179,10 +179,12 @@ class BusinessShow extends React.Component {
 
               <h2>Your trust is our top concern, so businesses can't pay to alter or remove their reviews</h2>
             </div>
-            
-            <ul className="review-box-1-work">
-              {reviewBox1}
-            </ul>
+
+            <div className="review-items-1">
+              <ul className="review-box-1-work">
+                {reviewBox1}
+              </ul>
+            </div>
           </div>
         </div>
         

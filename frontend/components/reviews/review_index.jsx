@@ -95,22 +95,48 @@ const ReviewIndex = props => {
   if (props.review.author_id) {
     authorName = props.allUsers[props.review.author_id].username
   }
+  // console.log(props.review.created_at.substring(0, 10))
+  // 2022-03-15
+
+  let month;
+  month = props.review.created_at.substring(5, 7)
+  // console.log(month)
+  let day;
+  day = props.review.created_at.substring(8, 10)
+  // console.log(day)
+  let year;
+  year = props.review.created_at.substring(0, 4)
+  // console.log(year)
+
+  // console.log(month + "-" + day + "-" + year)
 
   return (
     <div className="reviews01">
-      <i className="fas fa-user fa-lg"></i>
-      <div className="review-name">
-        {authorName}
-      </div>
-      <div className="review-body">
-        {props.review.body}
-      </div>
-      <div className="review-rating">
-        {/* {props.review.rating} */}
-        <div className="stars-div">
-          {starRating}
+
+      <div className='reviews01-left'>
+        <i className="fas fa-user fa-2x"></i>
+        <div className="review-name">
+          {authorName}
+        </div>
+        <div className="date-date">
+          {month + "-" + day + "-" + year}
         </div>
       </div>
+
+      <div className="reviews01-right">
+        <div className="review-rating">
+          <div className="stars-div">
+            {starRating}
+          </div>
+        </div>
+
+        <div className="review-body">
+          {props.review.body}
+        </div>
+
+
+      </div>
+
     </div>
   )
 }
