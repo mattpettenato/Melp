@@ -19,4 +19,7 @@ end
       json.extract! review.author, :id, :username
     end
   end
+
 end
+
+# json.average_rating @review.business.average_rating

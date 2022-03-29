@@ -1,4 +1,4 @@
-json.extract! business, :id, :name, :about, :rating, :phone, :address, :hours, :websiteurl, :latitude, :longitude
+json.extract! business, :id, :name, :about, :rating, :phone, :address, :hours, :websiteurl, :latitude, :longitude, :average_rating
 
 
 if business.photos.attached?
