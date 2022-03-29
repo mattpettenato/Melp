@@ -40,18 +40,6 @@ class BusinessIndex extends React.Component {
                 <i className="fa fa-square fa-stack-2x"></i>
                 <i className="fas fa-star fa-stack-1x"></i>
               </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
             </div>
           )
         }
@@ -67,14 +55,6 @@ class BusinessIndex extends React.Component {
                 <i className="fa fa-square fa-stack-2x"></i>
                 <i className="fas fa-star fa-stack-1x"></i>
               </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
             </div>
           )
         }
@@ -82,10 +62,6 @@ class BusinessIndex extends React.Component {
         if (Math.floor(this.props.businesses[i].average_rating) === 3){
           return(
             <div className="stars-div">
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
               <span className="fa-stack fa-xs icon-star">
                 <i className="fa fa-square fa-stack-2x"></i>
                 <i className="fas fa-star fa-stack-1x"></i>
@@ -144,6 +120,10 @@ class BusinessIndex extends React.Component {
                 <i className="fa fa-square fa-stack-2x"></i>
                 <i className="fas fa-star fa-stack-1x"></i>
               </span>
+              <span className="fa-stack fa-xs icon-star">
+                <i className="fa fa-square fa-stack-2x"></i>
+                <i className="fas fa-star fa-stack-1x"></i>
+              </span>
             </div>
           )
         }
@@ -155,7 +135,7 @@ class BusinessIndex extends React.Component {
   }
 
   render(){
-    // console.log(this.props)
+    console.log(this.props)
     if (this.props.businesses.length === 4 ){
       for (let i = this.props.businesses.length -1; i >= 0; i--){
         // console.log(this.props.businesses[i])

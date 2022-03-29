@@ -109,7 +109,7 @@ const ReviewIndex = props => {
   // console.log(year)
 
   // console.log(month + "-" + day + "-" + year)
-
+  // console.log(props)
   return (
     <div className="reviews01">
 
@@ -121,6 +121,8 @@ const ReviewIndex = props => {
         <div className="date-date">
           {month + "-" + day + "-" + year}
         </div>
+
+        <button>Delete Review</button>
       </div>
 
       <div className="reviews01-right">

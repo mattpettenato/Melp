@@ -29,7 +29,7 @@ export const receiveAllReviews = reviews => ({
 export const receiveReview = review => ({
   type: RECEIVE_REVIEW,
   review,
-  average_rating
+  // average_rating
 })
 
 // export const receiveUserReviews = (reviews) => {

@@ -103,10 +103,10 @@ class BusinessShow extends React.Component {
     }
     let avgRatingRounded = Math.floor(avgRatingSum / this.props.reviews.length)
 
-    console.log(avgRatingRounded) // avg = sum/total
-
+    // console.log(avgRatingRounded) // avg = sum/total
+    console.log(this.props)
   let starRatingBus
-  if (avgRatingRounded === 1){
+  if (Math.floor(this.props.currentBusiness.average_rating) === 1){
     starRatingBus =
       <div className="stars-div">
         <span className="fa-stack fa-xs icon-star">
