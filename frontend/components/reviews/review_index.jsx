@@ -90,7 +90,7 @@ const ReviewIndex = props => {
         </span>
       </div>
   }
-  
+  // console.log(props)
   let authorName
   if (props.review.author_id) {
     authorName = props.allUsers[props.review.author_id].username
