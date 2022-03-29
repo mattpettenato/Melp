@@ -21,7 +21,7 @@ class BusinessShow extends React.Component {
 
 
   render() {
-    if (this.props.business){
+    if (this.props.currentBusiness){
       const authors = this.props.authors;
       // console.log(authors)
     }
@@ -95,6 +95,107 @@ class BusinessShow extends React.Component {
       bisWebsite = this.props.currentBusiness.websiteurl
     }
 
+    
+    let avgRatingSum = 0;
+    for (let i = this.props.reviews.length -1; i >= 0; i--){
+      avgRatingSum += this.props.reviews[i].rating
+      // console.log(avgRatingSum)
+    }
+    let avgRatingRounded = Math.floor(avgRatingSum / this.props.reviews.length)
+
+    console.log(avgRatingRounded) // avg = sum/total
+
+  let starRatingBus
+  if (avgRatingRounded === 1){
+    starRatingBus =
+      <div className="stars-div">
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+      </div>
+  }
+  if (avgRatingRounded === 2){
+    starRatingBus = 
+      <div className="stars-div">
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+      </div>
+
+  }
+  if (avgRatingRounded === 3){
+    starRatingBus = 
+      <div className="stars-div">
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+      </div>
+  }
+  if (avgRatingRounded === 4){
+    starRatingBus = 
+      <div className="stars-div">
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+      </div>
+  }
+  if (avgRatingRounded === 5){
+    starRatingBus = 
+      <div className="stars-div">
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+        <span className="fa-stack fa-xs icon-star">
+          <i className="fa fa-square fa-stack-2x"></i>
+          <i className="fas fa-star fa-stack-1x"></i>
+        </span>
+      </div>
+  }
+
+
+
+
     return (
       <div>
         <div className="business-page-nav">
@@ -121,8 +222,11 @@ class BusinessShow extends React.Component {
             </div>
 
             <div className="business-rating">
-              <p className="bis-rating"><img src="https://raw.githubusercontent.com/mattpettenato/git_test/main/large/large_5.png" />
-              </p>
+              {/* <p className="bis-rating"> */}
+                {starRatingBus}
+                {/* <img src="https://raw.githubusercontent.com/mattpettenato/git_test/main/large/large_5.png" /> */}
+
+              {/* </p> */}
             </div>
 
           <div className="business-about">
