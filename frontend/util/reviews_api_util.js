@@ -23,17 +23,9 @@ export const createReview = (businessId, review) => {
   })
 }
 
-// export const deleteReview = (reviewId) => {
-//   return $.ajax({
-//     url: `api/reviews/${reviewId}`,
-//     method: `DELETE`
-//   })
-// }
-
-// export const createReview = (review) =>{
-//   return $.ajax({ 
-//   url: "/api/reviews", 
-//   method: "POST", 
-//   data: review,
-//   })
-// }
+export const deleteReview = reviewId => (
+  $.ajax({
+    method: 'DELETE',
+    url: `/api/reviews/${reviewId}`
+  })
+)

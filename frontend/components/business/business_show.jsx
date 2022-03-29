@@ -104,7 +104,7 @@ class BusinessShow extends React.Component {
     let avgRatingRounded = Math.floor(avgRatingSum / this.props.reviews.length)
 
     // console.log(avgRatingRounded) // avg = sum/total
-    console.log(this.props)
+    // console.log(this.props)
   let starRatingBus
   if (Math.floor(this.props.currentBusiness.average_rating) === 1){
     starRatingBus =

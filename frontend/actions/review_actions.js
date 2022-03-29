@@ -15,12 +15,6 @@ export const clearReviewErrors = () => ({
   type: CLEAR_REVIEW_ERRORS,
 })
 
-// export const receiveAllReviews = (reviews) => {
-//   return {
-//     type: RECEIVE_ALL_REVIEWS,
-//     reviews
-//   }
-// }
 export const receiveAllReviews = reviews => ({
   type: RECEIVE_ALL_REVIEWS, 
   reviews
@@ -28,16 +22,14 @@ export const receiveAllReviews = reviews => ({
 
 export const receiveReview = review => ({
   type: RECEIVE_REVIEW,
-  review,
-  // average_rating
+  review
 })
 
-// export const receiveUserReviews = (reviews) => {
-//   return {
-//     type: RECEIVE_USER_REVIEWS,
-//     reviews
-//   }
-// }
+export const removeReview = reviewId => ({
+  type: REMOVE_REVIEW,
+  reviewId
+})
+
 
 export const receiveErrors = errors => {
   return ({
@@ -59,34 +51,15 @@ export const returnSingleReview = review => {
   })
 }
 
-// export const fetchAllReviews = (businessId) => (dispatch) => {
-//   return reviewsAPIUtil.fetchAllReviews(businessId)
-//     .then(
-//       result => dispatch(receiveAllReviews(result)),
-//       errors => dispatch(receiveErrors(errors.response.JSON))
-//     )
-// }
+
 
 export const fetchAllReviews = () => dispatch => reviewsAPIUtil.fetchAllReviews()
   .then(reviews => dispatch(receiveAllReviews(reviews)))
 
-// export const fetchReview = (reviewId) => (dispatch) => {
-//   return reviewsAPIUtil.fetchReview(reviewId)
-//     .then(
-//       review => dispatch(receiveReview(review)),
-//       errors => dispatch(receiveErrors(errors.response.JSON))
-//       )
-// }
+
 export const fetchReview = review => dispatch => reviewsAPIUtil.fetchReview(review)
   .then(review => dispatch(receiveReview(review)))
 
-// export const fetchUserReviews = (userId) => (dispatch) => {
-//   return reviewsAPIUtil.fetchUserReviews(userId)
-//     .then(
-//       result => dispatch(receiveUserReviews(result)),
-//       errors => dispatch(receiveErrors(errors.response.JSON))
-//       )
-// }
 
 export const createReview = (businessId, review) => (dispatch) => {
   return reviewsAPIUtil.createReview(businessId, review)
@@ -96,3 +69,6 @@ export const createReview = (businessId, review) => (dispatch) => {
     )
   ))
 }
+
+export const deleteReview = reviewId => dispatch => reviewsAPIUtil.deleteReview(reviewId)
+  .then(review => dispatch(removeReview(reviewId)))

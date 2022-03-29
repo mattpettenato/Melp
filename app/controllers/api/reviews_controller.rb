@@ -6,27 +6,26 @@ def show
 end
 
 def create
-    @review = Review.new(review_params)
-    if !@review.author_id
-        @review.author_id = current_user.id
-    end   
-    if @review.save && @review.rating
-        render :show
-    else
-        # render json: ['Make sure to select stars for rating'], status: 422
-      render json: @review.errors.full_messages, status: 422
-    end
+  @review = Review.new(review_params)
+  if !@review.author_id
+    @review.author_id = current_user.id
+  end   
+  if @review.save && @review.rating
+    render :show
+  else
+    render json: @review.errors.full_messages, status: 422
+  end
 end
 
-# def create
-#   @review = Review.new(review_params)
+def destroy
+  @review = Review.find(params[:id])
+  if @review.destroy
+    render :show
+  else
+    render json: @review.errors.full_messages, status: 401
+  end
+end
 
-#   if @review.save
-#     render :show
-#   else
-#     render json: @review.errors.full_messages, status: 422
-#   end
-# end
 
 def index
   @reviews = Review.all

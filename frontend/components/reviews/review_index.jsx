@@ -109,7 +109,7 @@ const ReviewIndex = props => {
   // console.log(year)
 
   // console.log(month + "-" + day + "-" + year)
-  // console.log(props)
+  console.log(props)
   return (
     <div className="reviews01">
 
@@ -121,8 +121,10 @@ const ReviewIndex = props => {
         <div className="date-date">
           {month + "-" + day + "-" + year}
         </div>
-
-        <button>Delete Review</button>
+        {props.currentUser === props.review.author_id ? (
+          <button className="rev-del" onClick={() => props.deleteReview(props.review.id)}>Delete Your Review</button>
+          // <h1>test</h1>
+        ): null}
       </div>
 
       <div className="reviews01-right">
