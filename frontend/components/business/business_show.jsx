@@ -21,6 +21,7 @@ class BusinessShow extends React.Component {
 
 
   render() {
+    console.log(this.props)
     if (this.props.currentBusiness){
       const authors = this.props.authors;
       // console.log(authors)
@@ -104,7 +105,7 @@ class BusinessShow extends React.Component {
     let avgRatingRounded = Math.floor(avgRatingSum / this.props.reviews.length)
 
     // console.log(avgRatingRounded) // avg = sum/total
-    // console.log(this.props)
+    // console.log(this.props.currentBusiness.photos[0])
   let starRatingBus
   if (Math.floor(this.props.currentBusiness.average_rating) === 1){
     starRatingBus =
@@ -210,10 +211,15 @@ class BusinessShow extends React.Component {
 
         <div className="bus-head">
           <div className="bus-imgs">
-            <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/1.jpg`} height="424" />
-            <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/2.jpg`} height="424" />
-            <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/3.jpg`} height="424" />
-            <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/4.jpg`} height="424" />
+            {/* <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/1.jpg`} height="424" /> */}
+            <img className='listing-show-img' src={this.props.currentBusiness.photos[0]} height="424"/>
+            <img className='listing-show-img' src={this.props.currentBusiness.photos[1]} height="424"/>
+            <img className='listing-show-img' src={this.props.currentBusiness.photos[2]} height="424"/>
+            <img className='listing-show-img' src={this.props.currentBusiness.photos[3]} height="424"/>
+
+            {/* <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/2.jpg`} height="424" /> */}
+            {/* <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/3.jpg`} height="424" /> */}
+            {/* <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/4.jpg`} height="424" /> */}
           </div>
 
           <div className="bus1-about-box">

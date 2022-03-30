@@ -135,7 +135,7 @@ class BusinessIndex extends React.Component {
   }
 
   render(){
-    console.log(this.props)
+    // console.log(this.props)
     if (this.props.businesses.length === 4 ){
       for (let i = this.props.businesses.length -1; i >= 0; i--){
         // console.log(this.props.businesses[i])
@@ -147,25 +147,7 @@ class BusinessIndex extends React.Component {
 
 
     const items = this.props.businesses.map((item) => 
-      <div className="bis-splash-container" key={item.id}>
-        <div className="bis-splash" key={item.id}>
-        <Link className="bis-link1" key={item.id} to={`/businesses/${item.id}`}>
-          <img src={`https://github.com/mattpettenato/FullStack_Project/blob/main/melp_imgs/home/${item.id}/${item.id}.jpg?raw=true`}/>
-          <div key={item.id}>
-            <p className="bis-name">{item.name}</p>
-            {/* {starRatingBus} */}
-            
-              {this.avg_rat(item.id)}
-            
-            {/* <p>{Math.floor(item.average_rating)}</p> */}
-            {/* {BusinessIndexItem} */}
-            <p className="bis-phone">{item.about}</p>
-            <p className="bis-address">{item.address}</p>
-          </div>
-        </Link>
-        
-        </div>
-      </div>
+      <BusinessIndexItem business={item} key={item.id} fetchBusiness={this.props.fetchBusiness} fetchReviews={this.props.fetchReviews}/>
     );
 
 

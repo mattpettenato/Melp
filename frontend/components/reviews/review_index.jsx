@@ -109,7 +109,7 @@ const ReviewIndex = props => {
   // console.log(year)
 
   // console.log(month + "-" + day + "-" + year)
-  console.log(props)
+  // console.log(props)
   return (
     <div className="reviews01">
 

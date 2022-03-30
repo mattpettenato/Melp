@@ -33,9 +33,39 @@ user11 = User.create!({username: "banananeo", email: "banananeo@banananeo.com", 
 
 bus1 = Business.create!({name: "Taquería El Farolito", about: "Mexican, Bar, Late Night", rating: 4.5, phone: "(415) 824-7877", address: "2779 Mission St, San Francisco, CA 94110", hours:"10:00AM–1:45AM", websiteurl: "https://elfarolitosf.com/", latitude: 37.75266096263757, longitude: -122.41819051574423})
 
+b1p1 = URI.open('https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus1pic1.jpg')
+b1p2 = URI.open('https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus1pic2.jpg')
+b1p3 = URI.open('https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus1pic3.jpg')
+b1p4 = URI.open('https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus1pic4.jpg')
+
+bus1.photos.attach(io: b1p1, filename: 'bus1pic1.jpg')
+bus1.photos.attach(io: b1p2, filename: "bus1pic2.jpg")
+bus1.photos.attach(io: b1p3, filename: "bus1pic3.jpg")
+bus1.photos.attach(io: b1p4, filename: "bus1pic4.jpg")
+
 bus2 = Business.create!({name: "Kogi Gogi BBQ", about: "Barbeque, Korean, Beer Bar", rating: 4, phone: "(415) 702-6792", address: "1358 9th Ave San Francisco, CA 94122", hours:"12:00PM-10:00PM", websiteurl: "https://www.kogigogibbq.com/", latitude: 37.76324493147762, longitude: -122.46607400140118})
 
+b2p1 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus2pic1.jpg")
+b2p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus2pic2.jpg")
+b2p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus2pic3.jpg")
+b2p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus2pic4.jpg")
+
+bus2.photos.attach(io: b2p1, filename: "bus2pic1.jpg")
+bus2.photos.attach(io: b2p2, filename: "bus2pic2.jpg")
+bus2.photos.attach(io: b2p3, filename: "bus2pic3.jpg")
+bus2.photos.attach(io: b2p4, filename: "bus2pic4.jpg")
+
 bus3 = Business.create!({name: "District Tea", about: "Bubble Tea, Boba, Sandwiches", rating: 4.5, phone: "(415) 638-6134", address: "2154 Mission St San Francisco, CA 94110", hours:"11:00AM-5:00PM", websiteurl: "https://www.districtteasf.com/", latitude: 37.762734486517225, longitude: -122.4196499725657})
+
+b3p1 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus3pic1.jpg")
+b3p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus3pic2.jpg")
+b3p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus3pic3.jpg")
+b3p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus3pic4.jpg")
+
+bus3.photos.attach(io: b3p1, filename: "bus3pic1.jpg")
+bus3.photos.attach(io: b3p2, filename: "bus3pic2.jpg")
+bus3.photos.attach(io: b3p3, filename: "bus3pic3.jpg")
+bus3.photos.attach(io: b3p4, filename: "bus3pic4.jpg")
 
 bus4 = Business.create!({
                         name: "North Beach Pizza", 
@@ -49,24 +79,21 @@ bus4 = Business.create!({
                         longitude: -122.40735018605879
                         })
 
-# rev1 = Review.create!({
-#                         body: 'This is a test review',
-#                         rating: 1,
-#                         author_id: user1.id,
-#                         business_id: bus3.id
-#                     })
+b4p1 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus4pic1.jpg")
+b4p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus4pic2.jpg")
+b4p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus4pic3.jpg")
+b4p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus4pic4.jpg")
 
-# rev2 = Review.create!({
-#                         body: 'This is a test review 2',
-#                         rating: 2,
-#                         author_id: user2.id,
-#                         business_id: bus2.id
-#                     })
+bus4.photos.attach(io: b4p1, filename: "bus4pic1.jpg")
+bus4.photos.attach(io: b4p2, filename: "bus4pic2.jpg")
+bus4.photos.attach(io: b4p3, filename: "bus4pic3.jpg")
+bus4.photos.attach(io: b4p4, filename: "bus4pic4.jpg")
 
-rev1 = Review.create(body: "The food was great", rating: 4, author_id: user1.id, business_id: bus1.id, name: 'demo')
-rev2 = Review.create(body:"The food was great", rating: 4, author_id: user1.id, business_id: bus2.id, name: 'demo')
-rev3 = Review.create(body:"The food and drinks are amazing", rating: 3, author_id: user2.id, business_id: bus3.id, name: 'AnnaViviana')
-rev4 = Review.create(body:"The food and drinks are amazing", rating: 4, author_id: user3.id, business_id: bus4.id, name: 'JeongJo')
+
+rev1 = Review.create(body: "The food was great", rating: 4, author_id: user1.id, business_id: bus1.id)
+rev2 = Review.create(body:"The food was great", rating: 4, author_id: user1.id, business_id: bus2.id)
+rev3 = Review.create(body:"The food and drinks are amazing", rating: 3, author_id: user2.id, business_id: bus3.id)
+rev4 = Review.create(body:"The food and drinks are amazing", rating: 4, author_id: user3.id, business_id: bus4.id)
 
 
 
