@@ -129,27 +129,19 @@ class BusinessIndex extends React.Component {
         }
       }
 
-
-
     }
   }
 
   render(){
-    // console.log(this.props)
     if (this.props.businesses.length === 4 ){
       for (let i = this.props.businesses.length -1; i >= 0; i--){
-        // console.log(this.props.businesses[i])
-        
       }
 
     }
 
-
-
     const items = this.props.businesses.map((item) => 
       <BusinessIndexItem business={item} key={item.id} fetchBusiness={this.props.fetchBusiness} fetchReviews={this.props.fetchReviews}/>
     );
-
 
     if (!this.props.fetchBusinesses) {
       return null;

@@ -89,12 +89,23 @@ bus4.photos.attach(io: b4p2, filename: "bus4pic2.jpg")
 bus4.photos.attach(io: b4p3, filename: "bus4pic3.jpg")
 bus4.photos.attach(io: b4p4, filename: "bus4pic4.jpg")
 
-
 rev1 = Review.create(body: "The food was great", rating: 4, author_id: user1.id, business_id: bus1.id)
 rev2 = Review.create(body:"The food was great", rating: 4, author_id: user1.id, business_id: bus2.id)
 rev3 = Review.create(body:"The food and drinks are amazing", rating: 3, author_id: user2.id, business_id: bus3.id)
 rev4 = Review.create(body:"The food and drinks are amazing", rating: 4, author_id: user3.id, business_id: bus4.id)
 
+bus5 = Business.create!({ name: "Nash Hot Chicken & Ramen", about: "Chicken, Ramen", rating: 4.5, phone: "(415) 655-9122", address: "3970 17th St Ste B San Francisco, CA 94114", hours: "12:00PM-9:00PM", websiteurl: "https://www.nashchickramen.com", latitude: 37.762674091103484, longitude: -122.43436564504873 })
 
+b5p1 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus5pic1.jpeg")
+b5p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus5pic2.jpeg")
+b5p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus5pic3.jpeg")
+b5p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus5pic4.jpeg")
 
+bus5.photos.attach(io: b5p1, filename: "bus5pic1.jpeg")
+bus5.photos.attach(io: b5p2, filename: "bus5pic2.jpeg")
+bus5.photos.attach(io: b5p3, filename: "bus5pic3.jpeg")
+bus5.photos.attach(io: b5p4, filename: "bus5pic4.jpeg")
 
+bus5rev1 = Review.create(body: "Ramen had so much flavor! Will 100% be coming here again!", rating: 5, author_id: user5.id, business_id: bus5.id)
+bus5rev1 = Review.create(body: "The chicken had so much flavor! I cannot wait to eat here with my friends again!", rating: 5, author_id: user7.id, business_id: bus5.id)
+bus5rev1 = Review.create(body: "Was vert busy and I was hungry and tired", rating: 3, author_id: user5.id, business_id: bus5.id)

@@ -24,7 +24,7 @@ class Login extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
+    // this.renderErrors = this.renderErrors.bind(this);
     this.clearErrors = this.clearErrors.bind(this);
 
     this.nameEmpty = false;
@@ -67,17 +67,11 @@ class Login extends React.Component {
 
 
 
-  renderErrors() {
-    return (
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+  // renderErrors() {
+
+  //           {this.props.errors ? this.props.errors : ''}
+
+  // }
 
   handleClick() {
     this.setState(
@@ -91,6 +85,7 @@ class Login extends React.Component {
   }
 
   render() {
+    console.log(this.props.errors)
     return (
       <div id="wrapper">
       <div className="session-form">
@@ -103,15 +98,17 @@ class Login extends React.Component {
           <div className="session-form-box">
           <form onSubmit={this.handleSubmit}>
             <p className="session-form-title">Log In to Melp</p>
-            <p className="session-form-title-2">New to Melp? <Link to="/signup" onClick={this.clearErrors}>Sign Up</Link></p>
+            <p className="session-form-title-2">New to Melp? <Link to="/signup" >Sign Up</Link></p>
 
             <p className="legal-copy">By logging in, you agree to Melp’s 
             <a href="https://terms.yelp.com/tos/en_us/20200101_en_us/" >Terms of    Service</a> and 
             <a href="https://terms.yelp.com/privacy/en_us/20200101_en_us/" > Privacy    Policy.</a>
             </p>
         
-            {this.renderErrors()}
-
+            {/* {this.renderErrors()} */}
+            <div className="da-error">
+            {this.props.errors ? this.props.errors.invalid : ''}
+            </div>
 
                 <input type="text"
                   value={this.state.username}
@@ -135,7 +132,9 @@ class Login extends React.Component {
 
 
 
-              <p className="session-form-foot">New to Melp? <Link to="/signup" onClick={this.clearErrors}>Sign Up</Link></p>
+              {/* <p className="session-form-foot">New to Melp? <Link to="/signup" onClick={this.clearErrors}>Sign Up</Link></p> */}
+              <p className="session-form-foot">New to Melp? <Link to="/signup">Sign Up</Link></p>
+
           </div>
           <img className="signup-img" src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png" />
         </div>

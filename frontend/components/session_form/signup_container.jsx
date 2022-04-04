@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { signup } from '../../actions/session_actions';
 // import { openModal, closeModal } from '../../actions/modal_actions';
 import SignUp from './signup';
-import { clearErrors } from '../../actions/errors_actions';
+import { clearErrors } from '../../actions/session_actions';
 
 // const mapStateToProps = ({ errors }) => ({
 //   errors: errors.session,

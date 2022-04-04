@@ -51,19 +51,35 @@ class Signup extends React.Component{
   }
 
   renderErrors() {
-    return (
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
+    if (this.props.errors) {
+      console.log(this.props.errors)
+    }
+    // if (this.props.errors.username) {
+    //   return (
+    //     <ul>
+    //       {this.props.errors.username}
+    //     </ul>
+    //   )
+    // }
+    // if (this.props.errors.email) {
+    //   return (
+    //     <ul>
+    //       {this.props.errors.email}
+    //     </ul>
+    //   )
+    // }
+    // if (this.props.errors.password) {
+    //   return (
+    //     <ul>
+    //       {this.props.errors.password}
+    //     </ul>
+    //   )
+    // }
   }
 
 
   render () {
+    // console.log(this.props.errors)
     return (
       <div id="wrapper">
       <div className="session-form">
@@ -85,7 +101,7 @@ class Signup extends React.Component{
         <a href="https://terms.yelp.com/privacy/en_us/20200101_en_us/" > Privacy Policy.</a>
         </p>
 
-        {this.renderErrors()}
+        {/* {this.renderErrors()} */}
 
           <div className="login-form">
 
@@ -98,6 +114,10 @@ class Signup extends React.Component{
               className="login-input"
             />
           </label>
+          <div className="da-error">
+            {this.props.errors ? this.props.errors.username : ''}
+          </div>
+
           <label>
             <input
               type="text"
@@ -107,7 +127,11 @@ class Signup extends React.Component{
               className="login-input"
             />
           </label>
-          <label>
+          <div className="da-error">
+            {this.props.errors ? this.props.errors.email : ''}
+          </div>
+
+          <label className="signup-pass">
             <input
               type="password"
               value={this.state.password}
@@ -116,6 +140,10 @@ class Signup extends React.Component{
               className="login-input"
             />
           </label>
+          <div className="da-error">
+            {this.props.errors ? this.props.errors.password : ''}
+          </div>
+
 
           <label>
             <input
@@ -127,7 +155,8 @@ class Signup extends React.Component{
           {/* <input className="submit" type="submit" value="Sign Up" /> */}
                 <input className="submit" type="submit" value="Sign Up" />
 
-          <p className="session-form-foot">Already on Melp? <Link to="/login" onClick={this.clearErrors}>Log In</Link></p>
+          {/* <p className="session-form-foot">Already on Melp? <Link to="/login" onClick={this.clearErrors}>Log In</Link></p> */}
+          <p className="session-form-foot">Already on Melp? <Link to="/login" >Log In</Link></p>
           </div>
         </form>
       </div>
