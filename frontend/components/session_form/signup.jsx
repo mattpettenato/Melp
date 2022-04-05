@@ -52,7 +52,7 @@ class Signup extends React.Component{
 
   renderErrors() {
     if (this.props.errors) {
-      console.log(this.props.errors)
+      // console.log(this.props.errors)
     }
     // if (this.props.errors.username) {
     //   return (

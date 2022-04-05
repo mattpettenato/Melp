@@ -69,9 +69,14 @@ class SearchIndex extends React.Component {
       <div className="left-sided">
         <div className="category-filter">
           <h2>Categories</h2>
-          <button onClick={() =>this.button("bars")}>Bars</button>
-          <button onClick={() =>this.button("restaurant")}>Restaurants</button>
-          <button onClick={() =>this.button("boba")}>Boba</button> 
+          <button onClick={() =>this.button("All")}>All</button> 
+          <button onClick={() =>this.button("Food")}>Food</button>
+          <button onClick={() =>this.button("Drinks")}>Drinks</button>
+          <button onClick={() =>this.button("Italian")}>Italian</button>
+          <button onClick={() =>this.button("Mexican")}>Mexican</button>
+          <button onClick={() =>this.button("Korean")}>Korean</button>
+          <button onClick={() =>this.button("Asian")}>Asian</button>
+
         </div>
         <div className="bus-index-main">
           <div className="pls-search-123" >

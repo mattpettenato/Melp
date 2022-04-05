@@ -4,6 +4,7 @@ import Search from '../search/search_home';
 import NavBarContainer from '../../components/nav_bar/nav_bar_container';
 import BusinessIndexItem from '../business/business_index_item';
 import BusinessIndexContainer from '../business/business_index_container'
+import SearchHomeContainer from '../search/search_home_container'
 
 class Splash extends React.Component {
   constructor(props) {
@@ -34,7 +35,7 @@ class Splash extends React.Component {
             <div className="main-logo">
               <Link to="/"><img src="https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/melp_logo.png" /></Link>
             </div>
-            <Search />
+            <SearchHomeContainer />
           </div>
 
           <div className="new-businesses">

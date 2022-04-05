@@ -119,7 +119,7 @@ class BusinessIndexItem extends React.Component {
   }
 
   render() {
-    console.log(this.props.business)
+    // console.log(this.props.business)
     return (
       <div className="bis-splash-container" >
         <div className="bis-splash" >
