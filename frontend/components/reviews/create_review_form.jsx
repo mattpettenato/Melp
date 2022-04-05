@@ -101,7 +101,7 @@ class ReviewForm extends React.Component {
     let curBus1;
     if (this.props.business !== undefined) {
       curBus1 = this.props.business.name
-      console.log(curBus1)
+      // console.log(curBus1)
     }
 
     return(

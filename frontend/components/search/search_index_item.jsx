@@ -12,7 +12,6 @@ class SearchIndexItem extends React.Component {
   }
 
     avg_rat(businessIdx) {
-    
       
       if (businessIdx === this.props.business.id){
         let avgRatingRounded = Math.floor(this.props.business.average_rating)
@@ -119,7 +118,7 @@ class SearchIndexItem extends React.Component {
   }
 
   render() {
-    console.log(this.props.business)
+    console.log(this.props)
     return (
       <Link className="bis-link1" to={`/businesses/${this.props.business.id}`}>
       <div className="test-div-search">
@@ -138,29 +137,18 @@ class SearchIndexItem extends React.Component {
             </p>
           </div>
           <div className="test-search-rating">
-            <p>
               {this.avg_rat(this.props.business.id)}
-            </p>
+          </div>
+          <div className="index-category-show">
+            {this.props.business.categories[0]}
+            ,&nbsp;
+            {this.props.business.categories[1]}
+            {this.props.business.categories[2]}
+            {this.props.business.categories[4]}
           </div>
         </div>
       </div>
       </Link>
-      // <div className="bis-search-container" >
-      //   <div className="bis-search" >
-      //   <Link className="bis-link1" to={`/businesses/${this.props.business.id}`}>
-      //       <img className='listing-show-img' src={this.props.business.photos[0]} height="424"/>
-      //     <h1>test</h1>
-
-      //     <div className="search-info-stuff">
-      //       <p className="bis-name">{this.props.business.name}</p>           
-      //         {this.avg_rat(this.props.business.id)}
-      //       <p className="bis-phone">{this.props.business.about}</p>
-      //       <p className="bis-address">{this.props.business.address}</p>
-      //     </div>
-      //   </Link>
-        
-      //   </div>
-      // </div>
     )
   }
 }

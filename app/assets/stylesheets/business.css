@@ -584,3 +584,13 @@
   max-height: 180px;
   justify-content: center;
 }
+
+.index-category-show {
+  margin-top: 10px;
+  margin-left: 10px;
+
+}
+
+.test-search-right {
+  margin-left: 10px;
+}

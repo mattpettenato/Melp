@@ -6,7 +6,8 @@ class Api::BusinessesController < ApplicationController
   end
 
   def index
-    @businesses = Business.all
+    # @businesses = Business.all
+    @businesses = category ? Business.search_category(category) : Business.all
     render :index
   end
 
@@ -22,6 +23,10 @@ class Api::BusinessesController < ApplicationController
   def update
       @business = Business.find(params[:id])
       @business.update(business_params)
+  end
+
+  def category
+    params[:category]
   end
 
   private

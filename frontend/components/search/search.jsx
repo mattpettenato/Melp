@@ -67,7 +67,7 @@ class Search extends React.Component {
 
         </div>
 
-
+{/* 
         <footer className="footer">
           <div className="about-user">
             <p className="about-user-contact">Contact</p>
@@ -85,7 +85,7 @@ class Search extends React.Component {
 
           </div>
 
-        </footer>
+        </footer> */}
       </div>
     )
   }

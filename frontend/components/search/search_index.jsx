@@ -8,21 +8,50 @@ import SearchIndexItem from '../search/search_index_item'
 class SearchIndex extends React.Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      category: ""
+    }
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.button = this.button.bind(this);
   }
 
-  componentDidMount() {
-    // if (this.props.match.params.query === undefined) {
-    //   // this.props.fetchBusinesses()
-    // } else {
-    //   // this.props.getSearchBusinesses(this.props.match.params.query)
-    //   // console.log('test')
-    // }
+  componentDidMount(){
+    // this.props.fetchBusinesses({ category: this.props.match.params.query });
+    this.props.fetchBusinesses();
 
   }
 
-  render(){
+  handleSubmit(e){
+    e.preventDefault();
+
+    if (this.state.category == "" ) {
+      this.props.history.push(`/businesses/search/food`)
+    } else {
+      this.props.history.push(`businesses/search/${this.state.category}`)
+    }
+
+    // window.location.reload();
+  }
+
+  handleChange(type) {
+    return (e) => this.setState({ [type]: e.target.value })
+  }
+
+  button(category){
+    this.props.history.push(`/businesses/search/${category}`)
+    window.location.reload();
+  }
+
+
+  render() {
+    // console.log(this.props)
+    const { category } = this.state;
+    // const {categories} = this.props.business
+    // console.log(this.props)
     let orderedBus = []
-    for (let i = this.props.businesses.length -1; i >= 0 && orderedBus.length < 4; i--){
+    for (let i = this.props.businesses.length -1; i >= 0 && orderedBus.length < 8; i--){
       orderedBus.push(this.props.businesses[i])
     }
 
@@ -30,22 +59,24 @@ class SearchIndex extends React.Component {
     let busBox1 = oneBus.map((business, idx) => {
       return (
         <SearchIndexItem key={idx} currentUser={this.props.currentUser} business={business} fetchBusiness={this.props.fetchBusiness} fetchReviews={this.props.fetchReviews} />
-        // <ul>test</ul>
       )
     })
-
-    // const items = this.props.businesses.map((item) => 
-    //   <BusinessIndexItem business={item} key={item.id} fetchBusiness={this.props.fetchBusiness} fetchReviews={this.props.fetchReviews}/>
-    // );
 
     if (!this.props.fetchBusinesses) {
       return null;
     } else {
     return (
-      <div className="bus-index-main">
+      <div className="left-sided">
+        <div className="category-filter">
+          <h2>Categories</h2>
+          <button onClick={() =>this.button("bars")}>Bars</button>
+          <button onClick={() =>this.button("restaurant")}>Restaurants</button>
+          <button onClick={() =>this.button("boba")}>Boba</button> 
+        </div>
+        <div className="bus-index-main">
           <div className="pls-search-123" >
-          {/* {items} */}
-          {busBox1}
+            {busBox1}
+          </div>
         </div>
       </div>
     )

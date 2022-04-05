@@ -116,20 +116,48 @@ bus5rev1 = Review.create(body: "Was vert busy and I was hungry and tired", ratin
 # categories
 
 c1 = Category.create!({
-    title: 'italian'
+    title: 'Italian'
 })
 
 c2 = Category.create!({
-    title: 'asian'
+    title: 'Asian'
 })
 
 c3 = Category.create!({
-    title: 'mexican'
+    title: 'Mexican'
 })
 
 c4 = Category.create!({
-    title: 'boba'
+    title: 'Boba'
 })
+
+c5 = Category.create!({
+    title: 'Pizza'
+})
+
+c6 = Category.create!({
+    title: "Tacos",
+})
+
+c7 = Category.create!({
+    title: "BBQ",
+})
+
+c8 = Category.create!({
+    title: "Food",
+})
+
+c9 = Category.create!({
+    title: "Drinks",
+})
+
+c10 = Category.create!({
+    title: "Korean",
+})
+
+# c11 = Category.create!({
+#     title: ""
+# })
 
 BusinessCategory.create!({
     category_id: c1.id,
@@ -159,4 +187,54 @@ BusinessCategory.create!({
 BusinessCategory.create!({
     category_id: c2.id,
     business_id: bus5.id
+})
+
+BusinessCategory.create!({
+    category_id: c5.id,
+    business_id: 4
+})
+
+BusinessCategory.create!({
+  category_id: c6.id,
+  business_id: 1,
+})
+
+BusinessCategory.create!({
+  category_id: c7.id,
+  business_id: 2,
+})
+
+BusinessCategory.create!({
+  category_id: c8.id,
+  business_id: 1,
+})
+
+BusinessCategory.create!({
+  category_id: c8.id,
+  business_id: 2,
+})
+
+BusinessCategory.create!({
+  category_id: c8.id,
+  business_id: 3,
+})
+
+BusinessCategory.create!({
+  category_id: c8.id,
+  business_id: 4,
+})
+
+BusinessCategory.create!({
+  category_id: c8.id,
+  business_id: 5,
+})
+
+BusinessCategory.create!({
+  category_id: c9.id,
+  business_id: 3,
+})
+
+BusinessCategory.create!({
+  category_id: c10.id,
+  business_id: 2,
 })

@@ -21,7 +21,7 @@ class BusinessShow extends React.Component {
 
 
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     if (this.props.currentBusiness){
       const authors = this.props.authors;
       // console.log(authors)
