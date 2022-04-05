@@ -118,7 +118,7 @@ class SearchIndexItem extends React.Component {
   }
 
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     return (
       <Link className="bis-link1" to={`/businesses/${this.props.business.id}`}>
       <div className="test-div-search">

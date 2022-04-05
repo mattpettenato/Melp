@@ -18,11 +18,11 @@ class Search extends React.Component {
     e.preventDefault();
     if (this.state.category == "") {
       // this.props.history.push(`/businesses/search/all`);
-      console.log(this.state)
+      // console.log(this.state)
 
     } else {
       // this.props.history.push(`/businesses/search/${this.state.category}`);
-      console.log(this.state)
+      // console.log(this.state)
     }
   }
 

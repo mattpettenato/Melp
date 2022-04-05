@@ -40,14 +40,14 @@ class SearchIndex extends React.Component {
   }
 
   button(category){
-    this.props.history.push(`/businesses/search/${category}`)
+    // this.props.history.push(`/businesses/search/${category}`)
     window.location.reload();
   }
 
 
   render() {
-    // console.log(this.props)
     const { category } = this.state;
+    // console.log(window.location.href.slice(35,-1))
     // const {categories} = this.props.business
     // console.log(this.props)
     let orderedBus = []
@@ -69,13 +69,30 @@ class SearchIndex extends React.Component {
       <div className="left-sided">
         <div className="category-filter">
           <h2>Categories</h2>
-          <button onClick={() =>this.button("All")}>All</button> 
-          <button onClick={() =>this.button("Food")}>Food</button>
-          <button onClick={() =>this.button("Drinks")}>Drinks</button>
-          <button onClick={() =>this.button("Italian")}>Italian</button>
-          <button onClick={() =>this.button("Mexican")}>Mexican</button>
-          <button onClick={() =>this.button("Korean")}>Korean</button>
-          <button onClick={() =>this.button("Asian")}>Asian</button>
+          <Link to={`/businesses/search/all`}>
+            <button onClick={() =>this.button("All")}>All</button> 
+          </Link>
+          <Link to={`/businesses/search/food`}>
+            <button onClick={() =>this.button("Food")}>Food</button> 
+          </Link>
+          <Link to={`/businesses/search/drinks`}>
+            <button onClick={() =>this.button("Drinks")}>Drinks</button> 
+          </Link>
+          <Link to={`/businesses/search/italian`}>
+            <button onClick={() =>this.button("Italian")}>Italian</button>
+          </Link>
+          <Link to={`/businesses/search/mexican`}>
+            <button onClick={() =>this.button("Mexican")}>Mexican</button> 
+          </Link>
+          <Link to={`/businesses/search/korean`}>
+            <button onClick={() =>this.button("Korean")}>Korean</button> 
+          </Link>
+          <Link to={`/businesses/search/asian`}>
+            <button onClick={() =>this.button("Asian")}>Asian</button> 
+          </Link>                                                  
+          
+          
+          
 
         </div>
         <div className="bus-index-main">
