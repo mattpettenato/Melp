@@ -19,9 +19,9 @@ class Search extends React.Component {
           </div>
           <span id="search-submit" style={{width : '24px', height : '24px'}} >
             
-            <button to="/businesses/search/food" className="search-btn" >
+            <button to="/businesses/search/all" className="search-btn" >
               {/* <span style="width: 24px;" style="height: 24px;" /> */}
-              <Link to="/businesses/search/food">
+              <Link to="/businesses/search/all">
               <i className="fas fa-search fa-lg"></i>
               </Link>
             </button>

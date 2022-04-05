@@ -570,7 +570,7 @@
   justify-content: space-between;
   margin-left: 10%;
   margin-right: 5%;
-  height: 900px;
+  height: 1100px;
 
 }
 
@@ -593,4 +593,12 @@
 
 .test-search-right {
   margin-left: 10px;
+}
+
+.search-left {
+  margin-bottom: 50px;
+}
+
+.left-sided {
+  padding-bottom: 50px;
 }

@@ -25,7 +25,7 @@ class Search extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     if(this.state.category == ""){
-      this.props.history.push(`/businesses/search/food`); 
+      this.props.history.push(`/businesses/search/all`); 
     }else{
       this.props.history.push(`/businesses/search/${this.state.category}`);
     }
@@ -67,7 +67,7 @@ class Search extends React.Component {
 
         </div>
 
-{/* 
+
         <footer className="footer">
           <div className="about-user">
             <p className="about-user-contact">Contact</p>
@@ -85,7 +85,7 @@ class Search extends React.Component {
 
           </div>
 
-        </footer> */}
+        </footer>
       </div>
     )
   }
