@@ -133,15 +133,26 @@ class BusinessIndex extends React.Component {
   }
 
   render(){
-    if (this.props.businesses.length === 4 ){
+    if (this.props.businesses.length === 5 ){
       for (let i = this.props.businesses.length -1; i >= 0; i--){
       }
 
     }
+    let orderedBus = []
+    for (let i = this.props.businesses.length -1; i >= 0 && orderedBus.length < 4; i--){
+      orderedBus.push(this.props.businesses[i])
+    }
 
-    const items = this.props.businesses.map((item) => 
-      <BusinessIndexItem business={item} key={item.id} fetchBusiness={this.props.fetchBusiness} fetchReviews={this.props.fetchReviews}/>
-    );
+    let oneBus = orderedBus
+    let busBox1 = oneBus.map((business, idx) => {
+      return (
+        <BusinessIndexItem key={idx} currentUser={this.props.currentUser} business={business} fetchBusiness={this.props.fetchBusiness} fetchReviews={this.props.fetchReviews} />
+      )
+    })
+
+    // const items = this.props.businesses.map((item) => 
+    //   <BusinessIndexItem business={item} key={item.id} fetchBusiness={this.props.fetchBusiness} fetchReviews={this.props.fetchReviews}/>
+    // );
 
     if (!this.props.fetchBusinesses) {
       return null;
@@ -149,7 +160,8 @@ class BusinessIndex extends React.Component {
     return (
       <div className="bus-index-main">
           <div className="plswork123" >
-          {items}        
+          {/* {items} */}
+          {busBox1}
         </div>
       </div>
     )
