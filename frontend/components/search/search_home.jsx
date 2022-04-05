@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom';
 class Search extends React.Component {
   constructor(props) {
     super(props)
@@ -19,10 +19,11 @@ class Search extends React.Component {
           </div>
           <span id="search-submit" style={{width : '24px', height : '24px'}} >
             
-            <button href="https://www.google.com" className="search-btn" >
+            <button to="/businesses/search/food" className="search-btn" >
               {/* <span style="width: 24px;" style="height: 24px;" /> */}
-              
+              <Link to="/businesses/search/food">
               <i className="fas fa-search fa-lg"></i>
+              </Link>
             </button>
             
           </span>
