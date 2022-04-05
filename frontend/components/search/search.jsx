@@ -4,6 +4,11 @@ import nav_bar_container from '../nav_bar/nav_bar_container'
 import SearchHome from "../search/search_home"
 import SearchMap from "../maps/search_map"
 import NavBarContainer from '../../components/nav_bar/nav_bar_container';
+import BusinessIndexContainer from '../business/business_index_container';
+// import SearchIndexContainer from '../search/search_index_container.js'
+import SearchIndex from './search_index'
+import SearchIndexContainer from './search_index_container'
+
 
 class Search extends React.Component {
   constructor(props){
@@ -51,7 +56,9 @@ class Search extends React.Component {
 
         <div className="search-div">
           <div className="search-left">
-            <h1>test left</h1>
+            <SearchIndexContainer />
+            {/* <BusinessIndexContainer /> */}
+            {/* <h1>test</h1> */}
           </div>
           <div className="search-right">
             <SearchMap />

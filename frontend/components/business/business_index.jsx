@@ -27,117 +27,117 @@ class BusinessIndex extends React.Component {
   //   }
   // }
 
-  avg_rat(businessIdx) {
-    for (let i = this.props.businesses.length -1; i >= 0; i--){
+  // avg_rat(businessIdx) {
+  //   for (let i = this.props.businesses.length -1; i >= 0; i--){
       
-      if (businessIdx === this.props.businesses[i].id){
-        let avgRatingRounded = Math.floor(this.props.businesses[i].average_rating)
+  //     if (businessIdx === this.props.businesses[i].id){
+  //       let avgRatingRounded = Math.floor(this.props.businesses[i].average_rating)
         
-        if (Math.floor(this.props.businesses[i].average_rating) === 1){
-          return(
-            <div className="stars-div">
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-            </div>
-          )
-        }
+  //       if (Math.floor(this.props.businesses[i].average_rating) === 1){
+  //         return(
+  //           <div className="stars-div">
+  //             <span className="fa-stack fa-xs icon-star">
+  //               <i className="fa fa-square fa-stack-2x"></i>
+  //               <i className="fas fa-star fa-stack-1x"></i>
+  //             </span>
+  //           </div>
+  //         )
+  //       }
 
-        if (Math.floor(this.props.businesses[i].average_rating) === 2){
-          return(
-            <div className="stars-div">
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-            </div>
-          )
-        }
+  //       if (Math.floor(this.props.businesses[i].average_rating) === 2){
+  //         return(
+  //           <div className="stars-div">
+  //             <span className="fa-stack fa-xs icon-star">
+  //               <i className="fa fa-square fa-stack-2x"></i>
+  //               <i className="fas fa-star fa-stack-1x"></i>
+  //             </span>
+  //             <span className="fa-stack fa-xs icon-star">
+  //               <i className="fa fa-square fa-stack-2x"></i>
+  //               <i className="fas fa-star fa-stack-1x"></i>
+  //             </span>
+  //           </div>
+  //         )
+  //       }
 
-        if (Math.floor(this.props.businesses[i].average_rating) === 3){
-          return(
-            <div className="stars-div">
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-            </div>
-          )
-        }
+  //       if (Math.floor(this.props.businesses[i].average_rating) === 3){
+  //         return(
+  //           <div className="stars-div">
+  //             <span className="fa-stack fa-xs icon-star">
+  //               <i className="fa fa-square fa-stack-2x"></i>
+  //               <i className="fas fa-star fa-stack-1x"></i>
+  //             </span>
+  //             <span className="fa-stack fa-xs icon-star">
+  //               <i className="fa fa-square fa-stack-2x"></i>
+  //               <i className="fas fa-star fa-stack-1x"></i>
+  //             </span>
+  //             <span className="fa-stack fa-xs icon-star">
+  //               <i className="fa fa-square fa-stack-2x"></i>
+  //               <i className="fas fa-star fa-stack-1x"></i>
+  //             </span>
+  //           </div>
+  //         )
+  //       }
         
-        if (Math.floor(this.props.businesses[i].average_rating) === 4){
-          return(
-            <div className="stars-div">
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-            </div>
-          )
-        }
+  //       if (Math.floor(this.props.businesses[i].average_rating) === 4){
+  //         return(
+  //           <div className="stars-div">
+  //             <span className="fa-stack fa-xs icon-star">
+  //               <i className="fa fa-square fa-stack-2x"></i>
+  //               <i className="fas fa-star fa-stack-1x"></i>
+  //             </span>
+  //             <span className="fa-stack fa-xs icon-star">
+  //               <i className="fa fa-square fa-stack-2x"></i>
+  //               <i className="fas fa-star fa-stack-1x"></i>
+  //             </span>
+  //             <span className="fa-stack fa-xs icon-star">
+  //               <i className="fa fa-square fa-stack-2x"></i>
+  //               <i className="fas fa-star fa-stack-1x"></i>
+  //             </span>
+  //             <span className="fa-stack fa-xs icon-star">
+  //               <i className="fa fa-square fa-stack-2x"></i>
+  //               <i className="fas fa-star fa-stack-1x"></i>
+  //             </span>
+  //           </div>
+  //         )
+  //       }
 
-        if (Math.floor(this.props.businesses[i].average_rating) === 5){
-          return(
-            <div className="stars-div">
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-            </div>
-          )
-        }
-      }
+  //       if (Math.floor(this.props.businesses[i].average_rating) === 5){
+  //         return(
+  //           <div className="stars-div">
+  //             <span className="fa-stack fa-xs icon-star">
+  //               <i className="fa fa-square fa-stack-2x"></i>
+  //               <i className="fas fa-star fa-stack-1x"></i>
+  //             </span>
+  //             <span className="fa-stack fa-xs icon-star">
+  //               <i className="fa fa-square fa-stack-2x"></i>
+  //               <i className="fas fa-star fa-stack-1x"></i>
+  //             </span>
+  //             <span className="fa-stack fa-xs icon-star">
+  //               <i className="fa fa-square fa-stack-2x"></i>
+  //               <i className="fas fa-star fa-stack-1x"></i>
+  //             </span>
+  //             <span className="fa-stack fa-xs icon-star">
+  //               <i className="fa fa-square fa-stack-2x"></i>
+  //               <i className="fas fa-star fa-stack-1x"></i>
+  //             </span>
+  //             <span className="fa-stack fa-xs icon-star">
+  //               <i className="fa fa-square fa-stack-2x"></i>
+  //               <i className="fas fa-star fa-stack-1x"></i>
+  //             </span>
+  //           </div>
+  //         )
+  //       }
+  //     }
 
-    }
-  }
+  //   }
+  // }
 
   render(){
-    if (this.props.businesses.length === 5 ){
-      for (let i = this.props.businesses.length -1; i >= 0; i--){
-      }
+    // if (this.props.businesses.length === 5 ){
+    //   for (let i = this.props.businesses.length -1; i >= 0; i--){
+    //   }
 
-    }
+    // }
     let orderedBus = []
     for (let i = this.props.businesses.length -1; i >= 0 && orderedBus.length < 4; i--){
       orderedBus.push(this.props.businesses[i])
