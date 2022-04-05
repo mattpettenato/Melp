@@ -155,3 +155,8 @@ BusinessCategory.create!({
     category_id: c4.id,
     business_id: bus3.id
 })
+
+BusinessCategory.create!({
+    category_id: c2.id,
+    business_id: bus5.id
+})
