@@ -12,6 +12,14 @@ class Business < ApplicationRecord
   has_many :users_reviewed,
   through: :reviews,
   source: :user
+
+  has_many :business_categories,
+  foreign_key: :business_id,
+  class_name: :BusinessCategory
+
+  has_many :categories,
+  through: :business_categories,
+  source: :category
   
   has_many_attached :photos
 

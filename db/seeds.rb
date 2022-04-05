@@ -9,8 +9,11 @@
 
 require 'open-uri'
 
+BusinessCategory.destroy_all
+Category.destroy_all
 User.destroy_all
 Business.destroy_all
+Review.destroy_all
 
 ActiveRecord::Base.connection.tables.each do |t|
     ActiveRecord::Base.connection.reset_pk_sequence!(t)
@@ -109,3 +112,46 @@ bus5.photos.attach(io: b5p4, filename: "bus5pic4.jpeg")
 bus5rev1 = Review.create(body: "Ramen had so much flavor! Will 100% be coming here again!", rating: 5, author_id: user5.id, business_id: bus5.id)
 bus5rev1 = Review.create(body: "The chicken had so much flavor! I cannot wait to eat here with my friends again!", rating: 5, author_id: user7.id, business_id: bus5.id)
 bus5rev1 = Review.create(body: "Was vert busy and I was hungry and tired", rating: 3, author_id: user5.id, business_id: bus5.id)
+
+# categories
+
+c1 = Category.create!({
+    title: 'italian'
+})
+
+c2 = Category.create!({
+    title: 'asian'
+})
+
+c3 = Category.create!({
+    title: 'mexican'
+})
+
+c4 = Category.create!({
+    title: 'boba'
+})
+
+BusinessCategory.create!({
+    category_id: c1.id,
+    business_id: bus4.id
+})
+
+BusinessCategory.create!({
+    category_id: c2.id,
+    business_id: bus2.id,
+})
+
+BusinessCategory.create!({
+    category_id: c2.id,
+    business_id: bus3.id
+})
+
+BusinessCategory.create!({
+    category_id: c3.id,
+    business_id: bus1.id,
+})
+
+BusinessCategory.create!({
+    category_id: c4.id,
+    business_id: bus3.id
+})
