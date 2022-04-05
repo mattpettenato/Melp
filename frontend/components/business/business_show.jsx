@@ -211,15 +211,10 @@ class BusinessShow extends React.Component {
 
         <div className="bus-head">
           <div className="bus-imgs">
-            {/* <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/1.jpg`} height="424" /> */}
             <img className='listing-show-img' src={this.props.currentBusiness.photos[0]} height="424"/>
             <img className='listing-show-img' src={this.props.currentBusiness.photos[1]} height="424"/>
             <img className='listing-show-img' src={this.props.currentBusiness.photos[2]} height="424"/>
             <img className='listing-show-img' src={this.props.currentBusiness.photos[3]} height="424"/>
-
-            {/* <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/2.jpg`} height="424" /> */}
-            {/* <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/3.jpg`} height="424" /> */}
-            {/* <img src={`https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/home/${this.props.currentBusiness.id}/4.jpg`} height="424" /> */}
           </div>
 
           <div className="bus1-about-box">

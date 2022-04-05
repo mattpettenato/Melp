@@ -13,6 +13,8 @@ import BusinessShowContainer from "./business/business_show_container"
 import ReviewForm from "./reviews/create_review_form"
 import CreateReviewFormContainer from './reviews/create_review_form_container';
 import ReviewIndexContainer from './reviews/reviews_index_container'
+import SearchContainer from './search/search_container'
+
 
 const App = () => (
   <div>

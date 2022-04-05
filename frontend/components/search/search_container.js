@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import Search from "./search";
+import Search from "../search/search.jsx";
 import { fetchBusinesses } from "../../actions/business_actions";
 import { logout } from "../../actions/session_actions"
 
@@ -12,7 +12,7 @@ const mSTP = (state) => {
 
 const mDTP = dispatch => {
   return {
-    fetchBusinesses: (searchTerm) => dispatch(fetchBusinesses(searchTerm)),
+    fetchBusinesses: () => dispatch(fetchBusinesses()),
     logout: () => dispatch(logout())
   }
 }

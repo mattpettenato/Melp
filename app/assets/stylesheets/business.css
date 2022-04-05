@@ -457,6 +457,13 @@
   height: 150px;
 }
 
+#map-container {
+  width: 900px;
+  height: 100%;
+}
+
+
+
 .busdirbut {
   position: relative;
   display: flex;
@@ -514,3 +521,14 @@
   margin: -3px;
 }
 
+.search-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  margin-left: 10%;
+  margin-right: 5%;
+  height: 900px;
+
+}
