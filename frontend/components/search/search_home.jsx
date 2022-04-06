@@ -40,7 +40,7 @@ class Search extends React.Component {
           <label id="findme">Find</label>
           <div id="leftDiv">
             {/* <input value={category} className="findsearchtext" type="text" placeholder="Food, Drinks, BBQ, Pizza..." onChange={this.handleChange("category")}/> */}
-            <input type='text' placeholder='Food, Drinks, BBQ, Pizza...' value={this.state.category} onChange={this.update('category')}/>
+            <input type='text' className="findsearchtext" placeholder='Food, Drinks, BBQ, Pizza...' value={this.state.category} onChange={this.update('category')}/>
           </div>
           <label id="findme">Near</label>
           <div id="rightDiv">
