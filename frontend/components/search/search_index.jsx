@@ -1,5 +1,6 @@
 // import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 // import BusinessIndexItem from './business_index_item';
 import React, { useEffect, useRef } from 'react';
@@ -40,7 +41,10 @@ class SearchIndex extends React.Component {
   }
 
   button(category){
-    // this.props.history.push(`/businesses/search/${category}`)
+    
+    this.props.history.push(`/businesses/search/${category}`)
+    // this.props.history.push(`/businesses/search/${category === '' ? 'all' : category}`)
+    console.log(this.props.history)
     window.location.reload();
   }
 
@@ -49,7 +53,7 @@ class SearchIndex extends React.Component {
     const { category } = this.state;
     // console.log(window.location.href.slice(35,-1))
     // const {categories} = this.props.business
-    // console.log(this.props)
+    console.log(window.location.href.slice(42))
     let orderedBus = []
     for (let i = this.props.businesses.length -1; i >= 0 && orderedBus.length < 8; i--){
       orderedBus.push(this.props.businesses[i])
@@ -90,10 +94,6 @@ class SearchIndex extends React.Component {
           <Link to={`/businesses/search/asian`}>
             <button onClick={() =>this.button("Asian")}>Asian</button> 
           </Link>                                                  
-          
-          
-          
-
         </div>
         <div className="bus-index-main">
           <div className="pls-search-123" >
@@ -105,4 +105,5 @@ class SearchIndex extends React.Component {
   }
   }
 }
-export default SearchIndex;
+// export default SearchIndex;
+export default withRouter(SearchIndex)

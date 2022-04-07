@@ -23,16 +23,8 @@ class Search extends React.Component {
     return e => this.setState({[field]: e.currentTarget.value})
   }
 
-  // handleChange(type) {
-  //   return (e) => this.setState({ [type]: e.target.value });
-  // }
-
-  // componentDidMount(){
-  //   // this.props.fetchBusinesses();
-  // }
-
   render(){
-
+    // console.log(this.props)
     return (
       <div className="homesearch">
         {/* <form className="search-bar-form" onSubmit={this.handleSubmit}> */}

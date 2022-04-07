@@ -17,14 +17,5 @@ const mDTP = dispatch => {
   }
 }
 
-// export default connect(mSTP, mDTP)(Search)
+
 export default connect(mSTP, mDTP)(Search)
-// export default withRouter(connect(mSTP, mDTP)(Search))
-
-
-// import { withRouter } from "react-router";
-// // import SearchBar from "./search_bar";
-// import Search from "./search_home";
-// import { connect } from "react-redux";
-
-// export default withRouter(connect(null,null)(Search))
