@@ -33,7 +33,7 @@ class SearchIndex extends React.Component {
       this.props.history.push(`businesses/search/${this.state.category}`)
     }
 
-    // window.location.reload();
+    window.location.reload();
   }
 
   handleChange(type) {
@@ -44,7 +44,7 @@ class SearchIndex extends React.Component {
     
     this.props.history.push(`/businesses/search/${category}`)
     // this.props.history.push(`/businesses/search/${category === '' ? 'all' : category}`)
-    console.log(this.props.history)
+    // console.log(this.props.history)
     window.location.reload();
   }
 
@@ -53,7 +53,8 @@ class SearchIndex extends React.Component {
     const { category } = this.state;
     // console.log(window.location.href.slice(35,-1))
     // const {categories} = this.props.business
-    console.log(window.location.href.slice(42))
+    // console.log(window.location.href.slice(42))
+    // console.log(this.props.businesses)
     let orderedBus = []
     for (let i = this.props.businesses.length -1; i >= 0 && orderedBus.length < 8; i--){
       orderedBus.push(this.props.businesses[i])

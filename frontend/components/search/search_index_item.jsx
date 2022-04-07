@@ -11,114 +11,117 @@ class SearchIndexItem extends React.Component {
     this.props.fetchBusiness(this.props.business.id);
   }
 
-    avg_rat(businessIdx) {
+  avg_rat(businessIdx) {
+    
+    if (businessIdx === this.props.business.id){
+      let avgRatingRounded = Math.floor(this.props.business.average_rating)
       
-      if (businessIdx === this.props.business.id){
-        let avgRatingRounded = Math.floor(this.props.business.average_rating)
-        
-        if (Math.floor(this.props.business.average_rating) === 1){
-          return(
-            <div className="stars-div">
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-            </div>
-          )
-        }
-
-        if (Math.floor(this.props.business.average_rating) === 2){
-          return(
-            <div className="stars-div">
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-            </div>
-          )
-        }
-
-        if (Math.floor(this.props.business.average_rating) === 3){
-          return(
-            <div className="stars-div">
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-            </div>
-          )
-        }
-        
-        if (Math.floor(this.props.business.average_rating) === 4){
-          return(
-            <div className="stars-div">
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-            </div>
-          )
-        }
-
-        if (Math.floor(this.props.business.average_rating) === 5){
-          return(
-            <div className="stars-div">
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-              <span className="fa-stack fa-xs icon-star">
-                <i className="fa fa-square fa-stack-2x"></i>
-                <i className="fas fa-star fa-stack-1x"></i>
-              </span>
-            </div>
-          )
-        }
+      if (Math.floor(this.props.business.average_rating) === 1){
+        return(
+          <div className="stars-div">
+            <span className="fa-stack fa-xs icon-star">
+              <i className="fa fa-square fa-stack-2x"></i>
+              <i className="fas fa-star fa-stack-1x"></i>
+            </span>
+          </div>
+        )
       }
 
+      if (Math.floor(this.props.business.average_rating) === 2){
+        return(
+          <div className="stars-div">
+            <span className="fa-stack fa-xs icon-star">
+              <i className="fa fa-square fa-stack-2x"></i>
+              <i className="fas fa-star fa-stack-1x"></i>
+            </span>
+            <span className="fa-stack fa-xs icon-star">
+              <i className="fa fa-square fa-stack-2x"></i>
+              <i className="fas fa-star fa-stack-1x"></i>
+            </span>
+          </div>
+        )
+      }
 
+      if (Math.floor(this.props.business.average_rating) === 3){
+        return(
+          <div className="stars-div">
+            <span className="fa-stack fa-xs icon-star">
+              <i className="fa fa-square fa-stack-2x"></i>
+              <i className="fas fa-star fa-stack-1x"></i>
+            </span>
+            <span className="fa-stack fa-xs icon-star">
+              <i className="fa fa-square fa-stack-2x"></i>
+              <i className="fas fa-star fa-stack-1x"></i>
+            </span>
+            <span className="fa-stack fa-xs icon-star">
+              <i className="fa fa-square fa-stack-2x"></i>
+              <i className="fas fa-star fa-stack-1x"></i>
+            </span>
+          </div>
+        )
+      }
+      
+      if (Math.floor(this.props.business.average_rating) === 4){
+        return(
+          <div className="stars-div">
+            <span className="fa-stack fa-xs icon-star">
+              <i className="fa fa-square fa-stack-2x"></i>
+              <i className="fas fa-star fa-stack-1x"></i>
+            </span>
+            <span className="fa-stack fa-xs icon-star">
+              <i className="fa fa-square fa-stack-2x"></i>
+              <i className="fas fa-star fa-stack-1x"></i>
+            </span>
+            <span className="fa-stack fa-xs icon-star">
+              <i className="fa fa-square fa-stack-2x"></i>
+              <i className="fas fa-star fa-stack-1x"></i>
+            </span>
+            <span className="fa-stack fa-xs icon-star">
+              <i className="fa fa-square fa-stack-2x"></i>
+              <i className="fas fa-star fa-stack-1x"></i>
+            </span>
+          </div>
+        )
+      }
 
-    
+      if (Math.floor(this.props.business.average_rating) === 5){
+        return(
+          <div className="stars-div">
+            <span className="fa-stack fa-xs icon-star">
+              <i className="fa fa-square fa-stack-2x"></i>
+              <i className="fas fa-star fa-stack-1x"></i>
+            </span>
+            <span className="fa-stack fa-xs icon-star">
+              <i className="fa fa-square fa-stack-2x"></i>
+              <i className="fas fa-star fa-stack-1x"></i>
+            </span>
+            <span className="fa-stack fa-xs icon-star">
+              <i className="fa fa-square fa-stack-2x"></i>
+              <i className="fas fa-star fa-stack-1x"></i>
+            </span>
+            <span className="fa-stack fa-xs icon-star">
+              <i className="fa fa-square fa-stack-2x"></i>
+              <i className="fas fa-star fa-stack-1x"></i>
+            </span>
+            <span className="fa-stack fa-xs icon-star">
+              <i className="fa fa-square fa-stack-2x"></i>
+              <i className="fas fa-star fa-stack-1x"></i>
+            </span>
+          </div>
+        )
+      }
+    }
   }
 
+  // map each props.bus.categories depedending on window.location.href.slice(42)
+  // if bus has categories same as window.location.href.slice(42) (not case sensitive), render bus box on page
+  // need to add markers on page for map
+
   render() {
-    // console.log(this.props)
+    console.log(this.props.business.categories)
+
+    if (this.props.business.categories)
+
     return (
       <Link className="bis-link1" to={`/businesses/${this.props.business.id}`}>
       <div className="test-div-search">
