@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import { withRouter } from "react-router";
 
 class SearchIndexItem extends React.Component {
   constructor(props) {
@@ -7,14 +8,21 @@ class SearchIndexItem extends React.Component {
     
   }
 
-  componentDidMount() {
-    this.props.fetchBusiness(this.props.business.id);
+  // componentDidMount() {
+  //   this.props.fetchBusiness(this.props.business.id);
+  // }
+
+  componentDidMount(){
+    // this.props.fetchBusinesses({ category: this.props.match.params.query});
+    // this.props.fetchBusiness({ category: this.props.match.params.query});
+    // this.props.fetchBusiness(this.props.match.params.businessId);
+    // console.log(this.props)
   }
 
   avg_rat(businessIdx) {
     
     if (businessIdx === this.props.business.id){
-      let avgRatingRounded = Math.floor(this.props.business.average_rating)
+      // let avgRatingRounded = Math.floor(this.props.business.average_rating)
       
       if (Math.floor(this.props.business.average_rating) === 1){
         return(
@@ -118,7 +126,7 @@ class SearchIndexItem extends React.Component {
   // need to add markers on page for map
 
   render() {
-    console.log(this.props.business.categories)
+    // console.log(this.props.business.categories)
 
     if (this.props.business.categories)
 
@@ -156,4 +164,5 @@ class SearchIndexItem extends React.Component {
   }
 }
 
+// export default withRouter(SearchIndexItem);
 export default SearchIndexItem;
