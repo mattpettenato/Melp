@@ -13,21 +13,30 @@
  *= require_tree .
  *= require_self
  */
-html, body {
-    margin:0;
-    padding:0;
-    font-family: helvetica;
-    background-color: white;
-    
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: helvetica;
+  background-color: white;
+
 }
 
 .nav-list {
-  list-style-type: none;
+  /* list-style-type: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left:  0px;
   margin: 0px 100px 0px 0px;
+  height: 75px; */
+
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 0px;
+  margin: 0px 0px 0px 0px;
   height: 75px;
 }
 
@@ -35,25 +44,36 @@ html, body {
   cursor: pointer;
 }
 
+.nav-logged-out {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 0px;
+  margin: 0px 0px 0px 0px;
+  height: 75px;
+}
+
 .nav-logged-out-list {
   list-style-type: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left:  0px;
+  padding-left: 0px;
   /* margin: 0px 100px 0px 30px; */
   height: 75px;
 }
 
 .about-link {
-    text-decoration: none;
-    color: #2b273c;
+  text-decoration: none;
+  color: #2b273c;
 }
 
 
 .melplogo {
   height: 50px;
 }
+
 .nav-links a {
   font: bold 18px helvetica;
   text-decoration: none;
@@ -67,9 +87,10 @@ html, body {
   border-radius: 5px;
   margin: 5px;
   transition: 0.5s;
+  background-color: #c41200;
 }
 
-.nav-links a:last-child{
+.nav-links a:last-child {
   color: white;
   background-color: #c41200;
   border: none;
@@ -80,15 +101,13 @@ html, body {
   text-decoration: none;
   background-color: lightgray;
 }
- 
+
 .nav-links a:last-child:hover {
   text-decoration: none;
-      background-color: #d32323;
+  background-color: #d32323;
 }
 
 .mylinks {
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
-
-

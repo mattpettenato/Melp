@@ -4,6 +4,7 @@
     top: 0;
     width: 1200px;
     margin: auto;
+    margin-right: 5%;
 }
 
 #main-nav-bar #dropdown-container {
@@ -13,7 +14,7 @@
 }
 
 #main-nav-bar .nav-links a {
-    background-color: transparent;
+    /* background-color: transparent; */
     color: white;
     padding: 10px 12px 10px 12px;
     border-top: 1px solid lightgray;
@@ -29,8 +30,8 @@
 }
 
 .splash-background img {
-    width:100%;
-    height:600px;
+    width: 100%;
+    height: 600px;
     object-fit: cover;
     overflow: hidden;
     filter: brightness(75%);
@@ -52,17 +53,19 @@
 }
 
 .main-logo {
-margin: 0px auto 0px auto;
+    margin: 0px auto 0px auto;
 
 }
-.main-logo img{
+
+.main-logo img {
     /* height: 125px; */
     width: 270px;
     filter: brightness(100%);
 
 }
 
-.fa, .fas {
+.fa,
+.fas {
     font-weight: 500;
 }
 
@@ -79,52 +82,52 @@ margin: 0px auto 0px auto;
     align-items: center;
     height: 45px;
     display: table-cell;
-    text-align:center;
-    display:table;
+    text-align: center;
+    display: table;
     width: 912px;
-    text-align:center;
+    text-align: center;
 
 }
 
-.findsearchtext{
-    
+.findsearchtext {
+
     width: 300px;
     border: none;
     font-weight: bold;
     background-color: white;
     padding-left: 0px;
-    display:table-cell;
+    display: table-cell;
     margin-right: 0px;
     align-items: center;
 
 }
 
-#findme{
+#findme {
     display: flex;
     align-items: center;
     font-weight: bold;
     background-color: white;
     padding-right: 50px;
     padding-left: 10px;
-    font-size:18px;
-    display:table-cell;
+    font-size: 18px;
+    display: table-cell;
     height: 14.5px;
 }
 
 #search-submit {
-    
+
     border: none;
     font-weight: bold;
     background-color: white;
-    
+
     padding-right: 10px;
-    display:table-cell;
-    
+    display: table-cell;
+
     text-align: center;
     outline: none;
 }
 
-#search-submit button{
+#search-submit button {
     border: none;
     outline: none;
     background-color: #c41200;
@@ -137,57 +140,58 @@ margin: 0px auto 0px auto;
     size: 30;
 }
 
-#leftDiv{
+#leftDiv {
     border: none;
     font-weight: bold;
     background-color: white;
     padding-left: 10px;
-    display:table-cell;
+    display: table-cell;
     margin-right: 0px;
     text-align: center;
 }
-#leftDiv input{
+
+#leftDiv input {
     height: 40px;
     align-items: center;
     font-size: 18px;
 }
 
-#rightDiv{
+#rightDiv {
     width: 300px;
     border: none;
     font-weight: bold;
     background-color: white;
     padding-left: 0px;
-    display:table-cell;
+    display: table-cell;
     margin-right: 0px;
 }
 
-#rightDiv input{
+#rightDiv input {
     height: 40px;
     width: 300px;
     align-items: center;
     font-size: 18px;
 }
 
-.findnear{
+.findnear {
     color: black;
     width: 35px;
     border: none;
-    
+
 
 }
 
-.findneartext{
+.findneartext {
     width: 360px;
     border: none;
     font-weight: bold;
     background-color: white;
     padding-left: 0px;
-    display:table-cell;
+    display: table-cell;
     margin-right: 43px;
 }
 
-.searchsubmit button{
+.searchsubmit button {
     outline: none;
 }
 
@@ -208,36 +212,36 @@ margin: 0px auto 0px auto;
     list-style: none;
 }
 
-.about-user{
+.about-user {
     margin-left: 500px;
     margin-right: 250px;
     margin-top: 50px;
 }
 
-.mylinks{
+.mylinks {
     margin-right: 500px;
     margin-top: 50px;
     padding-bottom: 20px;
     margin-left: 250px;
 }
 
-.footer p{
+.footer p {
     color: #c41200;
     font-size: 24px;
     font-weight: bold;
 }
 
-.git-img{
+.git-img {
     height: 30px;
 }
 
-.ln-img{
+.ln-img {
     height: 30px;
     padding-bottom: 20px;
 }
 
-.gmail p{
+.gmail p {
     color: black;
     font-size: 16px;
-    font-weight:500
+    font-weight: 500
 }
