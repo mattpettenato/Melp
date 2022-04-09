@@ -30,12 +30,11 @@ class NavBar extends React.Component {
       <div className="nav-logged-in">
         <ul className="nav-list">
 
-          <li>
-            {/* <SearchBox /> */}
-          </li>
+
 
           
           <div className="nav-links">
+              <li></li>
               <Link to="/" onClick={this.props.logout}>Log Out</Link>
           </div>
 
@@ -47,9 +46,7 @@ class NavBar extends React.Component {
         <div className="nav-logged-out">
           <ul className="nav-logged-out-list">
 
-            <li>
-              {/* <SearchBox /> */}
-            </li>
+
             <li>
               <div className="nav-links">
                 <Link to="/login">Login</Link>
