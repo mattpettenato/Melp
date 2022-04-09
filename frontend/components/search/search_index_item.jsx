@@ -134,29 +134,31 @@ class SearchIndexItem extends React.Component {
       <Link className="bis-link1" to={`/businesses/${this.props.business.id}`}>
       <div className="test-div-search">
         <div className="test-search-left">
-          <img className='listing-show-img' src={this.props.business.photos[0]} height="424"/>
+          <img className='listing-show-img1' src={this.props.business.photos[0]} height="424"/>
         </div>
         <div className="test-search-right">
           <div className="test-search-name">
-            <p>
+            <ul>
               {this.props.business.name}
-            </p>
+            </ul>
           </div>
           <div className="test-search-addy">
-            <p>
+            <ul>
               {this.props.business.address}
-            </p>
+            </ul>
           </div>
           <div className="test-search-rating">
+            <ul>
               {this.avg_rat(this.props.business.id)}
+            </ul>
           </div>
-          <div className="index-category-show">
+          {/* <div className="index-category-show">
             {this.props.business.categories[0]}
             ,&nbsp;
             {this.props.business.categories[1]}
             {this.props.business.categories[2]}
             {this.props.business.categories[4]}
-          </div>
+          </div> */}
         </div>
       </div>
       </Link>

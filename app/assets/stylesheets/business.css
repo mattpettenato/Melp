@@ -1,9 +1,16 @@
 .business-page-nav {
-  margin-top: 12px;
+  /* margin-top: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap; */
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
   white-space: nowrap;
+  justify-content: space-between;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 #search-home-bus {
@@ -95,7 +102,7 @@
 }
 
 .hero-img-bus-nav {
-  margin-left: 85px;
+  /* margin-left: 100px; */
   white-space: nowrap;
   position: relative;
   height: 125px;
@@ -208,6 +215,11 @@
 
 .bis-link1 {
   text-decoration: none;
+  border: 1px solid #eeeeef;
+  border-radius: 4px;
+  margin: 10px;
+  width: 600px;
+  margin-left: 0px;
 }
 
 #busdir button {
@@ -568,15 +580,23 @@
   flex-wrap: nowrap;
   align-content: center;
   justify-content: space-between;
-  margin-left: 10%;
+  margin-left: 5%;
   margin-right: 5%;
   height: 1100px;
-
+  margin-bottom: 350px;
 }
 
 .test-div-search {
   display: flex;
-
+  /* border: 1px solid #eeeeef;
+  border-radius: 4px;
+  margin: 24px;
+  width: 600px;
+  margin-left: 0px; */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .test-search-left img {
@@ -592,13 +612,47 @@
 }
 
 .test-search-right {
-  margin-left: 10px;
+  /* margin-left: 10px;
+  display: flex; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .search-left {
   margin-bottom: 50px;
+  margin-left: 1%;
 }
 
 .left-sided {
   padding-bottom: 50px;
+}
+
+.listing-show-img {
+  /* width: 210px;
+  height: 210px; */
+  object-fit: cover;
+}
+
+.listing-show-img1 {
+  width: 210px;
+  height: 210px;
+  object-fit: cover;
+}
+
+.test-search-name {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* .test-search-addy {
+  font-size: 1px;
+
+} */
+
+.search-right {
+  padding-top: 20px;
 }

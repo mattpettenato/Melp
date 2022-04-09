@@ -124,7 +124,7 @@ class BusinessIndexItem extends React.Component {
       <div className="bis-splash-container" >
         <div className="bis-splash" >
         <Link className="bis-link1" to={`/businesses/${this.props.business.id}`}>
-            <img className='listing-show-img' src={this.props.business.photos[0]} height="424"/>
+            <img className='listing-show-img1' src={this.props.business.photos[0]} height="424"/>
 
           <div>
             <p className="bis-name">{this.props.business.name}</p>           
