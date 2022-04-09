@@ -58,7 +58,7 @@ class SearchIndex extends React.Component {
     // console.log(window.location.href.slice(35,-1))
     // const {categories} = this.props.business
     // console.log(window.location.href.slice(42))
-    console.log(this.props)
+    // console.log(this.props)
 
 
     let orderedBusinesses = []
@@ -71,7 +71,7 @@ class SearchIndex extends React.Component {
       } else {
         // orderedBusinesses.push(this.props.businesses[i])
         qq ++
-        console.log(qq)
+        // console.log(qq)
       }
     }
     // console.log()

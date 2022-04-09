@@ -58,23 +58,13 @@ class Search extends React.Component {
           <div className="search-left">
             <SearchIndexContainer />
           </div>
-          {/* <div>
-            <h1>
-              test
-            </h1>
-          </div> */}
-          {/* <div className="search-right">
-            <SearchMap />
-
-          </div> */}
-
 
       <div className="right-side-s">
         
         <div className="map-bar">
           <div className="space">
 
-            <SearchMap />
+            <SearchMap businesses={this.props.businesses}/>
           </div>
             {/* <h1></h1> */}
 

@@ -126,7 +126,7 @@ class SearchIndexItem extends React.Component {
   // need to add markers on page for map
 
   render() {
-    // console.log(this.props.business.categories)
+    // console.log(this.props.business.latitude)
 
     if (this.props.business.categories)
 
