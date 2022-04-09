@@ -95,12 +95,6 @@
   justify-content: center;
 }
 
-#map-container {
-  width: 400px;
-  height: 400px;
-  margin-bottom: 20px;
-}
-
 .hero-img-bus-nav {
   /* margin-left: 100px; */
   white-space: nowrap;
@@ -475,10 +469,16 @@
   border-right: 1px solid #ebebeb;
 }
 
+.map-bar {
+  position: sticky;
+  top: 18px;
+  max-height: 100vh;
+  min-height: 900px;
+}
+
 .guts-body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   display: flex;
   /* position: absolute; */
   width: 60%;
@@ -489,6 +489,10 @@
   /* margin-right: 10%; */
   /* padding-left: 63px; */
   /* padding-right: 63px;*/
+}
+
+.space {
+  height: 100%
 }
 
 .entire-page {
@@ -505,6 +509,15 @@
   width: 365px;
 }
 
+.right-side-s {
+  display: flex;
+  position: sticky;
+  flex-direction: column;
+  margin-right: 20%;
+  margin-left: 10%;
+  /* width: 365px; */
+}
+
 #side-hr {
   height: 1px;
   width: 90%;
@@ -519,11 +532,36 @@
 }
 
 #map-container {
+  display: flex;
   width: 900px;
   height: 100%;
+  top: 18px;
+  position: sticky !important;
+  left: 48%;
+  z-index: 100;
+  overflow: scroll !important;
 }
 
+/* .search-right #map-container {
 
+  position: sticky;
+  top: 0px;
+  align-self: flex-start;
+  height: 100vh;
+} */
+
+/* .map-container { */
+/* position: sticky;
+  top: 0;
+  position: sticky;
+  top: 0px;
+  align-self: flex-start;
+  height: 100vh; */
+/* position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100; */
+/* } */
 
 .busdirbut {
   position: relative;
@@ -584,14 +622,16 @@
 
 .search-div {
   display: flex;
-  flex-direction: row;
   flex-wrap: nowrap;
   align-content: center;
-  justify-content: space-between;
   margin-left: 5%;
   margin-right: 5%;
-  height: 1100px;
-  margin-bottom: 350px;
+  height: 100%;
+  margin-bottom: 100px;
+  margin-top: 20px;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .test-div-search {
@@ -661,6 +701,12 @@
 
 } */
 
-.search-right {
+/* .search-right {
+  display: flex;
   padding-top: 20px;
-}
+  position: sticky;
+  top: 18px;
+  display: flex;
+  position: sticky;
+  flex-direction: column;
+} */
