@@ -30,7 +30,7 @@ class Search extends React.Component {
       this.props.history.push(`/businesses/search/${this.state.category}`);
     }
     
-    window.location.reload();
+    // window.location.reload();
   }
 
   handleChange(type) {
