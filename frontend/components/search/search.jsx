@@ -25,7 +25,7 @@ class Search extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     if(this.state.category == ""){
-      this.props.history.push(`/businesses/search/all`); 
+      this.props.history.push(`/businesses/search/All`); 
     }else{
       this.props.history.push(`/businesses/search/${this.state.category}`);
     }
@@ -42,6 +42,8 @@ class Search extends React.Component {
   }
 
   render(){
+      // console.log(this.props.match.params.query)
+
     return (
       <div className="search-page">
         <div className="business-page-nav">
@@ -64,7 +66,7 @@ class Search extends React.Component {
         <div className="map-bar">
           <div className="space">
 
-            <SearchMap businesses={this.props.businesses}/>
+            <SearchMap businesses={this.props.businesses} query={this.props.match.params.query}/>
           </div>
             {/* <h1></h1> */}
 

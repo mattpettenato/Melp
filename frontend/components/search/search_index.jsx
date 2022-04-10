@@ -32,7 +32,7 @@ class SearchIndex extends React.Component {
     e.preventDefault();
 
     if (this.state.category == "" ) {
-      this.props.history.push(`/businesses/search/all`)
+      this.props.history.push(`/businesses/search/All`)
     } else {
       this.props.history.push(`businesses/search/${this.state.category}`)
     }
@@ -115,7 +115,7 @@ class SearchIndex extends React.Component {
       <div className="left-sided">
         <div className="category-filter">
           <h2>Categories</h2>
-          <Link to={`/businesses/search/all`}>
+          <Link to={`/businesses/search/All`}>
             <button onClick={() =>this.button("All")}>All</button> 
           </Link>
           <Link to={`/businesses/search/food`}>

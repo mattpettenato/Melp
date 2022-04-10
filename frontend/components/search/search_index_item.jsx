@@ -121,12 +121,7 @@ class SearchIndexItem extends React.Component {
     }
   }
 
-  // map each props.bus.categories depedending on window.location.href.slice(42)
-  // if bus has categories same as window.location.href.slice(42) (not case sensitive), render bus box on page
-  // need to add markers on page for map
-
   render() {
-    // console.log(this.props.business.latitude)
 
     if (this.props.business.categories)
 

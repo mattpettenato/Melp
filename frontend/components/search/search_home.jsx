@@ -40,7 +40,7 @@ class Search extends React.Component {
           </div>
           <span id="search-submit" style={{width : '24px', height : '24px'}} >
             {/* <Link to={`/businesses/search/${category}`}> */}
-            {/* <button type="submit" to="/businesses/search/all" className="search-btn" >
+            {/* <button type="submit" to="/businesses/search/All" className="search-btn" >
               <i className="fas fa-search fa-lg"></i>
             </button> */}
             <button className="search-btn" onClick={this.handleSubmit}><i className="fas fa-search fa-lg"></i></button>

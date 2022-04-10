@@ -22,13 +22,7 @@ class ListingMap extends React.Component{
       zoom: 13
     };
     this.map = new google.maps.Map(this.mapNode, mapOptions);
-    // this.MarkerManager = new MarkerManager(this.map);
-    // this.MarkerManager.updateMarkers(this.props.listings);
-    // const markerOptions = {
-    // position: { lat: this.props.business.latitude, lng: this.props.business.longitude },
-    // map: this.map
-    // }
-    // this.marker = new google.maps.Marker(markerOptions);
+
   }
 
   componentDidUpdate(){
@@ -39,19 +33,32 @@ class ListingMap extends React.Component{
     let coords = []
     if (this.props.businesses.length > 0){
       console.log(this.props)
-      this.props.businesses.map
 
-    for (let i = this.props.businesses.length -1; i >= 0 && coords.length < this.props.businesses.length; i--){
-      coords.push([this.props.businesses[i].name.charAt(0), this.props.businesses[i].latitude, this.props.businesses[i].longitude])
-      console.log(coords)
+      for (let i = this.props.businesses.length -1; i >= 0 && coords.length < this.props.businesses.length; i--){
+        if (this.props.businesses[i].categories.includes(this.props.query) || this.props.query === 'All' || this.props.query === 'all'){
+          coords.push([this.props.businesses[i].name, this.props.businesses[i].latitude, this.props.businesses[i].longitude])
+        }
+      }
+
+      // if (this.props.businesses.length === coords.length) {
+
+        var infowindow = new google.maps.InfoWindow();
+        var marker, i;
+        for (i = 0; i < coords.length; i++) {  
+          marker = new google.maps.Marker({
+            position: new google.maps.LatLng(coords[i][1], coords[i][2]),
+            map: this.map
+          });
+          google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+              infowindow.setContent(coords[i][0]);
+              infowindow.open(this.map, marker);
+            }
+          })(marker, i));
+        }
+      // }
     }
-
-
-    }
-    // this.props.businesses
-
     return (
-
     <div id="map-container" ref={map => this.mapNode = map}>
       Map
     </div>
