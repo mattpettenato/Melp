@@ -21,6 +21,32 @@ class BusinessShow extends React.Component {
 
   }
 
+  statusCheck(){
+    if (this.props.currentUser === null) {
+      return(
+          <div className="write-review">
+            <Link to={`/login`}>
+              <button className="write-review-button">
+              <i className="far fa-star"></i>
+              &nbsp;&nbsp;Write a Review
+              </button>
+            </Link>
+          </div>
+      ) 
+    } else {
+      return (
+          <div className="write-review">
+            <Link to={`/businesses/${this.props.currentBusiness.id}/reviews`}>
+              <button className="write-review-button">
+              <i className="far fa-star"></i>
+              &nbsp;&nbsp;Write a Review
+              </button>
+            </Link>
+          </div>
+      )
+    }
+  }
+
 
   render() {
 
@@ -195,6 +221,8 @@ class BusinessShow extends React.Component {
 
 
 
+
+  console.log(this.props)
     return (
       <div>
         <div className="business-page-nav">
@@ -238,15 +266,15 @@ class BusinessShow extends React.Component {
         <div className="center-div">
         <div className="guts-body">
         <div className="above-review">
-
-        <div className="write-review">
+        {this.statusCheck()}
+        {/* <div className="write-review">
           <Link to={`/businesses/${this.props.currentBusiness.id}/reviews`}>
             <button className="write-review-button">
             <i className="far fa-star"></i>
             &nbsp;&nbsp;Write a Review
             </button>
           </Link>
-        </div>
+        </div> */}
           
         </div>
         
