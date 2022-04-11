@@ -65,14 +65,6 @@ class Login extends React.Component {
     this.setState({ state: this.state });
   }
 
-
-
-  // renderErrors() {
-
-  //           {this.props.errors ? this.props.errors : ''}
-
-  // }
-
   handleClick() {
     this.setState(
       { show: !this.state.show }

@@ -19,7 +19,7 @@ class Search extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.button = this.button.bind(this);
+
   }
 
   handleSubmit(e) {
@@ -42,7 +42,7 @@ class Search extends React.Component {
   }
 
   render(){
-      // console.log(this.props.match.params.query)
+
 
     return (
       <div className="search-page">

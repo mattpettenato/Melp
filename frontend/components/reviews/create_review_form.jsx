@@ -53,15 +53,6 @@ class ReviewForm extends React.Component {
     return e => this.setState({[field]: e.currentTarget.value})
   }
 
-  // reviewNameSave() {
-  //   const updateReviewAuthor = (reviewAuthorName) => {
-  //     this.setState({ name: reviewAuthorName })
-  //   }
-  //   return (
-  //   <h4 onSubmit>Review will be posted from your account: {this.props.authorId.username}</h4>  
-  //   )
-  // }
-
   renderErrors() {
     return (
       <ul className="error-msg">

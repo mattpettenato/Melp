@@ -49,9 +49,6 @@ class BusinessShow extends React.Component {
       const busRevs = this.props.reviews
     }
 
-    // var options = {  weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
-    // var prnDt = 'Printed on ' + new Date().toLocaleTimeString('en-us', options);
-
     const { business } = this.props;
 
     if (this.props.currentBusiness !== undefined) {

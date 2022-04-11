@@ -7,15 +7,10 @@ class SearchIndexItem extends React.Component {
     super(props)
     
   }
-// asd
-  // componentDidMount() {
-  //   this.props.fetchBusiness(this.props.business.id);
-  // }
+
 
   componentDidMount(){
-    // this.props.fetchBusinesses({ category: this.props.match.params.query});
-    // this.props.fetchBusiness({ category: this.props.match.params.query});
-    // this.props.fetchBusiness(this.props.match.params.businessId);
+
     // console.log(this.props)
   }
 

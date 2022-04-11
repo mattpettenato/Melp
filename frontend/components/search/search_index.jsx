@@ -18,12 +18,6 @@ class SearchIndex extends React.Component {
     this.button = this.button.bind(this);
   }
 
-  // componentDidMount(){
-  //   // this.props.fetchBusinesses({ category: this.props.match.params.query });
-  //   this.props.fetchBusinesses();
-
-  // }
-
   componentDidMount(){
     this.props.fetchBusinesses({ category: this.props.match.params.query});
   }
@@ -36,8 +30,6 @@ class SearchIndex extends React.Component {
     } else {
       this.props.history.push(`businesses/search/${this.state.category}`)
     }
-
-    // window.location.reload();
   }
 
   handleChange(type) {
@@ -45,22 +37,13 @@ class SearchIndex extends React.Component {
   }
 
   button(category){
-    
     this.props.history.push(`/businesses/search/${category}`)
-    // this.props.history.push(`/businesses/search/${category === '' ? 'all' : category}`)
-    // console.log(this.props.history)
     window.location.reload();
   }
 
 
   render() {
     const { category } = this.state;
-    // console.log(window.location.href.slice(35,-1))
-    // const {categories} = this.props.business
-    // console.log(window.location.href.slice(42))
-    // console.log(this.props)
-
-
     let orderedBusinesses = []
     let qq = 0
     for (let i = this.props.businesses.length -1; i >= 0 && orderedBusinesses.length < 8; i--){
@@ -69,40 +52,19 @@ class SearchIndex extends React.Component {
       } else if (this.props.match.params.query === "All" || this.props.match.params.query === "all"){
         orderedBusinesses.push(this.props.businesses[i])
       } else {
-        // orderedBusinesses.push(this.props.businesses[i])
         qq ++
-        // console.log(qq)
+
       }
     }
-    // console.log()
+
     let qqchecker
-    // if (qq === 5){
-    //   qqchecker = <h1>Please Try a Different Search Term</h1>
-      
-    // }
-
-
-
-    // console.log(orderedBusinesses)
-    // let oneReview = orderedReview
-    // let reviewBox1 = oneReview.map((review, idx) => {
-    //   return (
-    //     <ReviewIndex className="rev-box-1" key={idx} deleteReview={this.props.removeReview} currentUser={this.props.currentUser} review={review} allUsers={this.props.allUsers} />
-    //   )
-    // })
-
-
-
 
     let orderedBus = []
     for (let i = this.props.businesses.length -1; i >= 0 && orderedBus.length < 8; i--){
       orderedBus.push(this.props.businesses[i])
     }
-    // console.log(orderedBus)
-    // let oneBus = orderedBus
     let oneBus = orderedBusinesses
     let busBox1 = oneBus.map((business, idx) => {
-
       return (
         <SearchIndexItem key={idx} currentUser={this.props.currentUser} business={business} fetchBusiness={this.props.fetchBusiness} fetchReviews={this.props.fetchReviews} />
       )

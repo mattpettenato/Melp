@@ -6,29 +6,6 @@ import { signup } from '../../actions/session_actions';
 import SignUp from './signup';
 import { clearErrors } from '../../actions/session_actions';
 
-// const mapStateToProps = ({ errors }) => ({
-//   errors: errors.session,
-//   formType: 'signup',
-
-//   // formType: 'signup',
-//   // navLink: <Link to="/login">Log in instead</Link>,
-// })
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     processForm: (user) => dispatch(signup(user)),
-//     // openModal: modal => dispatch(openModal(modal)),
-
-//     clearErrors: () => dispatch(clearErrors()),
-//     otherForm: (
-//       <button onClick={() => dispatch(openModal('login'))}>
-//         Login
-//       </button>
-//     ),
-//     closeModal: () => dispatch(closeModal())
-//   };
-// };
-
 const mapStateToProps = ({ errors }) => {
   return {
     errors: errors.session,

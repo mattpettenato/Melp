@@ -22,10 +22,6 @@ export const receiveErrors = errors => ({
   errors
 })
 
-// export const clearSessionErrors = () => ({
-//   type: CLEAR_SESSION_ERRORS,
-//   errors: [],
-// })
 
 export const login = user => dispatch => APIUtil.signin(user)
   .then(currentUser => dispatch(receiveCurrentUser(currentUser)), err => (

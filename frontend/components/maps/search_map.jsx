@@ -35,7 +35,7 @@ class ListingMap extends React.Component{
       // console.log(this.props)
 
       for (let i = this.props.businesses.length -1; i >= 0 && coords.length < this.props.businesses.length; i--){
-        console.log(this.props.businesses[i].id)
+        // console.log(this.props.businesses[i].id)
         if (this.props.businesses[i].categories.includes(this.props.query) || this.props.query === 'All' || this.props.query === 'all'){
           coords.push([this.props.businesses[i].id, this.props.businesses[i].latitude, this.props.businesses[i].longitude])
         }

@@ -54,27 +54,6 @@ class Signup extends React.Component{
     if (this.props.errors) {
       // console.log(this.props.errors)
     }
-    // if (this.props.errors.username) {
-    //   return (
-    //     <ul>
-    //       {this.props.errors.username}
-    //     </ul>
-    //   )
-    // }
-    // if (this.props.errors.email) {
-    //   return (
-    //     <ul>
-    //       {this.props.errors.email}
-    //     </ul>
-    //   )
-    // }
-    // if (this.props.errors.password) {
-    //   return (
-    //     <ul>
-    //       {this.props.errors.password}
-    //     </ul>
-    //   )
-    // }
   }
 
 

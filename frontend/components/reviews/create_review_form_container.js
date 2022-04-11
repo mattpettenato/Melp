@@ -28,26 +28,4 @@ const mDTP = (dispatch) => {
 
 export default connect(mSTP, mDTP)(ReviewForm);
 
-// const mSTP = (state, ownProps) => {
-//   console.log(ownProps)
-//   return {
-//     review: {
-//     rating: '',
-//     body: '',
-//     name: '',
-//     listingId: parseInt(ownProps.listingId),
-//     guestId: state.session.id
-//   },
-//   currentUser: state.session.id
-//   }
-// }
-
-// const mDTP = dispatch => ({
-//   createReview: review => dispatch(createReview(review)),
-//   removeErrors: () => dispatch(removeErrors()),
-//   fetchBusiness: (businessId) => dispatch(fetchBusiness(businessId)),
-//   // openModal: (e) => dispatch(openModal(e))
-// })
-
-// export default connect(mSTP, mDTP)(ReviewForm)
 

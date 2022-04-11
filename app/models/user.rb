@@ -6,16 +6,6 @@ class User < ApplicationRecord
   attr_reader :password
   after_initialize :ensure_session_token
 
-  # has_many :businesses,
-  #   foreign_key: :owner_id,
-  #   primary_key: :id,
-  #   class_name: :Business
-
-  # has_many :reviews,
-  # foreign_key: :user_id,
-  # primary_key: :id,
-  # class_name: :Review
-
   has_many :reviews,
   foreign_key: :author_id,
   primary_key: :id,

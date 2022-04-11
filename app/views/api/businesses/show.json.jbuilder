@@ -21,5 +21,3 @@ end
   end
 
 end
-
-# json.average_rating @review.business.average_rating
