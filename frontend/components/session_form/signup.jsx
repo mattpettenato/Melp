@@ -52,13 +52,13 @@ class Signup extends React.Component{
 
   renderErrors() {
     if (this.props.errors) {
-      // console.log(this.props.errors)
+
     }
   }
 
 
   render () {
-    // console.log(this.props.errors)
+
     return (
       <div id="wrapper">
       <div className="session-form">

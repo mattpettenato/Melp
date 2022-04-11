@@ -3,7 +3,7 @@ import React from "react";
 
 const ReviewIndex = props => {
   let starRating
-  // console.log(props.review.rating)
+
   if (props.review.rating === 1){
     starRating =
       <div className="stars-div">
@@ -90,26 +90,21 @@ const ReviewIndex = props => {
         </span>
       </div>
   }
-  // console.log(props)
+
   let authorName
   if (props.review.author_id) {
     authorName = props.allUsers[props.review.author_id].username
   }
-  // console.log(props.review.created_at.substring(0, 10))
-  // 2022-03-15
 
   let month;
   month = props.review.created_at.substring(5, 7)
-  // console.log(month)
+
   let day;
   day = props.review.created_at.substring(8, 10)
-  // console.log(day)
+
   let year;
   year = props.review.created_at.substring(0, 4)
-  // console.log(year)
 
-  // console.log(month + "-" + day + "-" + year)
-  // console.log(props)
   return (
     <div className="reviews01">
 

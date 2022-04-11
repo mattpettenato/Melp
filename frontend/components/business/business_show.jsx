@@ -23,10 +23,10 @@ class BusinessShow extends React.Component {
 
 
   render() {
-    // console.log(this.props)
+
     if (this.props.currentBusiness){
       const authors = this.props.authors;
-      // console.log(authors)
+
     }
 
     if (!this.props.currentBusiness) return null;
@@ -99,12 +99,11 @@ class BusinessShow extends React.Component {
     let avgRatingSum = 0;
     for (let i = this.props.reviews.length -1; i >= 0; i--){
       avgRatingSum += this.props.reviews[i].rating
-      // console.log(avgRatingSum)
+
     }
     let avgRatingRounded = Math.floor(avgRatingSum / this.props.reviews.length)
 
-    // console.log(avgRatingRounded) // avg = sum/total
-    // console.log(this.props.currentBusiness.photos[0])
+
   let starRatingBus
   if (Math.floor(this.props.currentBusiness.average_rating) === 1){
     starRatingBus =

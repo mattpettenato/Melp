@@ -24,7 +24,7 @@ class Search extends React.Component {
   }
 
   render(){
-    // console.log(this.props)
+
     return (
       <div className="homesearch">
         {/* <form className="search-bar-form" onSubmit={this.handleSubmit}> */}

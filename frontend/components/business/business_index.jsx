@@ -14,7 +14,7 @@ class BusinessIndex extends React.Component {
       // this.props.fetchBusinesses()
     } else {
       // this.props.getSearchBusinesses(this.props.match.params.query)
-      // console.log('test')
+
     }
 
   }

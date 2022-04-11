@@ -11,7 +11,7 @@ class SearchIndexItem extends React.Component {
 
   componentDidMount(){
 
-    // console.log(this.props)
+
   }
 
   avg_rat(businessIdx) {

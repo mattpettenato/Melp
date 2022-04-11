@@ -27,7 +27,7 @@ const Header = ({ currentUser, signOut, businessId }) => {
     </div>
   );
 
-  // console.log(currentUser)
+
   return (
     <div className="header-container">
       <div className="header-container-child" id="logo-id">
