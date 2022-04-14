@@ -56,6 +56,10 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   ActiveRecord::Base.logger = nil
   config.active_record.logger = nil
+
+# config.after_initialize do
+#   ActiveRecord::Base.logger = nil
+# end
   # ActiveRecord::Base.logger.level = 1
   # config.log_level = :info
   # Use an evented file watcher to asynchronously detect changes in source code,
