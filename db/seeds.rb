@@ -116,43 +116,43 @@ bus5rev1 = Review.create(body: "Was vert busy and I was hungry and tired", ratin
 # categories
 
 c1 = Category.create!({
-    title: 'Italian'
+    title: 'italian'
 })
 
 c2 = Category.create!({
-    title: 'Asian'
+    title: 'asian'
 })
 
 c3 = Category.create!({
-    title: 'Mexican'
+    title: 'mexican'
 })
 
 c4 = Category.create!({
-    title: 'Boba'
+    title: 'boba'
 })
 
 c5 = Category.create!({
-    title: 'Pizza'
+    title: 'pizza'
 })
 
 c6 = Category.create!({
-    title: "Tacos",
+    title: "tacos",
 })
 
 c7 = Category.create!({
-    title: "BBQ",
+    title: "bbq",
 })
 
 c8 = Category.create!({
-    title: "Food",
+    title: "food",
 })
 
 c9 = Category.create!({
-    title: "Drinks",
+    title: "drinks",
 })
 
 c10 = Category.create!({
-    title: "Korean",
+    title: "korean",
 })
 
 # c11 = Category.create!({

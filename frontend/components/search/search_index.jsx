@@ -43,11 +43,12 @@ class SearchIndex extends React.Component {
 
 
   render() {
+    console.log(this.props)
     const { category } = this.state;
     let orderedBusinesses = []
     let qq = 0
     for (let i = this.props.businesses.length -1; i >= 0 && orderedBusinesses.length < 8; i--){
-      if (this.props.businesses[i].categories.includes(this.props.match.params.query)){
+      if (this.props.businesses[i].categories.includes(this.props.match.params.query.toLowerCase())){
         orderedBusinesses.push(this.props.businesses[i])
       } else if (this.props.match.params.query === "All" || this.props.match.params.query === "all"){
         orderedBusinesses.push(this.props.businesses[i])
