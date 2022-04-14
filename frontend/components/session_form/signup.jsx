@@ -86,7 +86,7 @@ class Signup extends React.Component{
 
           <label>
             <input
-              type="text"
+              type="username"
               value={this.state.username}
               onChange={this.update('username')}
               placeholder="Username"
@@ -99,11 +99,12 @@ class Signup extends React.Component{
 
           <label>
             <input
-              type="text"
+              type="email"
               value={this.state.email}
               onChange={this.update('email')}
               placeholder="Email"
               className="login-input"
+
             />
           </label>
           <div className="da-error">
@@ -126,9 +127,11 @@ class Signup extends React.Component{
 
           <label>
             <input
-              type="text"
+              type="number"
               placeholder="ZIP code"
               className="login-input"
+              min='00501'
+              max='99999'
             />
           </label>
           {/* <input className="submit" type="submit" value="Sign Up" /> */}
