@@ -666,6 +666,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  word-wrap: break-word;
 }
 
 .search-left {
@@ -696,10 +697,22 @@
   font-size: 18px;
 }
 
-/* .test-search-addy {
-  font-size: 1px;
+.test-search-addy {
+  word-wrap: break-word;
+  max-width: 370px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
 
-} */
+.test-search-addy ul{
+  word-wrap: break-word;
+  max-width: 370px;
+  /* max-width: 220px; */
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
 
 /* .search-right {
   display: flex;

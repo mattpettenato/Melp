@@ -131,7 +131,7 @@ bus5.photos.attach(io: b5p4, filename: "bus5pic4.jpeg")
 
 bus5rev1 = Review.create(body: "Ramen had so much flavor! Will 100% be coming here again!", rating: 5, author_id: user5.id, business_id: bus5.id)
 bus5rev1 = Review.create(body: "The chicken had so much flavor! I cannot wait to eat here with my friends again!", rating: 5, author_id: user7.id, business_id: bus5.id)
-bus5rev1 = Review.create(body: "Was vert busy and I was hungry and tired", rating: 3, author_id: user5.id, business_id: bus5.id)
+bus5rev1 = Review.create(body: "Was very busy and I was hungry and tired", rating: 3, author_id: user5.id, business_id: bus5.id)
 
 # categories
 
@@ -194,6 +194,7 @@ c14 = Category.create!({
 c15 = Category.create!({
   title: "tea",
 })
+
 
 BusinessCategory.create!({
   category_id: c1.id,
@@ -363,3 +364,82 @@ rev7r1 = Review.create(body: "super cute shop w many different coffee flavors ~ 
 rev7r2 = Review.create(body: "Cute new coffee shop alert in the Richmond! I love the interior - bright and airy! They even have a doggy area in the shop in the back corner of the shop! The service was amazing! The staff was extremely friendly and attentive!", rating: 4, author_id: user2.id, business_id: bus7.id)
 rev7r3 = Review.create(body: "The drinks were pretty sweet but nothing overwhelming. The croffle was delicious but i wouldn't substitute a meal for it. It's just a nice treat. I noticed some reviews that they were unsatisfied with proportions based on how pricey things are. Remember, you're paying for the aesthetic of the place. Customer service is amazing! The staff was patient and kind.", rating: 4, author_id: user9.id, business_id: bus7.id)
 rev7r4 = Review.create(body: "Super cute coffee shop on a relatively quiet strip of the inner Richmond with trendy/instagrammable croffles, fancy $$ drinks, and very few indoor seats.", rating: 3, author_id: user6.id, business_id: bus7.id)
+
+bus8 = Business.create!({ name: "Tea & Others", about: "Boba, Bubble Tea", rating: 4.5, phone: "(415) 864-4920", address: "250 Divisadero St San Francisco, CA 94117", hours: "12:00PM-6:00PM", websiteurl: "http://www.teaandothers.com", latitude: 37.771613174681086, longitude: -122.43684554453965 })
+
+b8p1 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus8pic1.jpeg")
+b8p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus8pic2.jpeg")
+b8p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus8pic3.jpeg")
+b8p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus8pic4.jpeg")
+
+bus8.photos.attach(io: b8p1, filename: "bus8pic1.jpeg")
+bus8.photos.attach(io: b8p2, filename: "bus8pic2.jpeg")
+bus8.photos.attach(io: b8p3, filename: "bus8pic3.jpeg")
+bus8.photos.attach(io: b8p4, filename: "bus8pic4.jpeg")
+
+rev8r1 = Review.create(body: "Both drinks were good. There was a short wait since they didn't have the dirty boba ready at the time. I felt like the Sunny Side Up was a bit too small for me. I wish they had it in a bigger size for that drink. I'm rarely ever in that area so hopefully I'll get a chance to go by and try their other drinks.", rating: 4, author_id: user9.id, business_id: bus8.id)
+rev8r2 = Review.create(body: "Amazing tea place, would definitely go again (I have been there thrice already). Teas are flavorful", rating: 5, author_id: user10.id, business_id: bus8.id)
+rev8r3 = Review.create(body: "Tried their jasmine milk tea today, their tea flavor is pretty strong (which I love) but unfortunately the boba is pretty much tasteless and slightly over cooked/soggy. I think any bubble tea drink place needs to have their boba flavor and texture right.", rating: 3, author_id: user3.id, business_id: bus8.id)
+rev8r4 = Review.create(body: "Would come back again when I visiting for the Taro Matcha Latte, because I love the taro paste too much. Enjoyable experience!", rating: 5, author_id: user7.id, business_id: bus8.id)
+
+BusinessCategory.create!({
+  category_id: c2.id,
+  business_id: bus8.id,
+})
+
+BusinessCategory.create!({
+  category_id: c4.id,
+  business_id: bus8.id,
+})
+
+BusinessCategory.create!({
+  category_id: c9.id,
+  business_id: bus8.id,
+})
+
+BusinessCategory.create!({
+  category_id: c15.id,
+  business_id: bus8.id,
+})
+
+BusinessCategory.create!({
+  category_id: c15.id,
+  business_id: bus3.id,
+})
+
+BusinessCategory.create!({
+  category_id: c4.id,
+  business_id: bus8.id,
+})
+
+BusinessCategory.create!({
+  category_id: c4.id,
+  business_id: bus3.id,
+})
+
+bus9 = Business.create!({ name: "The Bird", about: "Chicken, Sandwiches", rating: 4.5, phone: "(415) 872-9825", address: "115 New Montgomery St San Francisco, CA 94105", hours: "10:00AM-8:00PM", websiteurl: "http://www.thebirdsf.com", latitude: 37.78743965491058, longitude: -122.40009290215059 })
+
+b9p1 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus9pic1.jpeg")
+b9p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus9pic2.jpeg")
+b9p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus9pic3.jpeg")
+b9p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus9pic4.jpeg")
+
+bus9.photos.attach(io: b9p1, filename: "bus8pic1.jpeg")
+bus9.photos.attach(io: b9p2, filename: "bus8pic2.jpeg")
+bus9.photos.attach(io: b9p3, filename: "bus8pic3.jpeg")
+bus9.photos.attach(io: b9p4, filename: "bus8pic4.jpeg")
+
+revB9r1 = Review.create(body: "Incredibly fast, fried chicken is delicious-- there is cinnamon in batter that adds phenomenal touch of sweetness and the coleslaw has apple slices, which add even more to the experience. It was delicious!!", rating: 5, author_id: user8.id, business_id: bus9.id)
+revB9r2 = Review.create(body: "The fried chicken sandwich is amazingly delicious! The fried chicken itself is fried to perfection and is well seasoned, not overly salty. It's dark meat so it's super juicy and tender. The cold slaw and pickles are fresh and give a nice crunch to the sandwich. The bun is soft and buttery. It's definitely worth the price for how good this is!", rating: 4, author_id: user9.id, business_id: bus9.id)
+revB9r3 = Review.create(body: "So the spicy chicken is like a fried Sriracha chicken sandwich. It was okay, but honestly I'm more wowed by Popeye's spicy chicken sandwich and this one is like 25% more expensive with not much crunch or anything of a wow factor. It's just a fried Sriracha chicken sandwich that tastes like it's made by your local cafeteria kitchen worker.", rating: 3, author_id: user2.id, business_id: bus9.id)
+revB9r4 = Review.create(body: "I ordered the spicy fried chicken sandwich. The breading has lots of flavor and its crunchy, and the chicken meat was tender. The spiciness was below average per my standard. The Cole Slaw in the burger balanced out the overall flavor and texture of the sandwich as it added some juiciness", rating: 4, author_id: user10.id, business_id: bus9.id)
+
+BusinessCategory.create!({
+  category_id: c8.id,
+  business_id: bus9.id,
+})
+
+BusinessCategory.create!({
+  category_id: c11.id,
+  business_id: bus9.id,
+})
