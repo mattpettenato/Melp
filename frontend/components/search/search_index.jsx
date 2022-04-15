@@ -43,7 +43,6 @@ class SearchIndex extends React.Component {
 
 
   render() {
-    console.log(this.props)
     const { category } = this.state;
     let orderedBusinesses = []
     let qq = 0
