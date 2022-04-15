@@ -124,7 +124,6 @@ class Signup extends React.Component{
             {this.props.errors ? this.props.errors.password : ''}
           </div>
 
-
           <label>
             <input
               type="number"

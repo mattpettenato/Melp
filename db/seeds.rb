@@ -116,43 +116,43 @@ bus5rev1 = Review.create(body: "Was vert busy and I was hungry and tired", ratin
 # categories
 
 c1 = Category.create!({
-    title: 'italian'
+  title: 'italian'
 })
 
 c2 = Category.create!({
-    title: 'asian'
+  title: 'asian'
 })
 
 c3 = Category.create!({
-    title: 'mexican'
+  title: 'mexican'
 })
 
 c4 = Category.create!({
-    title: 'boba'
+  title: 'boba'
 })
 
 c5 = Category.create!({
-    title: 'pizza'
+  title: 'pizza'
 })
 
 c6 = Category.create!({
-    title: "tacos",
+  title: "tacos",
 })
 
 c7 = Category.create!({
-    title: "bbq",
+  title: "bbq",
 })
 
 c8 = Category.create!({
-    title: "food",
+  title: "food",
 })
 
 c9 = Category.create!({
-    title: "drinks",
+  title: "drinks",
 })
 
 c10 = Category.create!({
-    title: "korean",
+  title: "korean",
 })
 
 # c11 = Category.create!({
@@ -160,8 +160,8 @@ c10 = Category.create!({
 # })
 
 BusinessCategory.create!({
-    category_id: c1.id,
-    business_id: bus4.id
+  category_id: c1.id,
+  business_id: bus4.id
 })
 
 BusinessCategory.create!({
@@ -170,28 +170,28 @@ BusinessCategory.create!({
 })
 
 BusinessCategory.create!({
-    category_id: c2.id,
-    business_id: bus3.id
+  category_id: c2.id,
+  business_id: bus3.id
 })
 
 BusinessCategory.create!({
-    category_id: c3.id,
-    business_id: bus1.id,
+  category_id: c3.id,
+  business_id: bus1.id,
 })
 
 BusinessCategory.create!({
-    category_id: c4.id,
-    business_id: bus3.id
+  category_id: c4.id,
+  business_id: bus3.id
 })
 
 BusinessCategory.create!({
-    category_id: c2.id,
-    business_id: bus5.id
+  category_id: c2.id,
+  business_id: bus5.id
 })
 
 BusinessCategory.create!({
-    category_id: c5.id,
-    business_id: 4
+  category_id: c5.id,
+  business_id: 4
 })
 
 BusinessCategory.create!({
@@ -238,3 +238,47 @@ BusinessCategory.create!({
   category_id: c10.id,
   business_id: 2,
 })
+
+bus6 = Business.create!({ name: "Bella Trattoria", about: "Italian, Pasta", rating: 4.5, phone: "(415) 221-0305", address: "3854 Geary Blvd San Francisco, CA 94118", hours: "11:00AM-9:00PM", websiteurl: "https://osteriabella.com", latitude: 37.781567730282, longitude: -122.46090431504788 })
+
+b6p1 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus6pic1.jpeg")
+b6p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus6pic2.jpeg")
+b6p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus6pic3.jpeg")
+b6p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus6pic4.jpeg")
+
+bus6.photos.attach(io: b6p1, filename: "bus6pic1.jpeg")
+bus6.photos.attach(io: b6p2, filename: "bus6pic2.jpeg")
+bus6.photos.attach(io: b6p3, filename: "bus6pic3.jpeg")
+bus6.photos.attach(io: b6p4, filename: "bus6pic4.jpeg")
+
+BusinessCategory.create!({
+  category_id: c1.id,
+  business_id: bus6.id,
+})
+
+BusinessCategory.create!({
+  category_id: c8.id,
+  business_id: bus6.id,
+})
+
+BusinessCategory.create!({
+  category_id: c5.id,
+  business_id: bus6.id,
+})
+
+revB1 = Review.create(body: "Came here with my family, and will 100% be coming back soon with friends", rating: 5, author_id: user2.id, business_id: bus6.id)
+revB2 = Review.create(body: "The food was great", rating: 4, author_id: user1.id, business_id: bus6.id)
+revB3 = Review.create(body: "Dessert was amazing but I wanted more", rating: 3, author_id: user2.id, business_id: bus6.id)
+revB4 = Review.create(body: "The food and drinks are amazing", rating: 4, author_id: user3.id, business_id: bus6.id)
+
+# bus7 = Business.create!({ name: "", about: "", rating: 4.5, phone: "", address: "", hours: "", websiteurl: "", latitude: , longitude:  })
+
+# b7p1 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus7pic1.jpg")
+# b7p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus7pic2.jpg")
+# b7p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus7pic3.jpg")
+# b7p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus7pic4.jpg")
+
+# bus7.photos.attach(io: b1p1, filename: "bus1pic1.jpg")
+# bus7.photos.attach(io: b1p2, filename: "bus1pic2.jpg")
+# bus7.photos.attach(io: b1p3, filename: "bus1pic3.jpg")
+# bus7.photos.attach(io: b1p4, filename: "bus1pic4.jpg")
