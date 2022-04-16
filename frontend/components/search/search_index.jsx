@@ -20,6 +20,7 @@ class SearchIndex extends React.Component {
 
   componentDidMount(){
     this.props.fetchBusinesses({ category: this.props.match.params.query});
+    
   }
 
   handleSubmit(e){
@@ -30,6 +31,7 @@ class SearchIndex extends React.Component {
     } else {
       this.props.history.push(`businesses/search/${this.state.category}`)
     }
+
   }
 
   handleChange(type) {
@@ -37,16 +39,23 @@ class SearchIndex extends React.Component {
   }
 
   button(category){
+    // window.location.reload();
     this.props.history.push(`/businesses/search/${category}`)
-    window.location.reload();
+    console.log('test')
+
   }
+
+  
 
 
   render() {
+
+
+    
     const { category } = this.state;
     let orderedBusinesses = []
     let qq = 0
-    for (let i = this.props.businesses.length -1; i >= 0 && orderedBusinesses.length < 8; i--){
+    for (let i = this.props.businesses.length -1; i >= 0 && orderedBusinesses.length < 20; i--){
       if (this.props.businesses[i].categories.includes(this.props.match.params.query.toLowerCase())){
         orderedBusinesses.push(this.props.businesses[i])
       } else if (this.props.match.params.query === "All" || this.props.match.params.query === "all"){
@@ -69,7 +78,6 @@ class SearchIndex extends React.Component {
         <SearchIndexItem key={idx} currentUser={this.props.currentUser} business={business} fetchBusiness={this.props.fetchBusiness} fetchReviews={this.props.fetchReviews} />
       )
     })
-
     if (!this.props.fetchBusinesses) {
       return null;
     } else {
@@ -77,25 +85,25 @@ class SearchIndex extends React.Component {
       <div className="left-sided">
         <div className="category-filter">
           <h2>Categories</h2>
-          <Link to={`/businesses/search/All`}>
+          <Link to={`/businesses/search/All`} replace>
             <button onClick={() =>this.button("All")}>All</button> 
           </Link>
-          <Link to={`/businesses/search/food`}>
+          <Link to={`/businesses/search/food`} replace>
             <button onClick={() =>this.button("Food")}>Food</button> 
           </Link>
-          <Link to={`/businesses/search/drinks`}>
+          <Link to={`/businesses/search/drinks`} replace>
             <button onClick={() =>this.button("Drinks")}>Drinks</button> 
           </Link>
-          <Link to={`/businesses/search/italian`}>
+          <Link to={`/businesses/search/italian`} replace>
             <button onClick={() =>this.button("Italian")}>Italian</button>
           </Link>
-          <Link to={`/businesses/search/mexican`}>
+          <Link to={`/businesses/search/mexican`} replace>
             <button onClick={() =>this.button("Mexican")}>Mexican</button> 
           </Link>
-          <Link to={`/businesses/search/korean`}>
+          <Link to={`/businesses/search/korean`} replace>
             <button onClick={() =>this.button("Korean")}>Korean</button> 
           </Link>
-          <Link to={`/businesses/search/asian`}>
+          <Link to={`/businesses/search/asian`} replace>
             <button onClick={() =>this.button("Asian")}>Asian</button> 
           </Link>                                                  
         </div>

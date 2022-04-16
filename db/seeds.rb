@@ -195,6 +195,9 @@ c15 = Category.create!({
   title: "tea",
 })
 
+c16 = Category.create!({
+  title: "pasta",
+})
 
 BusinessCategory.create!({
   category_id: c1.id,
@@ -424,10 +427,10 @@ b9p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus9pic2.jpeg")
 b9p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus9pic3.jpeg")
 b9p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus9pic4.jpeg")
 
-bus9.photos.attach(io: b9p1, filename: "bus8pic1.jpeg")
-bus9.photos.attach(io: b9p2, filename: "bus8pic2.jpeg")
-bus9.photos.attach(io: b9p3, filename: "bus8pic3.jpeg")
-bus9.photos.attach(io: b9p4, filename: "bus8pic4.jpeg")
+bus9.photos.attach(io: b9p1, filename: "bus9pic1.jpeg")
+bus9.photos.attach(io: b9p2, filename: "bus9pic2.jpeg")
+bus9.photos.attach(io: b9p3, filename: "bus9pic3.jpeg")
+bus9.photos.attach(io: b9p4, filename: "bus9pic4.jpeg")
 
 revB9r1 = Review.create(body: "Incredibly fast, fried chicken is delicious-- there is cinnamon in batter that adds phenomenal touch of sweetness and the coleslaw has apple slices, which add even more to the experience. It was delicious!!", rating: 5, author_id: user8.id, business_id: bus9.id)
 revB9r2 = Review.create(body: "The fried chicken sandwich is amazingly delicious! The fried chicken itself is fried to perfection and is well seasoned, not overly salty. It's dark meat so it's super juicy and tender. The cold slaw and pickles are fresh and give a nice crunch to the sandwich. The bun is soft and buttery. It's definitely worth the price for how good this is!", rating: 4, author_id: user9.id, business_id: bus9.id)
@@ -442,4 +445,245 @@ BusinessCategory.create!({
 BusinessCategory.create!({
   category_id: c11.id,
   business_id: bus9.id,
+})
+
+bus10 = Business.create!({ name: "Fiorella", about: "Italian, Pasta, Wine", rating: 4.5, phone: "(415) 340-3049", address: "2339 Clement St San Francisco, CA 94121", hours: "5:00PM-9:30PM", websiteurl: "http://www.fiorella-sf.com", latitude: 37.781983371345405, longitude: -122.48454235994076 })
+
+b10p1 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus10pic1.jpeg")
+b10p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus10pic2.jpeg")
+b10p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus10pic3.jpeg")
+b10p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus10pic4.jpeg")
+
+bus10.photos.attach(io: b10p1, filename: "bus10pic1.jpeg")
+bus10.photos.attach(io: b10p2, filename: "bus10pic2.jpeg")
+bus10.photos.attach(io: b10p3, filename: "bus10pic3.jpeg")
+bus10.photos.attach(io: b10p4, filename: "bus10pic4.jpeg")
+
+revB10r1 = Review.create(body: "Entrees we ordered were the rigatoni al bolognese classico and burrata pizza. Pasta was cooked well and in a tasty sauce, although plating was a little messy. The pizza can with a hefty ball of burrata on top, any cheese lovers heaven. There was plenty of sauce full of fresh tomatoes.", rating: 5, author_id: user7.id, business_id: bus10.id)
+revB10r2 = Review.create(body: "The food here was delicious. We had the Salsiccia Pizza and the Rigatoni al Bolognese Classico. I highly recommend either of those! 4 stars mainly because though it was pretty good, but I've had a few better. I would still come back though!", rating: 4, author_id: user5.id, business_id: bus10.id)
+revB10r3 = Review.create(body: "I've been wanting to try this place for a while now and finally made a reservation for last night. The restaurant has a great ambiance and the food was incredible! We had the clam pie and mushroom risotto and they were both really good! Lemon juice on the clam pie was a nice touch  next time I want to try their pasta and their mushroom pizza! Highly recommend making a reservation (they're on open table)", rating: 5, author_id: user4.id, business_id: bus10.id)
+revB10r4 = Review.create(body: "Overall, the food was decent (because I love Italian) but it definitely does not compare to the other Italian options in the city.", rating: 3, author_id: user9.id, business_id: bus10.id)
+
+BusinessCategory.create!({
+  category_id: c1.id,
+  business_id: bus10.id,
+})
+
+BusinessCategory.create!({
+  category_id: c5.id,
+  business_id: bus10.id,
+})
+
+BusinessCategory.create!({
+  category_id: c16.id,
+  business_id: bus10.id,
+})
+
+BusinessCategory.create!({
+  category_id: c8.id,
+  business_id: bus10.id,
+})
+
+BusinessCategory.create!({
+  category_id: c9.id,
+  business_id: bus10.id,
+})
+
+BusinessCategory.create!({
+  category_id: c12.id,
+  business_id: bus10.id,
+})
+
+BusinessCategory.create!({
+  category_id: c13.id,
+  business_id: bus10.id,
+})
+
+BusinessCategory.create!({
+  category_id: c14.id,
+  business_id: bus10.id,
+})
+
+bus11 = Business.create!({ name: "Padrecito", about: "Mexican, Brunch, Bar", rating: 4.5, phone: "(415) 742-5505", address: "901 Cole St San Francisco, CA 94117", hours: "4:30PM-9:00PM", websiteurl: "http://www.padrecitosf.com", latitude: 37.76582667000361, longitude: -122.45019674446523 })
+
+
+b11p1 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus11pic1.jpeg")
+b11p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus11pic2.jpeg")
+b11p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus11pic3.jpeg")
+b11p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus11pic4.jpeg")
+
+bus11.photos.attach(io: b11p1, filename: "bus11pic1.jpeg")
+bus11.photos.attach(io: b11p2, filename: "bus11pic2.jpeg")
+bus11.photos.attach(io: b11p3, filename: "bus11pic3.jpeg")
+bus11.photos.attach(io: b11p4, filename: "bus11pic4.jpeg")
+
+revB11r1 = Review.create(body: "The food is amazing I've had almost everything on the menu and nothing has disappointed so far. I went for my birthday recently and had the fish tacos - fish was nice and crispy on the outside and soft on the inside. The ceviches are AMAZING and quessabirria is sooo savory, hearty, and flavorful.", rating: 5, author_id: user4.id, business_id: bus11.id)
+revB11r2 = Review.create(body: "This place is right around the corner from me and I finally got around to trying it last Friday. Went around 8:30 and there was only a 10 minute wait or so. Wanted to order the calamari tacos, but they were unfortunately sold out, so I got the carnitas one instead, which was delicious! The chips and guac appetizer was also some of the best I've had in San Francisco.", rating: 4, author_id: user2.id, business_id: bus11.id)
+revB11r3 = Review.create(body: "We decided to go for the huevos rancheros and huevos Benedictos and ordered coffee for drinks (since they don't offer any other espresso drinks). The coffee was quite nice and the food was very tasty with generous portion sizes. Service was very good and our hostess checked on us from time to time to make sure we had everything we need. Great place for brunch!", rating: 4, author_id: user4.id, business_id: bus11.id)
+revB11r4 = Review.create(body: "If you're a fan of breakfast burritos, Padrecito's is definitely one I would order. It comes with salsa and guac too! The chips and guac are also absolutely worth it, since they give a ton of guac and an assortment of salsas. The chips are super fresh too.", rating: 4, author_id: user9.id, business_id: bus11.id)
+
+BusinessCategory.create!({
+  category_id: c3.id,
+  business_id: bus11.id,
+})
+
+BusinessCategory.create!({
+  category_id: c6.id,
+  business_id: bus11.id,
+})
+
+BusinessCategory.create!({
+  category_id: c8.id,
+  business_id: bus11.id,
+})
+
+BusinessCategory.create!({
+  category_id: c9.id,
+  business_id: bus11.id,
+})
+
+BusinessCategory.create!({
+  category_id: c12.id,
+  business_id: bus11.id,
+})
+
+BusinessCategory.create!({
+  category_id: c13.id,
+  business_id: bus11.id,
+})
+
+BusinessCategory.create!({
+  category_id: c3.id,
+  business_id: bus11.id,
+})
+
+bus12 = Business.create!({ name: "Taqueria Los Mayas", about: "Tacos, Mexican", rating: 4.5, phone: "(415) 548-2800", address: "331 Clement St San Francisco, CA 94118", hours: "11:00AM-10:00PM", websiteurl: "https://taquerialosmayassf.com", latitude: 37.78310938371122, longitude: -122.46286567528215 })
+
+b12p1 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus12pic1.jpeg")
+b12p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus12pic2.jpeg")
+b12p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus12pic3.jpeg")
+b12p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus12pic4.jpeg")
+
+bus12.photos.attach(io: b12p1, filename: "bus12pic1.jpeg")
+bus12.photos.attach(io: b12p2, filename: "bus12pic2.jpeg")
+bus12.photos.attach(io: b12p3, filename: "bus12pic3.jpeg")
+bus12.photos.attach(io: b12p4, filename: "bus12pic4.jpeg")
+
+revb12r1 = Review.create(body: "We had 2 empanadas that were huge but mostly masa so that's why the 1 star doc and it's a little pricey for a bit of a hole on the wall. Also had 2 tacos. Homemade tortillas which were nice and the Chile verde was awesome. Al Pastor was a bit dry. Definitely worth a visit though!", rating: 4, author_id: user3.id, business_id: bus12.id)
+revb12r2 = Review.create(body: "Very bad customer service. Very rude!!! I came across this place on yelp and decided to give it a try", rating: 1, author_id: user8.id, business_id: bus12.id)
+revb12r3 = Review.create(body: "As for last night my order was a Plate of seasoned chicken, rice, beans, corn tortilla, plus chips and salsa. Upon arrival my order was ready, and well packaged, and the staff polite and friendly. The portions were more then ample, and for the most part the seasoning worked with the only exception being the beans. I know it's just beans, but I did not detect any notable seasoning, that said at least they were not over salted.", rating: 4, author_id: user11.id, business_id: bus12.id)
+revb12r4 = Review.create(body: "Ceviche and fajitas are pretty good.", rating: 5, author_id: user10.id, business_id: bus12.id)
+
+BusinessCategory.create!({
+  category_id: c3.id,
+  business_id: bus12.id,
+})
+
+BusinessCategory.create!({
+  category_id: c6.id,
+  business_id: bus12.id,
+})
+
+BusinessCategory.create!({
+  category_id: c8.id,
+  business_id: bus12.id,
+})
+
+BusinessCategory.create!({
+  category_id: c9.id,
+  business_id: bus12.id,
+})
+
+BusinessCategory.create!({
+  category_id: c14.id,
+  business_id: bus12.id,
+})
+
+bus13 = Business.create!({ name: "Daeho Kalbijjim & Beef Soup", about: "Korean, Soup, Noodles", rating: 4.5, phone: "(415) 563-1388", address: "1620 Post St San Francisco, CA 94115", hours: "11:00AM-9:00PM", websiteurl: "https://www.instagram.com/daeho_official/?hl=en", latitude: 37.78310938371122, longitude: -122.46286567528215 })
+
+b13p1 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus13pic1.jpeg")
+b13p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus13pic2.jpeg")
+b13p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus13pic3.jpeg")
+b13p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus13pic4.jpeg")
+
+bus13.photos.attach(io: b13p1, filename: "bus13pic1.jpeg")
+bus13.photos.attach(io: b13p2, filename: "bus13pic2.jpeg")
+bus13.photos.attach(io: b13p3, filename: "bus13pic3.jpeg")
+bus13.photos.attach(io: b13p4, filename: "bus13pic4.jpeg")
+
+revb13r1 = Review.create(body: "Kalbijjim was super delicious and tasty! Definitely on the richer side and you'll have enough to take home as well! I recommend trying their purple rice.", rating: 5, author_id: user2.id, business_id: bus13.id)
+revb13r2 = Review.create(body: "They did run out of the ox tail with short ribs when we came here so we just ordered the short rib! It was sooo flavorful and delicious! Although I wanted the meat to be super soft like the ox tail but it was still good!", rating: 4, author_id: user9.id, business_id: bus13.id)
+revb13r3 = Review.create(body: "Daeho is amazing. Their most popular dish is of course their kalbijim. Most people order with cheese on top - great for instagram and tastes pretty good. I'm also perfectly happy without though so I load up on the glass noodles, get extra meat to enjoy for the next few days, and rice cakes", rating: 5, author_id: user7.id, business_id: bus13.id)
+revb13r4 = Review.create(body: "The music is extremely loud. It's hard to hear your dinner companions without shouting. However, it's fun and upbeat, so this is definitely a place to go for groups looking to have a fun time. Overall, great food, but the service and loudness might be a turn off for returning.", rating: 4, author_id: user10.id, business_id: bus13.id)
+
+BusinessCategory.create!({
+  category_id: c2.id,
+  business_id: bus13.id,
+})
+
+BusinessCategory.create!({
+  category_id: c8.id,
+  business_id: bus13.id,
+})
+
+BusinessCategory.create!({
+  category_id: c9.id,
+  business_id: bus13.id,
+})
+
+BusinessCategory.create!({
+  category_id: c10.id,
+  business_id: bus13.id,
+})
+
+BusinessCategory.create!({
+  category_id: c2.id,
+  business_id: bus13.id,
+})
+
+bus14 = Business.create!({ name: "Yakiniq", about: "Korean, BBQ", rating: 4.5, phone: "(415) 441-9292", address: "1640 Post St Fl 2 San Francisco, CA 94115", hours: "5:00PM-10:00PM", websiteurl: "http://www.yakiniq-sanjose.com/", latitude: 37.786118597850376, longitude: -122.42894930409635 })
+
+b14p1 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus14pic1.jpeg")
+b14p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus14pic2.jpeg")
+b14p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus14pic3.jpeg")
+b14p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus14pic4.jpeg")
+
+bus14.photos.attach(io: b14p1, filename: "bus14pic1.jpeg")
+bus14.photos.attach(io: b14p2, filename: "bus14pic2.jpeg")
+bus14.photos.attach(io: b14p3, filename: "bus14pic3.jpeg")
+bus14.photos.attach(io: b14p4, filename: "bus14pic4.jpeg")
+
+revb14r1 = Review.create(body: "Love coming here, it's one of my favorite KBBQ spots in the Bay Area. The meat selections are great, the steamed egg is a must for my table. I always get the radish wraps because I think it's the perfect compliment for  the meat. Prices are fair and the waitlist makes it easier to have an idea of how long you'll be waiting. I just wish they didn't forget my order so often, but that's understandable.", rating: 4, author_id: user6.id, business_id: bus14.id)
+revb14r2 = Review.create(body: "if you are a party that is smaller than 6, don't bother coming, because this place will sit people who come after you if they are a bigger party. According to the front desk staff, it is because that's how we make money. (Yes. He literally said that.)", rating: 1, author_id: user9.id, business_id: bus14.id)
+revb14r3 = Review.create(body: "Was able to make reservations over the phone for a party of 8 and it pulled through. It's very popular so calling right when they open ascertains a reservation. Usually they do through Yelp for waiting lines. Love the food, the service was good, very attentive servers. Definitely a favorite spot", rating: 5, author_id: user11.id, business_id: bus14.id)
+revb14r4 = Review.create(body: "This place is delicious and fun for so many reasons! First of all, all you can eat for a decent price. Always a win. They also have cheese corn which not all places have common so that's an extra point in my book.", rating: 5, author_id: user10.id, business_id: bus14.id)
+
+BusinessCategory.create!({
+  category_id: c2.id,
+  business_id: bus14.id,
+})
+
+BusinessCategory.create!({
+  category_id: c8.id,
+  business_id: bus14.id,
+})
+
+BusinessCategory.create!({
+  category_id: c9.id,
+  business_id: bus14.id,
+})
+
+BusinessCategory.create!({
+  category_id: c10.id,
+  business_id: bus14.id,
+})
+
+BusinessCategory.create!({
+  category_id: c2.id,
+  business_id: bus14.id,
+})
+
+BusinessCategory.create!({
+  category_id: c7.id,
+  business_id: bus14.id,
 })

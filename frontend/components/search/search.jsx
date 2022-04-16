@@ -30,11 +30,12 @@ class Search extends React.Component {
       this.props.history.push(`/businesses/search/${this.state.category}`);
     }
     
-    window.location.reload();
+    // window.location.reload();
   }
 
   handleChange(type) {
     return (e) => this.setState({ [type]: e.target.value });
+
   }
 
   componentDidMount(){
@@ -42,6 +43,18 @@ class Search extends React.Component {
   }
 
   render(){
+    
+    let coordz = []
+    if (this.props.businesses.length > 0){
+      // console.log(this.props.businesses.length)
+      for (let i = this.props.businesses.length -1; i >= 0; i--){
+        if (this.props.businesses[i].categories.includes(this.props.match.params.query) || this.props.match.params.query === 'All' || this.props.match.params.query === 'all'){
+          coordz.push([this.props.businesses[i].id, this.props.businesses[i].latitude, this.props.businesses[i].longitude])
+        }
+      }
+    }
+    // console.log(coordz)
+    // console.log(this.props)
 
 
     return (
@@ -58,28 +71,19 @@ class Search extends React.Component {
 
         <div className="search-div">
           <div className="search-left">
-            <SearchIndexContainer />
+            <SearchIndexContainer/>
           </div>
 
       <div className="right-side-s">
         
         <div className="map-bar">
           <div className="space">
-
-            <SearchMap businesses={this.props.businesses} query={this.props.match.params.query}/>
+            <SearchMap businesses={this.props.businesses} query={this.props.match.params.query} coordz={coordz}/>
           </div>
             {/* <h1></h1> */}
-
-
         </div>
       </div>
-
-
-
-
         </div>
-
-
         <footer className="footer">
           <div className="about-user">
             <p className="about-user-contact">Contact</p>
@@ -90,13 +94,10 @@ class Search extends React.Component {
             <a href="https://www.linkedin.com/in/matthew-pettenato-936236123/" target="_blank">
               <img className="ln-img" src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg" />
             </a>
-
             <a href="https://github.com/mattpettenato" target="_blank">
               <img className="git-img" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" />
             </a>
-
           </div>
-
         </footer>
       </div>
     )
