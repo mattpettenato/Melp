@@ -599,7 +599,7 @@ BusinessCategory.create!({
   business_id: bus12.id,
 })
 
-bus13 = Business.create!({ name: "Daeho Kalbijjim & Beef Soup", about: "Korean, Soup, Noodles", rating: 4.5, phone: "(415) 563-1388", address: "1620 Post St San Francisco, CA 94115", hours: "11:00AM-9:00PM", websiteurl: "https://www.instagram.com/daeho_official/?hl=en", latitude: 37.78310938371122, longitude: -122.46286567528215 })
+bus13 = Business.create!({ name: "Daeho Kalbijjim", about: "Korean, Soup, Noodles", rating: 4.5, phone: "(415) 563-1388", address: "1620 Post St San Francisco, CA 94115", hours: "11:00AM-9:00PM", websiteurl: "https://www.instagram.com/daeho_official/?hl=en", latitude: 37.78310938371122, longitude: -122.46286567528215 })
 
 b13p1 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus13pic1.jpeg")
 b13p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus13pic2.jpeg")
