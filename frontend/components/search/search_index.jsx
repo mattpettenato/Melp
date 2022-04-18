@@ -27,7 +27,7 @@ class SearchIndex extends React.Component {
     e.preventDefault();
 
     if (this.state.category == "" ) {
-      this.props.history.push(`/businesses/search/All`)
+      this.props.history.push(`/businesses/search/all`)
     } else {
       this.props.history.push(`businesses/search/${this.state.category}`)
     }
@@ -39,14 +39,9 @@ class SearchIndex extends React.Component {
   }
 
   button(category){
-    // window.location.reload();
     this.props.history.push(`/businesses/search/${category}`)
-    console.log('test')
-
+    window.location.reload();
   }
-
-  
-
 
   render() {
 
@@ -85,26 +80,26 @@ class SearchIndex extends React.Component {
       <div className="left-sided">
         <div className="category-filter">
           <h2>Categories</h2>
-          <Link to={`/businesses/search/All`} replace>
-            <button onClick={() =>this.button("All")}>All</button> 
+          <Link to={`/businesses/search/all`} replace>
+            <button onClick={() =>this.button("all")}>All</button> 
           </Link>
           <Link to={`/businesses/search/food`} replace>
-            <button onClick={() =>this.button("Food")}>Food</button> 
+            <button onClick={() =>this.button("food")}>Food</button> 
           </Link>
           <Link to={`/businesses/search/drinks`} replace>
-            <button onClick={() =>this.button("Drinks")}>Drinks</button> 
+            <button onClick={() =>this.button("drinks")}>Drinks</button> 
           </Link>
           <Link to={`/businesses/search/italian`} replace>
-            <button onClick={() =>this.button("Italian")}>Italian</button>
+            <button onClick={() =>this.button("italian")}>Italian</button>
           </Link>
           <Link to={`/businesses/search/mexican`} replace>
-            <button onClick={() =>this.button("Mexican")}>Mexican</button> 
+            <button onClick={() =>this.button("mexican")}>Mexican</button> 
           </Link>
           <Link to={`/businesses/search/korean`} replace>
-            <button onClick={() =>this.button("Korean")}>Korean</button> 
+            <button onClick={() =>this.button("korean")}>Korean</button> 
           </Link>
           <Link to={`/businesses/search/asian`} replace>
-            <button onClick={() =>this.button("Asian")}>Asian</button> 
+            <button onClick={() =>this.button("asian")}>Asian</button> 
           </Link>                                                  
         </div>
         <div className="bus-index-main">

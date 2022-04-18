@@ -1,9 +1,9 @@
 import React from "react";
+import MarkerManager from "../../util/marker_manager";
 
 class ListingMap extends React.Component{
   constructor(props){
     super(props)
-    this.state= {markers: this.props.markers};
   }
   
   componentDidMount(){
@@ -15,45 +15,37 @@ class ListingMap extends React.Component{
       zoom: 13
     };
     this.map = new google.maps.Map(this.mapNode, mapOptions);
-    
+    this.MarkerManager = new MarkerManager(this.map);
+    this.MarkerManager.updateMarkers(this.props.businesses)
   }
 
   componentDidUpdate(){
-    // this.MarkerManager.updateMarkers(this.props.listings)
-    // window.location.reload();
-
+    this.MarkerManager.updateMarkers(this.props.businesses)
   }
 
   render(){
-    // console.log(this.props.query)
+    console.log(this.props)
     let coords = []
     let oldQ=this.props.query
     console.log(oldQ)
-    for (let i = this.props.coordz.length -1; i >= 0 && this.props.coordz.length < this.props.businesses.length; i--){
+    for (let i = this.props.coordz.length -1; i >= 0 && this.props.coordz.length <= this.props.businesses.length; i--){
       // console.log(this.props)
       coords.push(this.props.coordz[i])
+      // this.state.markers.push(this.props.coordz[i])
       // console.log('pushed')
       // console.log(this.props.coordz[i])
 
     }
     
+    console.log(this.coords)
 
     // let coords = this.props.coordz
     if (this.props.businesses.length > 0 && coords.length > 0){
-      // window.location.reload
-      // console.log(this.props.coordz)
-
-
       for (let i = this.props.businesses.length -1; i >= 0 && coords.length < this.props.businesses.length; i--){
-
-        if (this.props.businesses[i].categories.includes(this.props.query) || this.props.query === 'All' || this.props.query === 'all'){
+        if (this.props.businesses[i].categories.includes(this.props.query.toLowerCase()) || this.props.query === 'All' || this.props.query === 'all'){
           coords.push([this.props.businesses[i].id, this.props.businesses[i].latitude, this.props.businesses[i].longitude])
         }
       }
-
-      // if (this.props.businesses.length === coords.length) {
-
-        // var infowindow = new google.maps.InfoWindow();
         var marker, i;
         let dump = []
         for (i = 0; i < coords.length; i++) {  
@@ -63,18 +55,12 @@ class ListingMap extends React.Component{
             // animation: google.maps.Animation.DROP,
           });
           dump.push(coords[i])
-          // console.log(coords)
-          // console.log(dump)
-
           google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
-              // infowindow.setContent(this.props.coordz[i][0]);
-              // infowindow.open(this.map, marker);
               window.location.href = `#/businesses/${coords[i][0]}`;
             }
           })(marker, i));
         }
-      // }
     }
     return (
     <div id="map-container" ref={map => this.mapNode = map}>

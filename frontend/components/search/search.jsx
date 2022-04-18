@@ -15,7 +15,7 @@ class Search extends React.Component {
     super(props)
 
     this.state = {
-      category: ""
+      // category: ""
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,7 +25,7 @@ class Search extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     if(this.state.category == ""){
-      this.props.history.push(`/businesses/search/All`); 
+      this.props.history.push(`/businesses/search/all`); 
     }else{
       this.props.history.push(`/businesses/search/${this.state.category}`);
     }
@@ -48,7 +48,7 @@ class Search extends React.Component {
     if (this.props.businesses.length > 0){
       // console.log(this.props.businesses.length)
       for (let i = this.props.businesses.length -1; i >= 0; i--){
-        if (this.props.businesses[i].categories.includes(this.props.match.params.query) || this.props.match.params.query === 'All' || this.props.match.params.query === 'all'){
+        if (this.props.businesses[i].categories.includes(this.props.match.params.query.toLowerCase()) || this.props.match.params.query === 'All' || this.props.match.params.query === 'all'){
           coordz.push([this.props.businesses[i].id, this.props.businesses[i].latitude, this.props.businesses[i].longitude])
         }
       }

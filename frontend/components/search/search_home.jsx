@@ -17,6 +17,7 @@ class Search extends React.Component {
     e.preventDefault();
     let category = this.state.category
     this.props.history.push(`/businesses/search/${category === '' ? 'all' : category}`)
+    window.location.reload();
   }
 
   update(field){
