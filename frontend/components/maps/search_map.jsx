@@ -34,7 +34,7 @@ class ListingMap extends React.Component{
       // this.state.markers.push(this.props.coordz[i])
       // console.log('pushed')
       // console.log(this.props.coordz[i])
-
+// 
     }
     
     // console.log(this.coords)
