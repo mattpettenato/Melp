@@ -24,10 +24,10 @@ class ListingMap extends React.Component{
   }
 
   render(){
-    console.log(this.props)
+    // console.log(this.props)
     let coords = []
     let oldQ=this.props.query
-    console.log(oldQ)
+    // console.log(oldQ)
     for (let i = this.props.coordz.length -1; i >= 0 && this.props.coordz.length <= this.props.businesses.length; i--){
       // console.log(this.props)
       coords.push(this.props.coordz[i])
@@ -37,7 +37,7 @@ class ListingMap extends React.Component{
 
     }
     
-    console.log(this.coords)
+    // console.log(this.coords)
 
     // let coords = this.props.coordz
     if (this.props.businesses.length > 0 && coords.length > 0){
