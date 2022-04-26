@@ -29,7 +29,7 @@ The business show page displays information pertaining to a business and include
 ![Business Show](melp_imgs/readme_imgs/melp_bus_show.png)
 #### Search
 Users are able to search for businesses based off of categories. The categories are created and joined on the backend. 
-![Search](melp_imgs/readme_imgs/melp_bus_show.png)
+![Search](melp_imgs/readme_imgs/melp_search.png)
 #### Reviews
 Signed in users are able to rate a business and write a review for other users to read through a review form.
 ![Reviews](melp_imgs/readme_imgs/melp_bus_rev.png)
