@@ -1,4 +1,4 @@
-# Melp
+![Melp](melp_imgs/melp_logo.png)
 
 ## Introduction
 
