@@ -16,6 +16,7 @@ class Search extends React.Component {
 
     this.state = {
       // category: ""
+      bz: []
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -35,7 +36,6 @@ class Search extends React.Component {
 
   handleChange(type) {
     return (e) => this.setState({ [type]: e.target.value });
-
   }
 
   componentDidMount(){
@@ -43,19 +43,18 @@ class Search extends React.Component {
   }
 
   render(){
-    
+    // console.log(this.props)
     let coordz = []
+    let buzbuz = []
     if (this.props.businesses.length > 0){
       // console.log(this.props.businesses.length)
       for (let i = this.props.businesses.length -1; i >= 0; i--){
         if (this.props.businesses[i].categories.includes(this.props.match.params.query.toLowerCase()) || this.props.match.params.query === 'All' || this.props.match.params.query === 'all'){
           coordz.push([this.props.businesses[i].id, this.props.businesses[i].latitude, this.props.businesses[i].longitude])
+          buzbuz.push(this.props.businesses[i])
         }
       }
     }
-    // console.log(coordz)
-    // console.log(this.props)
-
 
     return (
       <div className="search-page">
@@ -63,7 +62,7 @@ class Search extends React.Component {
           <Link to="/">
             <img className="hero-img-bus-nav" src="https://raw.githubusercontent.com/mattpettenato/FullStack_Project/main/melp_imgs/melp_logo.png" />
           </Link>
-          <SearchHome id="search-home-bus"/>
+          <SearchHome id="search-home-bus" bizb={this.props.businesses}/>
           <div className="busnav">
             <NavBarContainer/>
           </div>
@@ -78,7 +77,7 @@ class Search extends React.Component {
         
         <div className="map-bar">
           <div className="space">
-            <SearchMap businesses={this.props.businesses} query={this.props.match.params.query} coordz={coordz}/>
+            <SearchMap query={this.props.match.params.query} coordz={coordz} buzbuz={buzbuz}/>
           </div>
             {/* <h1></h1> */}
         </div>

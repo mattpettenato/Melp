@@ -1,6 +1,9 @@
 import { connect } from "react-redux";
 import Search from "./search_home";
+// import { fetchBusinesses } from "../../actions/business_actions";
 import { fetchBusinesses } from "../../actions/business_actions";
+import { logout } from "../../actions/session_actions"
+
 // import { withRouter } from "react-router";
 
 const mSTP = (state) => {
@@ -12,6 +15,7 @@ const mSTP = (state) => {
 
 const mDTP = dispatch => {
   return {
+    // fetchBusinesses: () => dispatch(fetchBusinesses()),
     fetchBusinesses: () => dispatch(fetchBusinesses()),
     logout: () => dispatch(logout())
   }

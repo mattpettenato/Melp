@@ -13,11 +13,16 @@ class Search extends React.Component {
 
   }
 
+  // componentDidMount(){
+  //   // this.props.fetchBusinesses({ category: this.props.match.params.query});
+  //   // console.log(this.props)
+  // }
+
   handleSubmit(e) {
     e.preventDefault();
     let category = this.state.category
     this.props.history.push(`/businesses/search/${category === '' ? 'all' : category}`)
-    // window.location.reload();
+    window.location.reload();
   }
 
   update(field){

@@ -41,7 +41,7 @@ class SearchIndex extends React.Component {
 
   button(category){
     this.props.history.push(`/businesses/search/${category}`)
-    // window.location.reload();
+    window.location.reload();
   }
 
   render() {
@@ -60,11 +60,9 @@ class SearchIndex extends React.Component {
         orderedBusinesses.push(this.props.businesses[i])
       } else {
         qq ++
-    // console.log('qq: ' + qq)
 
       }
     }
-    // console.log(orderedBusinesses)
 
     let qqchecker
 
@@ -74,9 +72,6 @@ class SearchIndex extends React.Component {
     }
     let oneBus = orderedBusinesses
 
-    // if (orderedBusinesses.length === 0){
-
-    // }
     let busBox1 = oneBus.map((business, idx) => {
       return (
         <SearchIndexItem key={idx} currentUser={this.props.currentUser} business={business} fetchBusiness={this.props.fetchBusiness} fetchReviews={this.props.fetchReviews} />
