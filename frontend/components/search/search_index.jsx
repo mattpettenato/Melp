@@ -136,7 +136,6 @@ class SearchIndex extends React.Component {
         <div className="bus-index-main">
           <div className="pls-search-123" >
             {orderedBusinesses.length === 0 ? <p>There are no results with those search parameters</p> : busBox1}
-
             {/* {busBox1} */}
             {qqchecker}
           </div>
