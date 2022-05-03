@@ -11,7 +11,8 @@ class SearchIndex extends React.Component {
     super(props)
 
     this.state = {
-      category: ""
+      category: "",
+      b: []
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -44,6 +45,8 @@ class SearchIndex extends React.Component {
   }
 
   render() {
+    console.log(this.props)
+    // console.log(this.state)
 
 
     
@@ -57,9 +60,11 @@ class SearchIndex extends React.Component {
         orderedBusinesses.push(this.props.businesses[i])
       } else {
         qq ++
+    // console.log('qq: ' + qq)
 
       }
     }
+    console.log(orderedBusinesses)
 
     let qqchecker
 
@@ -68,6 +73,10 @@ class SearchIndex extends React.Component {
       orderedBus.push(this.props.businesses[i])
     }
     let oneBus = orderedBusinesses
+
+    // if (orderedBusinesses.length === 0){
+
+    // }
     let busBox1 = oneBus.map((business, idx) => {
       return (
         <SearchIndexItem key={idx} currentUser={this.props.currentUser} business={business} fetchBusiness={this.props.fetchBusiness} fetchReviews={this.props.fetchReviews} />
@@ -126,7 +135,9 @@ class SearchIndex extends React.Component {
         </div>
         <div className="bus-index-main">
           <div className="pls-search-123" >
-            {busBox1}
+            {orderedBusinesses.length === 0 ? <p>There are no results with those search parameters</p> : busBox1}
+
+            {/* {busBox1} */}
             {qqchecker}
           </div>
         </div>
