@@ -513,8 +513,8 @@
   display: flex;
   position: sticky;
   flex-direction: column;
-  margin-right: 20%;
-  margin-left: 10%;
+  /* margin-right: 20%;
+  margin-left: 10%; */
   /* width: 365px; */
 }
 
@@ -533,7 +533,7 @@
 
 #map-container {
   display: flex;
-  width: 900px;
+  width: 90vh;
   height: 100%;
   top: 18px;
   position: sticky !important;
