@@ -11,8 +11,8 @@ class SearchIndex extends React.Component {
     super(props)
 
     this.state = {
-      category: "",
-      b: []
+      category: ""
+      // b: []
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -41,11 +41,11 @@ class SearchIndex extends React.Component {
 
   button(category){
     this.props.history.push(`/businesses/search/${category}`)
-    window.location.reload();
+    // window.location.reload();
   }
 
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     // console.log(this.state)
 
 
@@ -64,7 +64,7 @@ class SearchIndex extends React.Component {
 
       }
     }
-    console.log(orderedBusinesses)
+    // console.log(orderedBusinesses)
 
     let qqchecker
 
