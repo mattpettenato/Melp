@@ -356,7 +356,7 @@ class BusinessShow extends React.Component {
           </div>
           <div className="mylinks">
             <p className="about-user-title">About</p>
-            <a href="https://www.linkedin.com/in/matthew-pettenato-936236123/" target="_blank">
+            <a href="https://www.linkedin.com/in/matt-pettenato-936236123/" target="_blank">
               <img className="ln-img" src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg" />
             </a>
 
