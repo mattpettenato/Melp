@@ -15,13 +15,8 @@ class ListingMap extends React.Component{
       zoom: 13
     };
     this.map = new google.maps.Map(this.mapNode, mapOptions);
-    // this.MarkerManager = new MarkerManager(this.map);
-    // this.MarkerManager.updateMarkers(this.props.buzbuz)
   }
 
-  // componentDidUpdate(){
-  //   this.MarkerManager.updateMarkers(this.props.buzbuz)
-  // }
 
   useEffect(){
     this.MarkerManager.updateMarkers(this.props.buzbuz)
@@ -30,7 +25,6 @@ class ListingMap extends React.Component{
 
   render(){
     let coords = []
-    // let oldQ=this.props.query
     for (let i = this.props.coordz.length -1; i >= 0 && this.props.coordz.length <= this.props.buzbuz.length; i--){
       coords.push(this.props.coordz[i])
     }
@@ -46,10 +40,7 @@ class ListingMap extends React.Component{
           marker = new google.maps.Marker({
             position: new google.maps.LatLng(coords[i][1], coords[i][2]),
             map: this.map,
-            // animation: google.maps.Animation.DROP,
           });
-          // console.log(this.map)
-          // dump.push(coords[i])
           google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
               window.location.href = `#/businesses/${coords[i][0]}`;
@@ -57,7 +48,6 @@ class ListingMap extends React.Component{
           })(marker, i));
         }
     }
-    // console.log(this.props)
     return (
     <div id="map-container" ref={map => this.mapNode = map}>
       Map
