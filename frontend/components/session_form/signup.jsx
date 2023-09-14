@@ -149,7 +149,7 @@ class Signup extends React.Component{
           <footer className="footer">
             <div className="about-user">
               <p className="about-user-contact">Contact</p>
-              <div className='gmail'><p>mtp855@gmail.com</p></div>
+              <div className='gmail'><p>mattpettenato@gmail.com</p></div>
             </div>
             <div className="mylinks">
               <p className="about-user-title">About</p>
