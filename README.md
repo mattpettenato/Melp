@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Melp is a Yelp Clone which allows users to look up and access businesses in their local area and view information pertaining to that business. Users are able to create reviews and rate businesses once they create a free account. Design documents can be found [here](https://github.com/mattpettenato/FullStack_Project/wiki)
+Melp is inspires by Yelp and allows users to look up and access businesses in their local area and view information pertaining to that business. Users are able to create reviews and rate businesses once they create a free account. Design documents can be found [here](https://github.com/mattpettenato/FullStack_Project/wiki)
 
 ## [Live Link](https://melp21.herokuapp.com/)
 
