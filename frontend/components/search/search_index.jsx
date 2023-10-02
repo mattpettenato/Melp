@@ -6,29 +6,24 @@ import SearchIndexItem from '../search/search_index_item'
 class SearchIndex extends React.Component {
   constructor(props) {
     super(props)
-
     this.state = {
       category: ""
     }
-
     this.handleSubmit = this.handleSubmit.bind(this);
     this.button = this.button.bind(this);
   }
 
   componentDidMount(){
     this.props.fetchBusinesses({ category: this.props.match.params.query});
-    
   }
 
   handleSubmit(e){
     e.preventDefault(); // handle the form submission without a page refresh
-
     if (this.state.category == "" ) {
       this.props.history.push(`/businesses/search/all`) // if category is empty, show all
     } else {
       this.props.history.push(`businesses/search/${this.state.category}`) // if category is not empty, update routes based on selected category
     }
-
   }
 
   handleChange(type) {
@@ -51,18 +46,15 @@ class SearchIndex extends React.Component {
         orderedBusinesses.push(this.props.businesses[i])
       } else {
         qq ++
-
       }
     }
 
     let qqchecker
-
     let orderedBus = []
     for (let i = this.props.businesses.length -1; i >= 0 && orderedBus.length < 8; i--){
       orderedBus.push(this.props.businesses[i])
     }
     let oneBus = orderedBusinesses
-
     let busBox1 = oneBus.map((business, idx) => {
       return (
         <SearchIndexItem key={idx} currentUser={this.props.currentUser} business={business} fetchBusiness={this.props.fetchBusiness} fetchReviews={this.props.fetchReviews} />
@@ -102,10 +94,6 @@ class SearchIndex extends React.Component {
       </div>
     )
     }
-  
   }
-
-
-  
 }
 export default withRouter(SearchIndex)
