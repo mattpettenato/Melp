@@ -35,7 +35,6 @@ class ListingMap extends React.Component{
         }
       }
         var marker, i;
-        // let dump = []
         for (i = 0; i < coords.length; i++) {  
           marker = new google.maps.Marker({
             position: new google.maps.LatLng(coords[i][1], coords[i][2]),
