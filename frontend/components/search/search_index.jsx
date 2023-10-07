@@ -67,28 +67,27 @@ class SearchIndex extends React.Component {
       <div className="left-sided">
         <div className="category-filter">
           <h2>Categories</h2>
-  <select name="search-term" id="terms">
-    <option value="all">All</option>
-    <option value="italian">Italian</option>
-    <option value="asian">Asian</option>
-    <option value="mexican">Mexican</option>
-    <option value="boba">Boba</option>
-    <option value="pizza">Pizza</option>
-    <option value="tacos">Tacos</option>
-    <option value="bbq">BBQ</option>
-    <option value="food">Food</option>
-    <option value="drinks">Drinks</option>
-    <option value="korean">Korean</option>
-    <option value="coffee">Coffee</option>
-    <option value="dessert">Dessert</option>
-    <option value="pastry">Pastry</option>
-  </select>
-  <button onClick={() =>this.button(document.getElementById("terms").value)}>Submit</button>
+          <select name="search-term" id="terms">
+            <option value="all">All</option>
+            <option value="italian">Italian</option>
+            <option value="asian">Asian</option>
+            <option value="mexican">Mexican</option>
+            <option value="boba">Boba</option>
+            <option value="pizza">Pizza</option>
+            <option value="tacos">Tacos</option>
+            <option value="bbq">BBQ</option>
+            <option value="food">Food</option>
+            <option value="drinks">Drinks</option>
+            <option value="korean">Korean</option>
+            <option value="coffee">Coffee</option>
+            <option value="dessert">Dessert</option>
+            <option value="pastry">Pastry</option>
+          </select>
+          <button onClick={() =>this.button(document.getElementById("terms").value)}>Submit</button>
         </div>
         <div className="bus-index-main">
           <div className="pls-search-123" >
             {orderedBusinesses.length === 0 ? <p>There are no results with those search parameters</p> : busBox1}
-            {qqchecker}
           </div>
         </div>
       </div>
