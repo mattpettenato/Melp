@@ -46,6 +46,7 @@ b1p3 = URI.open('https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus1pic3.jpg')
 b1p4 = URI.open('https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus1pic4.jpg')
 
 begin
+  puts "Attaching photos for bus1 to bucket: #{ENV['S3_BUCKET']}"
   bus1.photos.attach(io: b1p1, filename: 'bus1pic1.jpg')
   bus1.photos.attach(io: b1p2, filename: 'bus1pic2.jpg')
   bus1.photos.attach(io: b1p3, filename: 'bus1pic3.jpg')
@@ -69,10 +70,12 @@ b2p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus2pic3.jpg")
 b2p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus2pic4.jpg")
 
 begin
+  puts "Attaching photos for bus2 to bucket: #{ENV['S3_BUCKET']}"
   bus2.photos.attach(io: b2p1, filename: "bus2pic1.jpg")
   bus2.photos.attach(io: b2p2, filename: "bus2pic2.jpg")
     bus2.photos.attach(io: b2p3, filename: "bus2pic3.jpg")
   bus2.photos.attach(io: b2p4, filename: "bus2pic4.jpg")
+  puts "Successfully attached photos for bus2"
 rescue => e
   puts "Error attaching photos for bus2: #{e.message}"
   puts e.backtrace.join("\n")
@@ -91,10 +94,12 @@ b3p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus3pic3.jpg")
 b3p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus3pic4.jpg")
 
 begin
+  puts "Attaching photos for bus3 to bucket: #{ENV['S3_BUCKET']}"
   bus3.photos.attach(io: b3p1, filename: "bus3pic1.jpg")
   bus3.photos.attach(io: b3p2, filename: "bus3pic2.jpg")
   bus3.photos.attach(io: b3p3, filename: "bus3pic3.jpg")
   bus3.photos.attach(io: b3p4, filename: "bus3pic4.jpg")
+  puts "Successfully attached photos for bus3"
 rescue => e
   puts "Error attaching photos for bus3: #{e.message}"
   puts e.backtrace.join("\n")
@@ -123,10 +128,12 @@ b4p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus4pic3.jpg")
 b4p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus4pic4.jpg")
 
 begin
+  puts "Attaching photos for bus4 to bucket: #{ENV['S3_BUCKET']}"
   bus4.photos.attach(io: b4p1, filename: "bus4pic1.jpg")
   bus4.photos.attach(io: b4p2, filename: "bus4pic2.jpg")
   bus4.photos.attach(io: b4p3, filename: "bus4pic3.jpg")
   bus4.photos.attach(io: b4p4, filename: "bus4pic4.jpg")
+  puts "Successfully attached photos for bus4"
 rescue => e
   puts "Error attaching photos for bus4: #{e.message}"
   puts e.backtrace.join("\n")
@@ -138,9 +145,9 @@ revPZ3 = Review.create(body: "My usual pizza place closed down. So I tried this 
 revPZ4 = Review.create(body: "North beach pizza is the best pizza place in terms of taste and service. We had a pizza delivered quickly and it was hot like it just came out of the oven. Delivery guy was friendly. I would definitely be back and recommend this place to anyone. Thanks !!!!", rating: 4, author_id: user3.id, business_id: bus4.id)
 
 rev1 = Review.create(body: "The food was great", rating: 4, author_id: user1.id, business_id: bus1.id)
-rev2 = Review.create(body:"The food was great", rating: 4, author_id: user1.id, business_id: bus2.id)
-rev3 = Review.create(body:"The food and drinks are amazing", rating: 3, author_id: user2.id, business_id: bus3.id)
-rev4 = Review.create(body:"The food and drinks are amazing", rating: 4, author_id: user3.id, business_id: bus4.id)
+rev2 = Review.create(body: "The food was great", rating: 4, author_id: user1.id, business_id: bus2.id)
+rev3 = Review.create(body: "The food and drinks are amazing", rating: 3, author_id: user2.id, business_id: bus3.id)
+rev4 = Review.create(body: "The food and drinks are amazing", rating: 4, author_id: user3.id, business_id: bus4.id)
 
 bus5 = Business.create!({ name: "Nash Hot Chicken & Ramen", about: "Chicken, Ramen", rating: 4.5, phone: "(415) 655-9122", address: "3970 17th St Ste B San Francisco, CA 94114", hours: "12:00PM-9:00PM", websiteurl: "https://www.nashchickramen.com", latitude: 37.762674091103484, longitude: -122.43436564504873 })
 
@@ -150,10 +157,12 @@ b5p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus5pic3.jpeg")
 b5p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus5pic4.jpeg")
 
 begin
+  puts "Attaching photos for bus5 to bucket: #{ENV['S3_BUCKET']}"
   bus5.photos.attach(io: b5p1, filename: "bus5pic1.jpeg")
   bus5.photos.attach(io: b5p2, filename: "bus5pic2.jpeg")
   bus5.photos.attach(io: b5p3, filename: "bus5pic3.jpeg")
   bus5.photos.attach(io: b5p4, filename: "bus5pic4.jpeg")
+  puts "Successfully attached photos for bus5"
 rescue => e
   puts "Error attaching photos for bus5: #{e.message}"
   puts e.backtrace.join("\n")
@@ -265,52 +274,52 @@ BusinessCategory.create!({
 
 BusinessCategory.create!({
   category_id: c5.id,
-  business_id: 4,
+  business_id: bus4.id,
 })
 
 BusinessCategory.create!({
   category_id: c6.id,
-  business_id: 1,
+  business_id: bus1.id,
 })
 
 BusinessCategory.create!({
   category_id: c7.id,
-  business_id: 2,
+  business_id: bus2.id,
 })
 
 BusinessCategory.create!({
   category_id: c8.id,
-  business_id: 1,
+  business_id: bus1.id,
 })
 
 BusinessCategory.create!({
   category_id: c8.id,
-  business_id: 2,
+  business_id: bus2.id,
 })
 
 BusinessCategory.create!({
   category_id: c8.id,
-  business_id: 3,
+  business_id: bus3.id,
 })
 
 BusinessCategory.create!({
   category_id: c8.id,
-  business_id: 4,
+  business_id: bus4.id,
 })
 
 BusinessCategory.create!({
   category_id: c8.id,
-  business_id: 5,
+  business_id: bus5.id,
 })
 
 BusinessCategory.create!({
   category_id: c9.id,
-  business_id: 3,
+  business_id: bus3.id,
 })
 
 BusinessCategory.create!({
   category_id: c10.id,
-  business_id: 2,
+  business_id: bus2.id,
 })
 
 bus6 = Business.create!({ name: "Bella Trattoria", about: "Italian, Pasta", rating: 4.5, phone: "(415) 221-0305", address: "3854 Geary Blvd San Francisco, CA 94118", hours: "11:00AM-9:00PM", websiteurl: "https://osteriabella.com", latitude: 37.781567730282, longitude: -122.46090431504788 })
@@ -321,10 +330,12 @@ b6p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus6pic3.jpeg")
 b6p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus6pic4.jpeg")
 
 begin
+  puts "Attaching photos for bus6 to bucket: #{ENV['S3_BUCKET']}"
   bus6.photos.attach(io: b6p1, filename: "bus6pic1.jpeg")
   bus6.photos.attach(io: b6p2, filename: "bus6pic2.jpeg")
   bus6.photos.attach(io: b6p3, filename: "bus6pic3.jpeg")
   bus6.photos.attach(io: b6p4, filename: "bus6pic4.jpeg")
+  puts "Successfully attached photos for bus6"
 rescue => e
   puts "Error attaching photos for bus6: #{e.message}"
   puts e.backtrace.join("\n")
@@ -363,10 +374,12 @@ b7p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus7pic3.jpeg")
 b7p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus7pic4.jpeg")
 
 begin
+  puts "Attaching photos for bus7 to bucket: #{ENV['S3_BUCKET']}"
   bus7.photos.attach(io: b7p1, filename: "bus7pic1.jpeg")
   bus7.photos.attach(io: b7p2, filename: "bus7pic2.jpeg")
   bus7.photos.attach(io: b7p3, filename: "bus7pic3.jpeg")
   bus7.photos.attach(io: b7p4, filename: "bus7pic4.jpeg")
+  puts "Successfully attached photos for bus7"
 rescue => e
   puts "Error attaching photos for bus7: #{e.message}"
   puts e.backtrace.join("\n")
@@ -420,10 +433,12 @@ b8p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus8pic3.jpeg")
 b8p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus8pic4.jpeg")
 
 begin
+  puts "Attaching photos for bus8 to bucket: #{ENV['S3_BUCKET']}"
   bus8.photos.attach(io: b8p1, filename: "bus8pic1.jpeg")
   bus8.photos.attach(io: b8p2, filename: "bus8pic2.jpeg")
   bus8.photos.attach(io: b8p3, filename: "bus8pic3.jpeg")
   bus8.photos.attach(io: b8p4, filename: "bus8pic4.jpeg")
+  puts "Successfully attached photos for bus8"
 rescue => e
   puts "Error attaching photos for bus8: #{e.message}"
   puts e.backtrace.join("\n")
@@ -477,10 +492,12 @@ b9p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus9pic3.jpeg")
 b9p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus9pic4.jpeg")
 
 begin
+  puts "Attaching photos for bus9 to bucket: #{ENV['S3_BUCKET']}"
   bus9.photos.attach(io: b9p1, filename: "bus9pic1.jpeg")
   bus9.photos.attach(io: b9p2, filename: "bus9pic2.jpeg")
   bus9.photos.attach(io: b9p3, filename: "bus9pic3.jpeg")
   bus9.photos.attach(io: b9p4, filename: "bus9pic4.jpeg")
+  puts "Successfully attached photos for bus9"
 rescue => e
   puts "Error attaching photos for bus9: #{e.message}"
   puts e.backtrace.join("\n")
@@ -509,10 +526,12 @@ b10p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus10pic3.jpeg"
 b10p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus10pic4.jpeg")
 
 begin
+  puts "Attaching photos for bus10 to bucket: #{ENV['S3_BUCKET']}"
   bus10.photos.attach(io: b10p1, filename: "bus10pic1.jpeg")
   bus10.photos.attach(io: b10p2, filename: "bus10pic2.jpeg")
   bus10.photos.attach(io: b10p3, filename: "bus10pic3.jpeg")
   bus10.photos.attach(io: b10p4, filename: "bus10pic4.jpeg")
+  puts "Successfully attached photos for bus10"
 rescue => e
   puts "Error attaching photos for bus10: #{e.message}"
   puts e.backtrace.join("\n")
