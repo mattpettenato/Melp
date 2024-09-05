@@ -19,6 +19,9 @@ ActiveRecord::Base.connection.tables.each do |t|
     ActiveRecord::Base.connection.reset_pk_sequence!(t)
 end
 
+puts "Starting seed process..."
+puts "Creating users..."
+
 demo = User.create!({username: "demo", email: "demo@demo.com", password: "demopassword"})
 
 user1 = User.create!({username: "MaxJohnson", email: "max@max.com", password: "passwordmax"})
@@ -33,6 +36,7 @@ user9 = User.create!({username: "applepiewalrus", email: "applepiewalrus@.com", 
 user10 = User.create!({username: "oceanmine", email: "oceanmine@oceanmine.com", password: "passwordoceanmine"})
 user11 = User.create!({username: "banananeo", email: "banananeo@banananeo.com", password: "passwordbanananeo"})
 
+puts "Creating businesses..."
 
 bus1 = Business.create!({name: "Taquería El Farolito", about: "Mexican, Bar, Late Night", rating: 4.5, phone: "(415) 824-7877", address: "2779 Mission St, San Francisco, CA 94110", hours:"10:00AM–1:45AM", websiteurl: "https://elfarolitosf.com/", latitude: 37.75266096263757, longitude: -122.41819051574423})
 
@@ -41,10 +45,16 @@ b1p2 = URI.open('https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus1pic2.jpg')
 b1p3 = URI.open('https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus1pic3.jpg')
 b1p4 = URI.open('https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus1pic4.jpg')
 
-bus1.photos.attach(io: b1p1, filename: 'bus1pic1.jpg')
-bus1.photos.attach(io: b1p2, filename: "bus1pic2.jpg")
-bus1.photos.attach(io: b1p3, filename: "bus1pic3.jpg")
-bus1.photos.attach(io: b1p4, filename: "bus1pic4.jpg")
+begin
+  bus1.photos.attach(io: b1p1, filename: 'bus1pic1.jpg')
+  bus1.photos.attach(io: b1p2, filename: 'bus1pic2.jpg')
+  bus1.photos.attach(io: b1p3, filename: 'bus1pic3.jpg')
+  bus1.photos.attach(io: b1p4, filename: 'bus1pic4.jpg')
+  puts "Successfully attached photos for bus1"
+rescue => e
+  puts "Error attaching photos for bus1: #{e.message}"
+  puts e.backtrace.join("\n")
+end
 
 revT1 = Review.create(body: "They have the best shrimp burritos  I totally recommend this to anyone looking for a good juicy burrito in SF", rating: 5, author_id: user7.id, business_id: bus1.id)
 revT2 = Review.create(body: "This is one of the classic spots where the food is great but the service not so much. The burritos here are some of the best I've had in sf. Although I'd grab it to go and eat it in mission dolores park as the inside space itself is not that clean. I also ordered a drink that they forgot and later refused to give me. So come expecting good food, not good service.", rating: 4, author_id: user11.id, business_id: bus1.id)
@@ -58,10 +68,15 @@ b2p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus2pic2.jpg")
 b2p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus2pic3.jpg")
 b2p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus2pic4.jpg")
 
-bus2.photos.attach(io: b2p1, filename: "bus2pic1.jpg")
-bus2.photos.attach(io: b2p2, filename: "bus2pic2.jpg")
-bus2.photos.attach(io: b2p3, filename: "bus2pic3.jpg")
-bus2.photos.attach(io: b2p4, filename: "bus2pic4.jpg")
+begin
+  bus2.photos.attach(io: b2p1, filename: "bus2pic1.jpg")
+  bus2.photos.attach(io: b2p2, filename: "bus2pic2.jpg")
+    bus2.photos.attach(io: b2p3, filename: "bus2pic3.jpg")
+  bus2.photos.attach(io: b2p4, filename: "bus2pic4.jpg")
+rescue => e
+  puts "Error attaching photos for bus2: #{e.message}"
+  puts e.backtrace.join("\n")
+end
 
 revK1 = Review.create(body: "his place hits the spot and was a great way to end our trip to the city. It would be wise to call ahead to reserve a table as they get really busy at dinner service (not surprising because the food is soooooo goooood!). Reminds me of AYCE KBBQ in LA.", rating: 5, author_id: user7.id, business_id: bus2.id)
 revK2 = Review.create(body: "I ate here on February 15th, 2022 and paid $38 per person for dinner. The selection of meat were good and the side dishes were nice. I tried the spicy rice cake and corn cheese, which were very delicious. The spicy rice cake was crispy but not burnt and its flavor was sweet and spicy. The corn cheese had chopped onions, tomatoes, peppers and the cheese was cooked to a nice crisp.", rating: 4, author_id: user2.id, business_id: bus2.id)
@@ -75,10 +90,15 @@ b3p1 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus3pic2.jpg")
 b3p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus3pic3.jpg")
 b3p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus3pic4.jpg")
 
-bus3.photos.attach(io: b3p1, filename: "bus3pic1.jpg")
-bus3.photos.attach(io: b3p2, filename: "bus3pic2.jpg")
-bus3.photos.attach(io: b3p3, filename: "bus3pic3.jpg")
-bus3.photos.attach(io: b3p4, filename: "bus3pic4.jpg")
+begin
+  bus3.photos.attach(io: b3p1, filename: "bus3pic1.jpg")
+  bus3.photos.attach(io: b3p2, filename: "bus3pic2.jpg")
+  bus3.photos.attach(io: b3p3, filename: "bus3pic3.jpg")
+  bus3.photos.attach(io: b3p4, filename: "bus3pic4.jpg")
+rescue => e
+  puts "Error attaching photos for bus3: #{e.message}"
+  puts e.backtrace.join("\n")
+end
 
 revDB1 = Review.create(body: "I love coming back to District Tea time and time again. You get the taste of real tea- something that is often missing in many other boba shops. Their quality of the drinks never falter and their service is unbeatable. And holy nuts, don't get me started on the snacks!!! The popcorn chicken and Korean hot dogs are heaven sent.", rating: 5, author_id: user4.id, business_id: bus3.id)
 revDB2 = Review.create(body: "District Tea was offering a half gallon size of my exact go-to drink at all boba places (Jasmine Oat Milk Tea) so I had to take advantage and I'm so glad I did! It was the perfect amount and really satisfied my quarantine craving", rating: 6, author_id: user2.id, business_id: bus3.id)
@@ -102,10 +122,15 @@ b4p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus4pic2.jpg")
 b4p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus4pic3.jpg")
 b4p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus4pic4.jpg")
 
-bus4.photos.attach(io: b4p1, filename: "bus4pic1.jpg")
-bus4.photos.attach(io: b4p2, filename: "bus4pic2.jpg")
-bus4.photos.attach(io: b4p3, filename: "bus4pic3.jpg")
-bus4.photos.attach(io: b4p4, filename: "bus4pic4.jpg")
+begin
+  bus4.photos.attach(io: b4p1, filename: "bus4pic1.jpg")
+  bus4.photos.attach(io: b4p2, filename: "bus4pic2.jpg")
+  bus4.photos.attach(io: b4p3, filename: "bus4pic3.jpg")
+  bus4.photos.attach(io: b4p4, filename: "bus4pic4.jpg")
+rescue => e
+  puts "Error attaching photos for bus4: #{e.message}"
+  puts e.backtrace.join("\n")
+end
 
 revPZ1 = Review.create(body: "Came here with my family, and will 100% be coming back soon with friends", rating: 5, author_id: user8.id, business_id: bus4.id)
 revPZ2 = Review.create(body: "Just in the mood for a slice. So many choices: hawaiian, meat combo, cheese, veggie, pesto.  I picked  a slice of pesto. They took it out of the warmer and served it. Yes, it was fast service but it was not hot and it was eating pizza that has been sitting there (don't know how long).", rating: 3, author_id: user7.id, business_id: bus4.id)
@@ -124,16 +149,23 @@ b5p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus5pic2.jpeg")
 b5p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus5pic3.jpeg")
 b5p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus5pic4.jpeg")
 
-bus5.photos.attach(io: b5p1, filename: "bus5pic1.jpeg")
-bus5.photos.attach(io: b5p2, filename: "bus5pic2.jpeg")
-bus5.photos.attach(io: b5p3, filename: "bus5pic3.jpeg")
-bus5.photos.attach(io: b5p4, filename: "bus5pic4.jpeg")
+begin
+  bus5.photos.attach(io: b5p1, filename: "bus5pic1.jpeg")
+  bus5.photos.attach(io: b5p2, filename: "bus5pic2.jpeg")
+  bus5.photos.attach(io: b5p3, filename: "bus5pic3.jpeg")
+  bus5.photos.attach(io: b5p4, filename: "bus5pic4.jpeg")
+rescue => e
+  puts "Error attaching photos for bus5: #{e.message}"
+  puts e.backtrace.join("\n")
+end
 
 bus5rev1 = Review.create(body: "Ramen had so much flavor! Will 100% be coming here again!", rating: 5, author_id: user5.id, business_id: bus5.id)
 bus5rev1 = Review.create(body: "The chicken had so much flavor! I cannot wait to eat here with my friends again!", rating: 5, author_id: user7.id, business_id: bus5.id)
 bus5rev1 = Review.create(body: "Was very busy and I was hungry and tired", rating: 3, author_id: user5.id, business_id: bus5.id)
 
 # categories
+
+puts "Creating categories..."
 
 c1 = Category.create!({
   title: 'italian'
@@ -199,6 +231,8 @@ c16 = Category.create!({
   title: "pasta",
 })
 
+puts "Creating business categories..."
+
 BusinessCategory.create!({
   category_id: c1.id,
   business_id: bus4.id
@@ -231,52 +265,52 @@ BusinessCategory.create!({
 
 BusinessCategory.create!({
   category_id: c5.id,
-  business_id: 4
+  business_id: bus4.id
 })
 
 BusinessCategory.create!({
   category_id: c6.id,
-  business_id: 1,
+  business_id: bus1.id,
 })
 
 BusinessCategory.create!({
   category_id: c7.id,
-  business_id: 2,
+  business_id: bus2.id,
 })
 
 BusinessCategory.create!({
   category_id: c8.id,
-  business_id: 1,
+  business_id: bus1.id,
 })
 
 BusinessCategory.create!({
   category_id: c8.id,
-  business_id: 2,
+  business_id: bus2.id,
 })
 
 BusinessCategory.create!({
   category_id: c8.id,
-  business_id: 3,
+  business_id: bus3.id,
 })
 
 BusinessCategory.create!({
   category_id: c8.id,
-  business_id: 4,
+  business_id: bus4.id,
 })
 
 BusinessCategory.create!({
   category_id: c8.id,
-  business_id: 5,
+  business_id: bus5.id,
 })
 
 BusinessCategory.create!({
   category_id: c9.id,
-  business_id: 3,
+  business_id: bus3.id,
 })
 
 BusinessCategory.create!({
   category_id: c10.id,
-  business_id: 2,
+  business_id: bus2.id,
 })
 
 bus6 = Business.create!({ name: "Bella Trattoria", about: "Italian, Pasta", rating: 4.5, phone: "(415) 221-0305", address: "3854 Geary Blvd San Francisco, CA 94118", hours: "11:00AM-9:00PM", websiteurl: "https://osteriabella.com", latitude: 37.781567730282, longitude: -122.46090431504788 })
@@ -286,10 +320,15 @@ b6p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus6pic2.jpeg")
 b6p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus6pic3.jpeg")
 b6p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus6pic4.jpeg")
 
-bus6.photos.attach(io: b6p1, filename: "bus6pic1.jpeg")
-bus6.photos.attach(io: b6p2, filename: "bus6pic2.jpeg")
-bus6.photos.attach(io: b6p3, filename: "bus6pic3.jpeg")
-bus6.photos.attach(io: b6p4, filename: "bus6pic4.jpeg")
+begin
+  bus6.photos.attach(io: b6p1, filename: "bus6pic1.jpeg")
+  bus6.photos.attach(io: b6p2, filename: "bus6pic2.jpeg")
+  bus6.photos.attach(io: b6p3, filename: "bus6pic3.jpeg")
+  bus6.photos.attach(io: b6p4, filename: "bus6pic4.jpeg")
+rescue => e
+  puts "Error attaching photos for bus6: #{e.message}"
+  puts e.backtrace.join("\n")
+end
 
 BusinessCategory.create!({
   category_id: c1.id,
@@ -323,10 +362,15 @@ b7p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus7pic2.jpeg")
 b7p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus7pic3.jpeg")
 b7p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus7pic4.jpeg")
 
-bus7.photos.attach(io: b7p1, filename: "bus7pic1.jpeg")
-bus7.photos.attach(io: b7p2, filename: "bus7pic2.jpeg")
-bus7.photos.attach(io: b7p3, filename: "bus7pic3.jpeg")
-bus7.photos.attach(io: b7p4, filename: "bus7pic4.jpeg")
+begin
+  bus7.photos.attach(io: b7p1, filename: "bus7pic1.jpeg")
+  bus7.photos.attach(io: b7p2, filename: "bus7pic2.jpeg")
+  bus7.photos.attach(io: b7p3, filename: "bus7pic3.jpeg")
+  bus7.photos.attach(io: b7p4, filename: "bus7pic4.jpeg")
+rescue => e
+  puts "Error attaching photos for bus7: #{e.message}"
+  puts e.backtrace.join("\n")
+end
 
 BusinessCategory.create!({
   category_id: c9.id,
@@ -366,7 +410,7 @@ BusinessCategory.create!({
 rev7r1 = Review.create(body: "super cute shop w many different coffee flavors ~ they also have these super delicious looking croffles - will definitely try next time! They have a limited number of tables but we were able to find a spot to study! Theres also outlets at each table :)", rating: 5, author_id: user7.id, business_id: bus7.id)
 rev7r2 = Review.create(body: "Cute new coffee shop alert in the Richmond! I love the interior - bright and airy! They even have a doggy area in the shop in the back corner of the shop! The service was amazing! The staff was extremely friendly and attentive!", rating: 4, author_id: user2.id, business_id: bus7.id)
 rev7r3 = Review.create(body: "The drinks were pretty sweet but nothing overwhelming. The croffle was delicious but i wouldn't substitute a meal for it. It's just a nice treat. I noticed some reviews that they were unsatisfied with proportions based on how pricey things are. Remember, you're paying for the aesthetic of the place. Customer service is amazing! The staff was patient and kind.", rating: 4, author_id: user9.id, business_id: bus7.id)
-rev7r4 = Review.create(body: "Super cute coffee shop on a relatively quiet strip of the inner Richmond with trendy/instagrammable croffles, fancy $$ drinks, and very few indoor seats.", rating: 3, author_id: user6.id, business_id: bus7.id)
+rev7r4 = Review.create(body: "Super cute coffee shop on a relatively quiet strip of the inner Richmond with trendy/instagramable croffles, fancy $$ drinks, and very few indoor seats.", rating: 3, author_id: user6.id, business_id: bus7.id)
 
 bus8 = Business.create!({ name: "Tea & Others", about: "Boba, Bubble Tea", rating: 4.5, phone: "(415) 864-4920", address: "250 Divisadero St San Francisco, CA 94117", hours: "12:00PM-6:00PM", websiteurl: "http://www.teaandothers.com", latitude: 37.771613174681086, longitude: -122.43684554453965 })
 
@@ -375,10 +419,15 @@ b8p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus8pic2.jpeg")
 b8p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus8pic3.jpeg")
 b8p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus8pic4.jpeg")
 
-bus8.photos.attach(io: b8p1, filename: "bus8pic1.jpeg")
-bus8.photos.attach(io: b8p2, filename: "bus8pic2.jpeg")
-bus8.photos.attach(io: b8p3, filename: "bus8pic3.jpeg")
-bus8.photos.attach(io: b8p4, filename: "bus8pic4.jpeg")
+begin
+  bus8.photos.attach(io: b8p1, filename: "bus8pic1.jpeg")
+  bus8.photos.attach(io: b8p2, filename: "bus8pic2.jpeg")
+  bus8.photos.attach(io: b8p3, filename: "bus8pic3.jpeg")
+  bus8.photos.attach(io: b8p4, filename: "bus8pic4.jpeg")
+rescue => e
+  puts "Error attaching photos for bus8: #{e.message}"
+  puts e.backtrace.join("\n")
+end
 
 rev8r1 = Review.create(body: "Both drinks were good. There was a short wait since they didn't have the dirty boba ready at the time. I felt like the Sunny Side Up was a bit too small for me. I wish they had it in a bigger size for that drink. I'm rarely ever in that area so hopefully I'll get a chance to go by and try their other drinks.", rating: 4, author_id: user9.id, business_id: bus8.id)
 rev8r2 = Review.create(body: "Amazing tea place, would definitely go again (I have been there thrice already). Teas are flavorful", rating: 5, author_id: user10.id, business_id: bus8.id)
@@ -427,10 +476,15 @@ b9p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus9pic2.jpeg")
 b9p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus9pic3.jpeg")
 b9p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus9pic4.jpeg")
 
-bus9.photos.attach(io: b9p1, filename: "bus9pic1.jpeg")
-bus9.photos.attach(io: b9p2, filename: "bus9pic2.jpeg")
-bus9.photos.attach(io: b9p3, filename: "bus9pic3.jpeg")
-bus9.photos.attach(io: b9p4, filename: "bus9pic4.jpeg")
+begin
+  bus9.photos.attach(io: b9p1, filename: "bus9pic1.jpeg")
+  bus9.photos.attach(io: b9p2, filename: "bus9pic2.jpeg")
+  bus9.photos.attach(io: b9p3, filename: "bus9pic3.jpeg")
+  bus9.photos.attach(io: b9p4, filename: "bus9pic4.jpeg")
+rescue => e
+  puts "Error attaching photos for bus9: #{e.message}"
+  puts e.backtrace.join("\n")
+end
 
 revB9r1 = Review.create(body: "Incredibly fast, fried chicken is delicious-- there is cinnamon in batter that adds phenomenal touch of sweetness and the coleslaw has apple slices, which add even more to the experience. It was delicious!!", rating: 5, author_id: user8.id, business_id: bus9.id)
 revB9r2 = Review.create(body: "The fried chicken sandwich is amazingly delicious! The fried chicken itself is fried to perfection and is well seasoned, not overly salty. It's dark meat so it's super juicy and tender. The cold slaw and pickles are fresh and give a nice crunch to the sandwich. The bun is soft and buttery. It's definitely worth the price for how good this is!", rating: 4, author_id: user9.id, business_id: bus9.id)
@@ -454,10 +508,15 @@ b10p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus10pic2.jpeg"
 b10p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus10pic3.jpeg")
 b10p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus10pic4.jpeg")
 
-bus10.photos.attach(io: b10p1, filename: "bus10pic1.jpeg")
-bus10.photos.attach(io: b10p2, filename: "bus10pic2.jpeg")
-bus10.photos.attach(io: b10p3, filename: "bus10pic3.jpeg")
-bus10.photos.attach(io: b10p4, filename: "bus10pic4.jpeg")
+begin
+  bus10.photos.attach(io: b10p1, filename: "bus10pic1.jpeg")
+  bus10.photos.attach(io: b10p2, filename: "bus10pic2.jpeg")
+  bus10.photos.attach(io: b10p3, filename: "bus10pic3.jpeg")
+  bus10.photos.attach(io: b10p4, filename: "bus10pic4.jpeg")
+rescue => e
+  puts "Error attaching photos for bus10: #{e.message}"
+  puts e.backtrace.join("\n")
+end
 
 revB10r1 = Review.create(body: "Entrees we ordered were the rigatoni al bolognese classico and burrata pizza. Pasta was cooked well and in a tasty sauce, although plating was a little messy. The pizza can with a hefty ball of burrata on top, any cheese lovers heaven. There was plenty of sauce full of fresh tomatoes.", rating: 5, author_id: user7.id, business_id: bus10.id)
 revB10r2 = Review.create(body: "The food here was delicious. We had the Salsiccia Pizza and the Rigatoni al Bolognese Classico. I highly recommend either of those! 4 stars mainly because though it was pretty good, but I've had a few better. I would still come back though!", rating: 4, author_id: user5.id, business_id: bus10.id)
@@ -487,203 +546,4 @@ BusinessCategory.create!({
 BusinessCategory.create!({
   category_id: c9.id,
   business_id: bus10.id,
-})
-
-BusinessCategory.create!({
-  category_id: c12.id,
-  business_id: bus10.id,
-})
-
-BusinessCategory.create!({
-  category_id: c13.id,
-  business_id: bus10.id,
-})
-
-BusinessCategory.create!({
-  category_id: c14.id,
-  business_id: bus10.id,
-})
-
-bus11 = Business.create!({ name: "Padrecito", about: "Mexican, Brunch, Bar", rating: 4.5, phone: "(415) 742-5505", address: "901 Cole St San Francisco, CA 94117", hours: "4:30PM-9:00PM", websiteurl: "http://www.padrecitosf.com", latitude: 37.76582667000361, longitude: -122.45019674446523 })
-
-
-b11p1 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus11pic1.jpeg")
-b11p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus11pic2.jpeg")
-b11p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus11pic3.jpeg")
-b11p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus11pic4.jpeg")
-
-bus11.photos.attach(io: b11p1, filename: "bus11pic1.jpeg")
-bus11.photos.attach(io: b11p2, filename: "bus11pic2.jpeg")
-bus11.photos.attach(io: b11p3, filename: "bus11pic3.jpeg")
-bus11.photos.attach(io: b11p4, filename: "bus11pic4.jpeg")
-
-revB11r1 = Review.create(body: "The food is amazing I've had almost everything on the menu and nothing has disappointed so far. I went for my birthday recently and had the fish tacos - fish was nice and crispy on the outside and soft on the inside. The ceviches are AMAZING and quessabirria is sooo savory, hearty, and flavorful.", rating: 5, author_id: user4.id, business_id: bus11.id)
-revB11r2 = Review.create(body: "This place is right around the corner from me and I finally got around to trying it last Friday. Went around 8:30 and there was only a 10 minute wait or so. Wanted to order the calamari tacos, but they were unfortunately sold out, so I got the carnitas one instead, which was delicious! The chips and guac appetizer was also some of the best I've had in San Francisco.", rating: 4, author_id: user2.id, business_id: bus11.id)
-revB11r3 = Review.create(body: "We decided to go for the huevos rancheros and huevos Benedictos and ordered coffee for drinks (since they don't offer any other espresso drinks). The coffee was quite nice and the food was very tasty with generous portion sizes. Service was very good and our hostess checked on us from time to time to make sure we had everything we need. Great place for brunch!", rating: 4, author_id: user4.id, business_id: bus11.id)
-revB11r4 = Review.create(body: "If you're a fan of breakfast burritos, Padrecito's is definitely one I would order. It comes with salsa and guac too! The chips and guac are also absolutely worth it, since they give a ton of guac and an assortment of salsas. The chips are super fresh too.", rating: 4, author_id: user9.id, business_id: bus11.id)
-
-BusinessCategory.create!({
-  category_id: c3.id,
-  business_id: bus11.id,
-})
-
-BusinessCategory.create!({
-  category_id: c6.id,
-  business_id: bus11.id,
-})
-
-BusinessCategory.create!({
-  category_id: c8.id,
-  business_id: bus11.id,
-})
-
-BusinessCategory.create!({
-  category_id: c9.id,
-  business_id: bus11.id,
-})
-
-BusinessCategory.create!({
-  category_id: c12.id,
-  business_id: bus11.id,
-})
-
-BusinessCategory.create!({
-  category_id: c13.id,
-  business_id: bus11.id,
-})
-
-BusinessCategory.create!({
-  category_id: c3.id,
-  business_id: bus11.id,
-})
-
-bus12 = Business.create!({ name: "Taqueria Los Mayas", about: "Tacos, Mexican", rating: 4.5, phone: "(415) 548-2800", address: "331 Clement St San Francisco, CA 94118", hours: "11:00AM-10:00PM", websiteurl: "https://taquerialosmayassf.com", latitude: 37.78310938371122, longitude: -122.46286567528215 })
-
-b12p1 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus12pic1.jpeg")
-b12p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus12pic2.jpeg")
-b12p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus12pic3.jpeg")
-b12p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus12pic4.jpeg")
-
-bus12.photos.attach(io: b12p1, filename: "bus12pic1.jpeg")
-bus12.photos.attach(io: b12p2, filename: "bus12pic2.jpeg")
-bus12.photos.attach(io: b12p3, filename: "bus12pic3.jpeg")
-bus12.photos.attach(io: b12p4, filename: "bus12pic4.jpeg")
-
-revb12r1 = Review.create(body: "We had 2 empanadas that were huge but mostly masa so that's why the 1 star doc and it's a little pricey for a bit of a hole on the wall. Also had 2 tacos. Homemade tortillas which were nice and the Chile verde was awesome. Al Pastor was a bit dry. Definitely worth a visit though!", rating: 4, author_id: user3.id, business_id: bus12.id)
-revb12r2 = Review.create(body: "Very bad customer service. Very rude!!! I came across this place on yelp and decided to give it a try", rating: 1, author_id: user8.id, business_id: bus12.id)
-revb12r3 = Review.create(body: "As for last night my order was a Plate of seasoned chicken, rice, beans, corn tortilla, plus chips and salsa. Upon arrival my order was ready, and well packaged, and the staff polite and friendly. The portions were more then ample, and for the most part the seasoning worked with the only exception being the beans. I know it's just beans, but I did not detect any notable seasoning, that said at least they were not over salted.", rating: 4, author_id: user11.id, business_id: bus12.id)
-revb12r4 = Review.create(body: "Ceviche and fajitas are pretty good.", rating: 5, author_id: user10.id, business_id: bus12.id)
-
-BusinessCategory.create!({
-  category_id: c3.id,
-  business_id: bus12.id,
-})
-
-BusinessCategory.create!({
-  category_id: c6.id,
-  business_id: bus12.id,
-})
-
-BusinessCategory.create!({
-  category_id: c8.id,
-  business_id: bus12.id,
-})
-
-BusinessCategory.create!({
-  category_id: c9.id,
-  business_id: bus12.id,
-})
-
-BusinessCategory.create!({
-  category_id: c14.id,
-  business_id: bus12.id,
-})
-
-bus13 = Business.create!({ name: "Daeho Kalbijjim", about: "Korean, Soup, Noodles", rating: 4.5, phone: "(415) 563-1388", address: "1620 Post St San Francisco, CA 94115", hours: "11:00AM-9:00PM", websiteurl: "https://www.instagram.com/daeho_official/?hl=en", latitude: 37.78310938371122, longitude: -122.46286567528215 })
-
-b13p1 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus13pic1.jpeg")
-b13p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus13pic2.jpeg")
-b13p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus13pic3.jpeg")
-b13p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus13pic4.jpeg")
-
-bus13.photos.attach(io: b13p1, filename: "bus13pic1.jpeg")
-bus13.photos.attach(io: b13p2, filename: "bus13pic2.jpeg")
-bus13.photos.attach(io: b13p3, filename: "bus13pic3.jpeg")
-bus13.photos.attach(io: b13p4, filename: "bus13pic4.jpeg")
-
-revb13r1 = Review.create(body: "Kalbijjim was super delicious and tasty! Definitely on the richer side and you'll have enough to take home as well! I recommend trying their purple rice.", rating: 5, author_id: user2.id, business_id: bus13.id)
-revb13r2 = Review.create(body: "They did run out of the ox tail with short ribs when we came here so we just ordered the short rib! It was sooo flavorful and delicious! Although I wanted the meat to be super soft like the ox tail but it was still good!", rating: 4, author_id: user9.id, business_id: bus13.id)
-revb13r3 = Review.create(body: "Daeho is amazing. Their most popular dish is of course their kalbijim. Most people order with cheese on top - great for instagram and tastes pretty good. I'm also perfectly happy without though so I load up on the glass noodles, get extra meat to enjoy for the next few days, and rice cakes", rating: 5, author_id: user7.id, business_id: bus13.id)
-revb13r4 = Review.create(body: "The music is extremely loud. It's hard to hear your dinner companions without shouting. However, it's fun and upbeat, so this is definitely a place to go for groups looking to have a fun time. Overall, great food, but the service and loudness might be a turn off for returning.", rating: 4, author_id: user10.id, business_id: bus13.id)
-
-BusinessCategory.create!({
-  category_id: c2.id,
-  business_id: bus13.id,
-})
-
-BusinessCategory.create!({
-  category_id: c8.id,
-  business_id: bus13.id,
-})
-
-BusinessCategory.create!({
-  category_id: c9.id,
-  business_id: bus13.id,
-})
-
-BusinessCategory.create!({
-  category_id: c10.id,
-  business_id: bus13.id,
-})
-
-BusinessCategory.create!({
-  category_id: c2.id,
-  business_id: bus13.id,
-})
-
-bus14 = Business.create!({ name: "Yakiniq", about: "Korean, BBQ", rating: 4.5, phone: "(415) 441-9292", address: "1640 Post St Fl 2 San Francisco, CA 94115", hours: "5:00PM-10:00PM", websiteurl: "http://www.yakiniq-sanjose.com/", latitude: 37.786118597850376, longitude: -122.42894930409635 })
-
-b14p1 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus14pic1.jpeg")
-b14p2 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus14pic2.jpeg")
-b14p3 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus14pic3.jpeg")
-b14p4 = URI.open("https://melp-aa-dev.s3.us-west-1.amazonaws.com/bus14pic4.jpeg")
-
-bus14.photos.attach(io: b14p1, filename: "bus14pic1.jpeg")
-bus14.photos.attach(io: b14p2, filename: "bus14pic2.jpeg")
-bus14.photos.attach(io: b14p3, filename: "bus14pic3.jpeg")
-bus14.photos.attach(io: b14p4, filename: "bus14pic4.jpeg")
-
-revb14r1 = Review.create(body: "Love coming here, it's one of my favorite KBBQ spots in the Bay Area. The meat selections are great, the steamed egg is a must for my table. I always get the radish wraps because I think it's the perfect compliment for  the meat. Prices are fair and the waitlist makes it easier to have an idea of how long you'll be waiting. I just wish they didn't forget my order so often, but that's understandable.", rating: 4, author_id: user6.id, business_id: bus14.id)
-revb14r2 = Review.create(body: "if you are a party that is smaller than 6, don't bother coming, because this place will sit people who come after you if they are a bigger party. According to the front desk staff, it is because that's how we make money. (Yes. He literally said that.)", rating: 1, author_id: user9.id, business_id: bus14.id)
-revb14r3 = Review.create(body: "Was able to make reservations over the phone for a party of 8 and it pulled through. It's very popular so calling right when they open ascertains a reservation. Usually they do through Yelp for waiting lines. Love the food, the service was good, very attentive servers. Definitely a favorite spot", rating: 5, author_id: user11.id, business_id: bus14.id)
-revb14r4 = Review.create(body: "This place is delicious and fun for so many reasons! First of all, all you can eat for a decent price. Always a win. They also have cheese corn which not all places have common so that's an extra point in my book.", rating: 5, author_id: user10.id, business_id: bus14.id)
-
-BusinessCategory.create!({
-  category_id: c2.id,
-  business_id: bus14.id,
-})
-
-BusinessCategory.create!({
-  category_id: c8.id,
-  business_id: bus14.id,
-})
-
-BusinessCategory.create!({
-  category_id: c9.id,
-  business_id: bus14.id,
-})
-
-BusinessCategory.create!({
-  category_id: c10.id,
-  business_id: bus14.id,
-})
-
-BusinessCategory.create!({
-  category_id: c2.id,
-  business_id: bus14.id,
-})
-
-BusinessCategory.create!({
-  category_id: c7.id,
-  business_id: bus14.id,
 })

@@ -7,7 +7,7 @@ gem 'bcrypt'
 gem 'jquery-rails'
 gem "thor", "~> 0.20.3" 
 gem "stringio"
-gem "aws-sdk-s3"
+gem "aws-sdk-s3", require: false
 gem "net-http"
 gem "figaro"
 gem 'open-uri'
@@ -15,7 +15,7 @@ gem 'solargraph'
 gem "font-awesome-rails"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.6'
+gem 'rails', '~> 5.2.8'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+gem 'mini_magick'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -73,3 +73,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'activestorage', '~> 5.2.8'
+gem 'image_processing', '~> 1.2'
