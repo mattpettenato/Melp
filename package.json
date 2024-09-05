@@ -35,7 +35,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode=production",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "start": "webpack -w --mode=development"
   },
   "repository": {
     "type": "git",

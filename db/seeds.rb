@@ -255,62 +255,62 @@ BusinessCategory.create!({
 
 BusinessCategory.create!({
   category_id: c4.id,
-  business_id: bus3.id
+  business_id: bus3.id,
 })
 
 BusinessCategory.create!({
   category_id: c2.id,
-  business_id: bus5.id
-})
-
-BusinessCategory.create!({
-  category_id: c5.id,
-  business_id: bus4.id
-})
-
-BusinessCategory.create!({
-  category_id: c6.id,
-  business_id: bus1.id,
-})
-
-BusinessCategory.create!({
-  category_id: c7.id,
-  business_id: bus2.id,
-})
-
-BusinessCategory.create!({
-  category_id: c8.id,
-  business_id: bus1.id,
-})
-
-BusinessCategory.create!({
-  category_id: c8.id,
-  business_id: bus2.id,
-})
-
-BusinessCategory.create!({
-  category_id: c8.id,
-  business_id: bus3.id,
-})
-
-BusinessCategory.create!({
-  category_id: c8.id,
-  business_id: bus4.id,
-})
-
-BusinessCategory.create!({
-  category_id: c8.id,
   business_id: bus5.id,
 })
 
 BusinessCategory.create!({
+  category_id: c5.id,
+  business_id: 4,
+})
+
+BusinessCategory.create!({
+  category_id: c6.id,
+  business_id: 1,
+})
+
+BusinessCategory.create!({
+  category_id: c7.id,
+  business_id: 2,
+})
+
+BusinessCategory.create!({
+  category_id: c8.id,
+  business_id: 1,
+})
+
+BusinessCategory.create!({
+  category_id: c8.id,
+  business_id: 2,
+})
+
+BusinessCategory.create!({
+  category_id: c8.id,
+  business_id: 3,
+})
+
+BusinessCategory.create!({
+  category_id: c8.id,
+  business_id: 4,
+})
+
+BusinessCategory.create!({
+  category_id: c8.id,
+  business_id: 5,
+})
+
+BusinessCategory.create!({
   category_id: c9.id,
-  business_id: bus3.id,
+  business_id: 3,
 })
 
 BusinessCategory.create!({
   category_id: c10.id,
-  business_id: bus2.id,
+  business_id: 2,
 })
 
 bus6 = Business.create!({ name: "Bella Trattoria", about: "Italian, Pasta", rating: 4.5, phone: "(415) 221-0305", address: "3854 Geary Blvd San Francisco, CA 94118", hours: "11:00AM-9:00PM", websiteurl: "https://osteriabella.com", latitude: 37.781567730282, longitude: -122.46090431504788 })
