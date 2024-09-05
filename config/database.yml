@@ -80,6 +80,8 @@ test:
 #
 production:
   <<: *default
-  database: FullStack_Project_production
+  # database: FullStack_Project_production
+  database: FullStack_Project_development
+
   username: FullStack_Project
   password: <%= ENV['FULLSTACK_PROJECT_DATABASE_PASSWORD'] %>
