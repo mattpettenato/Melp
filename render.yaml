@@ -9,6 +9,7 @@ services:
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
+    rubyVersion: 3.1.4  # Add this line
     envVars:
       - key: DATABASE_URL
         fromDatabase:
