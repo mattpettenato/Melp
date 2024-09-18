@@ -1,17 +1,15 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  # For details on connection pooling, see Rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
-  database: your_database_name_development
+  database: melp_development
 
 test:
   <<: *default
-  database: your_database_name_test
+  database: melp_test
 
 production:
   <<: *default
