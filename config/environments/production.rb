@@ -25,11 +25,12 @@ Rails.application.configure do
 
   # Compress JavaScripts and CSS.
   # config.assets.js_compressor = :uglifier
-  config.assets.js_compressor = Uglifier.new(:harmony => true)
+  config.assets.js_compressor = Uglifier.new(harmony: true)
+
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -40,8 +41,8 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
-  # Store uploaded files on the local file system (see config/storage.yml for options)
-  config.active_storage.service = :amazon_dev
+  # Store uploaded files in Tigris Global Object Storage (see config/storage.yml for options)
+  config.active_storage.service = :tigris
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
