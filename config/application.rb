@@ -18,5 +18,8 @@ module FullStackProject
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.assets.initialize_on_precompile = false
+    
+    # Add this line to disable CoffeeScript
+    config.generators.javascript_engine = :js
   end
 end
