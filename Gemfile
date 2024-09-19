@@ -70,3 +70,5 @@ gem 'aws-sdk-s3', require: false
 gem 'jquery-rails'
 
 gem "dockerfile-rails", ">= 1.6", :group => :development
+
+gem 'mini_racer', platforms: :ruby
